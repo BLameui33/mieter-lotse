@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Widerspruch gegen Kautionsabrechnung/-einbehalt</title>
+  <meta name="description" content="Erstellen Sie Ihren Widerspruch gegen eine fehlerhafte Kautionsabrechnung oder unberechtigte Einbehaltung Ihrer Mietkaution durch den Vermieter.">
+  <meta name="keywords" content="Widerspruch, Mietkaution, Kautionseinbehalt, Kautionsabrechnung, Mietrecht, Mieter, Vermieter, Vorlage, Generator">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script defer src="widerspruch-kaution_script.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      margin: 0; padding: 0; line-height: 1.7; background-color: #f9f9f9; color: #333;
+    }
+    .page-container {
+        max-width: 800px; margin: 2rem auto; background-color: #fff;
+        padding: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    h1 {
+      font-size: 2.2rem; margin-bottom: 1.5rem; color: #222; text-align: center;
+      overflow-wrap: break-word; word-wrap: break-word;
+    }
+    label { display: block; margin-top: 1rem; font-weight: 500; color: #444; }
+    label small { display: block; font-weight: normal; font-size: 0.85em; color: #555; margin-top: 0.2rem; }
+    input[type="text"], input[type="date"], input[type="number"], textarea, select {
+      width: 100%; padding: 10px; margin-top: 0.3rem; box-sizing: border-box;
+      border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; color: #333;
+    }
+    textarea { min-height: 80px; resize: vertical; }
+    /* Spezifische Höhen für Textareas in diesem Formular */
+    #argumentGrundEinbehalt, #argumentHoeheEinbehalt, #ergaenzendeArgumenteKaution {min-height: 100px;}
+
+
+    fieldset { border: 1px solid #ddd; padding: 1.5rem; margin-top: 2rem; border-radius: 6px; }
+    legend { font-weight: bold; font-size: 1.2em; padding: 0 0.5em; color: #333; margin-bottom:0.8rem;}
+    
+    .button-group {
+      margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee;
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+    }
+    button {
+      padding: 10px 20px; font-size: 1rem; border-radius: 5px; cursor: pointer;
+      border: none; font-weight: bold; text-align: center;
+      transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+    }
+    button:hover { transform: translateY(-1px); }
+    .button-secondary { background-color: #6c757d; color: white; }
+    .button-secondary:hover { background-color: #5a6268; }
+    .button-danger { background-color: #d9534f; color: white; } 
+    .button-danger:hover { background-color: #c9302c; }
+
+    .info-box {
+      font-size: 0.9em; background-color: #eef7ff; padding: 10px 15px;
+      border-radius: 4px; margin-bottom: 1rem; border-left: 4px solid #0070f3;
+    }
+    .warning-box { background-color: #fcf8e3; border-left: 5px solid #f0ad4e; padding: 15px; margin: 1.5rem 0; border-radius: 5px; }
+    .checkbox-group label { font-weight: normal; display: block; margin-top: 0.5rem;}
+    .checkbox-group input[type="checkbox"] { width: auto; margin-right: 5px; vertical-align: middle;}
+
+
+    .popup-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; padding: 1rem; box-sizing: border-box;}
+    .popup-content { background: white; padding: 2rem; border-radius: 10px; max-width: 450px; width: 100%; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.25);}
+    .popup-content h2 { font-size: 1.5em; margin-top: 0; margin-bottom: 1rem; color: #333; border-bottom: none; padding-bottom: 0;}
+    .popup-content p { margin-bottom: 1.5rem; color: #444; }
+    .popup-content form { margin-top: 1rem; }
+    .popup-content input[type="submit"] { background:#ffc439; border:none; padding:0.9rem 1.8rem; font-weight:bold; border-radius:5px; cursor: pointer; color: #333; font-size: 1em;}
+    .popup-content input[type="submit"]:hover { background-color: #f0b429; }
+    .popup-close-button { margin-top: 1.5rem; background: none; border: 1px solid #ccc; color: #555; font-weight: normal; cursor: pointer; padding: 0.6rem 1.2rem; border-radius: 5px; font-size: 0.9em;}
+    .popup-close-button:hover { background-color: #f0f0f0; }
+    
+    footer { text-align: center; padding: 2rem 0; margin-top: 2rem; font-size: 0.9em; color: #666; }
+    footer a { color: #555; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .page-container { padding: 1rem; margin: 1rem auto; }
+      h1 { font-size: 1.7rem; }
+      legend { font-size: 1.1em;}
+      .button-group { flex-direction: column; }
+      button { width: 100%; margin-right: 0;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-container">
+  <h1>Widerspruch gegen Kautionsabrechnung / Einbehalt der Mietkaution</h1>
+  <p class="info-box warning">
+    Hat Ihr ehemaliger Vermieter die Mietkaution nicht oder nur teilweise zurückgezahlt und Sie sind mit der (ggf. erhaltenen) Abrechnung nicht einverstanden? Nutzen Sie dieses Formular, um Widerspruch einzulegen.
+    Weitere Informationen finden Sie auf unserer <a href="info-rueckzahlung-kaution.html">Info-Seite zur Kautionsrückzahlung</a>.
+  </p>
+<p class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 10px;">
+  <strong>Hinweis:</strong> Dieses Tool ersetzt keine Rechtsberatung. Es dient der allgemeinen Unterstützung bei der Antragstellung. Bei Unsicherheiten wenden Sie sich bitte an eine anerkannte Beratungsstelle oder einen Rechtsanwalt.
+</p>
+<p class="highlight-box" style="background-color: #fff3f3; border-left: 4px solid #e53935; padding: 10px; margin-top: 10px;">
+  <strong>Hinweis:</strong> Falls der PDF-Download nicht funktioniert, öffnen Sie diese Seite bitte im Standard-Browser Ihres Smartphones (z. B. Chrome oder Firefox). Die Google-App unterstützt leider keine Dateidownloads.
+</p>
+
+  <form id="widerspruchKautionForm">
+    <fieldset>
+      <legend>1. Angaben zum Mieter / zur Mieterin (Kautionsgeber:in)</legend>
+      <label for="mieterName">Vor- und Nachname (aller im Mietvertrag genannten Mieter):</label>
+      <input type="text" id="mieterName" required placeholder="z.B. Erika Mustermann und Max Mustermann">
+      <label for="mieterAlteAdresse">Anschrift der ehemaligen Mietwohnung:</label>
+      <textarea id="mieterAlteAdresse" rows="3" required></textarea>
+      <label for="mieterNeueAdresse">Ihre aktuelle (neue) Anschrift:</label>
+      <textarea id="mieterNeueAdresse" rows="3" required></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Angaben zum ehemaligen Vermieter / zur Hausverwaltung</legend>
+      <label for="vermieterName">Name des Vermieters / der Hausverwaltung:</label>
+      <input type="text" id="vermieterName" required>
+      <label for="vermieterAdresse">Anschrift des Vermieters / der Hausverwaltung:</label>
+      <textarea id="vermieterAdresse" rows="3" required></textarea>
+    </fieldset>
+
+   <fieldset>
+      <legend>3. Angaben zum Mietverhältnis und zur Kaution</legend>
+      <label for="mietendeDatum">Ende des Mietverhältnisses / Datum der Wohnungsübergabe:</label>
+      <input type="date" id="mietendeDatum" required> <label for="zustandBeiUebergabe">Zustand der Wohnung bei Übergabe: <small>(z.B. "beanstandungsfrei laut Protokoll vom TT.MM.JJJJ", "mit folgenden geringfügigen Mängeln, die im Protokoll festgehalten wurden: ...")</small></label>
+      <textarea id="zustandBeiUebergabe" rows="3" placeholder="Beschreiben Sie kurz den Zustand der Wohnung bei der Übergabe." required></textarea>
+      <label for="kautionshoehe">Höhe der ursprünglich gezahlten Kaution (in EUR):</label>
+      <input type="number" id="kautionshoehe" step="0.01" placeholder="z.B. 1500.00" required>
+      <label for="datumKautionsabrechnung">Datum der Kautionsabrechnung / des Schreibens über den Einbehalt (falls erhalten):</label>
+      <input type="date" id="datumKautionsabrechnung">
+      <label for="einbehalteneSumme">Vom Vermieter einbehaltener oder verrechneter Betrag (in EUR), dem widersprochen wird:</label>
+      <input type="number" id="einbehalteneSumme" step="0.01" placeholder="z.B. 350.00" required>
+    </fieldset>
+    
+    <fieldset>
+      <legend>4. Gründe Ihres Widerspruchs</legend>
+      <p class="info-box">Legen Sie hier detailliert dar, gegen welche Punkte der Kautionsabrechnung oder welche vom Vermieter geltend gemachten Forderungen Sie Widerspruch einlegen und warum. Seien Sie so präzise wie möglich und beziehen Sie sich auf Beweismittel (z.B. Übergabeprotokoll, Fotos).</p>
+      
+      <label for="argumentGrundEinbehalt">Darlegung, warum der vom Vermieter genannte Grund für den Einbehalt nicht zutrifft: <small>(z.B. Schaden nicht von Ihnen verursacht, normale Abnutzung, Reparatur nicht fachgerecht/überteuert, Schönheitsreparaturklausel unwirksam)</small></label>
+      <textarea id="argumentGrundEinbehalt" name="argumentGrundEinbehalt" rows="5" required placeholder="z.B. Der Kratzer im Parkett war bereits bei meinem Einzug vorhanden, wie im Übergabeprotokoll vom TT.MM.JJJJ vermerkt. / Die Klausel zu Schönheitsreparaturen im Mietvertrag ist unwirksam."></textarea>
+
+      <label for="argumentHoeheEinbehalt">Begründung, warum die Höhe des Einbehalts oder der verrechneten Kosten unangemessen ist: <small>(Legen Sie ggf. Vergleichsangebote oder Schätzungen vor, wenn Kosten für Reparaturen strittig sind.)</small></label>
+      <textarea id="argumentHoeheEinbehalt" name="argumentHoeheEinbehalt" rows="4" placeholder="z.B. Die geltend gemachten Kosten für die Reparatur von XYZ sind um X % höher als ortsübliche Preise. / Für den geringfügigen Schaden ist der Abzug von Y EUR unverhältnismäßig."></textarea>
+      
+      <label for="ergaenzendeArgumenteKaution">Weitere/ergänzende Argumente zu Ihrem Widerspruch:</label>
+      <textarea id="ergaenzendeArgumenteKaution" name="ergaenzendeArgumenteKaution" rows="4" placeholder="z.B. Hinweis auf bereits erfolgte Mängelanzeigen, die nicht bearbeitet wurden und zu Folgeschäden führten, die nun mir angelastet werden."></textarea>
+    </fieldset>
+
+    <fieldset>
+        <legend>5. Ihre Forderung und Bankverbindung für die Rückzahlung</legend>
+        <label for="forderungKaution">Was fordern Sie vom Vermieter?</label>
+        <textarea id="forderungKaution" rows="3" required placeholder="z.B. Ich fordere Sie auf, die gesamte Kaution in Höhe von [Betrag] EUR nebst Zinsen an mich auszuzahlen. / Ich fordere die Auszahlung des Restbetrages von [Betrag] EUR."></textarea>
+        
+        <label for="fristForderungKaution">Ich bitte um Erfüllung meiner Forderung und Auszahlung auf unten stehendes Konto bis zum (Datum): <small>(Setzen Sie eine angemessene Frist, z.B. 10-14 Tage)</small></label>
+        <input type="date" id="fristForderungKaution" required>
+
+        <h4 style="font-size:1.1em; margin-top:1.5rem; color:#334e68; border-top: 1px dashed #eee; padding-top:1rem;">Meine Bankverbindung für die Rückzahlung:</h4>
+        <label for="kontoinhaberWiderspruchKaution">Kontoinhaber:in: <small>(Falls abweichend von Mieter:in Name)</small></label>
+        <input type="text" id="kontoinhaberWiderspruchKaution" placeholder="Vor- und Nachname">
+        <label for="ibanWiderspruchKaution">IBAN:</label>
+        <input type="text" id="ibanWiderspruchKaution" required>
+        <label for="bicWiderspruchKaution">BIC (optional, meist nur für Ausland):</label>
+        <input type="text" id="bicWiderspruchKaution">
+    </fieldset>
+    
+    <fieldset>
+        <legend>6. Beizufügende Anlagen (Kopien sind ausreichend)</legend>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="anlagenKautionWiderspruch" value="Kopie des Mietvertrages"> Kopie des Mietvertrages</label>
+            <label><input type="checkbox" name="anlagenKautionWiderspruch" value="Kopie des Wohnungsübergabeprotokolls (Einzug und Auszug)"> Kopie des Wohnungsübergabeprotokolls (Einzug und Auszug)</label>
+            <label><input type="checkbox" name="anlagenKautionWiderspruch" value="Kopie der Kautionsabrechnung / des Schreibens des Vermieters"> Kopie der Kautionsabrechnung / des Schreibens des Vermieters</label>
+            <label><input type="checkbox" name="anlagenKautionWiderspruch" value="Fotos (z.B. von Mängeln bei Einzug, Zustand bei Auszug, strittige Schäden)"> Fotos</label>
+            <label><input type="checkbox" name="anlagenKautionWiderspruch" value="Ggf. Kostenvoranschläge für strittige Reparaturen (eigene oder Vergleichsangebote)"> Ggf. Kostenvoranschläge für strittige Reparaturen</label>
+            <label><input type="checkbox" name="anlagenKautionWiderspruch" value="Schriftverkehr mit dem Vermieter zu den strittigen Punkten"> Schriftverkehr mit dem Vermieter zu den strittigen Punkten</label>
+        </div>
+        <label for="anlageSonstigesKautionWiderspruch">Sonstige Anlagen:</label>
+        <input type="text" id="anlageSonstigesKautionWiderspruch">
+    </fieldset>
+
+    <div class="button-group">
+      <button type="button" id="saveBtnWiderspruchKaution" class="button-secondary">Eingaben speichern</button>
+      <button type="button" id="loadBtnWiderspruchKaution" class="button-secondary">Gespeicherte Eingaben laden</button>
+      <button type="submit" class="button-danger">📄 Widerspruchs-PDF erstellen</button>
+    </div>
+  </form>
+</div>
+
+<div id="spendenPopupWiderspruchKaution" class="popup-overlay">
+  <div class="popup-content">
+    <h2>Danke für deine Nutzung 💛</h2>
+    <p>Wenn dir dieses Tool geholfen hat, unterstütze das Projekt gerne mit einer kleinen Spende:</p>
+    <form action="https://www.paypal.com/donate" method="post" target="_blank">
+      <input type="hidden" name="business" value="info@kassen-lotse.de" />
+      <input type="hidden" name="charset" value="utf-8">
+      <input type="hidden" name="item_name" value="Unterstützung für das Projekt Mieter-Lotse" />
+      <input type="hidden" name="currency_code" value="EUR" />
+      <input type="submit" value="Spenden mit PayPal" />
+    </form>
+    <button id="closePopupBtnWiderspruchKaution" class="popup-close-button">Schließen</button>
+  </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Mieter-Lotse | <a href="index-mieter-lotse.html">Zurück zur Startseite</a> | <a href="info-rueckzahlung-kaution.html">Infos Kautionsrückzahlung</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+</footer>
+
+</body>
+</html>

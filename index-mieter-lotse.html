@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Mieter-Lotse: Kostenlose Hilfe & Vorlagen für Mietrecht (Mängel, Nebenkosten, Kündigung)</title>
+  
+  <meta name="description" content="Ihr digitaler Helfer für Mietrechtsangelegenheiten! Erstellen Sie mit Mieter-Lotse kostenlos Mängelanzeigen, Widersprüche zu Nebenkostenabrechnungen, Kündigungen und mehr. Verständliche Infos und PDF-Generatoren für Mieter.">
+  
+  <meta name="keywords" content="Mieter-Lotse, Mietrecht, Mieter, Vermieter, Mängelanzeige, Nebenkostenabrechnung, Widerspruch Nebenkosten, Kündigung Mietvertrag, Mietminderung, Kaution zurückfordern, Schönheitsreparaturen, Untervermietung, Haustierhaltung, Vorlage, Generator, kostenlos, PDF, Hilfe, Ratgeber">
+  
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      line-height: 1.7;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .page-container {
+        max-width: 800px;
+        margin: 2rem auto;
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    h1 {
+      font-size: 2.4rem; /* Etwas präsenter */
+      margin-bottom: 1rem;
+      color: #2c3e50; /* Dunkleres Blau für die Hauptüberschrift */
+      text-align: center;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+     h1 .logo-part { /* Für den "Lotse" Teil im Namen */
+        color: #007bff; /* Helles Blau für Akzent */
+    }
+    h2 { /* Haupt-Kategorieüberschriften */
+      font-size: 1.8rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1.2rem;
+      color: #1a5276; 
+      border-bottom: 2px solid #aed6f1;
+      padding-bottom: 0.6rem;
+    }
+     h3 { /* Für Unterüberschriften in den Infoblöcken */
+        font-size: 1.4em;
+        color: #0056b3; 
+        margin-top: 1.5rem; 
+        margin-bottom: 0.8rem;
+    }
+    .intro-text, .project-mission, .privacy-short-info { /* Vereinheitlichte Infobox-Stile */
+        font-size: 1.05em;
+        line-height: 1.75;
+        margin-bottom: 2rem;
+        padding: 1.2rem 1.5rem;
+        background-color: #f0f8ff; /* Sehr helles AliceBlue */
+        border-left: 5px solid #5dade2; /* Helleres Blau für den Rand */
+        border-radius: 6px;
+    }
+    .project-mission strong, .privacy-short-info strong { /* Stärkere Hervorhebung für Schlüsselwörter */
+        color: #0056b3;
+    }
+
+    .category-section { margin-bottom: 2.5rem; }
+    .tool-list { list-style: none; padding-left: 0; }
+    .tool-list li {
+      margin-bottom: 0.9rem; /* Etwas mehr Abstand */
+      padding: 0.85rem 1rem; /* Etwas mehr Innenabstand */
+      background-color: #ffffff; /* Reines Weiß für Kontrast */
+      border: 1px solid #dee2e6; /* Hellerer Rand */
+      border-radius: 6px;
+      transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+    }
+    .tool-list li:hover { box-shadow: 0 5px 10px rgba(0,0,0,0.12); transform: translateY(-2px); }
+    .tool-list li a { text-decoration: none; color: #0070f3; font-weight: 500; display: block; }
+    .tool-list li a:hover { color: #005bb5; text-decoration: underline; }
+    .tool-list li small { display: block; font-size: 0.88em; color: #555; margin-top: 0.3rem; }
+
+    .spendenhinweis { 
+      background: #fff3cd; 
+      border: 1px solid #ffeeba; /* Passender Rand zum Hintergrund */
+      border-left: 5px solid #ffc107; 
+      padding: 1.5rem;
+      margin-top: 2rem; 
+      margin-bottom: 2.5rem; 
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .spendenhinweis h2 { 
+        font-size: 1.5rem !important; border-bottom: none !important;
+        margin-top: 0 !important; color: #856404 !important; /* Dunkleres Gelb für Text */
+        padding-bottom: 0.5rem !important;
+        text-align: center;
+    }
+    .spendenhinweis p {
+        text-align: center;
+        margin-bottom: 1.2rem;
+        color: #856404; /* Passender Text zum Hintergrund */
+        font-size: 0.95em;
+    }
+    .spendenhinweis form { margin-top: 1rem; }
+    .spendenhinweis input[type="submit"] {
+      background: #ffc107; border: none; padding: 0.9rem 2rem; font-weight: bold;
+      border-radius: 5px; color: #383d41; cursor: pointer; font-size: 1.05em;
+      transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+    .spendenhinweis input[type="submit"]:hover { background: #e0a800; box-shadow: 0 2px 4px rgba(0,0,0,0.1);}
+    
+    footer { 
+      text-align: center; padding: 2rem 0; margin-top: 2rem;
+      font-size: 0.9em; color: #666;
+    }
+    footer a { color: #555; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.9rem; -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto; }
+      h2 { font-size: 1.6rem; }
+      h3 { font-size: 1.25rem; }
+      .page-container { padding: 1rem; margin: 1rem auto; }
+      .tool-list li { padding: 0.7rem; }
+      .intro-text, .project-mission, .privacy-short-info { font-size: 0.95em; padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-container">
+    <h1>Mieter-<span class="logo-part">Lotse</span>: Ihr digitaler Helfer in Mietrechtsangelegenheiten</h1>
+
+    <div class="intro-text"> <h3>Willkommen bei Mieter-Lotse!</h3>
+      <p>Stehen Sie vor Problemen mit Ihrer Mietwohnung, einer unklaren Nebenkostenabrechnung oder Fragen zur Kündigung? <strong>Mieter-Lotse</strong> ist Ihr kostenloser und verlässlicher Partner, der Ihnen hilft, Ihre Rechte als Mieter:in souverän wahrzunehmen und notwendige Schreiben an Ihren Vermieter einfach und verständlich zu erstellen.</p>
+    </div>
+
+    <div class="project-mission"> <h3>Unsere Mission: Klarheit und Unterstützung im Mietrecht</h3>
+        <p>Das Mietrecht kann kompliziert sein. Unser Ziel ist es, Ihnen durch <strong>klare Informationen</strong> und <strong>einfach zu bedienende Generatoren</strong> eine echte Unterstützung zu bieten. So können Sie Ihre Anliegen formgerecht und wirkungsvoll vertreten – direkt, anonym und ohne Kosten.</p>
+        <p><strong>So funktioniert Mieter-Lotse:</strong></p>
+        <ul>
+            <li>Wählen Sie das passende Thema aus den unten stehenden Kategorien.</li>
+            <li>Informieren Sie sich auf den jeweiligen Info-Seiten über Ihre Rechte und Möglichkeiten.</li>
+            <li>Nutzen Sie unsere Generatoren, um Schritt für Schritt Ihr individuelles Schreiben (z.B. Mängelanzeige, Widerspruch, Kündigung) zu erstellen.</li>
+            <li>Am Ende erhalten Sie ein <strong>fertig formuliertes PDF-Dokument</strong>, das Sie ausdrucken, unterschreiben und einreichen können.</li>
+        </ul>
+    </div>
+
+    <div class="spendenhinweis">
+      <h2>💛 Unterstützen Sie die Weiterentwicklung von Mieter-Lotse!</h2>
+      <p>Mieter-Lotse ist ein unabhängiges Projekt und bleibt für Sie kostenlos. Wenn Ihnen dieses Tool hilft, können Sie mit einem kleinen Beitrag dazu beitragen, dass die Seite aktuell gehalten, verbessert und um neue hilfreiche Funktionen erweitert werden kann. Jeder Beitrag macht einen Unterschied!</p>
+      <form action="https://www.paypal.com/donate" method="post" target="_blank">
+        <input type="hidden" name="business" value="info@kassen-lotse.de" /> 
+        <input type="hidden" name="charset" value="utf-8">
+        <input type="hidden" name="item_name" value="Unterstützung für das Projekt Mieter-Lotse" />
+        <input type="hidden" name="currency_code" value="EUR" />
+        <input type="submit" value="Jetzt Mieter-Lotse unterstützen" />
+      </form>
+    </div>
+
+<p class="highlight-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 10px;">
+  <strong>Hinweis:</strong> Unsere Inhalte und Formulare ersetzen keine Rechtsberatung. Sie dienen der allgemeinen Unterstützung. Für verbindliche Auskünfte wenden Sie sich bitte an eine anerkannte Beratungsstelle oder einen Rechtsanwalt.
+</p>
+
+    <section id="maengel-wohnung" class="category-section">
+      <h2>🛠️ Mängel in der Wohnung</h2>
+      <ul class="tool-list">
+        <li>
+            <a href="info-maengelanzeige.html">Mängelanzeige: Infos & Generator</a>
+            <small>Mängel richtig anzeigen, Fristen setzen, Mietminderung prüfen.</small>
+        </li>
+        <li>
+            <a href="info-mietminderung.html">Mietminderung: Infos, Rechner & Schreiben-Generator</a>
+            <small>Wann und wie Sie die Miete bei Mängeln mindern und dies mitteilen können.</small>
+        </li>
+      </ul>
+    </section>
+
+    <section id="miete-nebenkosten" class="category-section">
+      <h2>💶 Miete & Nebenkosten</h2>
+      <ul class="tool-list">
+        <li>
+            <a href="generator-widerspruch-nebenkosten.html">Nebenkostenabrechnung: Infos & Widerspruchs-Generator</a> <small>Prüfung der Abrechnung und Erstellung eines fundierten Widerspruchs.</small>
+        </li>
+        <li>
+            <a href="info-mieterhoehung.html">Mieterhöhung: Infos & Widerspruchs-Generator</a>
+            <small>Prüfung von Mieterhöhungen und Erstellung einer Stellungnahme/eines Widerspruchs.</small>
+        </li>
+      </ul>
+    </section>
+
+    <section id="kuendigung-mietvertrag" class="category-section">
+      <h2>🔑 Kündigung & Auszug</h2>
+      <ul class="tool-list">
+        <li>
+            <a href="info-kuendigung-mieter.html">Kündigung durch Mieter: Infos & Generator</a>
+            <small>Ordentliche Kündigung des Mietvertrages korrekt erstellen.</small>
+        </li>
+	    <li>
+            <a href="info-kuendigung-vermieter.html">Kündigung durch Vermieter: Infos & Widerspruchs-Generator</a>
+            <small>Rechte kennen und Widerspruch gegen eine Vermieterkündigung formulieren.</small>
+        </li>
+        <li>
+            <a href="info-rueckzahlung-kaution.html">Mietkaution: Infos, Aufforderung & Widerspruch</a>
+            <small>Rechte bei der Rückzahlung und Hilfe bei unberechtigten Einbehalten.</small>
+        </li>
+        <li>
+            <a href="info-schoenheitsreparaturen.html">Schönheitsreparaturen: Infos</a>
+            <small>Was müssen Mieter beim Auszug wirklich renovieren?</small>
+        </li>
+      </ul>
+    </section>
+    
+    <section id="sonstige-mietthemen" class="category-section">
+      <h2>📋 Sonstige Mietthemen</h2>
+      <ul class="tool-list">
+        <li>
+            <a href="info-untervermietung.html">Untervermietung: Infos & Antrag auf Erlaubnis</a>
+            <small>Voraussetzungen und Erstellung eines Antrags an den Vermieter.</small>
+        </li>
+        <li>
+            <a href="info-haustierhaltung.html">Haustierhaltung: Infos</a>
+            <small>Was ist in Mietwohnungen erlaubt?</small>
+        </li>
+      </ul>
+    </section>
+
+    <div class="privacy-short-info"> <h3>🔒 Ihr Datenschutz ist uns wichtig!</h3>
+        <p>Bei Mieter-Lotse werden <strong>alle Ihre Eingaben ausschließlich lokal in Ihrem Browser verarbeitet</strong> und nicht auf unseren Servern gespeichert oder an Dritte weitergegeben. Die PDF-Erstellung erfolgt ebenfalls direkt auf Ihrem Gerät. Mehr dazu finden Sie in unserer ausführlichen <a href="datenschutz-mieter-lotse.html">Datenschutzerklärung</a>.</p>
+    </div>
+
+  </div> <footer>
+    <p>&copy; 2025 Mieter-Lotse | <a href="spenden.html">Unterstützen</a> | <a href="impressum-mieter-lotse.html">Impressum</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Widerspruch Nebenkostenabrechnung: Anleitung & Generator</title>
+  <meta name="description" content="Prüfen Sie Ihre Nebenkostenabrechnung (Betriebskostenabrechnung) und erstellen Sie direkt einen fundierten Widerspruch bei Fehlern. Anleitung und kostenloser Generator für Mieter.">
+  <meta name="keywords" content="Widerspruch Nebenkostenabrechnung, Betriebskostenabrechnung prüfen, Nebenkosten widersprechen, Generator, Vorlage, Mieter, Mietrecht, Fehler Nebenkosten">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script defer src="nebenkosten_widerspruch_script.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      line-height: 1.7; background-color: #f9f9f9; color: #333; margin: 0; padding: 0;
+    }
+    .page-container {
+        max-width: 800px; margin: 2rem auto; background-color: #fff; padding: 2rem;
+        border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    h1 { font-size: 2.2rem; margin-bottom: 1.5rem; color: #222; text-align: center; }
+    h2 { /* Für Hauptabschnitte wie "Informationen" und "Generator" */
+      font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1.2rem; color: #1a5276; 
+      border-bottom: 2px solid #aed6f1; padding-bottom: 0.6rem;
+    }
+    h3 { /* Für Unterüberschriften in den Infotexten */
+      font-size: 1.4rem; margin-top: 2rem; margin-bottom: 1rem; color: #2c3e50;
+    }
+    p, ul li, ol li { margin-bottom: 1rem; }
+    ul, ol { padding-left: 20px; }
+    
+    label { display: block; margin-top: 1rem; font-weight: 500; color: #444; }
+    label small { display: block; font-weight: normal; font-size: 0.85em; color: #555; margin-top: 0.2rem; }
+    input[type="text"], input[type="date"], input[type="number"], textarea, select {
+      width: 100%; padding: 10px; margin-top: 0.3rem; box-sizing: border-box;
+      border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; color: #333;
+    }
+    textarea { min-height: 80px; resize: vertical; }
+    .checkbox-group label { font-weight: normal; display: block; margin-top: 0.5rem;}
+    .checkbox-group input[type="checkbox"] { width: auto; margin-right: 8px; vertical-align: middle;}
+
+    fieldset { border: 1px solid #ddd; padding: 1.5rem; margin-top: 1rem; border-radius: 6px; }
+    legend { font-weight: bold; font-size: 1.2em; padding: 0 0.5em; color: #333; margin-bottom:0.8rem;}
+    
+    .button-group {
+      margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee;
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+    }
+    button {
+      padding: 10px 20px; font-size: 1rem; border-radius: 5px; cursor: pointer;
+      border: none; font-weight: bold; text-align: center;
+      transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+    }
+    button:hover { transform: translateY(-1px); }
+    .button-secondary { background-color: #6c757d; color: white; }
+    .button-secondary:hover { background-color: #5a6268; }
+    .button-danger { background-color: #d9534f; color: white; } /* Für Widerspruchs-PDF Button */
+    .button-danger:hover { background-color: #c9302c; }
+
+    .info-box {
+      font-size: 0.9em; background-color: #eef7ff; padding: 10px 15px;
+      border-radius: 4px; margin-bottom: 1rem; border-left: 4px solid #0070f3;
+    }
+    .warning-box { background-color: #fcf8e3; border-left: 5px solid #f0ad4e; padding: 15px; margin: 1.5rem 0; border-radius: 5px; font-size: 0.95em;}
+    strong { color: #117864; }
+    .widerspruchspunkt-block { margin-bottom: 1.5rem; padding: 1rem; border: 1px dashed #ccc; border-radius: 4px;}
+    .widerspruchspunkt-block h4 { margin-top:0; font-size: 1.1em; color: #334e68;}
+
+
+    .popup-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; padding: 1rem; box-sizing: border-box;}
+    .popup-content { background: white; padding: 2rem; border-radius: 10px; max-width: 450px; width: 100%; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.25);}
+    .popup-content h2 { font-size: 1.5em; margin-top: 0; margin-bottom: 1rem; color: #333; border-bottom: none; padding-bottom: 0;}
+    .popup-content p { margin-bottom: 1.5rem; color: #444; }
+    .popup-content form { margin-top: 1rem; }
+    .popup-content input[type="submit"] { background:#ffc439; border:none; padding:0.9rem 1.8rem; font-weight:bold; border-radius:5px; cursor: pointer; color: #333; font-size: 1em;}
+    .popup-content input[type="submit"]:hover { background-color: #f0b429; }
+    .popup-close-button { margin-top: 1.5rem; background: none; border: 1px solid #ccc; color: #555; font-weight: normal; cursor: pointer; padding: 0.6rem 1.2rem; border-radius: 5px; font-size: 0.9em;}
+    .popup-close-button:hover { background-color: #f0f0f0; }
+    
+    footer { text-align: center; padding: 2rem 0; margin-top: 2rem; font-size: 0.9em; color: #666; }
+    footer a { color: #555; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .page-container { padding: 1rem; margin: 1rem auto; }
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.5rem; }
+      h3 { font-size: 1.2rem; }
+      .button-group { flex-direction: column; }
+      button { width: 100%; margin-right: 0;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-container">
+  <h1>Widerspruch gegen die Nebenkostenabrechnung erstellen</h1>
+
+  <div class="info-box">
+      <p>Hier finden Sie wichtige Informationen zur Prüfung Ihrer Nebenkostenabrechnung (auch Betriebskostenabrechnung genannt) und können anschließend direkt einen Widerspruch erstellen, falls Sie Fehler entdeckt haben oder Posten unklar sind.</p>
+      <p><strong>Wichtig:</strong> Legen Sie Widerspruch immer schriftlich und nachweisbar (z.B. per Einschreiben) ein und beachten Sie die Widerspruchsfrist von 12 Monaten nach Erhalt der Abrechnung!</p>
+  </div>
+<p class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 10px;">
+  <strong>Hinweis:</strong> Dieses Tool ersetzt keine Rechtsberatung. Es dient der allgemeinen Unterstützung bei der Antragstellung. Bei Unsicherheiten wenden Sie sich bitte an eine anerkannte Beratungsstelle oder einen Rechtsanwalt.
+</p>
+<p class="highlight-box" style="background-color: #fff3f3; border-left: 4px solid #e53935; padding: 10px; margin-top: 10px;">
+  <strong>Technischer Hinweis:</strong> Um das PDF erfolgreich herunterzuladen, öffnen Sie diese Seite bitte in einem Internet-Browser wie <strong>Chrome, Firefox oder Safari</strong>. In der Google-App (z. B. über die Suchleiste auf dem Startbildschirm) funktioniert der Download leider nicht zuverlässig.
+</p>
+
+  <h2>Informationen zur Prüfung Ihrer Nebenkostenabrechnung</h2>
+
+  <h3>Was sind Nebenkosten/Betriebskosten?</h3>
+  <p>Unter Nebenkosten (oder genauer: **Betriebskosten**) versteht man die Kosten, die dem Eigentümer durch das Eigentum am Grundstück oder durch den bestimmungsmäßigen Gebrauch des Gebäudes laufend entstehen (§ 1 Betriebskostenverordnung - BetrKV). Diese Kosten kann der Vermieter auf die Mieter umlegen, **wenn dies im Mietvertrag wirksam vereinbart wurde**.</p>
+  <p>Zu den umlagefähigen Betriebskosten gehören typischerweise:</p>
+  <ul>
+      <li>Grundsteuer</li>
+      <li>Wasserkosten (Frischwasser und Abwasser)</li>
+      <li>Heizkosten und Kosten für Warmwasser (werden oft separat nach Heizkostenverordnung abgerechnet)</li>
+      <li>Aufzugskosten</li>
+      <li>Straßenreinigung und Müllabfuhr</li>
+      <li>Gebäudereinigung und Ungezieferbekämpfung</li>
+      <li>Gartenpflege</li>
+      <li>Beleuchtung (z.B. Treppenhaus, Außenbereiche)</li>
+      <li>Schornsteinreinigung</li>
+      <li>Sach- und Haftpflichtversicherungen (z.B. Gebäudeversicherung)</li>
+      <li>Hauswartkosten</li>
+      <li>Gemeinschaftsantennenanlage oder Kabelanschluss (wenn vertraglich vereinbart)</li>
+      <li>Sonstige Betriebskosten (müssen im Mietvertrag konkret benannt sein!)</li>
+  </ul>
+  <p class="warning-box"><strong>Nicht umlagefähig</strong> sind Verwaltungs-, Instandhaltungs- und Instandsetzungskosten (Reparaturen, Kosten für die Hausverwaltung, Bankgebühren).</p>
+
+  <h3>Formelle Anforderungen an eine Nebenkostenabrechnung</h3>
+  <p>Eine wirksame Abrechnung muss verständlich sein und folgende Punkte enthalten:</p>
+  <ul>
+      <li>Angabe des <strong>Abrechnungszeitraums</strong> (max. 12 Monate).</li>
+      <li>Zusammenstellung der **Gesamtkosten** für jede einzelne Kostenart.</li>
+      <li>Angabe und Erläuterung des verwendeten **Verteilerschlüssels** (z.B. nach Wohnfläche, Personenzahl).</li>
+      <li>Berechnung des **Anteils des Mieters** an den jeweiligen Kosten.</li>
+      <li>Abzug der geleisteten **Vorauszahlungen** des Mieters.</li>
+      <li>Ausweis eines **Guthabens oder einer Nachforderung**.</li>
+  </ul>
+   <p class="warning-box"><strong>Abrechnungsfrist:</strong> Der Vermieter muss spätestens 12 Monate nach Ende des Abrechnungszeitraums abrechnen. Versäumt er dies, kann er meist keine Nachforderungen mehr stellen.</p>
+
+
+  <h3>Ihr Recht auf Belegeinsicht</h3>
+  <p>Sie haben das Recht, die Originalbelege (Rechnungen etc.) einzusehen, die der Abrechnung zugrunde liegen. Fordern Sie dies bei Unklarheiten ein!</p>
+
+  <h3>Wie prüfe ich meine Abrechnung? – Checkliste</h3>
+  <ol>
+      <li><strong>Fristen:</strong> Hat der Vermieter die Abrechnungsfrist eingehalten? Haben Sie Ihre Prüf- und Widerspruchsfrist (12 Monate nach Erhalt) noch?</li>
+      <li><strong>Formelle Korrektheit:</strong> Sind alle oben genannten formellen Anforderungen erfüllt? Ist die Abrechnung für Sie nachvollziehbar?</li>
+      <li><strong>Abrechnungszeitraum:</strong> Ist der Zeitraum korrekt und nicht länger als ein Jahr?</li>
+      <li><strong>Verteilerschlüssel:</strong> Wurde der im Mietvertrag vereinbarte Verteilerschlüssel verwendet? Ist er für die jeweilige Kostenart zulässig und korrekt angewendet?</li>
+      <li><strong>Umlagefähige Kosten:</strong> Sind nur Kosten aufgeführt, die laut Mietvertrag und Betriebskostenverordnung umlagefähig sind? Keine Verwaltungs- oder Reparaturkosten?</li>
+      <li><strong>Heizkosten:</strong> Erfolgte die Abrechnung nach der Heizkostenverordnung (meist verbrauchsabhängig)? Sind die Zählerstände (falls vorhanden) plausibel?</li>
+      <li><strong>Wasserkosten:</strong> Nach Verbrauch oder anderem Schlüssel? Korrekt abgerechnet?</li>
+      <li><strong>Sonstige Betriebskosten:</strong> Sind diese im Mietvertrag konkret benannt?</li>
+      <li><strong>Vorauszahlungen:</strong> Wurden alle Ihre Vorauszahlungen korrekt berücksichtigt und abgezogen?</li>
+      <li><strong>Rechenfehler:</strong> Überprüfen Sie die einzelnen Rechenschritte.</li>
+  </ol>
+  <p>Diese Checkliste hilft Ihnen bei der ersten Prüfung. Für eine detaillierte Beanstandung einzelner Punkte nutzen Sie das folgende Formular.</p>
+
+  <h2>Generator: Widerspruch gegen Nebenkostenabrechnung</h2>
+
+  <form id="widerspruchNebenkostenForm">
+    <fieldset>
+      <legend>1. Angaben zum Mieter / zur Mieterin</legend>
+      <label for="mieterName">Vor- und Nachname:</label>
+      <input type="text" id="mieterName" required>
+      <label for="mieterAdresse">Anschrift der Mietwohnung (Straße, Hausnr., PLZ, Ort, ggf. Etage):</label>
+      <textarea id="mieterAdresse" rows="3" required></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Angaben zum Vermieter / zur Hausverwaltung</legend>
+      <label for="vermieterName">Name des Vermieters / der Hausverwaltung:</label>
+      <input type="text" id="vermieterName" required>
+      <label for="vermieterAdresse">Anschrift des Vermieters / der Hausverwaltung:</label>
+      <textarea id="vermieterAdresse" rows="3" required></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Angaben zur beanstandeten Nebenkostenabrechnung</legend>
+      <label for="datumNebenkostenabrechnung">Datum der Nebenkostenabrechnung:</label>
+      <input type="date" id="datumNebenkostenabrechnung" required>
+      <label for="abrechnungszeitraum">Abrechnungszeitraum laut Abrechnung:</label>
+      <input type="text" id="abrechnungszeitraum" required placeholder="z.B. 01.01.2023 - 31.12.2023">
+      <label for="nachforderungGuthaben">Ergebnis der Abrechnung: <small>(z.B. Nachforderung von XXX EUR / Guthaben von YYY EUR)</small></label>
+      <input type="text" id="nachforderungGuthaben" required placeholder="z.B. Nachforderung von 150,75 EUR">
+    </fieldset>
+    
+    <fieldset>
+      <legend>4. Punkte Ihres Widerspruchs (Beanstandungen)</legend>
+      <p class="info-box">Listen Sie hier die einzelnen Positionen oder Aspekte der Nebenkostenabrechnung auf, die Sie beanstanden, und begründen Sie Ihren Widerspruch.</p>
+      <div id="widerspruchspunkteContainer">
+        <div class="widerspruchspunkt-block">
+          <h4>Widerspruchspunkt 1</h4>
+          <label for="widerspruchspunkt1_position">Beanstandete Kostenposition / Aspekt:</label>
+          <input type="text" id="widerspruchspunkt1_position" name="widerspruch_position[]" required placeholder="z.B. Heizkosten, Hausreinigung, Verteilerschlüssel Wasser">
+          <label for="widerspruchspunkt1_begruendung">Begründung für die Beanstandung:</label>
+          <textarea id="widerspruchspunkt1_begruendung" name="widerspruch_begruendung[]" rows="3" required placeholder="z.B. Der Verteilerschlüssel für Wasser ist falsch angewendet. / Die Kosten für den Hauswart sind nicht umlagefähig, da Verwaltungstätigkeiten enthalten sind."></textarea>
+        </div>
+      </div>
+      <button type="button" id="addWiderspruchspunktBtn" style="margin-top:1rem; background-color: #5cb85c; color:white;">Weiteren Widerspruchspunkt hinzufügen</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>5. Antrag auf Belegeinsicht (optional)</legend>
+        <label><input type="checkbox" id="antragBelegeinsicht" name="antragBelegeinsicht" value="ja"> Ich beantrage hiermit Einsicht in die Originalbelege, die dieser Nebenkostenabrechnung zugrunde liegen, gemäß § 259 BGB. Bitte nennen Sie mir hierfür Terminvorschläge.</label>
+    </fieldset>
+
+    <fieldset>
+        <legend>6. Ihre Forderung</legend>
+        <label for="forderungNebenkosten">Was fordern Sie vom Vermieter? <small>(z.B. Korrektur der Abrechnung, Auszahlung eines (höheren) Guthabens, Erläuterung bestimmter Posten)</small></label>
+        <textarea id="forderungNebenkosten" rows="3" required placeholder="z.B. Ich bitte um Korrektur der Abrechnung unter Berücksichtigung meiner Einwände und um Auszahlung des sich daraus ergebenden Guthabens."></textarea>
+        <label for="fristStellungnahmeNK">Ich bitte um Ihre Stellungnahme/korrigierte Abrechnung bis zum (Datum): <small>(Setzen Sie eine angemessene Frist, z.B. 2-3 Wochen)</small></label>
+        <input type="date" id="fristStellungnahmeNK">
+    </fieldset>
+    
+    <fieldset>
+        <legend>7. Beizufügende Anlagen (optional)</legend>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="anlagenNKWiderspruch" value="Kopie der beanstandeten Nebenkostenabrechnung"> Kopie der beanstandeten Nebenkostenabrechnung</label>
+            <label><input type="checkbox" name="anlagenNKWiderspruch" value="Kopie des Mietvertrages (relevante Passagen)"> Kopie des Mietvertrages (relevante Passagen)</label>
+            <label><input type="checkbox" name="anlagenNKWiderspruch" value="Ggf. eigene Berechnungen / Gegenüberstellungen"> Ggf. eigene Berechnungen / Gegenüberstellungen</label>
+        </div>
+        <label for="anlageSonstigesNKWiderspruch">Sonstige Anlagen:</label>
+        <input type="text" id="anlageSonstigesNKWiderspruch">
+    </fieldset>
+
+    <div class="button-group">
+      <button type="button" id="saveBtnNKWiderspruch" class="button-secondary">Eingaben speichern</button>
+      <button type="button" id="loadBtnNKWiderspruch" class="button-secondary">Gespeicherte Eingaben laden</button>
+      <button type="submit" class="button-danger">📄 Widerspruchs-PDF erstellen</button>
+    </div>
+  </form>
+</div>
+
+<div id="spendenPopupNKWiderspruch" class="popup-overlay">
+  <div class="popup-content">
+    <h2>Danke für deine Nutzung 💛</h2>
+    <p>Wenn dir dieses Tool geholfen hat, unterstütze das Projekt gerne mit einer kleinen Spende:</p>
+    <form action="https://www.paypal.com/donate" method="post" target="_blank">
+      <input type="hidden" name="business" value="info@kassen-lotse.de" />
+      <input type="hidden" name="charset" value="utf-8">
+      <input type="hidden" name="item_name" value="Unterstützung für das Projekt Mieter-Lotse" />
+      <input type="hidden" name="currency_code" value="EUR" />
+      <input type="submit" value="Spenden mit PayPal" />
+    </form>
+    <button id="closePopupBtnNKWiderspruch" class="popup-close-button">Schließen</button>
+  </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Mieter-Lotse | <a href="index-mieter-lotse.html">Zurück zur Startseite</a> | <a href="impressum-mieter-lotse.html">Impressum</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Mängelanzeige an Vermieter erstellen</title>
+  <meta name="description" content="Erstellen Sie hier Ihre Mängelanzeige an Ihren Vermieter. Einfach ausfüllen und PDF generieren.">
+  <meta name="keywords" content="Mängelanzeige, Mietrecht, Generator, Vorlage, Mieter, Vermieter, Mängel, Wohnung">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script defer src="maengelanzeige_script.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      margin: 0; padding: 0; line-height: 1.7; background-color: #f9f9f9; color: #333;
+    }
+    .page-container {
+        max-width: 800px; margin: 2rem auto; background-color: #fff;
+        padding: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    h1 {
+      font-size: 2.2rem; margin-bottom: 1.5rem; color: #222; text-align: center;
+      overflow-wrap: break-word; word-wrap: break-word;
+    }
+    label { display: block; margin-top: 1rem; font-weight: 500; color: #444; }
+    label small { display: block; font-weight: normal; font-size: 0.85em; color: #555; margin-top: 0.2rem; }
+    input[type="text"], input[type="date"], textarea, select, input[type="number"] {
+      width: 100%; padding: 10px; margin-top: 0.3rem; box-sizing: border-box;
+      border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; color: #333;
+    }
+    textarea { min-height: 80px; resize: vertical; }
+    .checkbox-group label { font-weight: normal; display: block; margin-top: 0.5rem;}
+    .checkbox-group input[type="checkbox"] { width: auto; margin-right: 8px; vertical-align: middle;}
+
+    fieldset { border: 1px solid #ddd; padding: 1.5rem; margin-top: 2rem; border-radius: 6px; }
+    legend { font-weight: bold; font-size: 1.2em; padding: 0 0.5em; color: #333; margin-bottom:0.8rem;}
+    
+    .button-group {
+      margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee;
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+    }
+    button {
+      padding: 10px 20px; font-size: 1rem; border-radius: 5px; cursor: pointer;
+      border: none; font-weight: bold; text-align: center;
+      transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+    }
+    button:hover { transform: translateY(-1px); }
+    .button-primary { background-color: #0070f3; color: white; }
+    .button-primary:hover { background-color: #005bb5; }
+    .button-secondary { background-color: #6c757d; color: white; }
+    .button-secondary:hover { background-color: #5a6268; }
+
+    .info-box {
+      font-size: 0.9em; background-color: #eef7ff; padding: 10px 15px;
+      border-radius: 4px; margin-bottom: 1rem; border-left: 4px solid #0070f3;
+    }
+    .maengel-block { margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px dashed #ccc;}
+    .maengel-block:last-child { border-bottom: none; }
+
+
+    .popup-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; padding: 1rem; box-sizing: border-box;}
+    .popup-content { background: white; padding: 2rem; border-radius: 10px; max-width: 450px; width: 100%; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.25);}
+    .popup-content h2 { font-size: 1.5em; margin-top: 0; margin-bottom: 1rem; color: #333; border-bottom: none; padding-bottom: 0;}
+    .popup-content p { margin-bottom: 1.5rem; color: #444; }
+    .popup-content form { margin-top: 1rem; }
+    .popup-content input[type="submit"] { background:#ffc439; border:none; padding:0.9rem 1.8rem; font-weight:bold; border-radius:5px; cursor: pointer; color: #333; font-size: 1em;}
+    .popup-content input[type="submit"]:hover { background-color: #f0b429; }
+    .popup-close-button { margin-top: 1.5rem; background: none; border: 1px solid #ccc; color: #555; font-weight: normal; cursor: pointer; padding: 0.6rem 1.2rem; border-radius: 5px; font-size: 0.9em;}
+    .popup-close-button:hover { background-color: #f0f0f0; }
+    
+    footer { text-align: center; padding: 2rem 0; margin-top: 2rem; font-size: 0.9em; color: #666; }
+    footer a { color: #555; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .page-container { padding: 1rem; margin: 1rem auto; }
+      h1 { font-size: 1.7rem; }
+      legend { font-size: 1.1em;}
+      .button-group { flex-direction: column; }
+      button { width: 100%; margin-right: 0;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-container">
+  <h1>Mängelanzeige an den Vermieter erstellen</h1>
+  <p class="info-box">
+    Mit diesem Formular können Sie eine Mängelanzeige an Ihren Vermieter oder Ihre Hausverwaltung erstellen. Beschreiben Sie die Mängel so genau wie möglich und setzen Sie eine angemessene Frist zur Beseitigung.
+    Weitere Informationen finden Sie auf unserer <a href="info-maengelanzeige.html">Info-Seite zur Mängelanzeige</a>.
+  </p>
+<p class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 10px;">
+  <strong>Hinweis:</strong> Dieses Tool ersetzt keine Rechtsberatung. Es dient der allgemeinen Unterstützung bei der Antragstellung. Bei Unsicherheiten wenden Sie sich bitte an eine anerkannte Beratungsstelle oder einen Rechtsanwalt.
+</p>
+<p class="highlight-box" style="background-color: #fff3f3; border-left: 4px solid #e53935; padding: 10px; margin-top: 10px;">
+  <strong>Technischer Hinweis:</strong> Um das PDF erfolgreich herunterzuladen, öffnen Sie diese Seite bitte in einem Internet-Browser wie <strong>Chrome, Firefox oder Safari</strong>. In der Google-App (z. B. über die Suchleiste auf dem Startbildschirm) funktioniert der Download leider nicht zuverlässig.
+</p>
+
+  <form id="maengelanzeigeForm">
+    <fieldset>
+      <legend>1. Angaben zum Mieter / zur Mieterin</legend>
+      <label for="mieterName">Vor- und Nachname:</label>
+      <input type="text" id="mieterName" required>
+      <label for="mieterAdresse">Anschrift der Mietwohnung (Straße, Hausnr., PLZ, Ort, ggf. Etage/Wohnungsnummer):</label>
+      <textarea id="mieterAdresse" rows="3" required></textarea>
+      <label for="mieterTelefon">Telefonnummer (für Rückfragen, optional):</label>
+      <input type="text" id="mieterTelefon">
+      <label for="mieterEmail">E-Mail-Adresse (optional):</label>
+      <input type="email" id="mieterEmail">
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Angaben zum Vermieter / zur Hausverwaltung</legend>
+      <label for="vermieterName">Name des Vermieters / der Hausverwaltung:</label>
+      <input type="text" id="vermieterName" required>
+      <label for="vermieterAdresse">Anschrift des Vermieters / der Hausverwaltung:</label>
+      <textarea id="vermieterAdresse" rows="3" required></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Beschreibung der Mängel</legend>
+      <p class="info-box">Beschreiben Sie jeden Mangel so genau wie möglich. Wo tritt er auf? Seit wann? Wie äußert er sich? Fügen Sie ggf. Fotos als Anlage bei.</p>
+      
+      <div id="maengelContainer">
+        <div class="maengel-block">
+          <label for="mangel1_beschreibung">Beschreibung des Mangels 1:</label>
+          <textarea id="mangel1_beschreibung" name="mangel_beschreibung[]" rows="3" required placeholder="z.B. Schimmelbefall im Badezimmer an der Decke, ca. 20x30cm, seit ca. 2 Wochen bemerkt."></textarea>
+          <label for="mangel1_ort">Ort des Mangels 1 in der Wohnung:</label>
+          <input type="text" id="mangel1_ort" name="mangel_ort[]" required placeholder="z.B. Badezimmer, Decke über Dusche">
+          <label for="mangel1_bemerkt_seit">Mangel bemerkt seit (ca. Datum/Zeitraum) 1:</label>
+          <input type="text" id="mangel1_bemerkt_seit" name="mangel_bemerkt_seit[]" placeholder="z.B. 15.05.2025 oder seit Einzug">
+        </div>
+      </div>
+      <button type="button" id="addMangelBtn" style="margin-top:1rem; background-color: #5cb85c; color:white;">Weiteren Mangel hinzufügen</button>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. Aufforderung zur Mängelbeseitigung und Fristsetzung</legend>
+      <label for="fristBeseitigung">Frist zur Beseitigung der Mängel bis zum (Datum): <small>(Setzen Sie eine angemessene Frist, z.B. 1-2 Wochen, je nach Dringlichkeit)</small></label>
+      <input type="date" id="fristBeseitigung" required>
+      <label>Ankündigung weiterer Schritte (optional, aber oft sinnvoll):</label>
+      <div class="checkbox-group">
+          <label><input type="checkbox" id="androhungMietminderung" name="weitereSchritte" value="Mietminderung"> Ich kündige an, die Miete angemessen zu mindern, sollten die Mängel nicht innerhalb der gesetzten Frist beseitigt werden.</label>
+          <label><input type="checkbox" id="androhungZurueckbehalt" name="weitereSchritte" value="Zurueckbehaltungsrecht"> Ich behalte mir vor, einen Teil der Miete bis zur vollständigen Mängelbeseitigung zurückzuhalten.</label>
+          <label><input type="checkbox" id="androhungSelbstvornahme" name="weitereSchritte" value="Selbstvornahme"> Ich behalte mir vor, nach fruchtlosem Fristablauf die Mängel ggf. selbst beseitigen zu lassen und Ihnen die Kosten in Rechnung zu stellen (Selbstvornahme nach § 536a Abs. 2 BGB).</label>
+      </div>
+    </fieldset>
+    
+    <fieldset>
+        <legend>5. Beizufügende Anlagen (optional)</legend>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="anlagenMaengel" value="Fotos der Mängel"> Fotos der Mängel</label>
+            <label><input type="checkbox" name="anlagenMaengel" value="Zeugenaussagen (falls vorhanden)"> Zeugenaussagen (falls vorhanden)</label>
+            <label><input type="checkbox" name="anlagenMaengel" value="Lärmprotokoll (bei Lärmbelästigung)"> Lärmprotokoll (bei Lärmbelästigung)</label>
+        </div>
+        <label for="anlageSonstigesMaengel">Sonstige Anlagen (bitte auflisten):</label>
+        <input type="text" id="anlageSonstigesMaengel">
+    </fieldset>
+
+    <div class="button-group">
+      <button type="button" id="saveBtnMaengel" class="button-secondary">Eingaben speichern</button>
+      <button type="button" id="loadBtnMaengel" class="button-secondary">Gespeicherte Eingaben laden</button>
+      <button type="submit" class="button-primary">📄 Mängelanzeige-PDF erstellen</button>
+    </div>
+  </form>
+</div>
+
+<div id="spendenPopupMaengel" class="popup-overlay">
+  <div class="popup-content">
+    <h2>Danke für deine Nutzung 💛</h2>
+    <p>Wenn dir dieses Tool geholfen hat, unterstütze das Projekt gerne mit einer kleinen Spende:</p>
+    <form action="https://www.paypal.com/donate" method="post" target="_blank">
+      <input type="hidden" name="business" value="info@kassen-lotse.de" /> <input type="hidden" name="charset" value="utf-8">
+      <input type="hidden" name="item_name" value="Unterstützung für das Projekt Mieter-Lotse" />
+      <input type="hidden" name="currency_code" value="EUR" />
+      <input type="submit" value="Spenden mit PayPal" />
+    </form>
+    <button id="closePopupBtnMaengel" class="popup-close-button">Schließen</button>
+  </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Mieter-Lotse | <a href="index-mieter-lotse.html">Zurück zur Startseite</a> | <a href="info-maengelanzeige.html">Infos Mängelanzeige</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+</footer>
+
+</body>
+</html>

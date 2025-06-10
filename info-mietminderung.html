@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Mietminderung bei Wohnungsmängeln: Infos & Rechner</title>
+  <meta name="description" content="Informationen zur Mietminderung: Wann dürfen Sie die Miete kürzen? Wie hoch darf die Minderung sein? Inklusive Orientierungsrechner.">
+  <meta name="keywords" content="Mietminderung, Mietrecht, Wohnungsmangel, Mangel, Miete kürzen, Rechte Mieter, Berechnung, Rechner, §536 BGB">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      line-height: 1.7; background-color: #f9f9f9; color: #333; margin: 0; padding: 0;
+    }
+    .page-container {
+        max-width: 800px; margin: 2rem auto; background-color: #fff; padding: 2rem;
+        border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    h1 { font-size: 2.2rem; margin-bottom: 1.5rem; color: #222; text-align: center; }
+    h2 { font-size: 1.6rem; margin-top: 2rem; margin-bottom: 1rem; color: #1a5276; border-bottom: 2px solid #aed6f1; padding-bottom: 0.6rem;}
+    h3 { font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 0.8rem; color: #2c3e50; }
+    p, ul li, ol li { margin-bottom: 1rem; }
+    ul, ol { padding-left: 20px; }
+    .button {
+      display: inline-block; background: #0070f3; color: white !important; padding: 0.8rem 1.5rem;
+      text-decoration: none; border-radius: 6px; margin: 1rem 0.5rem 1rem 0; font-weight: bold;
+      transition: background-color 0.2s ease-in-out; text-align:center;
+      border: none; cursor: pointer;
+    }
+    .button:hover { background-color: #005bb5; transform: translateY(-1px); }
+    .button-container { text-align: center; margin-top:1.5rem; margin-bottom:1.5rem;}
+    .highlight-box { background-color: #eef7ff; border-left: 5px solid #0070f3; padding: 15px; margin: 1.5rem 0; border-radius: 5px; }
+    .warning-box { background-color: #fcf8e3; border-left: 5px solid #f0ad4e; padding: 15px; margin: 1.5rem 0; border-radius: 5px; font-size: 0.95em;}
+    strong { color: #117864; }
+    footer { text-align: center; padding: 2rem 0; margin-top: 2rem; font-size: 0.9em; color: #666; }
+    footer a { color: #555; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* Stile für den Mietminderungsrechner */
+    .calculator-container {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    .calculator-container h3 {
+        margin-top: 0;
+        color: #007bff;
+    }
+    .calculator-container label {
+        font-weight: normal; /* Etwas weniger dominant als Haupt-Labels */
+        margin-top: 0.8rem;
+    }
+    .calculator-container input[type="number"], .calculator-container input[type="text"] {
+        margin-bottom: 0.8rem;
+    }
+    .calculator-container button {
+        background-color: #28a745; /* Grüner Button für Berechnung */
+        border-color: #28a745;
+        color: white;
+        margin-top: 1rem;
+    }
+    .calculator-container button:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+    }
+    #minderungErgebnis {
+        margin-top: 1.5rem;
+        padding: 1rem;
+        background-color: #e9ecef;
+        border-radius: 6px;
+        font-weight: bold;
+        color: #206A5D; /* Dunkelgrün für positives Ergebnis */
+    }
+    #minderungErgebnis p { margin-bottom: 0.5rem; }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.4rem; }
+      h3 { font-size: 1.2rem; }
+      .page-container { padding: 1rem; margin: 1rem auto; }
+      .button { display: block; margin-left:0; margin-right:0; }
+      .calculator-container { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-container">
+    <h1>Mietminderung bei Wohnungsmängeln</h1>
+
+    <p class="highlight-box">Wenn Ihre Mietwohnung erhebliche Mängel aufweist, die Ihre Wohnqualität beeinträchtigen, haben Sie als Mieter:in unter bestimmten Voraussetzungen das Recht, die Miete zu mindern. Diese Seite erklärt Ihnen die Grundlagen und bietet eine Orientierungshilfe zur Berechnung.</p>
+<p class="highlight-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 10px;">
+  <strong>Hinweis:</strong> Diese Seite ersetzt keine Rechtsberatung. Alle Inhalte dienen der allgemeinen Orientierung. Bei Unsicherheiten wenden Sie sich bitte an eine anerkannte Beratungsstelle oder einen Rechtsanwalt.
+</p>
+
+    <h2>Was ist eine Mietminderung?</h2>
+    <p>Die Mietminderung ist das Recht des Mieters, die vereinbarte Miete zu kürzen, wenn die Mietsache einen Mangel hat, der ihre Tauglichkeit zum vertragsgemäßen Gebrauch aufhebt oder erheblich mindert (§ 536 Bürgerliches Gesetzbuch - BGB). Der Vermieter ist verpflichtet, die Wohnung während der Mietzeit in einem zum vertragsgemäßen Gebrauch geeigneten Zustand zu erhalten.</p>
+
+    <h2>Voraussetzungen für eine Mietminderung</h2>
+    <ul>
+        <li>Es muss ein <strong>erheblicher Mangel</strong> vorliegen (Bagatellmängel berechtigen nicht zur Minderung).</li>
+        <li>Der Mangel darf <strong>nicht vom Mieter selbst verursacht</strong> worden sein.</li>
+        <li>Der Vermieter muss über den Mangel <strong>informiert worden sein (Mängelanzeige!)</strong> und die Möglichkeit zur Beseitigung gehabt haben.</li>
+        <li>Das Recht zur Mietminderung darf nicht im Mietvertrag (wirksam) ausgeschlossen sein.</li>
+        <li>Sie durften den Mangel bei Vertragsabschluss nicht gekannt und die Wohnung trotzdem vorbehaltlos angemietet haben.</li>
+    </ul>
+    <p class="warning-box"><strong>Wichtig:</strong> Die Minderung tritt kraft Gesetzes ein, d.h., Sie müssen sie nicht erst gerichtlich durchsetzen. Sie sollten die Minderung aber immer schriftlich ankündigen und begründen!</p>
+
+    <h2>Wie hoch darf die Mietminderung sein?</h2>
+    <p>Die Höhe der Mietminderung muss **angemessen** sein und richtet sich nach dem Grad der Beeinträchtigung durch den Mangel. Es gibt keine gesetzlich festgelegten Prozentsätze. Sogenannte **Mietminderungstabellen** (z.B. Berliner Tabelle, Hamburger Tabelle) fassen Gerichtsurteile zu verschiedenen Mängeln zusammen, dienen aber nur als <strong>grobe Orientierung</strong> und sind nicht bindend.</p>
+    <p>Berechnungsgrundlage für die Minderung ist in der Regel die **Bruttomiete** (Kaltmiete plus Betriebs- und Heizkostenvorauszahlungen).</p>
+    <p class="warning-box"><strong>Risiko:</strong> Mindern Sie die Miete zu hoch oder unberechtigt, können Mietrückstände entstehen, die den Vermieter im schlimmsten Fall zu einer Kündigung berechtigen können. Im Zweifel sollten Sie die Miete unter Vorbehalt weiterzahlen und/oder Rechtsrat einholen!</p>
+
+    <div class="calculator-container">
+        <h3>Orientierungsrechner für Mietminderung (Beispiel)</h3>
+        <p><small><strong>Wichtiger Hinweis:</strong> Dieser Rechner dient nur einer ersten Orientierung und ersetzt keine Rechtsberatung! Die tatsächliche Höhe einer zulässigen Mietminderung hängt stark vom Einzelfall und der aktuellen Rechtsprechung ab. Kontaktieren Sie im Zweifel einen Mieterverein oder einen Rechtsanwalt.</small></p>
+        <form id="mietminderungRechnerForm">
+            <label for="bruttomiete">Ihre aktuelle monatliche Bruttomiete (in EUR):</label>
+            <input type="number" id="bruttomiete" step="0.01" placeholder="z.B. 750,50" required>
+            
+            <label for="minderungsquote">Geschätzte Minderungsquote (in %): <small>(Informieren Sie sich z.B. in Mietminderungstabellen oder bei einer Beratungsstelle über übliche Quoten für Ihren spezifischen Mangel.)</small></label>
+            <input type="number" id="minderungsquote" step="1" min="0" max="100" placeholder="z.B. 10 für 10%" required>
+
+            <label for="dauerMangelMonate">Dauer des Mangels bzw. der Beeinträchtigung (in vollen Monaten):</label>
+            <input type="number" id="dauerMangelMonate" min="0" placeholder="z.B. 3" value="1">
+            <button type="button" id="berechneMinderungBtn">Minderung berechnen (Orientierung)</button>
+        </form>
+        <div id="minderungErgebnis" style="display:none;">
+            <p>Monatlicher Minderungsbetrag: <span id="monatlicherBetrag"></span> EUR</p>
+            <p>Gesamter Minderungsbetrag für den Zeitraum: <span id="gesamterBetrag"></span> EUR</p>
+            <p><small>Nochmaliger Hinweis: Dies ist nur eine Schätzung!</small></p>
+        </div>
+    </div>
+
+    <h2>Wie wird die Mietminderung geltend gemacht?</h2>
+    <ol>
+        <li><strong>Mängelanzeige:</strong> Informieren Sie Ihren Vermieter unverzüglich und nachweisbar (schriftlich per Einschreiben) über den Mangel und setzen Sie ihm eine angemessene Frist zur Beseitigung. (Nutzen Sie hierfür unseren <a href="generator-maengelanzeige.html">Generator für Mängelanzeigen</a>!)</li>
+        <li><strong>Minderung erklären:</strong> Wenn der Mangel nicht fristgerecht beseitigt wird, erklären Sie dem Vermieter schriftlich, dass Sie die Miete ab sofort (oder ab Auftreten des Mangels) um einen bestimmten Betrag oder Prozentsatz mindern.</li>
+        <li><strong>Gekürzte Miete zahlen:</strong> Überweisen Sie nur noch die gekürzte Miete. Es ist oft ratsam, den einbehaltenen Betrag auf einem separaten Konto "anzusparen".</li>
+        <li><strong>Zahlung unter Vorbehalt:</strong> Wenn Sie unsicher über die Höhe der Minderung sind, können Sie die volle Miete unter dem ausdrücklichen Vorbehalt der Rückforderung wegen des bestehenden Mangels zahlen und den überzahlten Teil später zurückfordern, sobald die angemessene Quote klar ist.</li>
+    </ol>
+    <div class="button-container">
+        <a href="generator-mietminderungsschreiben.html" class="button button-primary">Zum Generator für Ihr Mietminderungsschreiben</a>
+    </div>
+
+    <h2>Wichtige Tipps</h2>
+    <ul>
+        <li><strong>Beweise sichern:</strong> Dokumentieren Sie Mängel immer sorgfältig (Fotos mit Datum, Videos, Zeugen, Lärmprotokoll, Temperaturmessungen etc.).</li>
+        <li><strong>Kommunikation:</strong> Führen Sie jegliche Korrespondenz mit dem Vermieter schriftlich und bewahren Sie Kopien auf.</li>
+        <li><strong>Fristen beachten:</strong> Insbesondere die Frist zur Mängelanzeige und die Fristsetzung zur Beseitigung.</li>
+        <li><strong>Rechtsberatung:</strong> Bei erheblichen Mängeln, Unsicherheit über die Minderungshöhe oder Streit mit dem Vermieter ist die Beratung durch einen Mieterverein oder einen Fachanwalt für Mietrecht dringend zu empfehlen.</li>
+    </ul>
+
+  </div> <footer>
+    <p>&copy; 2025 Mieter-Lotse | <a href="spenden.html">Unterstützen</a> | <a href="index-mieter-lotse.html">Zurück zur Startseite</a> | <a href="impressum-mieter-lotse.html">Impressum</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a></p>
+  </footer>
+
+<script>
+// Einfacher Mietminderungsrechner
+document.addEventListener('DOMContentLoaded', function() {
+    const berechneBtn = document.getElementById('berechneMinderungBtn');
+    if (berechneBtn) {
+        berechneBtn.addEventListener('click', function() {
+            const bruttomieteInput = document.getElementById('bruttomiete');
+            const minderungsquoteInput = document.getElementById('minderungsquote');
+            const dauerMangelMonateInput = document.getElementById('dauerMangelMonate');
+            const ergebnisDiv = document.getElementById('minderungErgebnis');
+            const monatlicherBetragSpan = document.getElementById('monatlicherBetrag');
+            const gesamterBetragSpan = document.getElementById('gesamterBetrag');
+
+            if (!bruttomieteInput || !minderungsquoteInput || !dauerMangelMonateInput || !ergebnisDiv || !monatlicherBetragSpan || !gesamterBetragSpan) {
+                console.error("Eines der Rechner-Elemente wurde nicht gefunden.");
+                return;
+            }
+            
+            const bruttomiete = parseFloat(bruttomieteInput.value);
+            const minderungsquote = parseFloat(minderungsquoteInput.value);
+            const dauerMonate = parseInt(dauerMangelMonateInput.value) || 1; // Default 1 Monat
+
+            if (isNaN(bruttomiete) || bruttomiete <= 0 || isNaN(minderungsquote) || minderungsquote < 0 || minderungsquote > 100) {
+                alert("Bitte geben Sie gültige Werte für Bruttomiete und Minderungsquote (0-100%) ein.");
+                ergebnisDiv.style.display = 'none';
+                return;
+            }
+
+            const monatlicherMinderungsbetrag = (bruttomiete * (minderungsquote / 100));
+            const gesamterMinderungsbetrag = monatlicherMinderungsbetrag * dauerMonate;
+
+            monatlicherBetragSpan.textContent = monatlicherMinderungsbetrag.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            gesamterBetragSpan.textContent = gesamterMinderungsbetrag.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            ergebnisDiv.style.display = 'block';
+        });
+    }
+});
+</script>
+
+</body>
+</html>

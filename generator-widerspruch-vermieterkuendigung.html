@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Widerspruch gegen Vermieterkündigung erstellen</title>
+  <meta name="description" content="Erstellen Sie Ihren Widerspruch gegen eine Kündigung des Mietvertrages durch den Vermieter. Berufen Sie sich auf Härtegründe (Sozialklausel) oder fehlerhafte Kündigungsgründe.">
+  <meta name="keywords" content="Widerspruch Kündigung, Vermieterkündigung, Eigenbedarf, Pflichtverletzung, Sozialklausel, Härtefall, Mietrecht, Mieter, Generator, Vorlage, §574 BGB">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script defer src="vermieterkuendigung_widerspruch_script.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      margin: 0; padding: 0; line-height: 1.7; background-color: #f9f9f9; color: #333;
+    }
+    .page-container {
+        max-width: 800px; margin: 2rem auto; background-color: #fff;
+        padding: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    h1 {
+      font-size: 2.2rem; margin-bottom: 1.5rem; color: #222; text-align: center;
+      overflow-wrap: break-word; word-wrap: break-word;
+    }
+    label { display: block; margin-top: 1rem; font-weight: 500; color: #444; }
+    label small { display: block; font-weight: normal; font-size: 0.85em; color: #555; margin-top: 0.2rem; }
+    input[type="text"], input[type="date"], textarea, select {
+      width: 100%; padding: 10px; margin-top: 0.3rem; box-sizing: border-box;
+      border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; color: #333;
+    }
+    textarea { min-height: 80px; resize: vertical; }
+    .checkbox-group label { font-weight: normal; display: block; margin-top: 0.5rem;}
+    .checkbox-group input[type="checkbox"] { width: auto; margin-right: 8px; vertical-align: middle;}
+
+    fieldset { border: 1px solid #ddd; padding: 1.5rem; margin-top: 2rem; border-radius: 6px; }
+    legend { font-weight: bold; font-size: 1.2em; padding: 0 0.5em; color: #333; margin-bottom:0.8rem;}
+    
+    .button-group {
+      margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee;
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+    }
+    button {
+      padding: 10px 20px; font-size: 1rem; border-radius: 5px; cursor: pointer;
+      border: none; font-weight: bold; text-align: center;
+      transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+    }
+    button:hover { transform: translateY(-1px); }
+    .button-secondary { background-color: #6c757d; color: white; }
+    .button-secondary:hover { background-color: #5a6268; }
+    .button-danger { background-color: #d9534f; color: white; } 
+    .button-danger:hover { background-color: #c9302c; }
+
+    .info-box {
+      font-size: 0.9em; background-color: #eef7ff; padding: 10px 15px;
+      border-radius: 4px; margin-bottom: 1rem; border-left: 4px solid #0070f3;
+    }
+    .warning-box { background-color: #fcf8e3; border-left: 5px solid #f0ad4e; padding: 15px; margin: 1.5rem 0; border-radius: 5px; }
+    .sub-details { display: none; margin-left: 10px; border-left: 2px solid #eee; padding-left: 10px; margin-top:0.5rem;}
+
+
+    .popup-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; padding: 1rem; box-sizing: border-box;}
+    .popup-content { background: white; padding: 2rem; border-radius: 10px; max-width: 450px; width: 100%; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.25);}
+    .popup-content h2 { font-size: 1.5em; margin-top: 0; margin-bottom: 1rem; color: #333; border-bottom: none; padding-bottom: 0;}
+    .popup-content p { margin-bottom: 1.5rem; color: #444; }
+    .popup-content form { margin-top: 1rem; }
+    .popup-content input[type="submit"] { background:#ffc439; border:none; padding:0.9rem 1.8rem; font-weight:bold; border-radius:5px; cursor: pointer; color: #333; font-size: 1em;}
+    .popup-content input[type="submit"]:hover { background-color: #f0b429; }
+    .popup-close-button { margin-top: 1.5rem; background: none; border: 1px solid #ccc; color: #555; font-weight: normal; cursor: pointer; padding: 0.6rem 1.2rem; border-radius: 5px; font-size: 0.9em;}
+    .popup-close-button:hover { background-color: #f0f0f0; }
+    
+    footer { text-align: center; padding: 2rem 0; margin-top: 2rem; font-size: 0.9em; color: #666; }
+    footer a { color: #555; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .page-container { padding: 1rem; margin: 1rem auto; }
+      h1 { font-size: 1.7rem; }
+      legend { font-size: 1.1em;}
+      .button-group { flex-direction: column; }
+      button { width: 100%; margin-right: 0;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-container">
+  <h1>Widerspruch gegen die Kündigung des Mietvertrages durch den Vermieter</h1>
+  <p class="info-box warning">
+    Haben Sie eine Kündigung Ihres Mietvertrages vom Vermieter erhalten? Prüfen Sie diese sorgfältig! Nicht jede Kündigung ist wirksam. Dieses Formular hilft Ihnen, einen Widerspruch zu formulieren, insbesondere wenn Sie sich auf Härtegründe (Sozialklausel) berufen möchten.
+    Beachten Sie unbedingt die Widerspruchsfrist (meist spätestens zwei Monate vor dem Kündigungstermin)! Holen Sie im Zweifel dringend Rechtsrat ein!
+    Lesen Sie auch unsere <a href="info-kuendigung-vermieter.html">Informationen zur Kündigung durch den Vermieter</a>.
+  </p>
+<p class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 10px;">
+  <strong>Hinweis:</strong> Dieses Tool ersetzt keine Rechtsberatung. Es dient der allgemeinen Unterstützung bei der Antragstellung. Bei Unsicherheiten wenden Sie sich bitte an eine anerkannte Beratungsstelle oder einen Rechtsanwalt.
+</p>
+<p class="highlight-box" style="background-color: #fff3f3; border-left: 4px solid #e53935; padding: 10px; margin-top: 10px;">
+  <strong>Technischer Hinweis:</strong> Um das PDF erfolgreich herunterzuladen, öffnen Sie diese Seite bitte in einem Internet-Browser wie <strong>Chrome, Firefox oder Safari</strong>. In der Google-App (z. B. über die Suchleiste auf dem Startbildschirm) funktioniert der Download leider nicht zuverlässig.
+</p>
+
+  <form id="widerspruchVermieterkuendigungForm">
+    <fieldset>
+      <legend>1. Angaben zum Mieter / zur Mieterin</legend>
+      <label for="mieterName">Vor- und Nachname (aller im Mietvertrag genannten Mieter):</label>
+      <textarea id="mieterName" rows="2" required placeholder="z.B. Erika Mustermann und Max Mustermann"></textarea>
+      <label for="mieterAdresse">Anschrift der gekündigten Mietwohnung (Straße, Hausnr., PLZ, Ort, ggf. Etage):</label>
+      <textarea id="mieterAdresse" rows="3" required></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Angaben zum Vermieter / zur Hausverwaltung</legend>
+      <label for="vermieterName">Name des Vermieters / der Hausverwaltung (laut Kündigungsschreiben):</label>
+      <input type="text" id="vermieterName" required>
+      <label for="vermieterAdresse">Anschrift des Vermieters / der Hausverwaltung:</label>
+      <textarea id="vermieterAdresse" rows="3" required></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Angaben zur erhaltenen Kündigung</legend>
+      <label for="datumKuendigungsschreiben">Datum des Kündigungsschreibens vom Vermieter:</label>
+      <input type="date" id="datumKuendigungsschreiben" required>
+      <label for="aktenzeichenKuendigung">Aktenzeichen / Geschäftszeichen des Kündigungsschreibens (falls vorhanden):</label>
+      <input type="text" id="aktenzeichenKuendigung">
+      <label for="kuendigungsfristZum">Gekündigt zum (Datum laut Kündigungsschreiben):</label>
+      <input type="date" id="kuendigungsfristZum" required>
+      <label for="kuendigungsgrundVermieter">Hauptsächlicher Kündigungsgrund laut Vermieter: <small>(z.B. Eigenbedarf, Pflichtverletzung – bitte so genau wie möglich aus dem Schreiben übernehmen)</small></label>
+      <textarea id="kuendigungsgrundVermieter" rows="3" required placeholder="z.B. Eigenbedarf für Tochter [Name], da sie eine Wohnung in [Ort] benötigt."></textarea>
+    </fieldset>
+    
+    <fieldset>
+      <legend>4. Gründe für Ihren Widerspruch</legend>
+      <p class="info-box">Legen Sie hier detailliert dar, warum Sie der Kündigung widersprechen. Dies können formelle Fehler, unzureichend dargelegte Kündigungsgründe oder soziale Härtegründe sein.</p>
+
+      <label for="argumentFormelleFehlerKuendigung">Liegen formelle Fehler in der Kündigung vor? <small>(z.B. fehlende Unterschrift aller Vermieter, keine oder unzureichende Begründung, falsche Frist, fehlender Hinweis auf Widerspruchsrecht)</small></label>
+      <textarea id="argumentFormelleFehlerKuendigung" rows="3" placeholder="z.B. Die Kündigung wurde nicht von allen im Mietvertrag genannten Vermietern unterschrieben. / Der Hinweis auf mein Widerspruchsrecht fehlt."></textarea>
+
+      <label for="argumentKritikKuendigungsgrund">Kritik am Kündigungsgrund des Vermieters: <small>(Warum halten Sie den vom Vermieter genannten Grund für nicht zutreffend, vorgeschoben oder nicht ausreichend dargelegt?)</small></label>
+      <textarea id="argumentKritikKuendigungsgrund" rows="5" placeholder="z.B. Der angegebene Eigenbedarf ist nicht nachvollziehbar, da die genannte Person bereits über angemessenen Wohnraum verfügt. / Die behauptete Pflichtverletzung liegt nicht vor bzw. wurde nicht abgemahnt."></textarea>
+      
+      <label for="argumentSozialeHaerte">Soziale Härtegründe gemäß § 574 BGB (Sozialklausel): <small>(Warum würde die Kündigung für Sie oder Ihre Haushaltsangehörigen eine besondere Härte darstellen, die auch unter Berücksichtigung der Vermieterinteressen nicht zu rechtfertigen ist?)</small></label>
+      <textarea id="argumentSozialeHaerte" rows="6" placeholder="z.B. Aufgrund meines hohen Alters und meiner schweren Erkrankung ist ein Umzug unzumutbar. / Ich finde trotz intensiver Suche keinen angemessenen Ersatzwohnraum zu zumutbaren Bedingungen. / Meine Kinder würden aus ihrem schulischen und sozialen Umfeld gerissen. / Ich befinde mich in einer wichtigen Prüfungsphase."></textarea>
+
+      <label for="ergaenzendeArgumenteKuendigung">Weitere/ergänzende Argumente und Erläuterungen:</label>
+      <textarea id="ergaenzendeArgumenteKuendigung" rows="5" placeholder="Hier können Sie weitere wichtige Aspekte oder Beweise anführen."></textarea>
+    </fieldset>
+
+    <fieldset>
+        <legend>5. Ihre Forderung</legend>
+        <label for="forderungWiderspruchKuendigung">Was fordern Sie vom Vermieter?</label>
+        <textarea id="forderungWiderspruchKuendigung" rows="3" required placeholder="z.B. Ich fordere Sie auf, die Kündigung zurückzunehmen und das Mietverhältnis fortzusetzen. / Ich bitte um eine Verlängerung der Räumungsfrist."></textarea>
+        <label><input type="checkbox" id="bitteUmStellungnahme" name="bitteUmStellungnahme" value="ja" checked> Ich bitte um eine schriftliche Stellungnahme zu meinem Widerspruch innerhalb von [z.B. 14 Tagen].</label>
+    </fieldset>
+
+     <fieldset>
+        <legend>6. Beizufügende Anlagen (Kopien sind ausreichend)</legend>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="anlagenVermieterKuendigung" value="Kopie des Kündigungsschreibens des Vermieters"> Kopie des Kündigungsschreibens des Vermieters</label>
+            <label><input type="checkbox" name="anlagenVermieterKuendigung" value="Kopie des Mietvertrages"> Kopie des Mietvertrages</label>
+            <label><input type="checkbox" name="anlagenVermieterKuendigung" value="Ärztliche Atteste (bei gesundheitlichen Härtegründen)"> Ärztliche Atteste (bei gesundheitlichen Härtegründen)</label>
+            <label><input type="checkbox" name="anlagenVermieterKuendigung" value="Nachweise über die Suche nach Ersatzwohnraum (bei drohender Obdachlosigkeit)"> Nachweise über die Suche nach Ersatzwohnraum</label>
+            <label><input type="checkbox" name="anlagenVermieterKuendigung" value="Ggf. Schriftverkehr mit dem Vermieter"> Ggf. Schriftverkehr mit dem Vermieter</label>
+            <label><input type="checkbox" id="anlageVollmachtVermieterKuendigung" name="anlagenVermieterKuendigung" value="Vollmacht (falls Widerspruch durch Dritte)"> Vollmacht (falls zutreffend)</label>
+        </div>
+        <label for="anlageSonstigesVermieterKuendigung">Sonstige Anlagen:</label>
+        <input type="text" id="anlageSonstigesVermieterKuendigung">
+    </fieldset>
+
+    <div class="button-group">
+      <button type="button" id="saveBtnWiderspruchVK" class="button-secondary">Eingaben speichern</button>
+      <button type="button" id="loadBtnWiderspruchVK" class="button-secondary">Gespeicherte Eingaben laden</button>
+      <button type="submit" class="button-danger">📄 Widerspruchs-PDF erstellen</button>
+    </div>
+  </form>
+</div> <div id="spendenPopupWiderspruchVK" class="popup-overlay">
+  <div class="popup-content">
+    <h2>Danke für deine Nutzung 💛</h2>
+    <p>Wenn dir dieses Tool geholfen hat, unterstütze das Projekt gerne mit einer kleinen Spende:</p>
+    <form action="https://www.paypal.com/donate" method="post" target="_blank">
+      <input type="hidden" name="business" value="info@kassen-lotse.de" />
+      <input type="hidden" name="charset" value="utf-8">
+      <input type="hidden" name="item_name" value="Unterstützung für das Projekt Mieter-Lotse" />
+      <input type="hidden" name="currency_code" value="EUR" />
+      <input type="submit" value="Spenden mit PayPal" />
+    </form>
+    <button id="closePopupBtnWiderspruchVK" class="popup-close-button">Schließen</button>
+  </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Mieter-Lotse | <a href="index-mieter-lotse.html">Zurück zur Startseite</a> | <a href="info-kuendigung-vermieter.html">Infos Kündigung durch Vermieter</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Mietvertrag Kündigungsschreiben erstellen (als Mieter)</title>
+  <meta name="description" content="Erstellen Sie hier Ihr Kündigungsschreiben für Ihren Mietvertrag als Mieter. Einfach ausfüllen und PDF generieren.">
+  <meta name="keywords" content="Kündigung Mietvertrag, Mieter kündigen, Kündigungsschreiben Wohnung, Vorlage, Generator, Mietrecht">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script defer src="kuendigung-mieter_script.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      margin: 0; padding: 0; line-height: 1.7; background-color: #f9f9f9; color: #333;
+    }
+    .page-container {
+        max-width: 800px; margin: 2rem auto; background-color: #fff;
+        padding: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    h1 {
+      font-size: 2.2rem; margin-bottom: 1.5rem; color: #222; text-align: center;
+      overflow-wrap: break-word; word-wrap: break-word;
+    }
+    label { display: block; margin-top: 1rem; font-weight: 500; color: #444; }
+    label small { display: block; font-weight: normal; font-size: 0.85em; color: #555; margin-top: 0.2rem; }
+    input[type="text"], input[type="date"], textarea, select {
+      width: 100%; padding: 10px; margin-top: 0.3rem; box-sizing: border-box;
+      border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; color: #333;
+    }
+    textarea { min-height: 80px; resize: vertical; }
+    .checkbox-group label { font-weight: normal; display: block; margin-top: 0.5rem;}
+    .checkbox-group input[type="checkbox"] { width: auto; margin-right: 8px; vertical-align: middle;}
+
+    fieldset { border: 1px solid #ddd; padding: 1.5rem; margin-top: 2rem; border-radius: 6px; }
+    legend { font-weight: bold; font-size: 1.2em; padding: 0 0.5em; color: #333; margin-bottom:0.8rem;}
+    
+    .button-group {
+      margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee;
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+    }
+    button {
+      padding: 10px 20px; font-size: 1rem; border-radius: 5px; cursor: pointer;
+      border: none; font-weight: bold; text-align: center;
+      transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+    }
+    button:hover { transform: translateY(-1px); }
+    .button-primary { background-color: #0070f3; color: white; }
+    .button-primary:hover { background-color: #005bb5; }
+    .button-secondary { background-color: #6c757d; color: white; }
+    .button-secondary:hover { background-color: #5a6268; }
+
+    .info-box {
+      font-size: 0.9em; background-color: #eef7ff; padding: 10px 15px;
+      border-radius: 4px; margin-bottom: 1rem; border-left: 4px solid #0070f3;
+    }
+    .warning-box { background-color: #fcf8e3; border-left: 5px solid #f0ad4e; padding: 15px; margin: 1.5rem 0; border-radius: 5px; }
+
+    .popup-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; padding: 1rem; box-sizing: border-box;}
+    .popup-content { background: white; padding: 2rem; border-radius: 10px; max-width: 450px; width: 100%; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.25);}
+    .popup-content h2 { font-size: 1.5em; margin-top: 0; margin-bottom: 1rem; color: #333; border-bottom: none; padding-bottom: 0;}
+    .popup-content p { margin-bottom: 1.5rem; color: #444; }
+    .popup-content form { margin-top: 1rem; }
+    .popup-content input[type="submit"] { background:#ffc439; border:none; padding:0.9rem 1.8rem; font-weight:bold; border-radius:5px; cursor: pointer; color: #333; font-size: 1em;}
+    .popup-content input[type="submit"]:hover { background-color: #f0b429; }
+    .popup-close-button { margin-top: 1.5rem; background: none; border: 1px solid #ccc; color: #555; font-weight: normal; cursor: pointer; padding: 0.6rem 1.2rem; border-radius: 5px; font-size: 0.9em;}
+    .popup-close-button:hover { background-color: #f0f0f0; }
+    
+    footer { text-align: center; padding: 2rem 0; margin-top: 2rem; font-size: 0.9em; color: #666; }
+    footer a { color: #555; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .page-container { padding: 1rem; margin: 1rem auto; }
+      h1 { font-size: 1.7rem; }
+      legend { font-size: 1.1em;}
+      .button-group { flex-direction: column; }
+      button { width: 100%; margin-right: 0;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-container">
+  <h1>Kündigungsschreiben für Ihren Mietvertrag erstellen</h1>
+  <p class="info-box">
+    Mit diesem Formular können Sie als Mieter:in ein formgerechtes Kündigungsschreiben für Ihren Mietvertrag erstellen.
+    Beachten Sie unbedingt die Kündigungsfristen und die notwendige Schriftform.
+    Weitere Informationen finden Sie auf unserer <a href="info-kuendigung-mieter.html">Info-Seite zur Kündigung durch den Mieter</a>.
+  </p>
+  <p class="warning-box"><strong>Wichtig:</strong> Eine Kündigung muss dem Vermieter fristgerecht zugehen (am besten per Einschreiben mit Rückschein). Alle im Mietvertrag genannten Mieter müssen unterschreiben!</p>
+<p class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 10px;">
+  <strong>Hinweis:</strong> Dieses Tool ersetzt keine Rechtsberatung. Es dient der allgemeinen Unterstützung bei der Antragstellung. Bei Unsicherheiten wenden Sie sich bitte an eine anerkannte Beratungsstelle oder einen Rechtsanwalt.
+</p>
+<p class="highlight-box" style="background-color: #fff3f3; border-left: 4px solid #e53935; padding: 10px; margin-top: 10px;">
+  <strong>Technischer Hinweis:</strong> Um das PDF erfolgreich herunterzuladen, öffnen Sie diese Seite bitte in einem Internet-Browser wie <strong>Chrome, Firefox oder Safari</strong>. In der Google-App (z. B. über die Suchleiste auf dem Startbildschirm) funktioniert der Download leider nicht zuverlässig.
+</p>
+
+  <form id="kuendigungMieterForm">
+    <fieldset>
+      <legend>1. Angaben zum Mieter / zu den Mietern</legend>
+      <label for="mieterNamen">Vollständige Namen aller im Mietvertrag genannten Mieter: <small>(Alle Mieter müssen das Schreiben später unterschreiben!)</small></label>
+      <textarea id="mieterNamen" rows="2" required placeholder="z.B. Erika Mustermann und Max Mustermann"></textarea>
+      <label for="mieterAdresse">Anschrift der gekündigten Mietwohnung (Straße, Hausnr., PLZ, Ort, ggf. Etage/Wohnungsnummer):</label>
+      <textarea id="mieterAdresse" rows="3" required></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Angaben zum Vermieter / zur Hausverwaltung</legend>
+      <label for="vermieterName">Name des Vermieters / der Hausverwaltung:</label>
+      <input type="text" id="vermieterName" required>
+      <label for="vermieterAdresse">Anschrift des Vermieters / der Hausverwaltung:</label>
+      <textarea id="vermieterAdresse" rows="3" required></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Angaben zur Kündigung</legend>
+      <label for="mietvertragDatum">Datum des Mietvertrages (falls bekannt, optional):</label>
+      <input type="date" id="mietvertragDatum">
+      <label for="kuendigungsdatumWunsch">Gewünschtes Kündigungsdatum (Mietvertragsende): <small>(Beachten Sie die gesetzliche Kündigungsfrist von 3 Monaten zum Monatsende. Die Kündigung muss spätestens am 3. Werktag eines Monats beim Vermieter sein, um zum Ende des übernächsten Monats zu wirken.)</small></label>
+      <input type="date" id="kuendigungsdatumWunsch" required>
+      <label for="kuendigungGrund">Art der Kündigung:</label>
+      <select id="kuendigungArt" required>
+        <option value="ordentlich" selected>Ordentliche, fristgerechte Kündigung</option>
+        <option value="sonderkuendigung">Sonderkündigung (z.B. nach Mieterhöhung, Grund unten angeben)</option>
+      </select>
+      <div id="sonderkuendigungGrundDetails" style="display:none;">
+        <label for="sonderkuendigungGrundText">Grund für die Sonderkündigung: <small>(Bitte genau angeben und ggf. auf das entsprechende Schreiben des Vermieters Bezug nehmen)</small></label>
+        <textarea id="sonderkuendigungGrundText" rows="3" placeholder="z.B. Sonderkündigungsrecht aufgrund der Mieterhöhung vom TT.MM.JJJJ"></textarea>
+      </div>
+      <label for="kuendigungZusatzText">Zusätzlicher Text für das Kündigungsschreiben (optional): <small>(z.B. Bitte um Bestätigung, Vorschlag für Übergabetermin)</small></label>
+      <textarea id="kuendigungZusatzText" rows="4" placeholder="z.B. Ich bitte um eine schriftliche Bestätigung dieser Kündigung. Für die Vereinbarung eines Termins zur Wohnungsübergabe stehe ich Ihnen gerne zur Verfügung."></textarea>
+    </fieldset>
+    
+    <fieldset>
+        <legend>4. Wichtige Hinweise und Bestätigung</legend>
+        <div class="checkbox-group">
+            <label><input type="checkbox" id="kenntnisFristen" required> Ich habe die Kündigungsfristen zur Kenntnis genommen.</label>
+            <label><input type="checkbox" id="alleMieterUnterschreiben" required> Ich bin mir bewusst, dass alle im Mietvertrag genannten Mieter dieses Schreiben eigenhändig unterschreiben müssen.</label>
+            <label><input type="checkbox" id="nachweisbarerVersand" required> Ich werde die Kündigung nachweisbar (z.B. per Einschreiben mit Rückschein) an den Vermieter senden.</label>
+        </div>
+    </fieldset>
+
+    <div class="button-group">
+      <button type="button" id="saveBtnKuendigungMieter" class="button-secondary">Eingaben speichern</button>
+      <button type="button" id="loadBtnKuendigungMieter" class="button-secondary">Gespeicherte Eingaben laden</button>
+      <button type="submit" class="button-primary">📄 Kündigungsschreiben-PDF erstellen</button>
+    </div>
+  </form>
+</div>
+
+<div id="spendenPopupKuendigungMieter" class="popup-overlay">
+  <div class="popup-content">
+    <h2>Danke für deine Nutzung 💛</h2>
+    <p>Wenn dir dieses Tool geholfen hat, unterstütze das Projekt gerne mit einer kleinen Spende:</p>
+    <form action="https://www.paypal.com/donate" method="post" target="_blank">
+      <input type="hidden" name="business" value="info@kassen-lotse.de" />
+      <input type="hidden" name="charset" value="utf-8">
+      <input type="hidden" name="item_name" value="Unterstützung für das Projekt Mieter-Lotse" />
+      <input type="hidden" name="currency_code" value="EUR" />
+      <input type="submit" value="Spenden mit PayPal" />
+    </form>
+    <button id="closePopupBtnKuendigungMieter" class="popup-close-button">Schließen</button>
+  </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Mieter-Lotse | <a href="index-mieter-lotse.html">Zurück zur Startseite</a> | <a href="info-kuendigung-mieter.html">Infos Kündigung Mieter</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+</footer>
+
+</body>
+</html>
