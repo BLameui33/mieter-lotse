@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Antrag auf bauliche Veränderung erstellen | Mieter-Lotse</title>
+  <meta name="description" content="Erstellen Sie einen formellen Antrag an Ihren Vermieter für die Genehmigung einer baulichen Veränderung in Ihrer Mietwohnung (z.B. Einbauküche, Wallbox, barrierefreier Umbau).">
+  <meta name="keywords" content="Bauliche Veränderung, Umbau, Antrag, Genehmigung, Erlaubnis, Vermieter, Mietrecht, Vorlage, Generator">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/logo-lotse-fav.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script defer src="bauliche-veraenderung_script.js"></script>
+  <style>
+    /* Exakt die gleichen Stile wie bei den anderen Seiten */
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; line-height: 1.7; background-color: #f9f9f9; color: #333; }
+    .page-container { max-width: 800px; margin: 2rem auto; background-color: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    h1 { font-size: 2.2rem; margin-bottom: 1.5rem; color: #222; text-align: center; }
+    label { display: block; margin-top: 1rem; font-weight: 500; color: #444; }
+    label small { display: block; font-weight: normal; font-size: 0.85em; color: #555; margin-top: 0.2rem; }
+    input[type="text"], textarea { width: 100%; padding: 10px; margin-top: 0.3rem; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
+    textarea { min-height: 120px; resize: vertical; }
+    fieldset { border: 1px solid #ddd; padding: 1.5rem; margin-top: 2rem; border-radius: 6px; }
+    legend { font-weight: bold; font-size: 1.2em; padding: 0 0.5em; color: #333; margin-bottom:0.8rem;}
+    .button-group { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    button { padding: 10px 20px; font-size: 1rem; border-radius: 5px; cursor: pointer; border: none; font-weight: bold; text-align: center; }
+    .button-secondary { background-color: #6c757d; color: white; }
+    .button-primary { background-color: #0070f3; color: white; }
+    .info-box { font-size: 0.9em; padding: 10px 15px; border-radius: 4px; margin-bottom: 1rem; border-left-width: 4px; border-left-style: solid; }
+    .info-box.info { background-color: #eef7ff; border-left-color: #0070f3; }
+    .info-box.warning { background-color: #fcf8e3; border-left-color: #f0ad4e; }
+    .popup-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; padding: 1rem; box-sizing: border-box;}
+    .popup-content { background: white; padding: 2rem; border-radius: 10px; max-width: 450px; width: 100%; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.25);}
+    .popup-content h2 { font-size: 1.5em; margin-top: 0; }
+    .popup-content form input[type="submit"] { background:#ffc439; border:none; padding:0.9rem 1.8rem; font-weight:bold; border-radius:5px; cursor: pointer; color: #333; font-size: 1em;}
+    .popup-close-button { margin-top: 1.5rem; background: none; border: 1px solid #ccc; color: #555; cursor: pointer; padding: 0.6rem 1.2rem; border-radius: 5px; }
+    .site-header { background-color: #ffffff; padding: 1rem 2rem; box-shadow: 0 2px 5px rgba(0,0,0,0.07); border-bottom: 1px solid #e9ecef; margin-bottom: 2rem; text-align: center; }
+    .site-logo { color: #1a5276; font-size: 1.5rem; font-weight: bold; text-decoration: none; }
+    footer { text-align: center; padding: 2rem 0; margin-top: 2rem; font-size: 0.9em; color: #666; }
+    footer a { color: #555; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+    <a href="index.html" class="site-logo">Mieter-Lotse</a>
+</header>
+
+<div class="page-container">
+  <h1>Antrag auf Genehmigung einer baulichen Veränderung</h1>
+  <p class="info-box info">
+    Für Umbauten, die in die Bausubstanz eingreifen (z.B. Wände, Böden, Elektrik), benötigen Sie immer die schriftliche Erlaubnis Ihres Vermieters. Ein gut begründeter Antrag, der dem Vermieter Sicherheit gibt, erhöht Ihre Chancen auf eine Zustimmung erheblich.
+  </p>
+  <p class="info-box warning">
+    Führen Sie niemals Umbauten ohne schriftliche Genehmigung durch! Dies kann eine Abmahnung oder sogar die fristlose Kündigung zur Folge haben.
+  </p>
+
+  <form id="baulicheVeraenderungForm">
+    <fieldset>
+      <legend>1. Ihre Angaben (Mieter/in)</legend>
+      <label for="mieterName">Vor- und Nachname:</label>
+      <input type="text" id="mieterName" required>
+      <label for="mieterAdresse">Ihre Anschrift (Straße, Hausnr., PLZ, Ort, Etage):</label>
+      <textarea id="mieterAdresse" rows="2" required></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Angaben zum Vermieter</legend>
+      <label for="vermieterName">Name des Vermieters / der Hausverwaltung:</label>
+      <input type="text" id="vermieterName" required>
+      <label for="vermieterAdresse">Anschrift des Vermieters / der Hausverwaltung:</label>
+      <textarea id="vermieterAdresse" rows="3" required></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Beschreibung der geplanten Maßnahme</legend>
+      <label for="massnahmeBeschreibung">Beschreiben Sie die geplante bauliche Veränderung so detailliert wie möglich:
+        <small>Was genau soll gemacht werden? Wo in der Wohnung? Welche Materialien werden verwendet? Wer führt die Arbeiten aus (Fachfirma)?</small>
+      </label>
+      <textarea id="massnahmeBeschreibung" required placeholder="Beispiel: Ich plane den Einbau einer neuen Einbauküche der Marke X. Hierfür müssen neue Wasser- und Stromanschlüsse durch die Fachfirma Y gelegt werden. Die alten Anschlüsse werden fachgerecht verschlossen. Die alten Fliesen bleiben unberührt."></textarea>
+    </fieldset>
+    
+    <fieldset>
+      <legend>4. Zusicherungen an den Vermieter</legend>
+      <label for="zusicherungen">Geben Sie dem Vermieter Sicherheit:
+        <small>Listen Sie hier auf, welche Garantien Sie geben, um die Bedenken des Vermieters zu zerstreuen.</small>
+      </label>
+      <textarea id="zusicherungen" placeholder="Beispiele:&#10;- Sämtliche Arbeiten werden fachgerecht durch eine qualifizierte Fachfirma ausgeführt.&#10;- Ich übernehme die vollständigen Kosten für den Ein- und eventuellen Rückbau.&#10;- Für eventuelle Schäden, die durch den Umbau entstehen, kommt meine Haftpflichtversicherung auf.&#10;- Bei meinem Auszug werde ich den ursprünglichen Zustand auf eigene Kosten wiederherstellen."></textarea>
+    </fieldset>
+    
+    <div class="button-group">
+      <button type="button" id="saveBtnUmbau" class="button-secondary">Speichern</button>
+      <button type="button" id="loadBtnUmbau" class="button-secondary">Laden</button>
+      <button type="submit" class="button-primary">📄 Antrag als PDF erstellen</button>
+    </div>
+  </form>
+</div>
+
+<div id="spendenPopup" class="popup-overlay">
+  <div class="popup-content">
+      <h2>Antrag erstellt!</h2>
+      <p>Wir drücken die Daumen für Ihr Vorhaben! Wenn Ihnen dieses Tool geholfen hat, unterstützen Sie das Projekt gerne mit einer kleinen Spende.</p>
+      <form action="https://www.paypal.com/donate" method="post" target="_blank">
+          <input type="hidden" name="business" value="info@kassen-lotse.de" />
+          <input type="hidden" name="item_name" value="Unterstützung für das Projekt Mieter-Lotse" />
+          <input type="hidden" name="currency_code" value="EUR" />
+          <input type="submit" value="Spenden mit PayPal" />
+      </form>
+      <button id="closePopupBtn" class="popup-close-button">Schließen</button>
+  </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Mieter-Lotse | <a href="index.html">Zurück zur Startseite</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+</footer>
+
+</body>
+</html>

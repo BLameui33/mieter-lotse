@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Antrag auf Tierhaltung (Hund, Katze) erstellen | Mieter-Lotse</title>
+  <meta name="description" content="Erstellen Sie einen formellen Antrag an Ihren Vermieter für die Erlaubnis zur Haltung eines Haustieres (Hund, Katze) in Ihrer Mietwohnung.">
+  <meta name="keywords" content="Tierhaltung, Haustier, Hund, Katze, Mietwohnung, Erlaubnis, Genehmigung, Antrag, Vermieter, Mietrecht, Vorlage, Generator">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/logo-lotse-fav.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script defer src="tierhaltung_script.js"></script>
+  <style>
+    /* Exakt die gleichen Stile wie bei den anderen Seiten */
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; line-height: 1.7; background-color: #f9f9f9; color: #333; }
+    .page-container { max-width: 800px; margin: 2rem auto; background-color: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    h1 { font-size: 2.2rem; margin-bottom: 1.5rem; color: #222; text-align: center; }
+    label { display: block; margin-top: 1rem; font-weight: 500; color: #444; }
+    label small { display: block; font-weight: normal; font-size: 0.85em; color: #555; margin-top: 0.2rem; }
+    input[type="text"], textarea { width: 100%; padding: 10px; margin-top: 0.3rem; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
+    textarea { min-height: 120px; resize: vertical; }
+    fieldset { border: 1px solid #ddd; padding: 1.5rem; margin-top: 2rem; border-radius: 6px; }
+    legend { font-weight: bold; font-size: 1.2em; padding: 0 0.5em; color: #333; margin-bottom:0.8rem;}
+    .button-group { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    button { padding: 10px 20px; font-size: 1rem; border-radius: 5px; cursor: pointer; border: none; font-weight: bold; text-align: center; }
+    .button-secondary { background-color: #6c757d; color: white; }
+    .button-primary { background-color: #0070f3; color: white; }
+    .info-box { font-size: 0.9em; padding: 10px 15px; border-radius: 4px; margin-bottom: 1rem; border-left-width: 4px; border-left-style: solid; }
+    .info-box.info { background-color: #eef7ff; border-left-color: #0070f3; }
+    .info-box.warning { background-color: #fcf8e3; border-left-color: #f0ad4e; }
+    .popup-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; padding: 1rem; box-sizing: border-box;}
+    .popup-content { background: white; padding: 2rem; border-radius: 10px; max-width: 450px; width: 100%; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.25);}
+    .popup-content h2 { font-size: 1.5em; margin-top: 0; }
+    .popup-close-button { margin-top: 1.5rem; background: none; border: 1px solid #ccc; color: #555; cursor: pointer; padding: 0.6rem 1.2rem; border-radius: 5px; }
+    .site-header { background-color: #ffffff; padding: 1rem 2rem; box-shadow: 0 2px 5px rgba(0,0,0,0.07); border-bottom: 1px solid #e9ecef; margin-bottom: 2rem; text-align: center; }
+    .site-logo { color: #1a5276; font-size: 1.5rem; font-weight: bold; text-decoration: none; }
+    footer { text-align: center; padding: 2rem 0; margin-top: 2rem; font-size: 0.9em; color: #666; }
+    footer a { color: #555; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+    <a href="index.html" class="site-logo">Mieter-Lotse</a>
+</header>
+
+<div class="page-container">
+  <h1>Antrag auf Genehmigung zur Tierhaltung</h1>
+  <p class="info-box info">
+    Kleintiere wie Hamster oder Zierfische sind immer erlaubt. Für die Haltung von Hunden oder Katzen benötigen Sie jedoch in der Regel die schriftliche Erlaubnis Ihres Vermieters. Ein generelles Verbot im Mietvertrag ist oft unwirksam, es kommt immer auf den Einzelfall an.
+  </p>
+  <p class="info-box warning">
+    Eine unerlaubte Tierhaltung kann zu einer Abmahnung und im schlimmsten Fall zur Kündigung führen. Bitten Sie daher immer zuerst um Erlaubnis, bevor das Tier einzieht.
+  </p>
+
+  <form id="tierhaltungForm">
+    <fieldset>
+      <legend>1. Ihre Angaben (Mieter/in)</legend>
+      <label for="mieterName">Vor- und Nachname:</label>
+      <input type="text" id="mieterName" required>
+      <label for="mieterAdresse">Ihre Anschrift (Straße, Hausnr., PLZ, Ort, Etage):</label>
+      <textarea id="mieterAdresse" rows="2" required></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Angaben zum Vermieter / zur Hausverwaltung</legend>
+      <label for="vermieterName">Name des Vermieters / der Hausverwaltung:</label>
+      <input type="text" id="vermieterName" required>
+      <label for="vermieterAdresse">Anschrift des Vermieters / der Hausverwaltung:</label>
+      <textarea id="vermieterAdresse" rows="3" required></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Angaben zum gewünschten Haustier</legend>
+      <label for="tierart">Tierart:</label>
+      <input type="text" id="tierart" required placeholder="z.B. Hund, Katze">
+      <label for="tierrasse">Rasse:</label>
+      <input type="text" id="tierrasse" required placeholder="z.B. Labrador-Mischling, Europäisch Kurzhaar">
+      <label for="tieralter">Alter des Tieres:</label>
+      <input type="text" id="tieralter" placeholder="z.B. 2 Jahre / 12 Wochen">
+      <label for="tiergroesseGewicht">Größe und Gewicht (ausgewachsen):</label>
+      <input type="text" id="tiergroesseGewicht" placeholder="z.B. ca. 55 cm Schulterhöhe, 30 kg">
+    </fieldset>
+    
+    <fieldset>
+      <legend>4. Zusätzliche Informationen & Zusicherungen</legend>
+      <label for="weitereInfos">Machen Sie es Ihrem Vermieter leicht, "Ja" zu sagen:
+        <small>Nennen Sie hier Argumente, die für Sie als verantwortungsvollen Halter sprechen. Dies erhöht die Chance auf eine Zusage erheblich.</small>
+      </label>
+      <textarea id="weitereInfos" placeholder="Beispiele:&#10;- Das Tier ist stubenrein, ruhig und an das Leben in einer Wohnung gewöhnt.&#10;- Eine Tierhalter-Haftpflichtversicherung besteht (Kopie kann nachgereicht werden).&#10;- Das Tier wird während meiner Arbeitszeit nicht über längere Zeit allein sein.&#10;- Ich sorge selbstverständlich für die Beseitigung von Verunreinigungen im Treppenhaus und auf den Außenanlagen."></textarea>
+    </fieldset>
+    
+    <div class="button-group">
+      <button type="button" id="saveBtnTier" class="button-secondary">Speichern</button>
+      <button type="button" id="loadBtnTier" class="button-secondary">Laden</button>
+      <button type="submit" class="button-primary">📄 Antrag als PDF erstellen</button>
+    </div>
+  </form>
+</div>
+
+<div id="spendenPopup" class="popup-overlay">
+  <div class="popup-content">
+    <h2>Antrag erstellt!</h2>
+    <p>Wir drücken die Daumen! Wenn dir dieses Tool geholfen hat, unterstütze das Projekt gerne mit einer kleinen Spende.</p>
+    <form action="https://www.paypal.com/donate" method="post" target="_blank">
+      <input type="hidden" name="business" value="info@kassen-lotse.de" />
+      <input type="hidden" name="item_name" value="Unterstützung für das Projekt Mieter-Lotse" />
+      <input type="hidden" name="currency_code" value="EUR" />
+      <input type="submit" value="Spenden mit PayPal" style="background-color: #ffc439; border: none; padding: 0.9rem 1.8rem; font-weight: bold; border-radius: 5px; cursor: pointer; color: #333; font-size: 1em;"/>
+    </form>
+    <button id="closePopupBtn" class="popup-close-button">Schließen</button>
+  </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Mieter-Lotse | <a href="index.html">Zurück zur Startseite</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+</footer>
+
+</body>
+</html>

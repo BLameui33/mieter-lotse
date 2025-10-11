@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Widerspruch gegen Kautionsabrechnung erstellen | Mieter-Lotse</title>
+  <meta name="description" content="Erstellen Sie einen detaillierten Widerspruch gegen die Abrechnung Ihrer Mietkaution. Wehren Sie sich gegen unberechtigte Abzüge und fordern Sie Ihr Geld zurück.">
+  <meta name="keywords" content="Kautionsabrechnung, Widerspruch, Mietkaution, Kaution zurückfordern, Abzüge, Mietrecht, Vorlage, Generator">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/logo-lotse-fav.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script defer src="kautionsabrechnung_script.js"></script>
+  <style>
+    /* Exakt die gleichen Stile wie bei den anderen Seiten */
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; line-height: 1.7; background-color: #f9f9f9; color: #333; }
+    .page-container { max-width: 800px; margin: 2rem auto; background-color: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    h1 { font-size: 2.2rem; margin-bottom: 1.5rem; color: #222; text-align: center; }
+    label { display: block; margin-top: 1rem; font-weight: 500; color: #444; }
+    label small { display: block; font-weight: normal; font-size: 0.85em; color: #555; margin-top: 0.2rem; }
+    input[type="text"], input[type="date"], input[type="number"], textarea { width: 100%; padding: 10px; margin-top: 0.3rem; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
+    textarea { min-height: 150px; resize: vertical; }
+    fieldset { border: 1px solid #ddd; padding: 1.5rem; margin-top: 2rem; border-radius: 6px; }
+    legend { font-weight: bold; font-size: 1.2em; padding: 0 0.5em; color: #333; margin-bottom:0.8rem;}
+    .button-group { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    button { padding: 10px 20px; font-size: 1rem; border-radius: 5px; cursor: pointer; border: none; font-weight: bold; text-align: center; }
+    .button-secondary { background-color: #6c757d; color: white; }
+    .button-primary { background-color: #d9534f; color: white; }
+    .info-box { font-size: 0.9em; padding: 10px 15px; border-radius: 4px; margin-bottom: 1rem; border-left-width: 4px; border-left-style: solid; }
+    .info-box.info { background-color: #eef7ff; border-left-color: #0070f3; }
+    .info-box.warning { background-color: #fcf8e3; border-left-color: #f0ad4e; }
+    .popup-overlay, .popup-content, .popup-close-button { /* Stile aus anderen Generatoren übernehmen */ }
+    .site-header { background-color: #ffffff; padding: 1rem 2rem; box-shadow: 0 2px 5px rgba(0,0,0,0.07); border-bottom: 1px solid #e9ecef; margin-bottom: 2rem; text-align: center; }
+    .site-logo { color: #1a5276; font-size: 1.5rem; font-weight: bold; text-decoration: none; }
+    footer { text-align: center; padding: 2rem 0; margin-top: 2rem; font-size: 0.9em; color: #666; }
+    footer a { color: #555; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+    <a href="index.html" class="site-logo">Mieter-Lotse</a>
+</header>
+
+<div class="page-container">
+  <h1>Widerspruch gegen die Kautionsabrechnung</h1>
+  <p class="info-box info">
+    Wenn Ihr Vermieter nach dem Auszug Kosten von Ihrer Mietkaution abzieht, muss er dies in einer nachvollziehbaren Abrechnung darlegen. Sind Sie mit den Abzügen nicht einverstanden, sollten Sie schriftlich und detailliert widersprechen.
+  </p>
+  <p class="info-box warning">
+    Fordern Sie eine klare Frist für die Rückzahlung des strittigen Betrags. Versenden Sie das Schreiben nachweisbar per Einwurf-Einschreiben.
+  </p>
+
+  <form id="kautionsabrechnungForm">
+    <fieldset>
+      <legend>1. Ihre Angaben (Mieter/in)</legend>
+      <label for="mieterName">Vor- und Nachname:</label>
+      <input type="text" id="mieterName" required>
+      <label for="mieterAdresse">Ihre aktuelle, neue Anschrift:</label>
+      <textarea id="mieterAdresse" rows="2" required></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Angaben zum Vermieter</legend>
+      <label for="vermieterName">Name des Vermieters / der Hausverwaltung:</label>
+      <input type="text" id="vermieterName" required>
+      <label for="vermieterAdresse">Anschrift des Vermieters / der Hausverwaltung:</label>
+      <textarea id="vermieterAdresse" rows="3" required></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Details zum Mietverhältnis & zur Abrechnung</legend>
+      <label for="objektAdresse">Anschrift der ehemaligen Mietwohnung:</label>
+      <textarea id="objektAdresse" rows="2" required></textarea>
+      <label for="datumMietvertragsende">Datum der Beendigung des Mietverhältnisses:</label>
+      <input type="date" id="datumMietvertragsende" required>
+      <label for="datumAbrechnung">Datum der Kautionsabrechnung:</label>
+      <input type="date" id="datumAbrechnung" required>
+    </fieldset>
+    
+    <fieldset>
+      <legend>4. Ihr Widerspruch</legend>
+      <label for="widerspruchsText">Listen Sie hier die Abzugsposten auf, denen Sie widersprechen, und begründen Sie dies jeweils:
+        <small>Seien Sie so präzise wie möglich. Beziehen Sie sich auf das Übergabeprotokoll oder unwirksame Klauseln im Mietvertrag.</small>
+      </label>
+      <textarea id="widerspruchsText" required placeholder="Beispiel:&#10;1. Posten 'Renovierung Wohnzimmer' (350 €): Die Renovierungsklausel in unserem Mietvertrag ist unwirksam, daher bestand keine Pflicht zur Durchführung von Schönheitsreparaturen.&#10;2. Posten 'Kratzer im Parkett' (150 €): Der Kratzer war bereits bei Einzug vorhanden und ist im Übergabeprotokoll vom TT.MM.JJJJ dokumentiert.&#10;3. Posten 'Mietrückstand April' (50 €): Die Miete für April wurde vollständig und pünktlich überwiesen (siehe Kontoauszug)."></textarea>
+    </fieldset>
+    
+    <div class="button-group">
+      <button type="button" id="saveBtnKaution" class="button-secondary">Speichern</button>
+      <button type="button" id="loadBtnKaution" class="button-secondary">Laden</button>
+      <button type="submit" class="button-primary">📄 Widerspruchs-PDF erstellen</button>
+    </div>
+  </form>
+</div>
+
+<div id="spendenPopup" class="popup-overlay">
+  <div class="popup-content">
+    <h2>Widerspruch erstellt!</h2>
+    <p>Wenn dir dieses Tool geholfen hat, deine Kaution zu schützen, unterstütze das Projekt gerne mit einer kleinen Spende.</p>
+    <form action="https://www.paypal.com/donate" method="post" target="_blank">
+      <input type="hidden" name="business" value="info@kassen-lotse.de" />
+      <input type="hidden" name="item_name" value="Unterstützung für das Projekt Mieter-Lotse" />
+      <input type="hidden" name="currency_code" value="EUR" />
+      <input type="submit" value="Spenden mit PayPal" />
+    </form>
+    <button id="closePopupBtn" class="popup-close-button">Schließen</button>
+  </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Mieter-Lotse | <a href="index.html">Zurück zur Startseite</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+</footer>
+
+</body>
+</html>

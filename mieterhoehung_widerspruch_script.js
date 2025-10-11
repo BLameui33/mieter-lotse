@@ -414,4 +414,5 @@ function generateMieterhoehungWiderspruchPDF(data) {
     if (spendenPopupElement) {
         spendenPopupElement.style.display = "flex";
     }
+
 }
