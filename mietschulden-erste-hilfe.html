@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mietschulden: Erste Hilfe 2025 | Ampel, Maßnahmen, Ratenplan</title>
+  <meta name="description" content="Schnelle Erste Hilfe bei Mietschulden: Ampel-Einschätzung der Dringlichkeit, konkrete Sofort-Maßnahmen, Hinweise zu Kostenübernahme (Jobcenter/Sozialamt) und eine Ratenplan-Vorlage zum Nachmachen." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://www.mieter-lotse.tld/mietschulden-erste-hilfe.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/logo-lotse-fav.png" />
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mietschulden: Erste Hilfe 2025 | Ampel & Maßnahmen" />
+  <meta property="og:description" content="Ampel-Check der Dringlichkeit, To-do-Liste, Ratenplan-Vorlage und Wege zur Übernahme von Mietrückständen." />
+  <meta property="og:type" content="website" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="/" class="site-logo" aria-label="Zur Startseite">Mieter-Lotse</a>
+  </header>
+
+  <div class="page-container">
+    <h1>Mietschulden – Erste Hilfe</h1>
+
+    <div class="highlight-box" role="region" aria-label="Kurzinfo">
+      <p>
+        Dieser Mini-Check stuft deine Lage mit einer <strong>Ampel</strong> ein und gibt dir eine
+        <strong>konkrete To-do-Liste</strong> – inklusive <strong>Ratenplan-Vorlage</strong>.
+        Die Einschätzung ist <em>unverbindlich</em>. Bei ernster Lage bitte <strong>sofort Hilfe</strong> holen.
+      </p>
+    </div>
+
+    <form id="ms-form" class="pflegegrad-form" aria-describedby="ms_ergebnis" novalidate>
+      <fieldset class="pflegegrad-fieldset active-step">
+        <legend>1. Kurze Angaben</legend>
+
+        <label class="pflegegrad-label" for="ms_rueckstand">
+          Offener Mietrückstand (gesamt, €)
+          <input type="number" id="ms_rueckstand" min="0" step="10" placeholder="z. B. 1.400" />
+        </label>
+
+        <label class="pflegegrad-label" for="ms_monate">
+          Seit wie vielen Monaten bist du (mindestens) im Rückstand?
+          <input type="number" id="ms_monate" min="0" max="24" step="1" placeholder="z. B. 2" />
+        </label>
+
+        <label class="pflegegrad-label" for="ms_mahnung">
+          Mahnung erhalten?
+          <select id="ms_mahnung">
+            <option value="nein" selected>Nein</option>
+            <option value="ja">Ja</option>
+          </select>
+        </label>
+
+        <label class="pflegegrad-label" for="ms_kuendigung">
+          Kündigung erhalten?
+          <select id="ms_kuendigung">
+            <option value="nein" selected>Nein</option>
+            <option value="ja">Ja (fristlos/ordentlich)</option>
+          </select>
+        </label>
+
+        <p class="hinweis">
+          Keine Panik – selbst bei Kündigung gibt es oft <strong>Handlungsmöglichkeiten</strong>.
+          Unten findest du sofortige Schritte.
+        </p>
+      </fieldset>
+
+      <div class="button-container">
+        <button type="button" id="ms_check" class="button">Einschätzung &amp; Maßnahmen anzeigen</button>
+        <button type="reset" id="ms_reset" class="button button-secondary">Eingaben zurücksetzen</button>
+      </div>
+    </form>
+
+    <section id="ms_ergebnis" aria-live="polite"></section>
+
+    <!-- Erklär- und Hilfeteil -->
+    <section style="margin-top:1.25rem" aria-label="Sofortmaßnahmen">
+      <h2>Was du jetzt tun kannst (Sofortmaßnahmen)</h2>
+      <ol>
+        <li><strong>Kontakt aufnehmen:</strong> Vermieter:in schriftlich informieren, Zahlungsbereitschaft zeigen, Raten anbieten.</li>
+        <li><strong>Unterstützung prüfen:</strong> <em>Kostenübernahme Mietschulden</em> beim <strong>Jobcenter/Sozialamt</strong> erfragen (Darlehen/Beihilfe; Belege bereithalten).</li>
+        <li><strong>Beratung holen:</strong> Schuldnerberatung, Mieterverein oder Rechtsberatung (ggf. <em>Beratungshilfe</em> beim Amtsgericht).</li>
+        <li><strong>Fristen beachten:</strong> Bei Kündigung schnell handeln – bei fristloser Kündigung kann <em>Heilung</em> durch komplette Nachzahlung möglich sein (zeitnah klären!).</li>
+        <li><strong>Budget prüfen:</strong> Abschläge und Fixkosten durchgehen, Priorität: <em>Miete</em>, Energie, Krankenversicherung.</li>
+      </ol>
+    </section>
+
+    <section aria-label="Ratenplan-Vorlage">
+      <h2>Ratenplan-Vorlage (zum Übernehmen)</h2>
+      <div class="pflegegrad-result-card" style="font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">
+        <p><strong>Betreff:</strong> Vorschlag Ratenzahlung Mietrückstand</p>
+        <p>Sehr geehrte:r &lt;Name Vermieter:in&gt;,</p>
+        <p>
+          wegen eines Mietrückstandes in Höhe von <strong>&lt;Betrag €&gt;</strong> biete ich ab dem
+          <strong>&lt;Datum&gt;</strong> eine Ratenzahlung von <strong>&lt;Betrag €&gt;</strong> monatlich zusätzlich zur laufenden Miete an.
+          Die vollständige Tilgung erfolgt voraussichtlich bis <strong>&lt;Datum&gt;</strong>.
+        </p>
+        <p>
+          Ich bitte um Bestätigung der Vereinbarung in Textform. Vielen Dank für Ihr Entgegenkommen.
+        </p>
+        <p>Mit freundlichen Grüßen<br />&lt;Dein Name / Adresse / Kontaktdaten&gt;</p>
+      </div>
+      <p class="hinweis">Tipp: Realistische Raten anbieten und pünktlich zahlen – sonst neu verhandeln.</p>
+    </section>
+
+    <section aria-label="FAQ & Hinweise">
+      <h2>Häufige Fragen zu Mietschulden</h2>
+      <details>
+        <summary><strong>Wann droht eine fristlose Kündigung?</strong></summary>
+        <p>Bei Mietrückstand von zwei Monatsmieten oder über zwei Termine verteilt (§-Logik vereinfacht). Bei drohender Kündigung sofort reagieren, Nachzahlung und Raten anbieten.</p>
+      </details>
+      <details>
+        <summary><strong>Übernimmt das Jobcenter/Sozialamt Mietschulden?</strong></summary>
+        <p>In Notlagen ist eine Übernahme als <em>Darlehen</em> oder <em>Beihilfe</em> möglich. Zuständig ist je nach Situation Jobcenter (SGB II) oder Sozialamt (SGB XII). Begründung, Nachweise und Mitwirkung sind nötig.</p>
+      </details>
+      <details>
+        <summary><strong>Was, wenn schon eine Räumungsklage läuft?</strong></summary>
+        <p>Sofort rechtlichen Rat holen (Mieterverein/Anwält:in). Mit Beratungshilfe ist Erstberatung oft kostenarm möglich. Parallel Finanzierungslösungen prüfen und Vergleich anbieten.</p>
+      </details>
+    </section>
+
+    <div class="warning-box">
+      <p>
+        <strong>Wichtig:</strong> Diese Erste Hilfe ersetzt <strong>keine Rechtsberatung</strong>.
+        Bei Kündigung, Räumungsklage oder Zwangsräumung bitte <strong>sofort</strong> Rechtsrat holen
+        (Mieterverein/Anwält:in, Beratungshilfe beim Amtsgericht) und Sozialleistungen prüfen.
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Mieter-Lotse | <a href="index.html">Zurück zur Startseite</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+  </footer>
+
+  <!-- FAQ-Schema.org für Rich Results -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Was tun bei Mietschulden?",
+        "acceptedAnswer":{"@type":"Answer","text":"Sofort Vermieter:in kontaktieren, Raten anbieten, Unterstützung beim Jobcenter/Sozialamt prüfen, Beratung holen (Mieterverein/Schuldnerberatung) und Fristen beachten."}
+      },
+      {
+        "@type":"Question",
+        "name":"Wann ist eine fristlose Kündigung möglich?",
+        "acceptedAnswer":{"@type":"Answer","text":"Vereinfacht: bei zwei Monatsmieten Rückstand oder über zwei Termine verteilt. Bei drohender Kündigung umgehend handeln, ggf. durch Nachzahlung heilen, rechtlichen Rat einholen."}
+      },
+      {
+        "@type":"Question",
+        "name":"Übernimmt das Jobcenter oder Sozialamt Mietrückstände?",
+        "acceptedAnswer":{"@type":"Answer","text":"In Notlagen können Mietschulden als Darlehen oder Beihilfe übernommen werden. Zuständig: Jobcenter (SGB II) oder Sozialamt (SGB XII). Erforderlich sind Begründung, Nachweise und Mitwirkung."}
+      }
+    ]
+  }
+  </script>
+
+  <script src="mietschulden-erste-hilfe.js"></script>
+</body>
+</html>

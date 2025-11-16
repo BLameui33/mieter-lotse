@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Schimmel in der Wohnung: Sofortcheck 2025 | Ampel, Maßnahmen & Musterbrief</title>
+  <meta name="description" content="Schneller Schimmel-Sofortcheck: Fragen beantworten, Ampel-Einschätzung erhalten und sofort wissen, was zu tun ist. Mit konkreten Sofortmaßnahmen, Beweissicherung, Lüft-/Heiztipps und Mängelanzeige-Muster." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://www.mieter-lotse.tld/schimmel-sofortcheck.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/logo-lotse-fav.png" />
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Schimmel in der Wohnung: Sofortcheck 2025 | Ampel & Maßnahmen" />
+  <meta property="og:description" content="Ampel-Check, To-do-Liste, Beweissicherung und Muster für Mängelanzeige – schnell & verständlich." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="/" class="site-logo" aria-label="Zur Startseite">Mieter-Lotse</a>
+  </header>
+
+  <div class="page-container">
+    <h1>Schimmel – Sofortcheck</h1>
+
+    <div class="highlight-box" role="region" aria-label="Kurzinfo">
+      <p>
+        Beantworte kurz die Fragen. Du bekommst eine <strong>Ampel-Einschätzung</strong> und eine
+        <strong>konkrete To-do-Liste</strong> inkl. <em>Mängelanzeige-Vorlage</em>.
+        Das ist eine <strong>Orientierung</strong>, keine Rechtsberatung.
+      </p>
+    </div>
+
+    <form id="sm-form" class="pflegegrad-form" aria-describedby="sm_ergebnis" novalidate>
+      <!-- 1) Angaben -->
+      <fieldset class="pflegegrad-fieldset active-step">
+        <legend>1. Kurz einordnen</legend>
+
+        <label class="pflegegrad-label" for="sm_raum">
+          Raum / Bereich (frei)
+          <input type="text" id="sm_raum" placeholder="z. B. Schlafzimmer, Außenwandecke" />
+        </label>
+
+        <label class="pflegegrad-label" for="sm_sichtbar">
+          Sichtbarer Schimmel?
+          <select id="sm_sichtbar">
+            <option value="nein" selected>Nein</option>
+            <option value="ja">Ja (sichtbare Flecken/Belag)</option>
+          </select>
+        </label>
+
+        <label class="pflegegrad-label" for="sm_geruch">
+          Muffiger Geruch?
+          <select id="sm_geruch">
+            <option value="nein" selected>Nein</option>
+            <option value="ja">Ja, wahrnehmbar</option>
+          </select>
+        </label>
+
+        <label class="pflegegrad-label" for="sm_feuchte">
+          Luftfeuchte &gt; 60&nbsp;% gemessen? (optional)
+          <select id="sm_feuchte">
+            <option value="unbekannt" selected>Weiß nicht / kein Hygrometer</option>
+            <option value="nein">Nein (≤ 60 %)</option>
+            <option value="ja">Ja (&gt; 60 %)</option>
+          </select>
+        </label>
+
+        <label class="pflegegrad-label" for="sm_wasserschaden">
+          Wasserschaden/Feuchtefleck bekannt?
+          <select id="sm_wasserschaden">
+            <option value="nein" selected>Nein</option>
+            <option value="ja">Ja (z. B. Leckage, Rohrbruch, eindringendes Wasser)</option>
+          </select>
+        </label>
+
+        <label class="pflegegrad-label" for="sm_lueften">
+          Lüften (realistisch)
+          <select id="sm_lueften">
+            <option value="regelmaessig">Regelmäßig Stoßlüften (2–4×/Tag)</option>
+            <option value="normal" selected>Teils/teils</option>
+            <option value="selten">Selten</option>
+          </select>
+        </label>
+
+        <label class="pflegegrad-label" for="sm_heizen">
+          Heizen im betroffenen Raum
+          <select id="sm_heizen">
+            <option value="konstant">Konstant temperiert</option>
+            <option value="normal" selected>Normal</option>
+            <option value="kalt">Meist kalt</option>
+          </select>
+        </label>
+
+        <label class="pflegegrad-label" for="sm_baujahr">
+          Baujahr/Modernisierung (optional)
+          <select id="sm_baujahr">
+            <option value="unbekannt" selected>Unbekannt</option>
+            <option value="alt">Altbau/ungedämmt (Wärmebrücken wahrscheinlicher)</option>
+            <option value="neu">Neu(ere) Dämmung/Fenster</option>
+          </select>
+        </label>
+
+        <p class="hinweis">
+          Tipp: Ein einfaches <strong>Hygrometer</strong> (10–15 €) hilft: Ideal sind <strong>40–60&nbsp;%</strong> rel. Luftfeuchte.
+        </p>
+      </fieldset>
+
+      <div class="button-container">
+        <button type="button" id="sm_check" class="button">Sofortcheck anzeigen</button>
+        <button type="reset" id="sm_reset" class="button button-secondary">Zurücksetzen</button>
+      </div>
+    </form>
+
+    <section id="sm_ergebnis" aria-live="polite"></section>
+
+    <!-- Erklär- und Hilfeteil -->
+    <section style="margin-top:1.25rem" aria-label="Sofortmaßnahmen">
+      <h2>Was jetzt wichtig ist: Sofortmaßnahmen</h2>
+      <ol>
+        <li><strong>Beweissicherung:</strong> Fotos/Videos mit Datum, Größe notieren, ggf. Hygrometer-Werte festhalten.</li>
+        <li><strong>Feuchte begrenzen:</strong> 2–4×/Tag stoßlüften (5–10 Minuten), Türen zu feuchten Räumen schließen, Wäsche nicht in Wohnräumen trocknen.</li>
+        <li><strong>Temperatur halten:</strong> Mind. 18–20&nbsp;°C in betroffenen Räumen – starke Auskühlung vermeiden.</li>
+        <li><strong>Mängel melden:</strong> Schriftliche <em>Mängelanzeige</em> an Vermieter:in senden (Vorlage unten), Frist zur Beseitigung setzen.</li>
+        <li><strong>Ursache prüfen:</strong> Bei Verdacht auf Bauschaden (Wasserfleck/Leck) Fachbetrieb/Verwaltung informieren – nicht eigenmächtig großflächig reinigen.</li>
+      </ol>
+    </section>
+
+    <section aria-label="Muster Mängelanzeige">
+      <h2>Mängelanzeige – Muster zum Kopieren</h2>
+      <div class="pflegegrad-result-card" style="font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;">
+        <p><strong>Betreff:</strong> Mängelanzeige – Schimmelbildung in &lt;Raum&gt;</p>
+        <p>Sehr geehrte:r &lt;Name Vermieter:in&gt;,</p>
+        <p>
+          in meiner Wohnung ist am &lt;Ort/Fläche&gt; seit &lt;Datum&gt; Schimmel sichtbar / muffiger Geruch wahrnehmbar.
+          Die Fläche ist ca. &lt;Größe&gt;, Fotos liegen bei. Ich lüfte und heize angemessen.
+        </p>
+        <p>
+          Ich bitte um <strong>Mangelbeseitigung</strong> und Rückmeldung bis zum &lt;Datum, z. B. in 7–14 Tagen&gt;.
+          Bei Verdacht auf Durchfeuchtung/Wasserschaden bitte kurzfristig Fachprüfung veranlassen.
+        </p>
+        <p>Mit freundlichen Grüßen<br />&lt;Name / Adresse / Kontakt&gt;</p>
+      </div>
+      <p class="hinweis">Sende die Anzeige nachweisbar (Einwurf-Einschreiben / E-Mail mit Sendebestätigung).</p>
+    </section>
+
+    <section aria-label="Ursachen & Vorbeugung">
+      <h2>Schimmel: Häufige Ursachen & Vorbeugung</h2>
+      <ul>
+        <li><strong>Wärmebrücken / kalte Außenwände:</strong> Möbel mit Abstand (5–10 cm), Luft zirkulieren lassen.</li>
+        <li><strong>Undichte Stellen / Feuchteeintrag:</strong> Wasserflecken sofort melden – Schimmel ist oft Folge, nicht Ursache.</li>
+        <li><strong>Hohe Luftfeuchte:</strong> Nach Duschen/Kochen stoßlüften, Bad/Zimmertüren geschlossen halten, Kondensat wischen.</li>
+        <li><strong>Neubau / neue Fenster:</strong> dichtere Gebäudehülle ⇒ regelmäßiges Lüften umso wichtiger.</li>
+      </ul>
+    </section>
+
+    <section aria-label="FAQ">
+      <h2>Häufige Fragen zum Thema Schimmel</h2>
+      <details>
+        <summary><strong>Ab wann ist Schimmel ein Mietmangel?</strong></summary>
+        <p>Schon kleine, wiederkehrende Flecken können ein Mangel sein. Maßgeblich sind Ursache, Umfang und Behebungsbedarf. Mangel schriftlich anzeigen und Frist setzen.</p>
+      </details>
+      <details>
+        <summary><strong>Darf ich die Miete mindern?</strong></summary>
+        <p>Grundsätzlich möglich, aber die Höhe hängt vom Einzelfall ab. Vorher Mangel anzeigen und rechtlich beraten lassen (Mieterverein/Rechtsberatung), um Risiken zu vermeiden.</p>
+      </details>
+      <details>
+        <summary><strong>Reicht Lüften/Heizen immer aus?</strong></summary>
+        <p>Nein. Bei Bauschäden (z. B. Leckagen, Wärmebrücken) hilft nur fachgerechte Instandsetzung. Eigenreinigung löst die Ursache nicht.</p>
+      </details>
+    </section>
+
+    <div class="warning-box">
+      <p>
+        <strong>Wichtig:</strong> Bei <strong>Gesundheitsbeschwerden</strong>, ausgedehntem Befall oder
+        <strong>Wasserschaden</strong> bitte umgehend Fachbetrieb/Rechtsberatung kontaktieren.
+        Diese Seite ersetzt keine Begutachtung.
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Mieter-Lotse | <a href="index.html">Zurück zur Startseite</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+  </footer>
+
+  <!-- FAQ-Schema.org für bessere Sichtbarkeit in der Suche -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Ab wann ist Schimmel ein Mietmangel?",
+        "acceptedAnswer":{"@type":"Answer","text":"Schon kleine, wiederkehrende Flecken können ein Mangel sein. Maßgeblich sind Ursache, Umfang und Behebungsbedarf. Mangel schriftlich anzeigen und Frist setzen."}
+      },
+      {
+        "@type":"Question",
+        "name":"Darf ich die Miete mindern?",
+        "acceptedAnswer":{"@type":"Answer","text":"Grundsätzlich möglich, aber die Höhe hängt vom Einzelfall ab. Vorher Mangel anzeigen und rechtlich beraten lassen (Mieterverein/Rechtsberatung), um Risiken zu vermeiden."}
+      },
+      {
+        "@type":"Question",
+        "name":"Reicht Lüften und Heizen immer aus?",
+        "acceptedAnswer":{"@type":"Answer","text":"Nein. Bei Bauschäden (z. B. Leckagen, Wärmebrücken) hilft nur fachgerechte Instandsetzung. Eigenreinigung löst die Ursache nicht."}
+      }
+    ]
+  }
+  </script>
+
+  <script src="schimmel-sofortcheck.js"></script>
+</body>
+</html>

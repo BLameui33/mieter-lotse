@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Betriebskostenabrechnung prüfen 2025 | Plausibilitätscheck pro m²</title>
+  <meta name="description" content="Schneller Plausibilitätscheck für Betriebskosten 2025: reale Kosten pro m²/Monat berechnen, mit Richtwert-Band vergleichen (mit/ohne Heizung), Ergebnis einordnen (im Rahmen, grenzwertig, auffällig) und Checkliste nutzen.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://www.mieter-lotse.tld/betriebskosten-plausicheck.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/logo-lotse-fav.png">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Betriebskosten 2025 prüfen | Plausicheck pro m²">
+  <meta property="og:description" content="Kosten pro m²/Monat berechnen, mit Richtwert-Band vergleichen und Ergebnis einordnen. Mit praktischer Prüf-Checkliste.">
+  <meta property="og:type" content="website">
+</head>
+<body>
+  <header class="site-header">
+    <a href="/" class="site-logo" aria-label="Zur Startseite">Mieter-Lotse</a>
+  </header>
+
+  <div class="page-container">
+    <h1>Betriebskosten – Plausicheck (Nebenkosten)</h1>
+
+    <div class="highlight-box" role="region" aria-label="Kurzinfo">
+      <p>
+        Mit diesem Tool prüfst du, ob deine <strong>Betriebskostenabrechnung</strong> (Nebenkosten) <strong>grob plausibel</strong> ist.
+        Wir berechnen deine <strong>tatsächlichen Kosten pro m² und Monat</strong> und vergleichen sie mit einem
+        <strong>Richtwert-Band</strong> – je nach Auswahl <em>inklusive</em> oder <em>ohne Heizung/Warmwasser</em>.
+      </p>
+      <p>
+        Ergebnis: <em>im Rahmen</em>, <em>grenzwertig</em> oder <em>auffällig</em>. Alle Werte sind <strong>editierbar</strong>,
+        damit du regionale Besonderheiten abbilden kannst.
+      </p>
+    </div>
+
+    <form id="bk-form" class="pflegegrad-form" aria-describedby="bk_ergebnis" novalidate>
+      <!-- Schritt 1: Eingaben -->
+      <fieldset class="pflegegrad-fieldset active-step">
+        <legend>1. Deine Angaben</legend>
+
+        <label class="pflegegrad-label" for="bk_flaeche">
+          Wohnfläche (m²)
+          <input type="number" id="bk_flaeche" min="5" max="500" step="0.5" placeholder="z. B. 65" />
+        </label>
+
+        <label class="pflegegrad-label" for="bk_voraus">
+          Monatliche Vorauszahlung Betriebskosten (€/Monat)
+          <input type="number" id="bk_voraus" min="0" step="1" placeholder="z. B. 200" />
+        </label>
+
+        <div class="pflegegrad-label">
+          Abrechnungszeitraum (Monate)
+          <input type="number" id="bk_monate" min="1" max="24" step="1" value="12" />
+        </div>
+
+        <label class="pflegegrad-label" for="bk_nachzahlung">
+          Ergebnis der Abrechnung (Gesamtbetrag für den Zeitraum): Nachzahlung <strong>+</strong> / Rückzahlung <strong>−</strong>
+          <input type="number" id="bk_nachzahlung" step="1" placeholder="z. B. 180 (Nachzahlung) oder -90 (Rückzahlung)" />
+        </label>
+
+        <label class="pflegegrad-label" for="bk_mit_heizung">
+          Enthalten die Betriebskosten <strong>Heizung/Warmwasser</strong>?
+          <select id="bk_mit_heizung">
+            <option value="ja" selected>Ja (Brutto inkl. Heizung)</option>
+            <option value="nein">Nein (nur „kalte“ Betriebskosten)</option>
+          </select>
+        </label>
+
+        <p class="hinweis">
+          So rechnet der Check: <em>(Vorauszahlung × Monate ± Nach-/Rückzahlung) ÷ Monate ÷ m²</em> ⇒ Kosten pro m²/Monat.
+        </p>
+      </fieldset>
+
+      <!-- Schritt 2: Referenzband -->
+      <fieldset class="pflegegrad-fieldset">
+        <legend>2. Richtwert-Band (anpassbar)</legend>
+
+        <p class="hinweis">
+          Grobe Orientierung (regional unterschiedlich): <em>inkl. Heizung</em> ca. <strong>3,50–5,50 €/m²</strong>,
+          <em>ohne Heizung</em> ca. <strong>1,80–3,20 €/m²</strong>. Passe die Werte bei Bedarf an (z. B. ältere Gebäude, Fernwärme).
+        </p>
+
+        <div style="display:grid; gap:.6rem; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
+          <label class="pflegegrad-label" for="bk_band_min">Unteres Band (€/m²/Monat)
+            <input type="number" id="bk_band_min" min="0" step="0.1" value="3.50" />
+          </label>
+          <label class="pflegegrad-label" for="bk_band_max">Oberes Band (€/m²/Monat)
+            <input type="number" id="bk_band_max" min="0" step="0.1" value="5.50" />
+          </label>
+          <label class="pflegegrad-label" for="bk_tol_plus">Toleranz „grenzwertig“ über Oberband (%)
+            <input type="number" id="bk_tol_plus" min="0" max="50" step="1" value="15" />
+          </label>
+          <label class="pflegegrad-label" for="bk_tol_minus">Toleranz „auffällig niedrig“ unter Unterband (%)
+            <input type="number" id="bk_tol_minus" min="0" max="50" step="1" value="15" />
+          </label>
+        </div>
+
+        <p class="hinweis">
+          Wenn du <strong>„ohne Heizung“</strong> gewählt hast, stelle das Band z. B. auf <strong>1,80–3,20 €/m²</strong>.
+        </p>
+      </fieldset>
+
+      <div class="button-container">
+        <button type="button" id="bk_check" class="button">Plausicheck starten</button>
+        <button type="reset" id="bk_reset" class="button button-secondary">Eingaben zurücksetzen</button>
+      </div>
+    </form>
+
+    <section id="bk_ergebnis" aria-live="polite"></section>
+
+    <!-- Erklärteil: verständlicher machen -->
+    <section style="margin-top:1.25rem" aria-label="Erläuterungen & Beispiele">
+      <h2>So liest du das Ergebnis</h2>
+      <ul>
+        <li><strong>Im Rahmen:</strong> Deine Kosten pro m²/Monat liegen innerhalb des gewählten Richtwert-Bands.</li>
+        <li><strong>Grenzwertig:</strong> Leicht über dem Band (innerhalb der Plus-Toleranz). Gründe prüfen (z. B. kalter Winter, Altbau, Fernwärme).</li>
+        <li><strong>Auffällig:</strong> Deutlich über dem Band oder unplausibel niedrig. Belege vergleichen und ggf. beraten lassen.</li>
+      </ul>
+
+      <h3>Beispielrechnung</h3>
+      <p class="hinweis">
+        65 m², Vorauszahlung 200 €/Monat, 12 Monate, Nachzahlung 180 € (inkl. Heizung):<br>
+        (200×12 + 180) ÷ 12 ÷ 65 ≈ <strong>3,12 €/m²</strong> → mit Heiz-Band 3,50–5,50 €/m² = <em>auffällig niedrig</em>.
+      </p>
+    </section>
+
+    <section aria-label="Checkliste">
+      <h2>Checkliste: Das solltest du bei der Abrechnung prüfen</h2>
+      <ul>
+        <li><strong>Zeitraum & Fristen:</strong> Stimmt der Abrechnungszeitraum? Kam die Abrechnung fristgerecht?</li>
+        <li><strong>Umlageschlüssel:</strong> Nach m², Personen oder Verbrauch? Passt er zu deinem Mietvertrag?</li>
+        <li><strong>Umlagefähige Posten:</strong> Nur zulässige Betriebskosten enthalten? (z. B. keine Reparaturen)</li>
+        <li><strong>Heizkosten:</strong> Bei „inkl. Heizung“ Verbrauchsanteile & Ablesewerte prüfen.</li>
+        <li><strong>Vorauszahlungen:</strong> Sind alle deine Monatsvorauszahlungen korrekt berücksichtigt?</li>
+        <li><strong>Vergleich Vorjahr:</strong> Große Sprünge erklären lassen (Preissteigerungen, Leerstand, Wetter).</li>
+      </ul>
+      <p class="hinweis">Bei Unklarheiten hilft der <strong>Mieterverein</strong> oder eine Verbraucherberatung.</p>
+    </section>
+
+    <div class="warning-box">
+      <p>
+        <strong>Wichtig:</strong> Der Plausicheck liefert eine <strong>vereinfachte</strong> Einordnung.
+        Verbindlich sind Abrechnungsunterlagen, Vertragsregelungen, Heizkostenverordnung, Umlageschlüssel und Fristen.
+        Bei Auffälligkeiten: <strong>fachliche Beratung</strong> einholen.
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Mieter-Lotse | <a href="index.html">Zurück zur Startseite</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+  </footer>
+
+  <!-- FAQ Schema für Rich Results -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Sind meine Nebenkosten zu hoch?",
+        "acceptedAnswer":{"@type":"Answer","text":"Berechne die realen Kosten pro m²/Monat und vergleiche mit einem passenden Richtwert-Band (inkl. oder ohne Heizung). Liegt der Wert deutlich darüber, prüfe Posten, Umlageschlüssel und Ablesewerte."}
+      },
+      {
+        "@type":"Question",
+        "name":"Welche Richtwerte gelten für Betriebskosten?",
+        "acceptedAnswer":{"@type":"Answer","text":"Stark regional abhängig. Häufig 3,50–5,50 €/m² inkl. Heizung bzw. 1,80–3,20 €/m² ohne Heizung. Passe die Bänder für dein Gebäude, Energieart und Region an."}
+      },
+      {
+        "@type":"Question",
+        "name":"Was tun bei einer hohen Nachzahlung?",
+        "acceptedAnswer":{"@type":"Answer","text":"Abrechnungszeitraum, Vorauszahlungen, Umlageschlüssel, Verbrauchswerte und Einzelpositionen prüfen. Bei Unklarheiten Mieterverein/Verbraucherzentrale einschalten und fristgerecht Einwendungen erheben."}
+      }
+    ]
+  }
+  </script>
+
+  <script src="betriebskosten-plausicheck.js"></script>
+</body>
+</html>
