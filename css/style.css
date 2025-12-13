@@ -632,3 +632,19 @@ h1, h2, h3, p, li, td, th {
 .kl-fall h3 { margin:0 0 6px 0; font-size:1rem; }
 .kl-fall p { margin:6px 0; color:#222; font-size:0.95rem; }
 .kl-fall-note { font-size:0.9rem; color:#555; margin-top:8px; }
+
+
+/* Kompakte Zuletzt-geprüft Box */
+.pruefdatum-box {
+  border-left: 4px solid #2196f3; /* blau bleibt */
+  background-color: #f0f7ff;      /* sanftes Blau für Aufmerksamkeit */
+  padding: 0.5rem 1rem;           /* kompakter als bisher */
+  font-size: 0.875rem;            /* etwas kleiner */
+  color: #0a0a0a;                 /* gut lesbar */
+  margin-top: 1.5rem;
+  border-radius: 4px;             /* leicht abgerundet */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* edler leichter Schatten */
+}
+.pruefdatum-box p {
+  margin: 0;
+}
