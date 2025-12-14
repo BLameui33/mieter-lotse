@@ -634,17 +634,14 @@ h1, h2, h3, p, li, td, th {
 .kl-fall-note { font-size:0.9rem; color:#555; margin-top:8px; }
 
 
-/* Kompakte Zuletzt-geprüft Box */
-.pruefdatum-box {
-  border-left: 4px solid #2196f3; /* blau bleibt */
-  background-color: #f0f7ff;      /* sanftes Blau für Aufmerksamkeit */
-  padding: 0.5rem 1rem;           /* kompakter als bisher */
-  font-size: 0.875rem;            /* etwas kleiner */
-  color: #0a0a0a;                 /* gut lesbar */
-  margin-top: 1.5rem;
-  border-radius: 4px;             /* leicht abgerundet */
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* edler leichter Schatten */
+.highlight-box.pruefdatum-box {
+  font-size: 0.75rem;        /* deutlich kleinerer Text */
+  padding: 0.4rem 0.6rem;    /* schmalere Box */
+  margin: 0.5rem 0;          /* weniger Außenabstand */
+  max-width: fit-content;   /* Box nur so breit wie der Inhalt */
 }
-.pruefdatum-box p {
+
+.highlight-box.pruefdatum-box p {
   margin: 0;
+  line-height: 1.3;
 }
