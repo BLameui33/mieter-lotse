@@ -2,66 +2,107 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Widerspruch/Stellungnahme zur Mieterhöhung erstellen</title>
-  <meta name="description" content="Erstellen Sie Ihren Widerspruch oder Ihre Stellungnahme zu einem Mieterhöhungsverlangen des Vermieters. Prüfen Sie die Voraussetzungen und begründen Sie Ihre Einwände.">
-  <meta name="keywords" content="Widerspruch Mieterhöhung, Stellungnahme Mieterhöhung, Mietrecht, Mieter, Vermieter, Kappungsgrenze, Mietspiegel, Vergleichsmiete, §558 BGB, Generator, Vorlage">
+  <title>Widerspruch/Stellungnahme zur Mieterhöhung erstellen | Mieter-Lotse</title>
+
+  <meta name="description" content="Erstellen Sie eine Stellungnahme oder einen Widerspruch zu einem Mieterhöhungsverlangen. Prüfen Sie Fristen (Zustimmung bis Ende des 2. Monats nach Zugang, § 558b BGB), Kappungsgrenze (§ 558 Abs. 3 BGB) und formelle Anforderungen (§ 558a BGB).">
+  <meta name="robots" content="index,follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="icon" href="/logo-lotse-fav.png">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script defer src="mieterhoehung_widerspruch_script.js"></script>
   <link rel="stylesheet" href="/css/generator.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Widerspruch / Stellungnahme zur Mieterhöhung",
+    "description": "Generator für eine Stellungnahme oder einen Widerspruch zu einem Mieterhöhungsverlangen (z.B. § 558 BGB).",
+    "inLanguage": "de",
+    "isPartOf": { "@type": "WebSite", "name": "Mieter-Lotse", "url": "https://mieter-lotse.de" },
+    "publisher": { "@type": "Organization", "name": "Mieter-Lotse", "url": "https://mieter-lotse.de" },
+    "about": [
+      { "@type": "Thing", "name": "Mieterhöhung" },
+      { "@type": "Thing", "name": "Ortsübliche Vergleichsmiete" },
+      { "@type": "Thing", "name": "Kappungsgrenze" },
+      { "@type": "Thing", "name": "BGB § 558" },
+      { "@type": "Thing", "name": "BGB § 558b" }
+    ],
+    "lastReviewed": "2025-12-13",
+    "reviewedBy": { "@type": "Organization", "name": "Mieter-Lotse Redaktion" }
+  }
+  </script>
 </head>
 <body>
 
-  <header class="site-header">
-    <a href="index.html" class="site-logo">Mieter-Lotse</a>
+<header class="site-header">
+  <a href="index.html" class="site-logo">Mieter-Lotse</a>
 </header>
 
 <div class="page-container">
   <h1>Widerspruch / Stellungnahme zur Mieterhöhung</h1>
-  <p class="info-box warning">
-    Haben Sie ein Mieterhöhungsverlangen von Ihrem Vermieter erhalten? Prüfen Sie es sorgfältig! Nicht jede Mieterhöhung ist zulässig. Dieses Formular hilft Ihnen, eine fundierte Stellungnahme oder einen Widerspruch zu formulieren.
-    Beachten Sie die Überlegungsfrist (meist bis zum Ende des zweiten Monats nach Zugang des Schreibens)! Lesen Sie auch unsere <a href="info-mieterhoehung.html">Informationen zum Thema Mieterhöhung</a>.
-  </p>
-<p class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 10px;">
-  <strong>Hinweis:</strong> Dieses Tool ersetzt keine Rechtsberatung. Es dient der allgemeinen Unterstützung bei der Antragstellung. Bei Unsicherheiten wenden Sie sich bitte an eine anerkannte Beratungsstelle oder einen Rechtsanwalt.
-</p>
-<p class="highlight-box" style="background-color: #fff3f3; border-left: 4px solid #e53935; padding: 10px; margin-top: 10px;">
-  <strong>Technischer Hinweis:</strong> Um das PDF erfolgreich herunterzuladen, öffnen Sie diese Seite bitte in einem Internet-Browser wie <strong>Chrome, Firefox oder Safari</strong>. In der Google-App (z. B. über die Suchleiste auf dem Startbildschirm) funktioniert der Download leider nicht zuverlässig.
-</p>
-<div class="highlight-box pruefdatum-box" role="note" aria-label="Zuletzt geprüft">
-  <p><strong>Zuletzt geprüft:</strong> <span id="pruefdatum">13.12.2025</span></p>
-</div>
 
-  <form id="widerspruchMieterhoehungForm">
+  <p class="info-box warning">
+    Haben Sie ein Mieterhöhungsverlangen erhalten? Prüfen Sie es sorgfältig: Nicht jede Mieterhöhung ist zulässig.
+    Die Zustimmung soll grundsätzlich bis zum Ablauf des zweiten Kalendermonats nach Zugang des Verlangens erklärt werden (§ 558b Abs. 2 BGB). 
+    Bei Mieterhöhungen bis zur ortsüblichen Vergleichsmiete gelten außerdem u.a. die 15‑Monats-Regel und die Einjahressperrfrist (§ 558 Abs. 1 BGB) sowie die Kappungsgrenze (20% bzw. 15% in bestimmten Gebieten, § 558 Abs. 3 BGB). 
+    Lesen Sie auch unsere <a href="info-mieterhoehung.html">Informationen zum Thema Mieterhöhung</a>.
+  </p>
+
+  <p class="info-box">
+    <strong>Expertentipps:</strong><br>
+    - Erst prüfen, dann reagieren: Formelle Mängel und fehlende Begründung sind häufige Ansatzpunkte (Begründung ist bei § 558-Mieterhöhung Pflicht, § 558a BGB).<br>
+    - Fristen notieren: Zugangstag dokumentieren (Briefumschlag/Fotos), da die Zustimmungsfrist daran hängt (§ 558b Abs. 2 BGB).<br>
+    - Bei Mietspiegel: Ausstattung/Lage/Größe korrekt einstufen und Rechenweg des Vermieters nachvollziehbar abgleichen.<br>
+    - Bei Vergleichswohnungen: Sind Größe, Baujahr, Ausstattung und Lage wirklich vergleichbar?
+  </p>
+
+  <p class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 10px;">
+    <strong>Hinweis:</strong> Dieses Tool ersetzt keine Rechtsberatung. Es dient der allgemeinen Unterstützung bei der Antragstellung. Bei Unsicherheiten wenden Sie sich bitte an eine anerkannte Beratungsstelle oder einen Rechtsanwalt.
+  </p>
+
+  <p class="highlight-box" style="background-color: #fff3f3; border-left: 4px solid #e53935; padding: 10px; margin-top: 10px;">
+    <strong>Technischer Hinweis:</strong> Um das PDF erfolgreich herunterzuladen, öffnen Sie diese Seite bitte in einem Internet-Browser wie <strong>Chrome, Firefox oder Safari</strong>. In der Google-App (z. B. über die Suchleiste auf dem Startbildschirm) funktioniert der Download leider nicht zuverlässig.
+  </p>
+
+  <div class="highlight-box pruefdatum-box" role="note" aria-label="Zuletzt geprüft">
+    <p><strong>Redaktionell geprüft:</strong> <span id="pruefdatum">13.12.2025</span></p>
+  </div>
+
+  <form id="widerspruchMieterhoehungForm" autocomplete="on">
     <fieldset>
       <legend>1. Angaben zum Mieter / zur Mieterin</legend>
       <label for="mieterName">Vor- und Nachname:</label>
-      <input type="text" id="mieterName" required>
+      <input type="text" id="mieterName" required autocomplete="name">
       <label for="mieterAdresse">Anschrift der Mietwohnung (Straße, Hausnr., PLZ, Ort, ggf. Etage):</label>
-      <textarea id="mieterAdresse" rows="3" required></textarea>
+      <textarea id="mieterAdresse" rows="3" required autocomplete="street-address"></textarea>
     </fieldset>
 
     <fieldset>
       <legend>2. Angaben zum Vermieter / zur Hausverwaltung</legend>
       <label for="vermieterName">Name des Vermieters / der Hausverwaltung:</label>
-      <input type="text" id="vermieterName" required>
+      <input type="text" id="vermieterName" required autocomplete="organization">
       <label for="vermieterAdresse">Anschrift des Vermieters / der Hausverwaltung:</label>
-      <textarea id="vermieterAdresse" rows="3" required></textarea>
+      <textarea id="vermieterAdresse" rows="3" required autocomplete="street-address"></textarea>
     </fieldset>
 
     <fieldset>
       <legend>3. Angaben zum Mieterhöhungsverlangen</legend>
       <label for="datumMieterhoehungsschreiben">Datum des Mieterhöhungsschreibens:</label>
-      <input type="date" id="datumMieterhoehungsschreiben" required>
+      <input type="date" id="datumMieterhoehungsschreiben" required autocomplete="off">
+
       <label for="aktuelleKaltmiete">Aktuelle monatliche Kaltmiete (Netto, ohne Betriebs- und Heizkosten):</label>
-      <input type="number" id="aktuelleKaltmiete" step="0.01" placeholder="z.B. 650.00" required>
+      <input type="number" id="aktuelleKaltmiete" step="0.01" placeholder="z.B. 650.00" required inputmode="decimal" autocomplete="off">
+
       <label for="gefordertenKaltmiete">Neu geforderte monatliche Kaltmiete ab (Datum):</label>
-      <input type="date" id="neueMieteAbDatum" required>
+      <input type="date" id="neueMieteAbDatum" required autocomplete="off">
+
       <label for="neueKaltmiete">Höhe der neu geforderten monatlichen Kaltmiete:</label>
-      <input type="number" id="neueKaltmiete" step="0.01" placeholder="z.B. 700.00" required>
+      <input type="number" id="neueKaltmiete" step="0.01" placeholder="z.B. 700.00" required inputmode="decimal" autocomplete="off">
+
       <label for="begruendungVermieter">Wie begründet der Vermieter die Mieterhöhung? <small>(z.B. Mietspiegel, Vergleichswohnungen, Gutachten)</small></label>
-      <select id="begruendungVermieter" required>
+      <select id="begruendungVermieter" required autocomplete="off">
         <option value="">Bitte wählen...</option>
         <option value="Mietspiegel">Mietspiegel</option>
         <option value="Vergleichswohnungen">Nennung von Vergleichswohnungen</option>
@@ -71,12 +112,13 @@
         <option value="Indexmiete">Indexmiete (vertraglich vereinbart)</option>
         <option value="Unklar/Keine Begründung">Unklare oder fehlende Begründung</option>
       </select>
-       <div id="detailsBegruendungVermieter" class="sub-details">
+
+      <div id="detailsBegruendungVermieter" class="sub-details">
         <label for="textBegruendungVermieter">Ggf. Details zur Begründung des Vermieters (z.B. Name des Mietspiegels, Adressen der Vergleichswohnungen):</label>
-        <textarea id="textBegruendungVermieter" rows="3"></textarea>
+        <textarea id="textBegruendungVermieter" rows="3" autocomplete="off"></textarea>
       </div>
     </fieldset>
-    
+
     <fieldset>
       <legend>4. Gründe für Ihre (teilweise) Ablehnung / Ihren Widerspruch</legend>
       <p class="info-box">Wählen Sie die zutreffenden Gründe aus und erläutern Sie diese. Sie müssen nicht allen Punkten zustimmen oder widersprechen.</p>
@@ -86,7 +128,7 @@
       </div>
       <div id="detailsFormelleFehler" class="sub-details">
         <label for="textFormelleFehler">Erläuterung der formellen Fehler: <small>(z.B. fehlende Begründung, falsche Adressierung, nicht in Textform, falscher Absender)</small></label>
-        <textarea id="textFormelleFehler" rows="3" placeholder="z.B. Das Schreiben wurde nicht von allen Vermietern unterschrieben. / Es fehlt eine nachvollziehbare Begründung."></textarea>
+        <textarea id="textFormelleFehler" rows="3" placeholder="z.B. Das Schreiben wurde nicht von allen Vermietern unterschrieben. / Es fehlt eine nachvollziehbare Begründung." autocomplete="off"></textarea>
       </div>
 
       <div class="checkbox-group" style="margin-top: 1rem;">
@@ -95,7 +137,7 @@
       <div id="detailsJahressperrfrist" class="sub-details">
         <label for="textJahressperrfrist">Erläuterung zur Jahressperrfrist: <small>(Die Miete muss bei Wirksamwerden der Erhöhung 15 Monate unverändert sein. Das Schreiben darf frühestens 12 Monate nach der letzten Erhöhung zugehen.)</small></label>
         <label for="datumLetzteMieterhoehung">Datum der letzten wirksamen Mieterhöhung (oder Mietbeginn, falls erste Erhöhung):</label>
-        <input type="date" id="datumLetzteMieterhoehung">
+        <input type="date" id="datumLetzteMieterhoehung" autocomplete="off">
       </div>
 
       <div class="checkbox-group" style="margin-top: 1rem;">
@@ -104,9 +146,9 @@
       <div id="detailsKappungsgrenze" class="sub-details">
         <label for="textKappungsgrenze">Erläuterung zur Kappungsgrenze: <small>(Die Miete darf innerhalb von 3 Jahren nicht um mehr als 20% bzw. in Gebieten mit angespanntem Wohnungsmarkt um 15% steigen. Geben Sie die Miete vor 3 Jahren an.)</small></label>
         <label for="mieteVor3Jahren">Monatliche Kaltmiete vor genau 3 Jahren:</label>
-        <input type="number" id="mieteVor3Jahren" step="0.01" placeholder="z.B. 600.00">
+        <input type="number" id="mieteVor3Jahren" step="0.01" placeholder="z.B. 600.00" inputmode="decimal" autocomplete="off">
         <label for="kappungsgrenzeProzent">Gilt für Ihren Wohnort eine reduzierte Kappungsgrenze von 15%?</label>
-        <select id="kappungsgrenzeProzent">
+        <select id="kappungsgrenzeProzent" autocomplete="off">
             <option value="20" selected>Nein, es gelten 20%</option>
             <option value="15">Ja, es gelten 15%</option>
         </select>
@@ -117,25 +159,25 @@
       </div>
       <div id="detailsVergleichsmiete" class="sub-details">
         <label for="textVergleichsmiete">Erläuterung zur ortsüblichen Vergleichsmiete: <small>(Begründen Sie, warum die geforderte Miete zu hoch ist. Verweisen Sie auf den lokalen Mietspiegel, Vergleichswohnungen oder Gutachten. Nennen Sie ggf. den Wert aus dem Mietspiegel.)</small></label>
-        <textarea id="textVergleichsmiete" rows="4" placeholder="z.B. Laut Mietspiegel 2024 für Musterstadt beträgt die Obergrenze für vergleichbare Wohnungen X EUR/qm. Die geforderte Miete liegt darüber. / Die genannten Vergleichswohnungen sind nicht mit meiner Wohnung vergleichbar, weil..."></textarea>
+        <textarea id="textVergleichsmiete" rows="4" placeholder="z.B. Laut Mietspiegel 2024 für Musterstadt beträgt die Obergrenze für vergleichbare Wohnungen X EUR/qm. ..." autocomplete="off"></textarea>
       </div>
-      
+
       <div class="checkbox-group" style="margin-top: 1rem;">
         <label><input type="checkbox" name="widerspruchsgrund" value="modernisierung"> Unstimmigkeiten bei Mieterhöhung nach Modernisierung (§ 559 BGB)</label>
       </div>
       <div id="detailsModernisierung" class="sub-details">
         <label for="textModernisierung">Erläuterung zu Unstimmigkeiten bei Modernisierungsmieterhöhung: <small>(z.B. keine echte Modernisierung, sondern nur Instandhaltung; Kosten falsch umgelegt; Ankündigung fehlerhaft; Härtefall)</small></label>
-        <textarea id="textModernisierung" rows="4" placeholder="z.B. Die Maßnahme XY war eine reine Instandsetzung und keine Modernisierung. / Die umgelegten Kosten sind nicht nachvollziehbar/zu hoch."></textarea>
+        <textarea id="textModernisierung" rows="4" placeholder="z.B. Die Maßnahme XY war eine reine Instandsetzung und keine Modernisierung. ..." autocomplete="off"></textarea>
       </div>
 
       <label for="ergaenzendeArgumenteMieterhoehung" style="margin-top: 1.5rem;">Weitere/ergänzende Argumente und Erläuterungen:</label>
-      <textarea id="ergaenzendeArgumenteMieterhoehung" rows="5" placeholder="Hier können Sie spezifisch auf einzelne Punkte des Mieterhöhungsschreibens eingehen oder weitere wichtige Aspekte anführen."></textarea>
+      <textarea id="ergaenzendeArgumenteMieterhoehung" rows="5" placeholder="Hier können Sie spezifisch auf einzelne Punkte des Mieterhöhungsschreibens eingehen..." autocomplete="off"></textarea>
     </fieldset>
 
     <fieldset>
         <legend>6. Ihre Entscheidung / Forderung</legend>
         <label for="entscheidungMieter">Wie möchten Sie auf das Mieterhöhungsverlangen reagieren?</label>
-        <select id="entscheidungMieter" required>
+        <select id="entscheidungMieter" required autocomplete="off">
             <option value="">Bitte wählen...</option>
             <option value="zustimmung_voll">Ich stimme der Mieterhöhung in voller Höhe zu.</option>
             <option value="zustimmung_teilweise">Ich stimme der Mieterhöhung nur teilweise zu (Details siehe Begründung).</option>
@@ -143,13 +185,13 @@
         </select>
         <div id="zustimmungTeilweiseDetails" class="sub-details">
             <label for="zustimmungBetrag">Wenn teilweise Zustimmung: Bis zu welchem Betrag (neue Kaltmiete) stimmen Sie zu?</label>
-            <input type="number" id="zustimmungBetrag" step="0.01" placeholder="z.B. 680.00">
+            <input type="number" id="zustimmungBetrag" step="0.01" placeholder="z.B. 680.00" inputmode="decimal" autocomplete="off">
         </div>
         <label for="forderungMieterhoehung" style="margin-top:1rem;">Zusätzliche Forderungen/Anmerkungen an den Vermieter (optional):</label>
-        <textarea id="forderungMieterhoehung" rows="3" placeholder="z.B. Ich bitte um eine korrigierte Berechnung. / Ich bitte um ein Gespräch zur Klärung."></textarea>
+        <textarea id="forderungMieterhoehung" rows="3" placeholder="z.B. Ich bitte um eine korrigierte Berechnung. ..." autocomplete="off"></textarea>
     </fieldset>
 
-     <fieldset>
+    <fieldset>
         <legend>7. Beizufügende Anlagen (optional)</legend>
         <div class="checkbox-group">
             <label><input type="checkbox" name="anlagenMieterhoehung" value="Kopie des Mieterhöhungsschreibens"> Kopie des Mieterhöhungsschreibens</label>
@@ -158,7 +200,7 @@
             <label><input type="checkbox" name="anlagenMieterhoehung" value="Eigene Berechnungen / Gegenüberstellungen"> Eigene Berechnungen / Gegenüberstellungen</label>
         </div>
         <label for="anlageSonstigesMieterhoehung">Sonstige Anlagen:</label>
-        <input type="text" id="anlageSonstigesMieterhoehung">
+        <input type="text" id="anlageSonstigesMieterhoehung" autocomplete="off">
     </fieldset>
 
     <div class="button-group">
@@ -186,13 +228,11 @@
 
 <footer>
   <div class="mini-footer-hint">
-  <p>Brauchen Sie mehr Unterstützung bei Anträgen, Behördenbriefen oder komplexen Schreiben?</p>
-  <a href="https://clerion.de" class="mini-footer-link">Clerion - Ihr digitaler Behörden-Assistent</a>
+    <p>Brauchen Sie mehr Unterstützung bei Anträgen, Behördenbriefen oder komplexen Schreiben?</p>
+    <a href="https://clerion.de" class="mini-footer-link">Clerion - Ihr digitaler Behörden-Assistent</a>
   </div>
-    <p>&copy; 2025 Mieter-Lotse | <a href="über.html">Über uns</a> | <a href="index.html">Zurück zur Startseite</a> | <a href="info-mieterhoehung.html">Infos Mieterhöhung</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+  <p>&copy; 2025 Mieter-Lotse | <a href="über.html">Über uns</a> | <a href="index.html">Zurück zur Startseite</a> | <a href="info-mieterhoehung.html">Infos Mieterhöhung</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
 </footer>
 
 </body>
 </html>
-
-

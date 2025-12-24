@@ -2,149 +2,211 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Antrag auf Erlaubnis zur Untervermietung erstellen</title>
-  <meta name="description" content="Erstellen Sie hier Ihren Antrag an den Vermieter auf Erlaubnis zur Untervermietung eines Teils Ihrer Wohnung. Begründen Sie Ihr berechtigtes Interesse.">
-  <meta name="keywords" content="Antrag Untervermietung, Erlaubnis Untervermietung, Mietrecht, Mieter, Vermieter, Untermieter, berechtigtes Interesse, §553 BGB, Vorlage, Generator">
+  <title>Erlaubnis Untervermietung beantragen | § 553 BGB | Mieter-Lotse</title>
+  <meta name="description" content="Antrag auf Erlaubnis zur Untervermietung eines Teils der Wohnung. Mit Begründung des berechtigten Interesses nach § 553 BGB und Angaben zum Untermieter. Kostenlos, ohne Registrierung.">
+  <meta name="robots" content="index,follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/logo-lotse-fav.png">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script defer src="untervermietung_antrag_script.js"></script>
   <link rel="stylesheet" href="/css/generator.css">
-</head>
-<body>
 
+  <!-- Schema.org (YMYL/Legal) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Antrag auf Erlaubnis zur Untervermietung",
+    "description": "Generator für einen Antrag auf Zustimmung zur Untervermietung eines Teils des Wohnraums nach § 553 BGB.",
+    "inLanguage": "de",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Mieter-Lotse",
+      "url": "https://mieter-lotse.de"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Mieter-Lotse",
+      "url": "https://mieter-lotse.de"
+    },
+    "about": [
+      { "@type": "Thing", "name": "Untervermietung" },
+      { "@type": "Thing", "name": "BGB § 553" },
+      { "@type": "Thing", "name": "BGB § 540" }
+    ],
+    "lastReviewed": "2025-12-13",
+    "reviewedBy": { "@type": "Organization", "name": "Mieter-Lotse Redaktion" }
+  }
+  </script>
+</head>
+
+<body>
   <header class="site-header">
     <a href="index.html" class="site-logo">Mieter-Lotse</a>
-</header>
+  </header>
 
-<div class="page-container">
-  <h1>Antrag auf Erlaubnis zur Untervermietung</h1>
-  <p class="info-box">
-    Mit diesem Formular können Sie Ihren Vermieter um die Erlaubnis zur Untervermietung eines Teils Ihrer Wohnung bitten.
-    Ein Anspruch auf Erlaubnis besteht oft, wenn Sie ein berechtigtes Interesse nachweisen können, das nach Abschluss des Mietvertrages entstanden ist.
-    Weitere Informationen finden Sie auf unserer <a href="info-untervermietung.html">Info-Seite zur Untervermietung</a>.
-  </p>
-  <p class="warning-box"><strong>Wichtig:</strong> Vermieten Sie niemals ohne die schriftliche Erlaubnis Ihres Vermieters unter! Dies kann ein Kündigungsgrund sein.</p>
-<p class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 10px;">
-  <strong>Hinweis:</strong> Dieses Tool ersetzt keine Rechtsberatung. Es dient der allgemeinen Unterstützung bei der Antragstellung. Bei Unsicherheiten wenden Sie sich bitte an eine anerkannte Beratungsstelle oder einen Rechtsanwalt.
-</p>
-<p class="highlight-box" style="background-color: #fff3f3; border-left: 4px solid #e53935; padding: 10px; margin-top: 10px;">
-  <strong>Technischer Hinweis:</strong> Um das PDF erfolgreich herunterzuladen, öffnen Sie diese Seite bitte in einem Internet-Browser wie <strong>Chrome, Firefox oder Safari</strong>. In der Google-App (z. B. über die Suchleiste auf dem Startbildschirm) funktioniert der Download leider nicht zuverlässig.
-</p>
-<div class="highlight-box pruefdatum-box" role="note" aria-label="Zuletzt geprüft">
-  <p><strong>Zuletzt geprüft:</strong> <span id="pruefdatum">13.12.2025</span></p>
-</div>
+  <div class="page-container">
+    <h1>Antrag auf Erlaubnis zur Untervermietung</h1>
 
-  <form id="untervermietungAntragForm">
-    <fieldset>
-      <legend>1. Angaben zum Hauptmieter / zur Hauptmieterin</legend>
-      <label for="hmName">Vor- und Nachname (aller im Hauptmietvertrag genannten Mieter):</label>
-      <textarea id="hmName" rows="2" required placeholder="z.B. Erika Mustermann und Max Mustermann"></textarea>
-      <label for="hmAdresse">Anschrift der Mietwohnung (Straße, Hausnr., PLZ, Ort, ggf. Etage/Wohnungsnummer):</label>
-      <textarea id="hmAdresse" rows="3" required></textarea>
-    </fieldset>
+    <p class="info-box">
+      Mit diesem Formular können Sie Ihren Vermieter um die Erlaubnis bitten, <strong>einen Teil</strong> Ihrer Wohnung unterzuvermieten.
+      Ein Anspruch auf Erlaubnis kann bestehen, wenn nach Abschluss des Mietvertrages ein berechtigtes Interesse entsteht (§ 553 Abs. 1 S. 1 BGB).
+      Der Vermieter darf die Erlaubnis u.a. verweigern, wenn ein wichtiger Grund in der Person des Dritten vorliegt, Überbelegung droht oder die Überlassung aus sonstigen Gründen unzumutbar wäre (§ 553 Abs. 1 S. 2 BGB). 
+    </p>
 
-    <fieldset>
-      <legend>2. Angaben zum Vermieter / zur Hausverwaltung</legend>
-      <label for="vermieterName">Name des Vermieters / der Hausverwaltung:</label>
-      <input type="text" id="vermieterName" required>
-      <label for="vermieterAdresse">Anschrift des Vermieters / der Hausverwaltung:</label>
-      <textarea id="vermieterAdresse" rows="3" required></textarea>
-    </fieldset>
+    <p class="info-box">
+      <strong>Wichtig:</strong> Ohne Erlaubnis des Vermieters ist die Gebrauchsüberlassung an Dritte grundsätzlich nicht zulässig (§ 540 Abs. 1 S. 1 BGB).
+      Verweigert der Vermieter die Erlaubnis, kann (je nach Fall) ein außerordentliches Kündigungsrecht des Mieters in Betracht kommen (§ 540 Abs. 1 S. 2 BGB). 
+      Außerdem kann der Vermieter die Erlaubnis von einer angemessenen Mieterhöhung abhängig machen (§ 553 Abs. 2 BGB). 
+    </p>
 
-    <fieldset>
-      <legend>3. Angaben zur geplanten Untervermietung</legend>
-      <label for="untervermieteterTeil">Welcher Teil der Wohnung soll untervermietet werden? <small>(Genaue Bezeichnung und Größe)</small></label>
-      <input type="text" id="untervermieteterTeil" required placeholder="z.B. Ein Zimmer mit ca. 15 qm zur Hofseite">
-      <label for="anzahlPersonenGesamt">Wie viele Personen würden nach der Untervermietung insgesamt in der Wohnung leben (inklusive Ihnen und dem/den Untermieter:innen)?</label>
-      <input type="number" id="anzahlPersonenGesamt" min="1" required placeholder="z.B. 3">
-      <label for="geplanterBeginnUntermiete">Geplanter Beginn der Untervermietung (Datum):</label>
-      <input type="date" id="geplanterBeginnUntermiete" required>
-      <label for="geplanteDauerUntermiete">Geplante Dauer der Untervermietung (optional):</label>
-      <input type="text" id="geplanteDauerUntermiete" placeholder="z.B. 6 Monate, unbefristet">
-    </fieldset>
+    <p class="info-box">
+      <strong>Hinweis zur Datenspeicherung:</strong>
+      Die Funktionen „Eingaben speichern“ und „Gespeicherte Eingaben laden“ nutzen den localStorage Ihres Browsers (gerät-/browserbezogen).
+      Es findet dabei keine automatische Übermittlung Ihrer Formulardaten an Mieter-Lotse statt.
+    </p>
 
-    <fieldset>
-      <legend>4. Angaben zur Person des/der vorgesehenen Untermieters/Untermieterin</legend>
-      <p class="info-box"><small>Ihr Vermieter hat ein Recht auf Informationen über die Person, an die Sie untervermieten möchten, um prüfen zu können, ob wichtige Gründe gegen diese Person sprechen.</small></p>
-      <label for="umName">Vollständiger Name des/der potenziellen Untermieters/Untermieterin:</label>
-      <input type="text" id="umName" required>
-      <label for="umGeburtsdatum">Geburtsdatum des/der Untermieters/Untermieterin (optional):</label>
-      <input type="date" id="umGeburtsdatum">
-      <label for="umBeruf">Aktueller Beruf/Tätigkeit des/der Untermieters/Untermieterin (optional):</label>
-      <input type="text" id="umBeruf">
-      <label for="umAnzahlPersonen">Anzahl der Personen, die mit dem/der Untermieter:in einziehen würden (inkl. Untermieter:in selbst):</label>
-      <input type="number" id="umAnzahlPersonen" min="1" value="1" required>
-      <label for="umVerhaeltnis">Verhältnis zu Ihnen (falls zutreffend, optional):</label>
-      <input type="text" id="umVerhaeltnis" placeholder="z.B. Freund/in, Kollege/Kollegin, keine Beziehung">
-    </fieldset>
+    <p class="info-box" style="background-color:#fff8e1; border-left:4px solid #ff9800; padding:10px; margin-top:10px;">
+      <strong>Wichtiger Hinweis:</strong> Dieses Tool ersetzt keine Rechtsberatung.
+      Ob die Voraussetzungen im Einzelfall vorliegen (z.B. „berechtigtes Interesse“, „Überbelegung“, „wichtiger Grund“) hängt von den konkreten Umständen ab. 
+    </p>
 
-    <fieldset>
-      <legend>5. Begründung Ihres berechtigten Interesses an der Untervermietung</legend>
-      <p class="info-box">Ein Anspruch auf Erlaubnis zur Untervermietung eines Teils der Wohnung besteht oft, wenn Sie ein berechtigtes Interesse haben, das nach Abschluss Ihres Mietvertrages entstanden ist (z.B. finanzielle Gründe, persönliche Gründe wie Bildung einer WG, Aufnahme einer Pflegeperson).</p>
-      <label for="berechtigtesInteresseGrund">Was ist Ihr berechtigtes Interesse an der Untervermietung? <small>(Wählen Sie den Hauptgrund)</small></label>
-      <select id="berechtigtesInteresseGrund" required>
-        <option value="">Bitte wählen...</option>
-        <option value="finanziell">Finanzielle Gründe (z.B. Verringerung der Mietbelastung)</option>
-        <option value="persoenlich_wg">Persönliche Gründe (z.B. Gründung einer Wohngemeinschaft, Gesellschaft)</option>
-        <option value="persoenlich_pflege">Persönliche Gründe (z.B. Aufnahme einer Pflegeperson oder eines Familienmitglieds)</option>
-        <option value="abwesenheit">Längere eigene Abwesenheit (um Wohnung zu halten)</option>
-        <option value="sonstiges">Sonstiges berechtigtes Interesse</option>
-      </select>
-      <label for="berechtigtesInteresseEntstehung">Wann ist dieses berechtigte Interesse entstanden? <small>(Nach Abschluss Ihres Hauptmietvertrages?)</small></label>
-      <input type="text" id="berechtigtesInteresseEntstehung" required placeholder="z.B. Nach Auszug meines Partners am TT.MM.JJJJ / Seit meiner Arbeitslosigkeit am TT.MM.JJJJ">
-      <label for="berechtigtesInteresseErlaeuterung">Detailliertere Erläuterung Ihres berechtigten Interesses: <small>(Warum ist die Untervermietung für Sie wichtig und notwendig geworden?)</small></label>
-      <textarea id="berechtigtesInteresseErlaeuterung" rows="5" required></textarea>
-    </fieldset>
+    <p class="highlight-box" style="background-color:#fff3f3; border-left:4px solid #e53935; padding:10px; margin-top:10px;">
+      <strong>Technischer Hinweis:</strong> Um das PDF erfolgreich herunterzuladen, öffnen Sie diese Seite bitte in einem Internet-Browser wie <strong>Chrome, Firefox oder Safari</strong>. In der Google-App (z. B. über die Suchleiste auf dem Startbildschirm) funktioniert der Download leider nicht zuverlässig.
+    </p>
 
-    <fieldset>
-      <legend>6. Zusätzliche Anmerkungen / Bitte um Zustimmung (optional)</legend>
-      <label for="zusatzTextUntermiete">Hier können Sie weitere Anmerkungen machen oder Ihre Bitte formulieren:</label>
-      <textarea id="zusatzTextUntermiete" rows="3" placeholder="z.B. Ich versichere Ihnen, dass durch die Untervermietung keine Überbelegung entsteht und der Hausfrieden nicht gestört wird. Ich bitte höflich um Ihre schriftliche Erlaubnis bis zum [Datum]."></textarea>
-    </fieldset>
-    
-    <fieldset>
+    <div class="highlight-box pruefdatum-box" role="note" aria-label="Redaktionell geprüft">
+      <p><strong>Redaktionell geprüft:</strong> <span id="pruefdatum">23.12.2025</span></p>
+    </div>
+
+    <form id="untervermietungAntragForm" autocomplete="on">
+      <fieldset>
+        <legend>1. Angaben zum Hauptmieter / zur Hauptmieterin</legend>
+
+        <label for="hmName">Vor- und Nachname (aller im Hauptmietvertrag genannten Mieter):</label>
+        <textarea id="hmName" name="hmName" rows="2" required placeholder="z.B. Erika Mustermann und Max Mustermann" autocomplete="name"></textarea>
+
+        <label for="hmAdresse">Anschrift der Mietwohnung (Straße, Hausnr., PLZ, Ort, ggf. Etage/Wohnungsnummer):</label>
+        <textarea id="hmAdresse" name="hmAdresse" rows="3" required autocomplete="street-address"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. Angaben zum Vermieter / zur Hausverwaltung</legend>
+
+        <label for="vermieterName">Name des Vermieters / der Hausverwaltung:</label>
+        <input type="text" id="vermieterName" name="vermieterName" required autocomplete="organization">
+
+        <label for="vermieterAdresse">Anschrift des Vermieters / der Hausverwaltung:</label>
+        <textarea id="vermieterAdresse" name="vermieterAdresse" rows="3" required autocomplete="street-address"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. Angaben zur geplanten Untervermietung</legend>
+
+        <label for="untervermieteterTeil">Welcher Teil der Wohnung soll untervermietet werden? <small>(Genaue Bezeichnung und Größe)</small></label>
+        <input type="text" id="untervermieteterTeil" name="untervermieteterTeil" required placeholder="z.B. ein Zimmer mit ca. 15 qm zur Hofseite" autocomplete="off">
+
+        <label for="anzahlPersonenGesamt">Wie viele Personen würden insgesamt in der Wohnung leben (inkl. Ihnen und Untermieter:innen)?</label>
+        <input type="number" id="anzahlPersonenGesamt" name="anzahlPersonenGesamt" min="1" required placeholder="z.B. 3" inputmode="numeric" autocomplete="off">
+
+        <label for="geplanterBeginnUntermiete">Geplanter Beginn der Untervermietung (Datum):</label>
+        <input type="date" id="geplanterBeginnUntermiete" name="geplanterBeginnUntermiete" required autocomplete="off">
+
+        <label for="geplanteDauerUntermiete">Geplante Dauer der Untervermietung (optional):</label>
+        <input type="text" id="geplanteDauerUntermiete" name="geplanteDauerUntermiete" placeholder="z.B. 6 Monate, unbefristet" autocomplete="off">
+      </fieldset>
+
+      <fieldset>
+        <legend>4. Angaben zur Person des/der vorgesehenen Untermieters/Untermieterin</legend>
+        <p class="info-box"><small>Der Vermieter darf Informationen zur Person verlangen, um z.B. zu prüfen, ob ein wichtiger Grund gegen die Person spricht (§ 553 Abs. 1 S. 2 BGB). </small></p>
+
+        <label for="umName">Vollständiger Name des/der potenziellen Untermieters/Untermieterin:</label>
+        <input type="text" id="umName" name="umName" required autocomplete="name">
+
+        <label for="umGeburtsdatum">Geburtsdatum (optional):</label>
+        <input type="date" id="umGeburtsdatum" name="umGeburtsdatum" autocomplete="bday">
+
+        <label for="umBeruf">Aktueller Beruf/Tätigkeit (optional):</label>
+        <input type="text" id="umBeruf" name="umBeruf" autocomplete="organization-title">
+
+        <label for="umAnzahlPersonen">Anzahl der Personen, die mit einziehen (inkl. Untermieter:in):</label>
+        <input type="number" id="umAnzahlPersonen" name="umAnzahlPersonen" min="1" value="1" required inputmode="numeric" autocomplete="off">
+
+        <label for="umVerhaeltnis">Verhältnis zu Ihnen (optional):</label>
+        <input type="text" id="umVerhaeltnis" name="umVerhaeltnis" placeholder="z.B. Freund/in, Kollege/Kollegin, keine Beziehung" autocomplete="off">
+      </fieldset>
+
+      <fieldset>
+        <legend>5. Begründung Ihres berechtigten Interesses</legend>
+
+        <p class="info-box">
+          Anspruchsvoraussetzung ist, dass das berechtigte Interesse <strong>nach Abschluss</strong> des Mietvertrages entsteht (§ 553 Abs. 1 S. 1 BGB). 
+          Der Antrag sollte daher erklären, was sich seit Vertragsschluss geändert hat und warum die Untervermietung nötig ist.
+        </p>
+
+        <label for="berechtigtesInteresseGrund">Was ist Ihr berechtigtes Interesse? <small>(Hauptgrund)</small></label>
+        <select id="berechtigtesInteresseGrund" name="berechtigtesInteresseGrund" required autocomplete="off">
+          <option value="">Bitte wählen...</option>
+          <option value="finanziell">Finanzielle Gründe (z.B. Verringerung der Mietbelastung)</option>
+          <option value="persoenlich_wg">Persönliche Gründe (z.B. WG/gesellschaftliche Gründe)</option>
+          <option value="persoenlich_pflege">Persönliche Gründe (z.B. Pflegeperson/Familienmitglied)</option>
+          <option value="abwesenheit">Längere eigene Abwesenheit (um Wohnung zu halten)</option>
+          <option value="sonstiges">Sonstiges berechtigtes Interesse</option>
+        </select>
+
+        <label for="berechtigtesInteresseEntstehung">Wann ist dieses Interesse entstanden? <small>(Nach Abschluss des Hauptmietvertrages?)</small></label>
+        <input type="text" id="berechtigtesInteresseEntstehung" name="berechtigtesInteresseEntstehung" required placeholder="z.B. Nach Auszug meines Partners am TT.MM.JJJJ" autocomplete="off">
+
+        <label for="berechtigtesInteresseErlaeuterung">Erläuterung: <small>Warum ist die Untervermietung wichtig/notwendig?</small></label>
+        <textarea id="berechtigtesInteresseErlaeuterung" name="berechtigtesInteresseErlaeuterung" rows="5" required autocomplete="off"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>6. Zusätzliche Anmerkungen / Bitte um Zustimmung (optional)</legend>
+        <label for="zusatzTextUntermiete">Weitere Anmerkungen:</label>
+        <textarea id="zusatzTextUntermiete" name="zusatzTextUntermiete" rows="3"
+          placeholder="z.B. Ich bitte um schriftliche Zustimmung bis zum … . Ich versichere, dass die Wohnung nicht überbelegt wird."></textarea>
+      </fieldset>
+
+      <fieldset>
         <legend>7. Beizufügende Anlagen (optional)</legend>
         <div class="checkbox-group">
-            <label><input type="checkbox" name="anlagenUntermiete" value="Kopie des Personalausweises des/der Untermieter:in"> Kopie des Personalausweises des/der Untermieter:in</label>
-            <label><input type="checkbox" name="anlagenUntermiete" value="Ggf. Einkommensnachweise des/der Untermieter:in"> Ggf. Einkommensnachweise des/der Untermieter:in</label>
-            <label><input type="checkbox" name="anlagenUntermiete" value="Ggf. Entwurf des Untermietvertrages"> Ggf. Entwurf des Untermietvertrages</label>
+          <label><input type="checkbox" name="anlagenUntermiete" value="Personendaten/kurze Vorstellung des/der Untermieter:in"> Personendaten/kurze Vorstellung des/der Untermieter:in</label>
+          <label><input type="checkbox" name="anlagenUntermiete" value="Ggf. Entwurf des Untermietvertrages"> Ggf. Entwurf des Untermietvertrages</label>
         </div>
         <label for="anlageSonstigesUntermiete">Sonstige Anlagen:</label>
-        <input type="text" id="anlageSonstigesUntermiete">
-    </fieldset>
+        <input type="text" id="anlageSonstigesUntermiete" name="anlageSonstigesUntermiete" autocomplete="off">
+      </fieldset>
 
-    <div class="button-group">
-      <button type="button" id="saveBtnUntermiete" class="button-secondary">Eingaben speichern</button>
-      <button type="button" id="loadBtnUntermiete" class="button-secondary">Gespeicherte Eingaben laden</button>
-      <button type="submit" class="button-primary">📄 Antrag auf Erlaubnis-PDF erstellen</button>
-    </div>
-  </form>
-</div>
-
-<div id="spendenPopupUntermiete" class="popup-overlay">
-  <div class="popup-content">
-    <h2>Danke für deine Nutzung 💛</h2>
-    <p>Wenn dir dieses Tool geholfen hat, unterstütze das Projekt gerne mit einer kleinen Spende:</p>
-    <form action="https://www.paypal.com/donate" method="post" target="_blank">
-      <input type="hidden" name="business" value="info@kassen-lotse.de" />
-      <input type="hidden" name="charset" value="utf-8">
-      <input type="hidden" name="item_name" value="Unterstützung für das Projekt Mieter-Lotse" />
-      <input type="hidden" name="currency_code" value="EUR" />
-      <input type="submit" value="Spenden mit PayPal" />
+      <div class="button-group">
+        <button type="button" id="saveBtnUntermiete" class="button-secondary">Eingaben speichern</button>
+        <button type="button" id="loadBtnUntermiete" class="button-secondary">Gespeicherte Eingaben laden</button>
+        <button type="submit" class="button-primary">📄 Antrag als PDF erstellen</button>
+      </div>
     </form>
-    <button id="closePopupBtnUntermiete" class="popup-close-button">Schließen</button>
   </div>
-</div>
 
-<footer>
-  <div class="mini-footer-hint">
-  <p>Brauchen Sie mehr Unterstützung bei Anträgen, Behördenbriefen oder komplexen Schreiben?</p>
-  <a href="https://clerion.de" class="mini-footer-link">Clerion - Ihr digitaler Behörden-Assistent</a>
+  <div id="spendenPopupUntermiete" class="popup-overlay">
+    <div class="popup-content">
+      <h2>Danke für deine Nutzung</h2>
+      <p>Wenn dieses Tool geholfen hat, unterstützt eine kleine Spende das Projekt gerne.</p>
+      <form action="https://www.paypal.com/donate" method="post" target="_blank">
+        <input type="hidden" name="business" value="info@kassen-lotse.de" />
+        <input type="hidden" name="charset" value="utf-8">
+        <input type="hidden" name="item_name" value="Unterstützung für das Projekt Mieter-Lotse" />
+        <input type="hidden" name="currency_code" value="EUR" />
+        <input type="submit" value="Spenden mit PayPal" />
+      </form>
+      <button id="closePopupBtnUntermiete" class="popup-close-button">Schließen</button>
+    </div>
   </div>
+
+  <footer>
+    <div class="mini-footer-hint">
+      <p>Brauchen Sie mehr Unterstützung bei Anträgen, Behördenbriefen oder komplexen Schreiben?</p>
+      <a href="https://clerion.de" class="mini-footer-link">Clerion - Ihr digitaler Behörden-Assistent</a>
+    </div>
     <p>&copy; 2025 Mieter-Lotse | <a href="über.html">Über uns</a> | <a href="index.html">Zurück zur Startseite</a> | <a href="info-untervermietung.html">Infos Untervermietung</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
-</footer>
-
+  </footer>
 </body>
 </html>
-

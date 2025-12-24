@@ -2,82 +2,147 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Mietvertrag Kündigungsschreiben erstellen (als Mieter)</title>
-  <meta name="description" content="Erstellen Sie hier Ihr Kündigungsschreiben für Ihren Mietvertrag als Mieter. Einfach ausfüllen und PDF generieren.">
-  <meta name="keywords" content="Kündigung Mietvertrag, Mieter kündigen, Kündigungsschreiben Wohnung, Vorlage, Generator, Mietrecht">
+  <title>Mietvertrag kündigen (Mieter) | Schriftform § 568 BGB | Frist § 573c BGB | Mieter-Lotse</title>
+  <meta name="description" content="Erstellen Sie ein Kündigungsschreiben für Ihren Mietvertrag als Mieter:in. Mit Hinweisen zu Schriftform (§ 568 BGB) und Kündigungsfrist (§ 573c BGB). Kostenlos, ohne Registrierung.">
+  <meta name="robots" content="index,follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/logo-lotse-fav.png">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script defer src="kuendigung-mieter_script.js"></script>
   <link rel="stylesheet" href="/css/generator.css">
-</head>
-<body>
 
-  <header class="site-header">
-    <a href="index.html" class="site-logo">Mieter-Lotse</a>
+  <!-- Schema.org (YMYL/Legal) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Mietvertrag Kündigungsschreiben erstellen (als Mieter)",
+    "description": "Generator für ein Kündigungsschreiben des Mieters mit Hinweisen zu Schriftform und Fristen.",
+    "inLanguage": "de",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Mieter-Lotse",
+      "url": "https://mieter-lotse.de"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Mieter-Lotse",
+      "url": "https://mieter-lotse.de"
+    },
+    "about": [
+      { "@type": "Thing", "name": "Kündigung Mietvertrag" },
+      { "@type": "Thing", "name": "BGB § 568" },
+      { "@type": "Thing", "name": "BGB § 573c" }
+    ],
+    "lastReviewed": "2025-12-13",
+    "reviewedBy": { "@type": "Organization", "name": "Mieter-Lotse Redaktion" }
+  }
+  </script>
+</head>
+
+<body>
+<header class="site-header">
+  <a href="index.html" class="site-logo">Mieter-Lotse</a>
 </header>
 
 <div class="page-container">
   <h1>Kündigungsschreiben für Ihren Mietvertrag erstellen</h1>
+
   <p class="info-box">
-    Mit diesem Formular können Sie als Mieter:in ein formgerechtes Kündigungsschreiben für Ihren Mietvertrag erstellen.
-    Beachten Sie unbedingt die Kündigungsfristen und die notwendige Schriftform.
+    Mit diesem Formular können Sie als Mieter:in ein formgerechtes Kündigungsschreiben erstellen.
+    <strong>Schriftform:</strong> Die Kündigung eines Wohnraummietverhältnisses bedarf der schriftlichen Form (§ 568 Abs. 1 BGB).
+    <strong>Frist:</strong> Die Kündigung ist spätestens am dritten Werktag eines Kalendermonats zum Ablauf des übernächsten Monats zulässig (§ 573c Abs. 1 BGB). 
     Weitere Informationen finden Sie auf unserer <a href="info-kuendigung-mieter.html">Info-Seite zur Kündigung durch den Mieter</a>.
   </p>
-  <p class="warning-box"><strong>Wichtig:</strong> Eine Kündigung muss dem Vermieter fristgerecht zugehen (am besten per Einschreiben mit Rückschein). Alle im Mietvertrag genannten Mieter müssen unterschreiben!</p>
-<p class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 10px;">
-  <strong>Hinweis:</strong> Dieses Tool ersetzt keine Rechtsberatung. Es dient der allgemeinen Unterstützung bei der Antragstellung. Bei Unsicherheiten wenden Sie sich bitte an eine anerkannte Beratungsstelle oder einen Rechtsanwalt.
-</p>
-<p class="highlight-box" style="background-color: #fff3f3; border-left: 4px solid #e53935; padding: 10px; margin-top: 10px;">
-  <strong>Technischer Hinweis:</strong> Um das PDF erfolgreich herunterzuladen, öffnen Sie diese Seite bitte in einem Internet-Browser wie <strong>Chrome, Firefox oder Safari</strong>. In der Google-App (z. B. über die Suchleiste auf dem Startbildschirm) funktioniert der Download leider nicht zuverlässig.
-</p>
-<div class="highlight-box pruefdatum-box" role="note" aria-label="Zuletzt geprüft">
-  <p><strong>Zuletzt geprüft:</strong> <span id="pruefdatum">13.12.2025</span></p>
-</div>
 
-  <form id="kuendigungMieterForm">
+  <p class="warning-box">
+    <strong>Wichtig:</strong> Die Kündigung wird erst wirksam, wenn sie dem Vermieter zugeht (nachweisbarer Zugang ist entscheidend).
+    Alle im Mietvertrag genannten Mieter sollten das Kündigungsschreiben eigenhändig unterschreiben, wenn sie gemeinsam Vertragspartner sind. 
+  </p>
+
+  <p class="info-box">
+    <strong>Hinweis zur Zustellung:</strong> Ziel ist ein sicherer Zugangs-/Inhaltsnachweis (z.B. Einwurf in den Briefkasten mit Zeuge oder Einwurf-Einschreiben).
+    Ein „Einschreiben mit Rückschein“ kann scheitern, wenn es nicht angenommen/abgeholt wird; daher eher nur nutzen, wenn Annahme realistisch ist.
+  </p>
+
+  <p class="info-box">
+    <strong>Hinweis zur Datenspeicherung:</strong>
+    „Eingaben speichern/Laden“ nutzt localStorage Ihres Browsers (gerät-/browserbezogen).
+    Es findet dabei keine automatische Übermittlung Ihrer Formulardaten an Mieter-Lotse statt.
+  </p>
+
+  <p class="info-box" style="background-color:#fff8e1; border-left:4px solid #ff9800; padding:10px; margin-top:10px;">
+    <strong>Wichtiger Hinweis:</strong> Dieses Tool ersetzt keine Rechtsberatung.
+    Sonderkündigungsrechte (z.B. nach Mieterhöhung/Modernisierung) haben eigene Voraussetzungen und Fristen – prüfen Sie diese im Einzelfall.
+  </p>
+
+  <p class="highlight-box" style="background-color:#fff3f3; border-left:4px solid #e53935; padding:10px; margin-top:10px;">
+    <strong>Technischer Hinweis:</strong> Um das PDF erfolgreich herunterzuladen, öffnen Sie diese Seite bitte in einem Internet-Browser wie <strong>Chrome, Firefox oder Safari</strong>. In der Google-App (z. B. über die Suchleiste auf dem Startbildschirm) funktioniert der Download leider nicht zuverlässig.
+  </p>
+
+  <div class="highlight-box pruefdatum-box" role="note" aria-label="Redaktionell geprüft">
+    <p><strong>Redaktionell geprüft:</strong> <span id="pruefdatum">13.12.2025</span></p>
+  </div>
+
+  <form id="kuendigungMieterForm" autocomplete="on">
     <fieldset>
       <legend>1. Angaben zum Mieter / zu den Mietern</legend>
-      <label for="mieterNamen">Vollständige Namen aller im Mietvertrag genannten Mieter: <small>(Alle Mieter müssen das Schreiben später unterschreiben!)</small></label>
-      <textarea id="mieterNamen" rows="2" required placeholder="z.B. Erika Mustermann und Max Mustermann"></textarea>
-      <label for="mieterAdresse">Anschrift der gekündigten Mietwohnung (Straße, Hausnr., PLZ, Ort, ggf. Etage/Wohnungsnummer):</label>
-      <textarea id="mieterAdresse" rows="3" required></textarea>
+
+      <label for="mieterNamen">Vollständige Namen aller im Mietvertrag genannten Mieter:
+        <small>(Alle Mieter müssen das Schreiben später eigenhändig unterschreiben.)</small>
+      </label>
+      <textarea id="mieterNamen" name="mieterNamen" rows="2" required
+        placeholder="z.B. Erika Mustermann und Max Mustermann" autocomplete="name"></textarea>
+
+      <label for="mieterAdresse">Anschrift der Mietwohnung:</label>
+      <textarea id="mieterAdresse" name="mieterAdresse" rows="3" required autocomplete="street-address"></textarea>
     </fieldset>
 
     <fieldset>
       <legend>2. Angaben zum Vermieter / zur Hausverwaltung</legend>
+
       <label for="vermieterName">Name des Vermieters / der Hausverwaltung:</label>
-      <input type="text" id="vermieterName" required>
+      <input type="text" id="vermieterName" name="vermieterName" required autocomplete="organization">
+
       <label for="vermieterAdresse">Anschrift des Vermieters / der Hausverwaltung:</label>
-      <textarea id="vermieterAdresse" rows="3" required></textarea>
+      <textarea id="vermieterAdresse" name="vermieterAdresse" rows="3" required autocomplete="street-address"></textarea>
     </fieldset>
 
     <fieldset>
       <legend>3. Angaben zur Kündigung</legend>
-      <label for="mietvertragDatum">Datum des Mietvertrages (falls bekannt, optional):</label>
-      <input type="date" id="mietvertragDatum">
-      <label for="kuendigungsdatumWunsch">Gewünschtes Kündigungsdatum (Mietvertragsende): <small>(Beachten Sie die gesetzliche Kündigungsfrist von 3 Monaten zum Monatsende. Die Kündigung muss spätestens am 3. Werktag eines Monats beim Vermieter sein, um zum Ende des übernächsten Monats zu wirken.)</small></label>
-      <input type="date" id="kuendigungsdatumWunsch" required>
-      <label for="kuendigungGrund">Art der Kündigung:</label>
-      <select id="kuendigungArt" required>
+
+      <label for="mietvertragDatum">Datum des Mietvertrages (optional):</label>
+      <input type="date" id="mietvertragDatum" name="mietvertragDatum" autocomplete="off">
+
+      <label for="kuendigungsdatumWunsch">Gewünschtes Vertragsende:
+        <small>Orientierung: Kündigung spätestens am 3. Werktag eines Monats → Ende des übernächsten Monats (§ 573c Abs. 1 BGB).</small> 
+      </label>
+      <input type="date" id="kuendigungsdatumWunsch" name="kuendigungsdatumWunsch" required autocomplete="off">
+
+      <label for="kuendigungArt">Art der Kündigung:</label>
+      <select id="kuendigungArt" name="kuendigungArt" required autocomplete="off">
         <option value="ordentlich" selected>Ordentliche, fristgerechte Kündigung</option>
-        <option value="sonderkuendigung">Sonderkündigung (z.B. nach Mieterhöhung, Grund unten angeben)</option>
+        <option value="sonderkuendigung">Sonderkündigung (Grund unten angeben)</option>
       </select>
+
       <div id="sonderkuendigungGrundDetails" style="display:none;">
-        <label for="sonderkuendigungGrundText">Grund für die Sonderkündigung: <small>(Bitte genau angeben und ggf. auf das entsprechende Schreiben des Vermieters Bezug nehmen)</small></label>
-        <textarea id="sonderkuendigungGrundText" rows="3" placeholder="z.B. Sonderkündigungsrecht aufgrund der Mieterhöhung vom TT.MM.JJJJ"></textarea>
+        <label for="sonderkuendigungGrundText">Grund für die Sonderkündigung (optional, aber empfohlen):</label>
+        <textarea id="sonderkuendigungGrundText" name="sonderkuendigungGrundText" rows="3"
+          placeholder="z.B. Sonderkündigungsrecht aufgrund der Mieterhöhung vom TT.MM.JJJJ" autocomplete="off"></textarea>
       </div>
-      <label for="kuendigungZusatzText">Zusätzlicher Text für das Kündigungsschreiben (optional): <small>(z.B. Bitte um Bestätigung, Vorschlag für Übergabetermin)</small></label>
-      <textarea id="kuendigungZusatzText" rows="4" placeholder="z.B. Ich bitte um eine schriftliche Bestätigung dieser Kündigung. Für die Vereinbarung eines Termins zur Wohnungsübergabe stehe ich Ihnen gerne zur Verfügung."></textarea>
+
+      <label for="kuendigungZusatzText">Zusätzlicher Text (optional):</label>
+      <textarea id="kuendigungZusatzText" name="kuendigungZusatzText" rows="4"
+        placeholder="z.B. Bitte bestätigen Sie mir den Erhalt dieser Kündigung schriftlich. Für einen Übergabetermin stehe ich zur Verfügung." autocomplete="off"></textarea>
     </fieldset>
-    
+
     <fieldset>
-        <legend>4. Wichtige Hinweise und Bestätigung</legend>
-        <div class="checkbox-group">
-            <label><input type="checkbox" id="kenntnisFristen" required> Ich habe die Kündigungsfristen zur Kenntnis genommen.</label>
-            <label><input type="checkbox" id="alleMieterUnterschreiben" required> Ich bin mir bewusst, dass alle im Mietvertrag genannten Mieter dieses Schreiben eigenhändig unterschreiben müssen.</label>
-            <label><input type="checkbox" id="nachweisbarerVersand" required> Ich werde die Kündigung nachweisbar (z.B. per Einschreiben mit Rückschein) an den Vermieter senden.</label>
-        </div>
+      <legend>4. Hinweise & Bestätigung</legend>
+      <div class="checkbox-group">
+        <label><input type="checkbox" id="kenntnisFristen" name="kenntnisFristen" required> Ich habe die Kündigungsfristen zur Kenntnis genommen (§ 573c BGB).</label>
+        <label><input type="checkbox" id="alleMieterUnterschreiben" name="alleMieterUnterschreiben" required> Mir ist bewusst, dass die Kündigung schriftlich erfolgen muss (§ 568 BGB) und die Kündigenden eigenhändig unterschreiben sollen.</label>
+        <label><input type="checkbox" id="nachweisbarerVersand" name="nachweisbarerVersand" required> Ich werde die Kündigung so versenden/übergeben, dass der Zugang nachweisbar ist.</label>
+      </div>
     </fieldset>
 
     <div class="button-group">
@@ -90,8 +155,8 @@
 
 <div id="spendenPopupKuendigungMieter" class="popup-overlay">
   <div class="popup-content">
-    <h2>Danke für deine Nutzung 💛</h2>
-    <p>Wenn dir dieses Tool geholfen hat, unterstütze das Projekt gerne mit einer kleinen Spende:</p>
+    <h2>Danke für deine Nutzung</h2>
+    <p>Wenn dieses Tool geholfen hat, unterstützt eine kleine Spende das Projekt gerne.</p>
     <form action="https://www.paypal.com/donate" method="post" target="_blank">
       <input type="hidden" name="business" value="info@kassen-lotse.de" />
       <input type="hidden" name="charset" value="utf-8">
@@ -105,12 +170,11 @@
 
 <footer>
   <div class="mini-footer-hint">
-  <p>Brauchen Sie mehr Unterstützung bei Anträgen, Behördenbriefen oder komplexen Schreiben?</p>
-  <a href="https://clerion.de" class="mini-footer-link">Clerion - Ihr digitaler Behörden-Assistent</a>
+    <p>Brauchen Sie mehr Unterstützung bei Anträgen, Behördenbriefen oder komplexen Schreiben?</p>
+    <a href="https://clerion.de" class="mini-footer-link">Clerion - Ihr digitaler Behörden-Assistent</a>
   </div>
-    <p>&copy; 2025 Mieter-Lotse | <a href="über.html">Über uns</a> | <a href="index.html">Zurück zur Startseite</a> | <a href="info-kuendigung-mieter.html">Infos Kündigung Mieter</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+  <p>&copy; 2025 Mieter-Lotse | <a href="über.html">Über uns</a> | <a href="index.html">Zurück zur Startseite</a> | <a href="info-kuendigung-mieter.html">Infos Kündigung Mieter</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
 </footer>
 
 </body>
 </html>
-

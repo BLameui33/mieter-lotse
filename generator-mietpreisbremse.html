@@ -2,80 +2,159 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Rüge wegen Verstoß gegen Mietpreisbremse erstellen | Mieter-Lotse</title>
-  <meta name="description" content="Erstellen Sie eine formelle Rüge an Ihren Vermieter, wenn Ihre Miete gegen die Mietpreisbremse verstößt. Fordern Sie zu viel gezahlte Miete zurück und senken Sie Ihre zukünftige Miete.">
-  <meta name="keywords" content="Mietpreisbremse, Rüge, Miete senken, zu hohe Miete, Mietrecht, § 556d BGB, Mietspiegel, Vorlage, Generator">
+  <title>Rüge Mietpreisbremse erstellen | § 556d, § 556g BGB | Mieter-Lotse</title>
+  <meta name="description" content="Erstellen Sie eine Rüge wegen Verstoßes gegen die Mietpreisbremse. Hinweis: Zulässige Miethöhe bei Mietbeginn (§ 556d BGB) und Rückforderung nur nach Rüge (§ 556g BGB, inkl. 30‑Monats-Regel). Kostenlos, ohne Registrierung.">
+  <meta name="robots" content="index,follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/logo-lotse-fav.png">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script defer src="mietpreisbremse_script.js"></script>
   <link rel="stylesheet" href="/css/generator.css">
-</head>
-<body>
 
+  <!-- Schema.org (YMYL/Legal) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Rüge wegen Verstoß gegen Mietpreisbremse erstellen",
+    "description": "Generator für eine Rüge zur Mietpreisbremse (Miethöhe bei Mietbeginn, Rückforderung, Auskunft).",
+    "inLanguage": "de",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Mieter-Lotse",
+      "url": "https://mieter-lotse.de"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Mieter-Lotse",
+      "url": "https://mieter-lotse.de"
+    },
+    "about": [
+      { "@type": "Thing", "name": "Mietpreisbremse" },
+      { "@type": "Thing", "name": "BGB § 556d" },
+      { "@type": "Thing", "name": "BGB § 556g" }
+    ],
+    "lastReviewed": "2025-12-23",
+    "reviewedBy": { "@type": "Organization", "name": "Mieter-Lotse Redaktion" }
+  }
+  </script>
+</head>
+
+<body>
 <header class="site-header">
-    <a href="index.html" class="site-logo">Mieter-Lotse</a>
+  <a href="index.html" class="site-logo">Mieter-Lotse</a>
 </header>
 
 <div class="page-container">
   <h1>Rüge wegen Verstoßes gegen die Mietpreisbremse</h1>
-  <p class="info-box info">
-    Wenn in Ihrer Stadt die Mietpreisbremse gilt, darf die Miete bei Neuvermietung die ortsübliche Vergleichsmiete um maximal 10% übersteigen. Liegt Ihre Miete darüber, können Sie diesen Verstoß rügen, zu viel gezahlte Miete zurückfordern und die Miete für die Zukunft senken.
-  </p>
-  <p class="info-box warning">
-    Wichtig: Sie können Miete erst ab dem Zeitpunkt zurückfordern, an dem Ihre Rüge beim Vermieter eingeht. Handeln Sie also schnell!
-  </p>
-  <p class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 10px;">
-  <strong>Hinweis:</strong> Dieses Tool ersetzt keine Rechtsberatung. Es dient der allgemeinen Unterstützung bei der Antragstellung. Bei Unsicherheiten wenden Sie sich bitte an eine anerkannte Beratungsstelle oder einen Rechtsanwalt.
-</p>
-<p class="highlight-box" style="background-color: #fff3f3; border-left: 4px solid #e53935; padding: 10px; margin-top: 10px;">
-  <strong>Technischer Hinweis:</strong> Um das PDF erfolgreich herunterzuladen, öffnen Sie diese Seite bitte in einem Internet-Browser wie <strong>Chrome, Firefox oder Safari</strong>. In der Google-App (z. B. über die Suchleiste auf dem Startbildschirm) funktioniert der Download leider nicht zuverlässig.
-</p>
-<div class="highlight-box pruefdatum-box" role="note" aria-label="Zuletzt geprüft">
-  <p><strong>Zuletzt geprüft:</strong> <span id="pruefdatum">13.12.2025</span></p>
-</div>
 
-  <form id="mietpreisbremseForm">
+  <p class="info-box info">
+    Die Mietpreisbremse gilt nur in Gebieten, die durch Rechtsverordnung als „angespannter Wohnungsmarkt“ bestimmt sind (§ 556d Abs. 2 BGB). 
+    Liegt Ihre Wohnung in einem solchen Gebiet, darf die Miete zu Beginn des Mietverhältnisses die ortsübliche Vergleichsmiete grundsätzlich höchstens um 10% übersteigen (§ 556d Abs. 1 BGB). 
+    Liegt die vereinbarte Miete darüber, kann eine Rüge helfen, die Miethöhe überprüfen zu lassen und (je nach Fall) überzahlte Miete zurückzufordern. 
+  </p>
+
+  <p class="info-box warning">
+    <strong>Wichtig zur Rückforderung:</strong> Eine Rückforderung nicht geschuldeter Miete ist nur möglich, wenn ein Verstoß gerügt wurde (§ 556g Abs. 2 BGB). 
+    Rügt der Mieter mehr als 30 Monate nach Mietbeginn oder ist das Mietverhältnis bei Zugang der Rüge bereits beendet, kann er nur die nach Zugang der Rüge fällig gewordene Miete zurückverlangen (§ 556g Abs. 2 BGB).
+  </p>
+
+  <p class="info-box">
+    <strong>Auskunft (hilft bei Ausnahmen):</strong> Beruht die Zulässigkeit der Miete auf bestimmten Ausnahmen, muss der Vermieter darüber vor Vertragsschluss unaufgefordert Auskunft erteilen (§ 556g Abs. 1a BGB); Erklärungen müssen in Textform erfolgen (§ 556g Abs. 4 BGB).
+  </p>
+
+  <p class="info-box">
+    <strong>Hinweis zur Datenspeicherung:</strong>
+    „Speichern/Laden“ nutzt localStorage Ihres Browsers (gerät-/browserbezogen).
+    Es findet dabei keine automatische Übermittlung Ihrer Formulardaten an Mieter-Lotse statt.
+  </p>
+
+  <p class="info-box" style="background-color:#fff8e1; border-left:4px solid #ff9800; padding:10px; margin-top:10px;">
+    <strong>Wichtiger Hinweis:</strong> Dieses Tool ersetzt keine Rechtsberatung.
+    Ob die Mietpreisbremse anwendbar ist und welche Ausnahmen greifen, ist oft von Details (Ort/Verordnung, Vormiete, Neubau/Modernisierung) abhängig. 
+  </p>
+
+  <p class="highlight-box" style="background-color:#fff3f3; border-left:4px solid #e53935; padding:10px; margin-top:10px;">
+    <strong>Technischer Hinweis:</strong> Um das PDF erfolgreich herunterzuladen, öffnen Sie diese Seite bitte in einem Internet-Browser wie <strong>Chrome, Firefox oder Safari</strong>. In der Google-App (z. B. über die Suchleiste auf dem Startbildschirm) funktioniert der Download leider nicht zuverlässig.
+  </p>
+
+  <div class="highlight-box pruefdatum-box" role="note" aria-label="Redaktionell geprüft">
+    <p><strong>Redaktionell geprüft:</strong> <span id="pruefdatum">23.12.2025</span></p>
+  </div>
+
+  <form id="mietpreisbremseForm" autocomplete="on">
     <fieldset>
       <legend>1. Ihre Angaben (Mieter/in)</legend>
+
       <label for="mieterName">Vor- und Nachname:</label>
-      <input type="text" id="mieterName" required>
+      <input type="text" id="mieterName" name="mieterName" required autocomplete="name">
+
       <label for="mieterAdresse">Ihre Anschrift (Straße, Hausnr., PLZ, Ort):</label>
-      <textarea id="mieterAdresse" rows="2" required></textarea>
+      <textarea id="mieterAdresse" name="mieterAdresse" rows="2" required autocomplete="street-address"></textarea>
     </fieldset>
 
     <fieldset>
       <legend>2. Angaben zum Vermieter</legend>
+
       <label for="vermieterName">Name des Vermieters / der Hausverwaltung:</label>
-      <input type="text" id="vermieterName" required>
+      <input type="text" id="vermieterName" name="vermieterName" required autocomplete="organization">
+
       <label for="vermieterAdresse">Anschrift des Vermieters / der Hausverwaltung:</label>
-      <textarea id="vermieterAdresse" rows="3" required></textarea>
+      <textarea id="vermieterAdresse" name="vermieterAdresse" rows="3" required autocomplete="street-address"></textarea>
     </fieldset>
 
     <fieldset>
       <legend>3. Details zum Mietvertrag</legend>
+
       <label for="datumMietvertrag">Datum des Mietvertragsabschlusses:</label>
-      <input type="date" id="datumMietvertrag" required>
+      <input type="date" id="datumMietvertrag" name="datumMietvertrag" required autocomplete="off">
+
       <label for="mietbeginn">Datum des Mietbeginns:</label>
-      <input type="date" id="mietbeginn" required>
+      <input type="date" id="mietbeginn" name="mietbeginn" required autocomplete="off">
+
       <label for="aktuelleNettokaltmiete">Vereinbarte monatliche Nettokaltmiete in €:</label>
-      <input type="number" id="aktuelleNettokaltmiete" step="0.01" required>
+      <input type="number" id="aktuelleNettokaltmiete" name="aktuelleNettokaltmiete" step="0.01" min="0" required inputmode="decimal" autocomplete="off">
     </fieldset>
-    
+
     <fieldset>
-      <legend>4. Begründung der Rüge</legend>
-      <label for="vergleichsmiete">Ortsübliche Vergleichsmiete laut Mietspiegel in €/qm:
-        <small>Ermitteln Sie den Wert aus dem qualifizierten Mietspiegel Ihrer Stadt/Gemeinde.</small>
-      </label>
-      <input type="number" id="vergleichsmiete" step="0.01" required>
-      <label for="wohnflaeche">Wohnfläche in qm laut Mietvertrag:</label>
-      <input type="number" id="wohnflaeche" step="0.01" required>
-      <label for="begruendung">Zusätzliche Begründung (optional):
-        <small>Hier können Sie z.B. erläutern, wie Sie die Vergleichsmiete ermittelt haben oder auf Besonderheiten hinweisen.</small>
-      </label>
-      <textarea id="begruendung" placeholder="Beispiel: Laut dem qualifizierten Mietspiegel für Musterstadt aus dem Jahr 2024 ergibt sich für meine Wohnung (Baujahr, Ausstattung, Lage) ein Mittelwert von X,XX €/qm."></textarea>
+      <legend>4. Geltungsbereich & mögliche Ausnahmen (Kurzcheck)</legend>
+
+      <label for="bremseGiltOrt">Gilt in Ihrer Gemeinde/Stadt (für die Wohnung) eine Mietpreisbegrenzungs-Verordnung?</label>
+      <select id="bremseGiltOrt" name="bremseGiltOrt" required autocomplete="off">
+        <option value="">Bitte wählen...</option>
+        <option value="ja">Ja / vermutlich ja</option>
+        <option value="nein">Nein / vermutlich nein</option>
+        <option value="unsicher">Unsicher</option>
+      </select>
+
+      <label for="ausnahmeHinweis">Ist Ihnen eine mögliche Ausnahme bekannt? (optional)</label>
+      <select id="ausnahmeHinweis" name="ausnahmeHinweis" autocomplete="off">
+        <option value="">Keine Angabe</option>
+        <option value="neubau">Neubau / Erstvermietung nach Neubau</option>
+        <option value="umfassend_modernisiert">Erstvermietung nach umfassender Modernisierung</option>
+        <option value="vormiete_hoch">Vormiete war schon höher</option>
+        <option value="unbekannt">Unbekannt</option>
+      </select>
+
+      <p class="info-box">
+        <strong>Hinweis:</strong> Der Vermieter muss in bestimmten Fällen vor Vertragsschluss unaufgefordert Auskunft geben (§ 556g Abs. 1a BGB) und Erklärungen müssen in Textform erfolgen (§ 556g Abs. 4 BGB). 
+      </p>
     </fieldset>
-    
+
+    <fieldset>
+      <legend>5. Begründung der Rüge (Vergleichsmiete)</legend>
+
+      <label for="vergleichsmiete">Ortsübliche Vergleichsmiete laut Mietspiegel in €/qm:</label>
+      <input type="number" id="vergleichsmiete" name="vergleichsmiete" step="0.01" min="0" required inputmode="decimal" autocomplete="off">
+
+      <label for="wohnflaeche">Wohnfläche in qm laut Mietvertrag:</label>
+      <input type="number" id="wohnflaeche" name="wohnflaeche" step="0.01" min="0" required inputmode="decimal" autocomplete="off">
+
+      <label for="begruendung">Zusätzliche Begründung (optional):</label>
+      <textarea id="begruendung" name="begruendung" autocomplete="off"
+        placeholder="Beispiel: Laut qualifiziertem Mietspiegel … ergibt sich (Baujahr/Ausstattung/Lage) ein Wert von … €/qm."></textarea>
+    </fieldset>
+
     <div class="button-group">
       <button type="button" id="saveBtnBremse" class="button-secondary">Speichern</button>
       <button type="button" id="loadBtnBremse" class="button-secondary">Laden</button>
@@ -85,27 +164,26 @@
 </div>
 
 <div id="spendenPopup" class="popup-overlay">
-    <div class="popup-content">
-      <h2>Rüge erstellt!</h2>
-      <p>Wenn dir dieses Tool geholfen hat, Geld zu sparen, unterstütze das Projekt gerne mit einer kleinen Spende.</p>
-      <form action="https://www.paypal.com/donate" method="post" target="_blank">
-          <input type="hidden" name="business" value="info@kassen-lotse.de" />
-          <input type="hidden" name="item_name" value="Unterstützung für das Projekt Mieter-Lotse" />
-          <input type="hidden" name="currency_code" value="EUR" />
-          <input type="submit" value="Spenden mit PayPal" />
-      </form>
-      <button id="closePopupBtn" class="popup-close-button">Schließen</button>
-    </div>
+  <div class="popup-content">
+    <h2>Rüge erstellt!</h2>
+    <p>Wenn dieses Tool geholfen hat, unterstützt eine kleine Spende das Projekt gerne.</p>
+    <form action="https://www.paypal.com/donate" method="post" target="_blank">
+      <input type="hidden" name="business" value="info@kassen-lotse.de" />
+      <input type="hidden" name="item_name" value="Unterstützung für das Projekt Mieter-Lotse" />
+      <input type="hidden" name="currency_code" value="EUR" />
+      <input type="submit" value="Spenden mit PayPal" />
+    </form>
+    <button id="closePopupBtn" class="popup-close-button">Schließen</button>
+  </div>
 </div>
 
 <footer>
   <div class="mini-footer-hint">
-  <p>Brauchen Sie mehr Unterstützung bei Anträgen, Behördenbriefen oder komplexen Schreiben?</p>
-  <a href="https://clerion.de" class="mini-footer-link">Clerion - Ihr digitaler Behörden-Assistent</a>
+    <p>Brauchen Sie mehr Unterstützung bei Anträgen, Behördenbriefen oder komplexen Schreiben?</p>
+    <a href="https://clerion.de" class="mini-footer-link">Clerion - Ihr digitaler Behörden-Assistent</a>
   </div>
-    <p>&copy; 2025 Mieter-Lotse | <a href="über.html">Über uns</a> | <a href="index.html">Zurück zur Startseite</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+  <p>&copy; 2025 Mieter-Lotse | <a href="über.html">Über uns</a> | <a href="index.html">Zurück zur Startseite</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
 </footer>
 
 </body>
-
 </html>

@@ -2,112 +2,170 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Widerspruch gegen Kautionsabrechnung/-einbehalt</title>
-  <meta name="description" content="Erstellen Sie Ihren Widerspruch gegen eine fehlerhafte Kautionsabrechnung oder unberechtigte Einbehaltung Ihrer Mietkaution durch den Vermieter.">
-  <meta name="keywords" content="Widerspruch, Mietkaution, Kautionseinbehalt, Kautionsabrechnung, Mietrecht, Mieter, Vermieter, Vorlage, Generator">
+  <title>Widerspruch gegen Kautionsabrechnung / Kautionseinbehalt | Mieter-Lotse</title>
+
+  <meta name="description" content="Erstellen Sie einen Widerspruch gegen eine fehlerhafte Kautionsabrechnung oder einen unberechtigten Kautionseinbehalt. Inkl. Hinweise zu Zinsen/Anlagepflicht (§ 551 BGB) und Abgrenzung normaler Abnutzung (§ 538 BGB).">
+  <meta name="robots" content="index,follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="icon" href="/logo-lotse-fav.png">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script defer src="widerspruch-kaution_script.js"></script>
   <link rel="stylesheet" href="/css/generator.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Widerspruch gegen Kautionsabrechnung / Kautionseinbehalt",
+    "description": "Generator für den Widerspruch gegen Kautionsabrechnung oder Einbehalt der Mietkaution nach Mietende.",
+    "inLanguage": "de",
+    "isPartOf": { "@type": "WebSite", "name": "Mieter-Lotse", "url": "https://mieter-lotse.de" },
+    "publisher": { "@type": "Organization", "name": "Mieter-Lotse", "url": "https://mieter-lotse.de" },
+    "about": [
+      { "@type": "Thing", "name": "Mietkaution" },
+      { "@type": "Thing", "name": "Kautionseinbehalt" },
+      { "@type": "Thing", "name": "Kautionsabrechnung" },
+      { "@type": "Thing", "name": "BGB § 551" },
+      { "@type": "Thing", "name": "BGB § 538" }
+    ],
+    "lastReviewed": "2025-12-18",
+    "reviewedBy": { "@type": "Organization", "name": "Mieter-Lotse Redaktion" }
+  }
+  </script>
 </head>
 <body>
 
-  <header class="site-header">
-    <a href="index.html" class="site-logo">Mieter-Lotse</a>
+<header class="site-header">
+  <a href="index.html" class="site-logo">Mieter-Lotse</a>
 </header>
 
 <div class="page-container">
   <h1>Widerspruch gegen Kautionsabrechnung / Einbehalt der Mietkaution</h1>
+
   <p class="info-box warning">
-    Hat Ihr ehemaliger Vermieter die Mietkaution nicht oder nur teilweise zurückgezahlt und Sie sind mit der (ggf. erhaltenen) Abrechnung nicht einverstanden? Nutzen Sie dieses Formular, um Widerspruch einzulegen.
+    Hat Ihr ehemaliger Vermieter die Mietkaution nicht oder nur teilweise zurückgezahlt und Sie sind mit der Abrechnung bzw. dem Einbehalt nicht einverstanden?
+    Nutzen Sie dieses Formular, um Ihren Widerspruch strukturiert zu formulieren und konkrete Einwände zu dokumentieren.
     Weitere Informationen finden Sie auf unserer <a href="info-rueckzahlung-kaution.html">Info-Seite zur Kautionsrückzahlung</a>.
   </p>
-<p class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 10px;">
-  <strong>Hinweis:</strong> Dieses Tool ersetzt keine Rechtsberatung. Es dient der allgemeinen Unterstützung bei der Antragstellung. Bei Unsicherheiten wenden Sie sich bitte an eine anerkannte Beratungsstelle oder einen Rechtsanwalt.
-</p>
-<p class="highlight-box" style="background-color: #fff3f3; border-left: 4px solid #e53935; padding: 10px; margin-top: 10px;">
-  <strong>Hinweis:</strong> Falls der PDF-Download nicht funktioniert, öffnen Sie diese Seite bitte im Standard-Browser Ihres Smartphones (z. B. Chrome oder Firefox). Die Google-App unterstützt leider keine Dateidownloads.
-</p>
-<div class="highlight-box pruefdatum-box" role="note" aria-label="Zuletzt geprüft">
-  <p><strong>Zuletzt geprüft:</strong> <span id="pruefdatum">18.12.2025</span></p>
-</div>
 
-  <form id="widerspruchKautionForm">
+  <p class="info-box">
+    <strong>Expertentipps:</strong><br>
+    - Verlangen Sie eine nachvollziehbare Aufschlüsselung: Welche Forderung, welche Rechnung/Belege, welcher Bezug zur Wohnung/Übergabe?<br>
+    - Zinsen gehören grundsätzlich zur Kaution: Erträge stehen dem Mieter zu und erhöhen die Sicherheit (§ 551 Abs. 3 BGB).<br>
+    - Normale Abnutzung ist kein „Schaden“: Veränderungen/Verschlechterungen durch vertragsgemäßen Gebrauch hat der Mieter nicht zu vertreten (§ 538 BGB).<br>
+    - Beweise bündeln: Übergabeprotokoll (Einzug/Auszug), Fotos, Mängelanzeigen, Schriftverkehr, ggf. Vergleichsangebote bei strittigen Kosten.
+  </p>
+
+  <p class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 10px;">
+    <strong>Hinweis:</strong> Dieses Tool ersetzt keine Rechtsberatung. Es dient der allgemeinen Unterstützung bei der Antragstellung. Bei Unsicherheiten wenden Sie sich bitte an eine anerkannte Beratungsstelle oder einen Rechtsanwalt.
+  </p>
+
+  <p class="highlight-box" style="background-color: #fff3f3; border-left: 4px solid #e53935; padding: 10px; margin-top: 10px;">
+    <strong>Technischer Hinweis:</strong> Falls der PDF-Download nicht funktioniert, öffnen Sie diese Seite bitte im Standard-Browser Ihres Smartphones (z. B. Chrome oder Firefox). Die Google-App unterstützt leider keine Dateidownloads.
+  </p>
+
+  <div class="highlight-box pruefdatum-box" role="note" aria-label="Zuletzt geprüft">
+    <p><strong>Redaktionell geprüft:</strong> <span id="pruefdatum">18.12.2025</span></p>
+  </div>
+
+  <form id="widerspruchKautionForm" autocomplete="on">
     <fieldset>
       <legend>1. Angaben zum Mieter / zur Mieterin (Kautionsgeber:in)</legend>
       <label for="mieterName">Vor- und Nachname (aller im Mietvertrag genannten Mieter):</label>
-      <input type="text" id="mieterName" required placeholder="z.B. Erika Mustermann und Max Mustermann">
+      <input type="text" id="mieterName" required placeholder="z.B. Erika Mustermann und Max Mustermann" autocomplete="name">
+
       <label for="mieterAlteAdresse">Anschrift der ehemaligen Mietwohnung:</label>
-      <textarea id="mieterAlteAdresse" rows="3" required></textarea>
+      <textarea id="mieterAlteAdresse" rows="3" required autocomplete="street-address"></textarea>
+
       <label for="mieterNeueAdresse">Ihre aktuelle (neue) Anschrift:</label>
-      <textarea id="mieterNeueAdresse" rows="3" required></textarea>
+      <textarea id="mieterNeueAdresse" rows="3" required autocomplete="street-address"></textarea>
     </fieldset>
 
     <fieldset>
       <legend>2. Angaben zum ehemaligen Vermieter / zur Hausverwaltung</legend>
       <label for="vermieterName">Name des Vermieters / der Hausverwaltung:</label>
-      <input type="text" id="vermieterName" required>
+      <input type="text" id="vermieterName" required autocomplete="organization">
+
       <label for="vermieterAdresse">Anschrift des Vermieters / der Hausverwaltung:</label>
-      <textarea id="vermieterAdresse" rows="3" required></textarea>
+      <textarea id="vermieterAdresse" rows="3" required autocomplete="street-address"></textarea>
     </fieldset>
 
-   <fieldset>
+    <fieldset>
       <legend>3. Angaben zum Mietverhältnis und zur Kaution</legend>
       <label for="mietendeDatum">Ende des Mietverhältnisses / Datum der Wohnungsübergabe:</label>
-      <input type="date" id="mietendeDatum" required> <label for="zustandBeiUebergabe">Zustand der Wohnung bei Übergabe: <small>(z.B. "beanstandungsfrei laut Protokoll vom TT.MM.JJJJ", "mit folgenden geringfügigen Mängeln, die im Protokoll festgehalten wurden: ...")</small></label>
-      <textarea id="zustandBeiUebergabe" rows="3" placeholder="Beschreiben Sie kurz den Zustand der Wohnung bei der Übergabe." required></textarea>
+      <input type="date" id="mietendeDatum" required autocomplete="off">
+
+      <label for="zustandBeiUebergabe">Zustand der Wohnung bei Übergabe:
+        <small>(z.B. "beanstandungsfrei laut Protokoll vom TT.MM.JJJJ", "mit folgenden geringfügigen Mängeln, die im Protokoll festgehalten wurden: ...")</small>
+      </label>
+      <textarea id="zustandBeiUebergabe" rows="3" placeholder="Beschreiben Sie kurz den Zustand der Wohnung bei der Übergabe." required autocomplete="off"></textarea>
+
       <label for="kautionshoehe">Höhe der ursprünglich gezahlten Kaution (in EUR):</label>
-      <input type="number" id="kautionshoehe" step="0.01" placeholder="z.B. 1500.00" required>
+      <input type="number" id="kautionshoehe" step="0.01" placeholder="z.B. 1500.00" required inputmode="decimal" autocomplete="off">
+
       <label for="datumKautionsabrechnung">Datum der Kautionsabrechnung / des Schreibens über den Einbehalt (falls erhalten):</label>
-      <input type="date" id="datumKautionsabrechnung">
+      <input type="date" id="datumKautionsabrechnung" autocomplete="off">
+
       <label for="einbehalteneSumme">Vom Vermieter einbehaltener oder verrechneter Betrag (in EUR), dem widersprochen wird:</label>
-      <input type="number" id="einbehalteneSumme" step="0.01" placeholder="z.B. 350.00" required>
+      <input type="number" id="einbehalteneSumme" step="0.01" placeholder="z.B. 350.00" required inputmode="decimal" autocomplete="off">
     </fieldset>
-    
+
     <fieldset>
       <legend>4. Gründe Ihres Widerspruchs</legend>
-      <p class="info-box">Legen Sie hier detailliert dar, gegen welche Punkte der Kautionsabrechnung oder welche vom Vermieter geltend gemachten Forderungen Sie Widerspruch einlegen und warum. Seien Sie so präzise wie möglich und beziehen Sie sich auf Beweismittel (z.B. Übergabeprotokoll, Fotos).</p>
-      
-      <label for="argumentGrundEinbehalt">Darlegung, warum der vom Vermieter genannte Grund für den Einbehalt nicht zutrifft: <small>(z.B. Schaden nicht von Ihnen verursacht, normale Abnutzung, Reparatur nicht fachgerecht/überteuert, Schönheitsreparaturklausel unwirksam)</small></label>
-      <textarea id="argumentGrundEinbehalt" name="argumentGrundEinbehalt" rows="5" required placeholder="z.B. Der Kratzer im Parkett war bereits bei meinem Einzug vorhanden, wie im Übergabeprotokoll vom TT.MM.JJJJ vermerkt. / Die Klausel zu Schönheitsreparaturen im Mietvertrag ist unwirksam."></textarea>
+      <p class="info-box">
+        Legen Sie hier dar, gegen welche Punkte der Kautionsabrechnung bzw. welche Forderungen Sie Widerspruch einlegen und warum.
+        Beziehen Sie sich möglichst auf Beweismittel (Übergabeprotokoll, Fotos, Schriftverkehr).
+        Hinweis: Normale Abnutzung durch vertragsgemäßen Gebrauch hat der Mieter nicht zu vertreten (§ 538 BGB).
+      </p>
 
-      <label for="argumentHoeheEinbehalt">Begründung, warum die Höhe des Einbehalts oder der verrechneten Kosten unangemessen ist: <small>(Legen Sie ggf. Vergleichsangebote oder Schätzungen vor, wenn Kosten für Reparaturen strittig sind.)</small></label>
-      <textarea id="argumentHoeheEinbehalt" name="argumentHoeheEinbehalt" rows="4" placeholder="z.B. Die geltend gemachten Kosten für die Reparatur von XYZ sind um X % höher als ortsübliche Preise. / Für den geringfügigen Schaden ist der Abzug von Y EUR unverhältnismäßig."></textarea>
-      
+      <label for="argumentGrundEinbehalt">Darlegung, warum der vom Vermieter genannte Grund für den Einbehalt nicht zutrifft:
+        <small>(z.B. Schaden nicht von Ihnen verursacht, normale Abnutzung, Reparatur nicht fachgerecht/überteuert, Schönheitsreparaturklausel unwirksam)</small>
+      </label>
+      <textarea id="argumentGrundEinbehalt" name="argumentGrundEinbehalt" rows="5" required placeholder="z.B. Der Kratzer im Parkett war bereits bei meinem Einzug vorhanden..." autocomplete="off"></textarea>
+
+      <label for="argumentHoeheEinbehalt">Begründung, warum die Höhe des Einbehalts oder der verrechneten Kosten unangemessen ist:
+        <small>(Legen Sie ggf. Vergleichsangebote oder Schätzungen vor, wenn Kosten für Reparaturen strittig sind.)</small>
+      </label>
+      <textarea id="argumentHoeheEinbehalt" name="argumentHoeheEinbehalt" rows="4" placeholder="z.B. Die geltend gemachten Kosten sind deutlich höher als ortsüblich..." autocomplete="off"></textarea>
+
       <label for="ergaenzendeArgumenteKaution">Weitere/ergänzende Argumente zu Ihrem Widerspruch:</label>
-      <textarea id="ergaenzendeArgumenteKaution" name="ergaenzendeArgumenteKaution" rows="4" placeholder="z.B. Hinweis auf bereits erfolgte Mängelanzeigen, die nicht bearbeitet wurden und zu Folgeschäden führten, die nun mir angelastet werden."></textarea>
+      <textarea id="ergaenzendeArgumenteKaution" name="ergaenzendeArgumenteKaution" rows="4" placeholder="z.B. Hinweis auf bereits erfolgte Mängelanzeigen..." autocomplete="off"></textarea>
     </fieldset>
 
     <fieldset>
-        <legend>5. Ihre Forderung und Bankverbindung für die Rückzahlung</legend>
-        <label for="forderungKaution">Was fordern Sie vom Vermieter?</label>
-        <textarea id="forderungKaution" rows="3" required placeholder="z.B. Ich fordere Sie auf, die gesamte Kaution in Höhe von [Betrag] EUR nebst Zinsen an mich auszuzahlen. / Ich fordere die Auszahlung des Restbetrages von [Betrag] EUR."></textarea>
-        
-        <label for="fristForderungKaution">Ich bitte um Erfüllung meiner Forderung und Auszahlung auf unten stehendes Konto bis zum (Datum): <small>(Setzen Sie eine angemessene Frist, z.B. 10-14 Tage)</small></label>
-        <input type="date" id="fristForderungKaution" required>
+      <legend>5. Ihre Forderung und Bankverbindung für die Rückzahlung</legend>
+      <label for="forderungKaution">Was fordern Sie vom Vermieter?</label>
+      <textarea id="forderungKaution" rows="3" required placeholder="z.B. Ich fordere die Auszahlung des Restbetrages ... (inkl. Zinsen) gemäß § 551 BGB." autocomplete="off"></textarea>
 
-        <h4 style="font-size:1.1em; margin-top:1.5rem; color:#334e68; border-top: 1px dashed #eee; padding-top:1rem;">Meine Bankverbindung für die Rückzahlung:</h4>
-        <label for="kontoinhaberWiderspruchKaution">Kontoinhaber:in: <small>(Falls abweichend von Mieter:in Name)</small></label>
-        <input type="text" id="kontoinhaberWiderspruchKaution" placeholder="Vor- und Nachname">
-        <label for="ibanWiderspruchKaution">IBAN:</label>
-        <input type="text" id="ibanWiderspruchKaution" required>
-        <label for="bicWiderspruchKaution">BIC (optional, meist nur für Ausland):</label>
-        <input type="text" id="bicWiderspruchKaution">
+      <label for="fristForderungKaution">Ich bitte um Erfüllung meiner Forderung und Auszahlung auf unten stehendes Konto bis zum (Datum):
+        <small>(Setzen Sie eine angemessene Frist, z.B. 10-14 Tage)</small>
+      </label>
+      <input type="date" id="fristForderungKaution" required autocomplete="off">
+
+      <h4 style="font-size:1.1em; margin-top:1.5rem; color:#334e68; border-top: 1px dashed #eee; padding-top:1rem;">Meine Bankverbindung für die Rückzahlung:</h4>
+      <label for="kontoinhaberWiderspruchKaution">Kontoinhaber:in: <small>(Falls abweichend von Mieter:in Name)</small></label>
+      <input type="text" id="kontoinhaberWiderspruchKaution" placeholder="Vor- und Nachname" autocomplete="name">
+
+      <label for="ibanWiderspruchKaution">IBAN:</label>
+      <input type="text" id="ibanWiderspruchKaution" required inputmode="text" autocomplete="off">
+
+      <label for="bicWiderspruchKaution">BIC (optional, meist nur für Ausland):</label>
+      <input type="text" id="bicWiderspruchKaution" autocomplete="off">
     </fieldset>
-    
+
     <fieldset>
-        <legend>6. Beizufügende Anlagen (Kopien sind ausreichend)</legend>
-        <div class="checkbox-group">
-            <label><input type="checkbox" name="anlagenKautionWiderspruch" value="Kopie des Mietvertrages"> Kopie des Mietvertrages</label>
-            <label><input type="checkbox" name="anlagenKautionWiderspruch" value="Kopie des Wohnungsübergabeprotokolls (Einzug und Auszug)"> Kopie des Wohnungsübergabeprotokolls (Einzug und Auszug)</label>
-            <label><input type="checkbox" name="anlagenKautionWiderspruch" value="Kopie der Kautionsabrechnung / des Schreibens des Vermieters"> Kopie der Kautionsabrechnung / des Schreibens des Vermieters</label>
-            <label><input type="checkbox" name="anlagenKautionWiderspruch" value="Fotos (z.B. von Mängeln bei Einzug, Zustand bei Auszug, strittige Schäden)"> Fotos</label>
-            <label><input type="checkbox" name="anlagenKautionWiderspruch" value="Ggf. Kostenvoranschläge für strittige Reparaturen (eigene oder Vergleichsangebote)"> Ggf. Kostenvoranschläge für strittige Reparaturen</label>
-            <label><input type="checkbox" name="anlagenKautionWiderspruch" value="Schriftverkehr mit dem Vermieter zu den strittigen Punkten"> Schriftverkehr mit dem Vermieter zu den strittigen Punkten</label>
-        </div>
-        <label for="anlageSonstigesKautionWiderspruch">Sonstige Anlagen:</label>
-        <input type="text" id="anlageSonstigesKautionWiderspruch">
+      <legend>6. Beizufügende Anlagen (Kopien sind ausreichend)</legend>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="anlagenKautionWiderspruch" value="Kopie des Mietvertrages"> Kopie des Mietvertrages</label>
+        <label><input type="checkbox" name="anlagenKautionWiderspruch" value="Kopie des Wohnungsübergabeprotokolls (Einzug und Auszug)"> Kopie des Wohnungsübergabeprotokolls (Einzug und Auszug)</label>
+        <label><input type="checkbox" name="anlagenKautionWiderspruch" value="Kopie der Kautionsabrechnung / des Schreibens des Vermieters"> Kopie der Kautionsabrechnung / des Schreibens des Vermieters</label>
+        <label><input type="checkbox" name="anlagenKautionWiderspruch" value="Fotos (z.B. von Mängeln bei Einzug, Zustand bei Auszug, strittige Schäden)"> Fotos</label>
+        <label><input type="checkbox" name="anlagenKautionWiderspruch" value="Ggf. Kostenvoranschläge für strittige Reparaturen (eigene oder Vergleichsangebote)"> Ggf. Kostenvoranschläge für strittige Reparaturen</label>
+        <label><input type="checkbox" name="anlagenKautionWiderspruch" value="Schriftverkehr mit dem Vermieter zu den strittigen Punkten"> Schriftverkehr mit dem Vermieter zu den strittigen Punkten</label>
+      </div>
+      <label for="anlageSonstigesKautionWiderspruch">Sonstige Anlagen:</label>
+      <input type="text" id="anlageSonstigesKautionWiderspruch" autocomplete="off">
     </fieldset>
 
     <div class="button-group">
@@ -135,12 +193,11 @@
 
 <footer>
   <div class="mini-footer-hint">
-  <p>Brauchen Sie mehr Unterstützung bei Anträgen, Behördenbriefen oder komplexen Schreiben?</p>
-  <a href="https://clerion.de" class="mini-footer-link">Clerion - Ihr digitaler Behörden-Assistent</a>
+    <p>Brauchen Sie mehr Unterstützung bei Anträgen, Behördenbriefen oder komplexen Schreiben?</p>
+    <a href="https://clerion.de" class="mini-footer-link">Clerion - Ihr digitaler Behörden-Assistent</a>
   </div>
-    <p>&copy; 2025 Mieter-Lotse | <a href="über.html">Über uns</a> | <a href="index.html">Zurück zur Startseite</a> | <a href="info-rueckzahlung-kaution.html">Infos Kautionsrückzahlung</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+  <p>&copy; 2025 Mieter-Lotse | <a href="über.html">Über uns</a> | <a href="index.html">Zurück zur Startseite</a> | <a href="info-rueckzahlung-kaution.html">Infos Kautionsrückzahlung</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
 </footer>
 
 </body>
 </html>
-

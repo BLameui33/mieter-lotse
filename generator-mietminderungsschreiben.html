@@ -2,101 +2,173 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Mietminderungsschreiben an Vermieter erstellen</title>
-  <meta name="description" content="Erstellen Sie hier Ihr Schreiben zur Ankündigung oder Geltendmachung einer Mietminderung gegenüber Ihrem Vermieter.">
-  <meta name="keywords" content="Mietminderung, Schreiben, Generator, Vorlage, Mieter, Vermieter, Mängel, Wohnung, Miete kürzen">
+  <title>Mietminderungsschreiben erstellen | § 536 BGB | Risiko Zahlungsverzug § 543 BGB | Mieter-Lotse</title>
+  <meta name="description" content="Erstellen Sie ein Schreiben zur Ankündigung oder Geltendmachung einer Mietminderung wegen Mängeln. Hinweise zu § 536 BGB (Mietminderung) und Risiken bei Mietrückstand (§ 543 BGB). Kostenlos, ohne Registrierung.">
+  <meta name="robots" content="index,follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/logo-lotse-fav.png">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script defer src="mietminderungsschreiben_script.js"></script>
   <link rel="stylesheet" href="/css/generator.css">
-</head>
-<body>
 
-  <header class="site-header">
-    <a href="index.html" class="site-logo">Mieter-Lotse</a>
+  <!-- Schema.org (YMYL/Legal) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Mietminderungsschreiben an Vermieter erstellen",
+    "description": "Generator für ein Schreiben zur Ankündigung oder Geltendmachung einer Mietminderung wegen Mängeln.",
+    "inLanguage": "de",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Mieter-Lotse",
+      "url": "https://mieter-lotse.de"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Mieter-Lotse",
+      "url": "https://mieter-lotse.de"
+    },
+    "about": [
+      { "@type": "Thing", "name": "Mietminderung" },
+      { "@type": "Thing", "name": "BGB § 536" },
+      { "@type": "Thing", "name": "BGB § 543" }
+    ],
+    "lastReviewed": "2025-12-23",
+    "reviewedBy": { "@type": "Organization", "name": "Mieter-Lotse Redaktion" }
+  }
+  </script>
+</head>
+
+<body>
+<header class="site-header">
+  <a href="index.html" class="site-logo">Mieter-Lotse</a>
 </header>
 
 <div class="page-container">
   <h1>Mietminderungsschreiben an den Vermieter</h1>
+
   <p class="info-box">
-    Mit diesem Formular können Sie ein Schreiben an Ihren Vermieter erstellen, um eine Mietminderung aufgrund von Mängeln anzukündigen oder geltend zu machen.
-    Voraussetzung ist in der Regel eine vorherige <a href="generator-maengelanzeige.html">Mängelanzeige</a> mit Fristsetzung zur Beseitigung.
+    Mit diesem Formular können Sie ein Schreiben erstellen, um eine Mietminderung wegen Mängeln anzukündigen oder geltend zu machen.
+    <strong>Rechtsgrundlage:</strong> Ist die Tauglichkeit der Mietsache wegen eines Mangels aufgehoben oder gemindert, ist der Mieter für die Zeit der Beeinträchtigung ganz oder teilweise von der Miete befreit bzw. schuldet nur eine angemessen herabgesetzte Miete (§ 536 Abs. 1 BGB).
+    Eine unerhebliche Minderung bleibt außer Betracht (§ 536 Abs. 1 S. 3 BGB), und zum Nachteil des Mieters abweichende Vereinbarungen sind unwirksam (§ 536 Abs. 4 BGB). 
+    Voraussetzung ist in der Praxis regelmäßig, dass der Vermieter den Mangel kennt (z.B. durch eine vorherige <a href="generator-maengelanzeige.html">Mängelanzeige</a>).
     Weitere Informationen finden Sie auf unserer <a href="info-mietminderung.html">Info-Seite zur Mietminderung</a>.
   </p>
-  <p class="warning-box"><strong>Wichtig:</strong> Die unberechtigte oder zu hohe Kürzung der Miete kann zu Mietrückständen und im schlimmsten Fall zur Kündigung führen. Holen Sie im Zweifel Rechtsrat ein!</p>
-<p class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 10px;">
-  <strong>Hinweis:</strong> Dieses Tool ersetzt keine Rechtsberatung. Es dient der allgemeinen Unterstützung bei der Antragstellung. Bei Unsicherheiten wenden Sie sich bitte an eine anerkannte Beratungsstelle oder einen Rechtsanwalt.
-</p>
-<p class="highlight-box" style="background-color: #fff3f3; border-left: 4px solid #e53935; padding: 10px; margin-top: 10px;">
-  <strong>Technischer Hinweis:</strong> Um das PDF erfolgreich herunterzuladen, öffnen Sie diese Seite bitte in einem Internet-Browser wie <strong>Chrome, Firefox oder Safari</strong>. In der Google-App (z. B. über die Suchleiste auf dem Startbildschirm) funktioniert der Download leider nicht zuverlässig.
-</p>
-<div class="highlight-box pruefdatum-box" role="note" aria-label="Zuletzt geprüft">
-  <p><strong>Zuletzt geprüft:</strong> <span id="pruefdatum">13.12.2025</span></p>
-</div>
 
-  <form id="mietminderungForm">
+  <p class="warning-box">
+    <strong>Wichtig:</strong> Eine unberechtigte oder zu hohe Kürzung kann zu Mietrückständen führen und im schlimmsten Fall eine fristlose Kündigung wegen Zahlungsverzugs auslösen (§ 543 Abs. 2 Nr. 3 BGB). 
+    Bei Unsicherheiten (Quote/Höhe/Startdatum) sollte fachlicher Rat eingeholt werden.
+  </p>
+
+  <p class="info-box">
+    <strong>Hinweis zur Datenspeicherung:</strong>
+    „Eingaben speichern/Laden“ nutzt localStorage Ihres Browsers (gerät-/browserbezogen).
+    Es findet dabei keine automatische Übermittlung Ihrer Formulardaten an Mieter-Lotse statt.
+  </p>
+
+  <p class="info-box" style="background-color:#fff8e1; border-left:4px solid #ff9800; padding:10px; margin-top:10px;">
+    <strong>Wichtiger Hinweis:</strong> Dieses Tool ersetzt keine Rechtsberatung.
+    Die Minderungsquote ist immer einzelfallabhängig (Art, Dauer, Intensität des Mangels) und sollte eher vorsichtig angesetzt werden.
+  </p>
+
+  <p class="highlight-box" style="background-color:#fff3f3; border-left:4px solid #e53935; padding:10px; margin-top:10px;">
+    <strong>Technischer Hinweis:</strong> Um das PDF erfolgreich herunterzuladen, öffnen Sie diese Seite bitte in einem Internet-Browser wie <strong>Chrome, Firefox oder Safari</strong>. In der Google-App (z. B. über die Suchleiste auf dem Startbildschirm) funktioniert der Download leider nicht zuverlässig.
+  </p>
+
+  <div class="highlight-box pruefdatum-box" role="note" aria-label="Redaktionell geprüft">
+    <p><strong>Redaktionell geprüft:</strong> <span id="pruefdatum">23.12.2025</span></p>
+  </div>
+
+  <form id="mietminderungForm" autocomplete="on">
     <fieldset>
       <legend>1. Angaben zum Mieter / zur Mieterin</legend>
+
       <label for="mieterName">Vor- und Nachname:</label>
-      <input type="text" id="mieterName" required>
-      <label for="mieterAdresse">Anschrift der Mietwohnung (Straße, Hausnr., PLZ, Ort, ggf. Etage/Wohnungsnummer):</label>
-      <textarea id="mieterAdresse" rows="3" required></textarea>
+      <input type="text" id="mieterName" name="mieterName" required autocomplete="name">
+
+      <label for="mieterAdresse">Anschrift der Mietwohnung:</label>
+      <textarea id="mieterAdresse" name="mieterAdresse" rows="3" required autocomplete="street-address"></textarea>
     </fieldset>
 
     <fieldset>
       <legend>2. Angaben zum Vermieter / zur Hausverwaltung</legend>
+
       <label for="vermieterName">Name des Vermieters / der Hausverwaltung:</label>
-      <input type="text" id="vermieterName" required>
+      <input type="text" id="vermieterName" name="vermieterName" required autocomplete="organization">
+
       <label for="vermieterAdresse">Anschrift des Vermieters / der Hausverwaltung:</label>
-      <textarea id="vermieterAdresse" rows="3" required></textarea>
+      <textarea id="vermieterAdresse" name="vermieterAdresse" rows="3" required autocomplete="street-address"></textarea>
     </fieldset>
 
     <fieldset>
-      <legend>3. Bezugnahme auf Mängel und Mängelanzeige</legend>
-      <label for="datumMaengelanzeige">Datum Ihrer letzten Mängelanzeige(n) bezüglich dieser Mängel:</label>
-      <input type="date" id="datumMaengelanzeige" required>
-      <label for="fristsetzungMaengelanzeige">Gesetzte Frist zur Mängelbeseitigung in der Mängelanzeige bis zum:</label>
-      <input type="date" id="fristsetzungMaengelanzeige" required>
-      <label for="kurzbeschreibungMaengel">Kurze Zusammenfassung der weiterhin bestehenden Hauptmängel: <small>(Die detaillierte Beschreibung erfolgte bereits in der Mängelanzeige, auf die Sie sich beziehen)</small></label>
-      <textarea id="kurzbeschreibungMaengel" rows="4" required placeholder="z.B. Fortbestehender Schimmelbefall im Badezimmer, Ausfall der Heizung im Wohnzimmer seit TT.MM.JJJJ."></textarea>
-      <label for="zustandMaengel">Aktueller Zustand der Mängel seit Fristablauf: <small>(Wurden keine oder nur unzureichende Maßnahmen zur Beseitigung ergriffen?)</small></label>
-      <textarea id="zustandMaengel" rows="3" required placeholder="z.B. Die Mängel bestehen unverändert fort. / Es wurde versucht, den Schimmel oberflächlich zu entfernen, die Ursache wurde jedoch nicht behoben."></textarea>
+      <legend>3. Art des Schreibens</legend>
+
+      <label for="mmSchreibenArt">Das Schreiben ist:</label>
+      <select id="mmSchreibenArt" name="mmSchreibenArt" required autocomplete="off">
+        <option value="ankuendigung" selected>Ankündigung der Mietminderung (ab Datum / für die Zukunft)</option>
+        <option value="geltendmachung">Geltendmachung/Abrechnung (für einen Zeitraum in der Vergangenheit)</option>
+      </select>
+
+      <p class="info-box">
+        <strong>Hinweis:</strong> Die Miete ist bei Mangel zwar gesetzlich gemindert (§ 536 BGB), aber in der Praxis ist eine klare schriftliche Mitteilung an den Vermieter hilfreich, um Streit über Quote/Zeitraum zu vermeiden. 
+      </p>
     </fieldset>
 
     <fieldset>
-      <legend>4. Angaben zur Mietminderung und erneute Fristsetzung</legend>
+      <legend>4. Bezugnahme auf Mängel und Mängelanzeige</legend>
+
+      <label for="datumMaengelanzeige">Datum Ihrer letzten Mängelanzeige(n):</label>
+      <input type="date" id="datumMaengelanzeige" name="datumMaengelanzeige" required autocomplete="off">
+
+      <label for="fristsetzungMaengelanzeige">Gesetzte Frist zur Mängelbeseitigung bis zum:</label>
+      <input type="date" id="fristsetzungMaengelanzeige" name="fristsetzungMaengelanzeige" required autocomplete="off">
+
+      <label for="kurzbeschreibungMaengel">Kurze Zusammenfassung der weiterhin bestehenden Hauptmängel:</label>
+      <textarea id="kurzbeschreibungMaengel" name="kurzbeschreibungMaengel" rows="4" required autocomplete="off"
+        placeholder="z.B. Fortbestehender Schimmelbefall im Badezimmer; Ausfall der Heizung seit TT.MM.JJJJ."></textarea>
+
+      <label for="zustandMaengel">Aktueller Zustand seit Fristablauf:</label>
+      <textarea id="zustandMaengel" name="zustandMaengel" rows="3" required autocomplete="off"
+        placeholder="z.B. Keine Abhilfe / nur unzureichende Maßnahmen; Ursache nicht behoben."></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>5. Angaben zur Mietminderung und Frist</legend>
+
       <label for="bruttomieteAktuell">Aktuelle monatliche Bruttomiete (inkl. Betriebs- und Heizkosten):</label>
-      <input type="number" id="bruttomieteAktuell" step="0.01" placeholder="z.B. 750.50" required>
-      
-      <label for="minderungsquoteProzent">Minderungsquote in Prozent (%): <small>(Schätzen Sie diese basierend auf der Beeinträchtigung und ggf. Mietminderungstabellen. Seien Sie eher vorsichtig.)</small></label>
-      <input type="number" id="minderungsquoteProzent" step="1" min="0" max="100" placeholder="z.B. 10 für 10%" required>
-      
-      <label for="minderungsbeginnDatum">Mietminderung geltend gemacht ab (Datum): <small>(In der Regel ab dem Zeitpunkt, zu dem der Vermieter Kenntnis vom Mangel erlangt hat und die Frist zur Beseitigung verstrichen ist oder die Minderung angekündigt wurde.)</small></label>
-      <input type="date" id="minderungsbeginnDatum" required>
-      
-      <label for="minderungsbetragMonat">Daraus resultierender monatlicher Minderungsbetrag (wird berechnet):</label>
-      <input type="text" id="minderungsbetragMonat" placeholder="Wird berechnet" readonly>
+      <input type="number" id="bruttomieteAktuell" name="bruttomieteAktuell" step="0.01" min="0"
+             placeholder="z.B. 750.50" required inputmode="decimal" autocomplete="off">
 
-      <label for="erneuteFristBeseitigungMM">Ich fordere Sie erneut auf, die Mängel zu beseitigen bis zum (Datum): <small>(Setzen Sie hier eine letzte, kurze Frist, z.B. 7-10 Tage ab heute. Wenn leer, wird ein allgemeinerer Satz verwendet.)</small></label>
-      <input type="date" id="erneuteFristBeseitigungMM"> 
+      <label for="minderungsquoteProzent">Minderungsquote in Prozent (%):</label>
+      <input type="number" id="minderungsquoteProzent" name="minderungsquoteProzent" step="1" min="0" max="100"
+             placeholder="z.B. 10" required inputmode="numeric" autocomplete="off">
+
+      <label for="minderungsbeginnDatum">Mietminderung ab (Datum):</label>
+      <input type="date" id="minderungsbeginnDatum" name="minderungsbeginnDatum" required autocomplete="off">
+
+      <label for="minderungsbetragMonat">Monatlicher Minderungsbetrag (wird berechnet):</label>
+      <input type="text" id="minderungsbetragMonat" name="minderungsbetragMonat" placeholder="Wird berechnet" readonly>
+
+      <label for="erneuteFristBeseitigungMM">Erneute (kurze) Frist zur Beseitigung bis zum (optional):</label>
+      <input type="date" id="erneuteFristBeseitigungMM" name="erneuteFristBeseitigungMM" autocomplete="off">
 
       <label style="margin-top: 1.5rem;">
-        <input type="checkbox" id="zahlungUnterVorbehalt" name="zahlungUnterVorbehalt" value="ja" style="width: auto; margin-right: 8px;">
-        Ich habe die Miete bisher unter Vorbehalt der Rückforderung weitergezahlt / Ich werde die (gekürzte) Miete zukünftig weiterhin unter Vorbehalt der Rückforderung zahlen.
-        <small>(Empfohlen, um Ihre Position zu stärken.)</small>
+        <input type="checkbox" id="zahlungUnterVorbehalt" name="zahlungUnterVorbehalt" value="ja" style="width:auto; margin-right:8px;">
+        Ich habe/werde Zahlungen (ggf. die gekürzte Miete) unter Vorbehalt leisten.
+        <small>(Kann hilfreich sein, ersetzt aber keine rechtliche Prüfung.)</small>
       </label>
     </fieldset>
-    
+
     <fieldset>
-        <legend>5. Beizufügende Anlagen (optional)</legend>
-        <div class="checkbox-group">
-            <label><input type="checkbox" name="anlagenMietminderung" value="Kopie der Mängelanzeige(n)"> Kopie der Mängelanzeige(n)</label>
-            <label><input type="checkbox" name="anlagenMietminderung" value="Aktuelle Fotos der Mängel"> Aktuelle Fotos der Mängel</label>
-            <label><input type="checkbox" name="anlagenMietminderung" value="Ggf. Zeugenaussagen / Protokolle"> Ggf. Zeugenaussagen / Protokolle</label>
-        </div>
-        <label for="anlageSonstigesMietminderung">Sonstige Anlagen:</label>
-        <input type="text" id="anlageSonstigesMietminderung">
+      <legend>6. Beizufügende Anlagen (optional)</legend>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="anlagenMietminderung" value="Kopie der Mängelanzeige(n)"> Kopie der Mängelanzeige(n)</label>
+        <label><input type="checkbox" name="anlagenMietminderung" value="Aktuelle Fotos der Mängel"> Aktuelle Fotos der Mängel</label>
+        <label><input type="checkbox" name="anlagenMietminderung" value="Ggf. Zeugenaussagen / Protokolle"> Ggf. Zeugenaussagen / Protokolle</label>
+      </div>
+      <label for="anlageSonstigesMietminderung">Sonstige Anlagen:</label>
+      <input type="text" id="anlageSonstigesMietminderung" name="anlageSonstigesMietminderung" autocomplete="off">
     </fieldset>
 
     <div class="button-group">
@@ -109,8 +181,8 @@
 
 <div id="spendenPopupMietminderung" class="popup-overlay">
   <div class="popup-content">
-    <h2>Danke für deine Nutzung 💛</h2>
-    <p>Wenn dir dieses Tool geholfen hat, unterstütze das Projekt gerne mit einer kleinen Spende:</p>
+    <h2>Danke für deine Nutzung</h2>
+    <p>Wenn dieses Tool geholfen hat, unterstützt eine kleine Spende das Projekt gerne.</p>
     <form action="https://www.paypal.com/donate" method="post" target="_blank">
       <input type="hidden" name="business" value="info@kassen-lotse.de" />
       <input type="hidden" name="charset" value="utf-8">
@@ -124,12 +196,11 @@
 
 <footer>
   <div class="mini-footer-hint">
-  <p>Brauchen Sie mehr Unterstützung bei Anträgen, Behördenbriefen oder komplexen Schreiben?</p>
-  <a href="https://clerion.de" class="mini-footer-link">Clerion - Ihr digitaler Behörden-Assistent</a>
+    <p>Brauchen Sie mehr Unterstützung bei Anträgen, Behördenbriefen oder komplexen Schreiben?</p>
+    <a href="https://clerion.de" class="mini-footer-link">Clerion - Ihr digitaler Behörden-Assistent</a>
   </div>
-    <p>&copy; 2025 Mieter-Lotse | <a href="über.html">Über uns</a> | <a href="index.html">Zurück zur Startseite</a> | <a href="info-mietminderung.html">Infos Mietminderung</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+  <p>&copy; 2025 Mieter-Lotse | <a href="über.html">Über uns</a> | <a href="index.html">Zurück zur Startseite</a> | <a href="info-mietminderung.html">Infos Mietminderung</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
 </footer>
 
 </body>
 </html>
-

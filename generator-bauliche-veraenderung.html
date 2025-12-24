@@ -2,72 +2,136 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Antrag auf bauliche Veränderung erstellen | Mieter-Lotse</title>
-  <meta name="description" content="Erstellen Sie einen formellen Antrag an Ihren Vermieter für die Genehmigung einer baulichen Veränderung in Ihrer Mietwohnung (z.B. Einbauküche, Wallbox, barrierefreier Umbau).">
-  <meta name="keywords" content="Bauliche Veränderung, Umbau, Antrag, Genehmigung, Erlaubnis, Vermieter, Mietrecht, Vorlage, Generator">
+  <title>Bauliche Veränderung genehmigen lassen | § 554 BGB (Barrierefrei/Wallbox/Solar) | Mieter-Lotse</title>
+  <meta name="description" content="Erstellen Sie einen Antrag an den Vermieter zur Genehmigung einer baulichen Veränderung in der Mietwohnung (z.B. Einbauküche, Wallbox, barrierearmer Umbau, Einbruchsschutz, Steckersolargerät). Hinweis auf § 554 BGB. Kostenlos, ohne Registrierung.">
+  <meta name="robots" content="index,follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/logo-lotse-fav.png">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script defer src="bauliche-veraenderung_script.js"></script>
   <link rel="stylesheet" href="/css/generator.css">
-</head>
-<body>
 
+  <!-- Schema.org (YMYL/Legal) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Antrag auf bauliche Veränderung erstellen",
+    "description": "Generator für einen Antrag an den Vermieter zur Zustimmung zu baulichen Veränderungen in der Mietwohnung, inkl. Maßnahmen nach § 554 BGB.",
+    "inLanguage": "de",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Mieter-Lotse",
+      "url": "https://mieter-lotse.de"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Mieter-Lotse",
+      "url": "https://mieter-lotse.de"
+    },
+    "about": [
+      { "@type": "Thing", "name": "Bauliche Veränderung" },
+      { "@type": "Thing", "name": "BGB § 554" },
+      { "@type": "Thing", "name": "Barriere­reduzierung" },
+      { "@type": "Thing", "name": "Wallbox" },
+      { "@type": "Thing", "name": "Steckersolargerät" },
+      { "@type": "Thing", "name": "BGB § 555d" }
+    ],
+    "lastReviewed": "2025-12-13",
+    "reviewedBy": { "@type": "Organization", "name": "Mieter-Lotse Redaktion" }
+  }
+  </script>
+</head>
+
+<body>
 <header class="site-header">
-    <a href="index.html" class="site-logo">Mieter-Lotse</a>
+  <a href="index.html" class="site-logo">Mieter-Lotse</a>
 </header>
 
 <div class="page-container">
   <h1>Antrag auf Genehmigung einer baulichen Veränderung</h1>
-  <p class="info-box info">
-    Für Umbauten, die in die Bausubstanz eingreifen (z.B. Wände, Böden, Elektrik), benötigen Sie immer die schriftliche Erlaubnis Ihres Vermieters. Ein gut begründeter Antrag, der dem Vermieter Sicherheit gibt, erhöht Ihre Chancen auf eine Zustimmung erheblich.
-  </p>
-  <p class="info-box warning">
-    Führen Sie niemals Umbauten ohne schriftliche Genehmigung durch! Dies kann eine Abmahnung oder sogar die fristlose Kündigung zur Folge haben.
-  </p>
-  <p class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 10px;">
-  <strong>Hinweis:</strong> Dieses Tool ersetzt keine Rechtsberatung. Es dient der allgemeinen Unterstützung bei der Antragstellung. Bei Unsicherheiten wenden Sie sich bitte an eine anerkannte Beratungsstelle oder einen Rechtsanwalt.
-</p>
-<p class="highlight-box" style="background-color: #fff3f3; border-left: 4px solid #e53935; padding: 10px; margin-top: 10px;">
-  <strong>Technischer Hinweis:</strong> Um das PDF erfolgreich herunterzuladen, öffnen Sie diese Seite bitte in einem Internet-Browser wie <strong>Chrome, Firefox oder Safari</strong>. In der Google-App (z. B. über die Suchleiste auf dem Startbildschirm) funktioniert der Download leider nicht zuverlässig.
-</p>
-<div class="highlight-box pruefdatum-box" role="note" aria-label="Zuletzt geprüft">
-  <p><strong>Zuletzt geprüft:</strong> <span id="pruefdatum">13.12.2025</span></p>
-</div>
 
-  <form id="baulicheVeraenderungForm">
+  <p class="info-box info">
+    Für Umbauten, die in die Bausubstanz eingreifen (z.B. Wände, Böden, Elektrik), sollte vor Beginn stets eine schriftliche Zustimmung des Vermieters eingeholt werden.
+    <strong>Wichtig:</strong> Für bestimmte Maßnahmen gibt es einen gesetzlichen Anspruch auf Erlaubnis, u.a. für Barrierereduzierung, Laden elektrisch betriebener Fahrzeuge (z.B. Wallbox), Einbruchsschutz und Stromerzeugung durch Steckersolargeräte (§ 554 Abs. 1 BGB). 
+    Der Anspruch besteht nicht, wenn die Maßnahme dem Vermieter unter Würdigung der Interessen des Mieters nicht zugemutet werden kann (§ 554 Abs. 1 S. 2 BGB). 
+  </p>
+
+  <p class="info-box">
+    <strong>Sicherheit/Absicherung:</strong> Im Zusammenhang mit Maßnahmen nach § 554 BGB kann der Mieter sich zur Leistung einer besonderen Sicherheit verpflichten; § 551 Abs. 3 gilt entsprechend (§ 554 Abs. 1 S. 3 BGB). 
+    <strong>Abgrenzung:</strong> § 555d BGB betrifft Modernisierungsmaßnahmen des Vermieters, die der Mieter grundsätzlich dulden muss (mit Härteeinwand-Regelungen). 
+  </p>
+
+  <p class="info-box warning">
+    Führen Sie Umbauten nicht „einfach so“ durch.
+    Ohne Zustimmung drohen je nach Einzelfall Rückbauverlangen, Schadensersatz und ggf. eine Abmahnung; die rechtlichen Folgen hängen stark von Maßnahme, Risiko und Vertrag ab.
+  </p>
+
+  <p class="info-box">
+    <strong>Hinweis zur Datenspeicherung:</strong>
+    Die Funktionen „Speichern“ und „Laden“ nutzen den localStorage Ihres Browsers (gerät-/browserbezogen).
+    Es findet dabei keine automatische Übermittlung Ihrer Formulardaten an Mieter-Lotse statt.
+  </p>
+
+  <p class="info-box" style="background-color:#fff8e1; border-left:4px solid #ff9800; padding:10px; margin-top:10px;">
+    <strong>Wichtiger Hinweis:</strong> Dieses Tool ersetzt keine Rechtsberatung.
+    Ob ein Anspruch nach § 554 BGB besteht, ob eine Sicherheit verlangt werden darf und welche technischen Vorgaben einzuhalten sind, hängt vom konkreten Vorhaben und dem Gebäude ab. 
+  </p>
+
+  <p class="highlight-box" style="background-color:#fff3f3; border-left:4px solid #e53935; padding:10px; margin-top:10px;">
+    <strong>Technischer Hinweis:</strong> Um das PDF erfolgreich herunterzuladen, öffnen Sie diese Seite bitte in einem Internet-Browser wie <strong>Chrome, Firefox oder Safari</strong>. In der Google-App (z. B. über die Suchleiste auf dem Startbildschirm) funktioniert der Download leider nicht zuverlässig.
+  </p>
+
+  <div class="highlight-box pruefdatum-box" role="note" aria-label="Redaktionell geprüft">
+    <p><strong>Redaktionell geprüft:</strong> <span id="pruefdatum">13.12.2025</span></p>
+  </div>
+
+  <form id="baulicheVeraenderungForm" autocomplete="on">
     <fieldset>
       <legend>1. Ihre Angaben (Mieter/in)</legend>
+
       <label for="mieterName">Vor- und Nachname:</label>
-      <input type="text" id="mieterName" required>
+      <input type="text" id="mieterName" name="mieterName" required autocomplete="name">
+
       <label for="mieterAdresse">Ihre Anschrift (Straße, Hausnr., PLZ, Ort, Etage):</label>
-      <textarea id="mieterAdresse" rows="2" required></textarea>
+      <textarea id="mieterAdresse" name="mieterAdresse" rows="2" required autocomplete="street-address"></textarea>
     </fieldset>
 
     <fieldset>
       <legend>2. Angaben zum Vermieter</legend>
+
       <label for="vermieterName">Name des Vermieters / der Hausverwaltung:</label>
-      <input type="text" id="vermieterName" required>
+      <input type="text" id="vermieterName" name="vermieterName" required autocomplete="organization">
+
       <label for="vermieterAdresse">Anschrift des Vermieters / der Hausverwaltung:</label>
-      <textarea id="vermieterAdresse" rows="3" required></textarea>
+      <textarea id="vermieterAdresse" name="vermieterAdresse" rows="3" required autocomplete="street-address"></textarea>
     </fieldset>
 
     <fieldset>
       <legend>3. Beschreibung der geplanten Maßnahme</legend>
+
       <label for="massnahmeBeschreibung">Beschreiben Sie die geplante bauliche Veränderung so detailliert wie möglich:
-        <small>Was genau soll gemacht werden? Wo in der Wohnung? Welche Materialien werden verwendet? Wer führt die Arbeiten aus (Fachfirma)?</small>
+        <small>Was genau soll gemacht werden? Wo? Welche Technik/Materialien? Fachfirma? (Bei Wallbox/Solar: elektrische Leistung, Anschluss, Montageort.)</small>
       </label>
-      <textarea id="massnahmeBeschreibung" required placeholder="Beispiel: Ich plane den Einbau einer neuen Einbauküche der Marke X. Hierfür müssen neue Wasser- und Stromanschlüsse durch die Fachfirma Y gelegt werden. Die alten Anschlüsse werden fachgerecht verschlossen. Die alten Fliesen bleiben unberührt."></textarea>
+      <textarea id="massnahmeBeschreibung" name="massnahmeBeschreibung" required autocomplete="off"
+        placeholder="Beispiel: Installation einer Wallbox (11 kW) in der Tiefgarage am Stellplatz Nr. … durch Fachbetrieb …; Zuleitung ab Unterverteilung; Absicherung/Fehlerstromschutz; keine Eingriffe in tragende Bauteile."></textarea>
     </fieldset>
-    
+
     <fieldset>
       <legend>4. Zusicherungen an den Vermieter</legend>
+
       <label for="zusicherungen">Geben Sie dem Vermieter Sicherheit:
-        <small>Listen Sie hier auf, welche Garantien Sie geben, um die Bedenken des Vermieters zu zerstreuen.</small>
+        <small>z.B. Fachfirma, Kostenübernahme, Haftung/Versicherung, Rückbau, Sicherheitsleistung (falls verlangt), Einhaltung von Normen/Brandschutz.</small>
       </label>
-      <textarea id="zusicherungen" placeholder="Beispiele:&#10;- Sämtliche Arbeiten werden fachgerecht durch eine qualifizierte Fachfirma ausgeführt.&#10;- Ich übernehme die vollständigen Kosten für den Ein- und eventuellen Rückbau.&#10;- Für eventuelle Schäden, die durch den Umbau entstehen, kommt meine Haftpflichtversicherung auf.&#10;- Bei meinem Auszug werde ich den ursprünglichen Zustand auf eigene Kosten wiederherstellen."></textarea>
+      <textarea id="zusicherungen" name="zusicherungen" autocomplete="off"
+        placeholder="Beispiele:
+- Ausführung ausschließlich durch qualifizierte Fachfirma.
+- Ich übernehme alle Kosten (Einbau/Betrieb/Wartung/Rückbau).
+- Für Schäden hafte ich; vorhandene Haftpflichtversicherung.
+- Rückbau bei Auszug, soweit verlangt.
+- Auf Wunsch: angemessene zusätzliche Sicherheit (Kaution) für Rückbau/Schäden (§ 554 Abs. 1 S. 3 BGB)."></textarea>
     </fieldset>
-    
+
     <div class="button-group">
       <button type="button" id="saveBtnUmbau" class="button-secondary">Speichern</button>
       <button type="button" id="loadBtnUmbau" class="button-secondary">Laden</button>
@@ -79,7 +143,7 @@
 <div id="spendenPopup" class="popup-overlay">
   <div class="popup-content">
       <h2>Antrag erstellt!</h2>
-      <p>Wir drücken die Daumen für Ihr Vorhaben! Wenn Ihnen dieses Tool geholfen hat, unterstützen Sie das Projekt gerne mit einer kleinen Spende.</p>
+      <p>Wenn dieses Tool geholfen hat, unterstützt eine kleine Spende das Projekt gerne.</p>
       <form action="https://www.paypal.com/donate" method="post" target="_blank">
           <input type="hidden" name="business" value="info@kassen-lotse.de" />
           <input type="hidden" name="item_name" value="Unterstützung für das Projekt Mieter-Lotse" />
@@ -92,12 +156,11 @@
 
 <footer>
   <div class="mini-footer-hint">
-  <p>Brauchen Sie mehr Unterstützung bei Anträgen, Behördenbriefen oder komplexen Schreiben?</p>
-  <a href="https://clerion.de" class="mini-footer-link">Clerion - Ihr digitaler Behörden-Assistent</a>
+    <p>Brauchen Sie mehr Unterstützung bei Anträgen, Behördenbriefen oder komplexen Schreiben?</p>
+    <a href="https://clerion.de" class="mini-footer-link">Clerion - Ihr digitaler Behörden-Assistent</a>
   </div>
-    <p>&copy; 2025 Mieter-Lotse | <a href="über.html">Über uns</a> | <a href="index.html">Zurück zur Startseite</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+  <p>&copy; 2025 Mieter-Lotse | <a href="über.html">Über uns</a> | <a href="index.html">Zurück zur Startseite</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
 </footer>
 
 </body>
-
 </html>

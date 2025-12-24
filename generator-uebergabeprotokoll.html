@@ -2,87 +2,145 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Wohnungsübergabeprotokoll erstellen | Mieter-Lotse</title>
-  <meta name="description" content="Erstellen Sie ein detailliertes Wohnungsübergabeprotokoll für Einzug und Auszug. Sichern Sie sich ab und dokumentieren Sie den Zustand der Wohnung, Zählerstände und Schlüssel.">
-  <meta name="keywords" content="Übergabeprotokoll, Wohnungsübergabe, Einzug, Auszug, Protokoll, Mängel, Zählerstand, Schlüssel, Mietrecht, Vorlage, Generator">
+  <title>Wohnungsübergabeprotokoll erstellen (Einzug/Auszug) | Mieter-Lotse</title>
+
+  <meta name="description" content="Erstellen Sie ein Wohnungsübergabeprotokoll für Einzug oder Auszug. Dokumentieren Sie Zustand, Zählernummern und Schlüssel – hilfreich zur Streitvermeidung (z.B. Kaution) und zur Abgrenzung normaler Abnutzung (§ 538 BGB).">
+  <meta name="robots" content="index,follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="icon" href="/logo-lotse-fav.png">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script defer src="uebergabeprotokoll_script.js"></script>
   <link rel="stylesheet" href="/css/generator.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Wohnungsübergabeprotokoll erstellen",
+    "description": "Generator für ein Wohnungsübergabeprotokoll (Einzug/Auszug) inkl. Zählernummern und Schlüsselanzahl.",
+    "inLanguage": "de",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Mieter-Lotse",
+      "url": "https://mieter-lotse.de"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Mieter-Lotse",
+      "url": "https://mieter-lotse.de"
+    },
+    "about": [
+      { "@type": "Thing", "name": "Wohnungsübergabeprotokoll" },
+      { "@type": "Thing", "name": "Mietkaution" },
+      { "@type": "Thing", "name": "BGB § 538" }
+    ],
+    "lastReviewed": "2025-12-23",
+    "reviewedBy": { "@type": "Organization", "name": "Mieter-Lotse Redaktion" }
+  }
+  </script>
 </head>
 <body>
 
 <header class="site-header">
-    <a href="index.html" class="site-logo">Mieter-Lotse</a>
+  <a href="index.html" class="site-logo">Mieter-Lotse</a>
 </header>
 
 <div class="page-container">
   <h1>Wohnungsübergabeprotokoll erstellen</h1>
-  <p class="info-box info">
-    Ein sauberes Übergabeprotokoll ist die beste Versicherung gegen spätere Streitigkeiten über Mängel oder die Mietkaution. Dieses Tool erstellt Ihnen ein professionelles, leeres Protokoll mit Ihren Stammdaten. Drucken Sie es am besten zweimal aus – ein Exemplar für Sie, eines für den Vermieter.
-  </p>
-  <p class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 10px;">
-  <strong>Hinweis:</strong> Dieses Tool ersetzt keine Rechtsberatung. Es dient der allgemeinen Unterstützung bei der Antragstellung. Bei Unsicherheiten wenden Sie sich bitte an eine anerkannte Beratungsstelle oder einen Rechtsanwalt.
-</p>
-<p class="highlight-box" style="background-color: #fff3f3; border-left: 4px solid #e53935; padding: 10px; margin-top: 10px;">
-  <strong>Technischer Hinweis:</strong> Um das PDF erfolgreich herunterzuladen, öffnen Sie diese Seite bitte in einem Internet-Browser wie <strong>Chrome, Firefox oder Safari</strong>. In der Google-App (z. B. über die Suchleiste auf dem Startbildschirm) funktioniert der Download leider nicht zuverlässig.
-</p>
-<div class="highlight-box pruefdatum-box" role="note" aria-label="Zuletzt geprüft">
-  <p><strong>Zuletzt geprüft:</strong> <span id="pruefdatum">13.12.2025</span></p>
-</div>
 
-  <form id="uebergabeprotokollForm">
+  <p class="info-box info">
+    Ein sauberes Übergabeprotokoll hilft, spätere Streitigkeiten über Mängel, Schlüssel oder Nebenkosten/Abrechnung zu vermeiden.
+    Wichtig ist eine möglichst genaue Dokumentation - inklusive Zählerdaten und Schlüsselanzahl - und die Unterschrift beider Parteien.
+    Normale Abnutzung durch vertragsgemäßen Gebrauch ist vom Mieter nicht zu vertreten (§ 538 BGB). 
+  </p>
+
+  <p class="info-box">
+    <strong>Expertentipps:</strong><br>
+    - Protokoll vor Ort vollständig ausfüllen und von allen Beteiligten unterschreiben lassen (am besten direkt zwei Exemplare).<br>
+    - Zählerstände am Übergabetag ablesen, fotografieren und zusammen mit Zählernummern dokumentieren (Fotos separat aufbewahren).<br>
+    - Auffälligkeiten/Mängel konkret beschreiben (Ort, Größe, Zustand), nicht nur „Kratzer vorhanden“.<br>
+    - Schlüssel wirklich zählen (auch Keller, Briefkasten, Zusatz-/Sicherheitsschlüssel) und im Protokoll festhalten.
+  </p>
+
+  <p class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 10px;">
+    <strong>Hinweis:</strong> Dieses Tool ersetzt keine Rechtsberatung. Es dient der allgemeinen Unterstützung bei der Antragstellung. Bei Unsicherheiten wenden Sie sich bitte an eine anerkannte Beratungsstelle oder einen Rechtsanwalt.
+  </p>
+
+  <p class="highlight-box" style="background-color: #fff3f3; border-left: 4px solid #e53935; padding: 10px; margin-top: 10px;">
+    <strong>Technischer Hinweis:</strong> Um das PDF erfolgreich herunterzuladen, öffnen Sie diese Seite bitte in einem Internet-Browser wie <strong>Chrome, Firefox oder Safari</strong>. In der Google-App (z. B. über die Suchleiste auf dem Startbildschirm) funktioniert der Download leider nicht zuverlässig.
+  </p>
+
+  <div class="highlight-box pruefdatum-box" role="note" aria-label="Zuletzt geprüft">
+    <p><strong>Redaktionell geprüft:</strong> <span id="pruefdatum">23.12.2025</span></p>
+  </div>
+
+  <form id="uebergabeprotokollForm" autocomplete="on">
     <fieldset>
       <legend>1. Angaben zur Wohnung & Übergabe</legend>
+
       <label for="objektAdresse">Anschrift der Wohnung (Straße, Hausnr., PLZ, Ort):</label>
-      <textarea id="objektAdresse" rows="2" required></textarea>
+      <textarea id="objektAdresse" name="objektAdresse" rows="2" required autocomplete="street-address"></textarea>
+
       <label for="etageLage">Etage / Lage im Haus:</label>
-      <input type="text" id="etageLage" placeholder="z.B. 2. OG links">
+      <input type="text" id="etageLage" name="etageLage" placeholder="z.B. 2. OG links" autocomplete="off">
+
       <label for="datumUebergabe">Datum der Übergabe:</label>
-      <input type="date" id="datumUebergabe" required>
+      <input type="date" id="datumUebergabe" name="datumUebergabe" required autocomplete="off">
     </fieldset>
 
     <fieldset>
       <legend>2. Beteiligte Personen</legend>
+
       <label for="mieterName">Vollständiger Name des Mieters / der Mieter:</label>
-      <input type="text" id="mieterName" required>
+      <input type="text" id="mieterName" name="mieterName" required autocomplete="name">
+
       <label for="vermieterName">Vollständiger Name des Vermieters / der Verwaltung:</label>
-      <input type="text" id="vermieterName" required>
+      <input type="text" id="vermieterName" name="vermieterName" required autocomplete="organization">
     </fieldset>
 
-<fieldset>
+    <fieldset>
       <legend>Zusätzliche Räume</legend>
       <small>Geben Sie hier die Bezeichnungen für weitere Zimmer ein, die im Protokoll erscheinen sollen (z.B. Kinderzimmer, Arbeitszimmer, Hobbyraum).</small>
+
       <label for="weiteresZimmer1">Name des 1. weiteren Zimmers:</label>
-      <input type="text" id="weiteresZimmer1" placeholder="z.B. Kinderzimmer">
+      <input type="text" id="weiteresZimmer1" name="weiteresZimmer1" placeholder="z.B. Kinderzimmer" autocomplete="off">
+
       <label for="weiteresZimmer2">Name des 2. weiteren Zimmers (optional):</label>
-      <input type="text" id="weiteresZimmer2" placeholder="z.B. Arbeitszimmer">
+      <input type="text" id="weiteresZimmer2" name="weiteresZimmer2" placeholder="z.B. Arbeitszimmer" autocomplete="off">
+
       <label for="weiteresZimmer3">Name des 3. weiteren Zimmers (optional):</label>
-      <input type="text" id="weiteresZimmer3" placeholder="z.B. Hobbyraum">
+      <input type="text" id="weiteresZimmer3" name="weiteresZimmer3" placeholder="z.B. Hobbyraum" autocomplete="off">
     </fieldset>
 
     <fieldset>
       <legend>3. Zähler (Nummern eintragen)</legend>
       <small>Die Zählerstände selbst werden vor Ort im Protokoll handschriftlich eingetragen.</small>
+
       <label for="zaehlernummerStrom">Zählernummer Strom:</label>
-      <input type="text" id="zaehlernummerStrom">
+      <input type="text" id="zaehlernummerStrom" name="zaehlernummerStrom" autocomplete="off">
+
       <label for="zaehlernummerHeizung">Zählernummer Heizung / Wärmemengenzähler:</label>
-      <input type="text" id="zaehlernummerHeizung">
+      <input type="text" id="zaehlernummerHeizung" name="zaehlernummerHeizung" autocomplete="off">
+
       <label for="zaehlernummerWasser">Zählernummer Kaltwasser:</label>
-      <input type="text" id="zaehlernummerWasser">
+      <input type="text" id="zaehlernummerWasser" name="zaehlernummerWasser" autocomplete="off">
+
       <label for="zaehlernummerWarmwasser">Zählernummer Warmwasser:</label>
-      <input type="text" id="zaehlernummerWarmwasser">
+      <input type="text" id="zaehlernummerWarmwasser" name="zaehlernummerWarmwasser" autocomplete="off">
     </fieldset>
 
     <fieldset>
       <legend>4. Übergebene Schlüssel (Anzahl eintragen)</legend>
+
       <label for="anzahlWohnungsschluessel">Anzahl Wohnungs-/Haustürschlüssel:</label>
-      <input type="number" id="anzahlWohnungsschluessel" min="0" value="0">
+      <input type="number" id="anzahlWohnungsschluessel" name="anzahlWohnungsschluessel" min="0" value="0" inputmode="numeric" autocomplete="off">
+
       <label for="anzahlKellerschluessel">Anzahl Kellerschlüssel:</label>
-      <input type="number" id="anzahlKellerschluessel" min="0" value="0">
+      <input type="number" id="anzahlKellerschluessel" name="anzahlKellerschluessel" min="0" value="0" inputmode="numeric" autocomplete="off">
+
       <label for="anzahlBriefkastenschluessel">Anzahl Briefkastenschlüssel:</label>
-      <input type="number" id="anzahlBriefkastenschluessel" min="0" value="0">
+      <input type="number" id="anzahlBriefkastenschluessel" name="anzahlBriefkastenschluessel" min="0" value="0" inputmode="numeric" autocomplete="off">
     </fieldset>
 
     <div class="button-group">
@@ -109,12 +167,11 @@
 
 <footer>
   <div class="mini-footer-hint">
-  <p>Brauchen Sie mehr Unterstützung bei Anträgen, Behördenbriefen oder komplexen Schreiben?</p>
-  <a href="https://clerion.de" class="mini-footer-link">Clerion - Ihr digitaler Behörden-Assistent</a>
+    <p>Brauchen Sie mehr Unterstützung bei Anträgen, Behördenbriefen oder komplexen Schreiben?</p>
+    <a href="https://clerion.de" class="mini-footer-link">Clerion - Ihr digitaler Behörden-Assistent</a>
   </div>
-    <p>&copy; 2025 Mieter-Lotse | <a href="über.html">Über uns</a> | <a href="index.html">Zurück zur Startseite</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+  <p>&copy; 2025 Mieter-Lotse | <a href="über.html">Über uns</a> | <a href="index.html">Zurück zur Startseite</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
 </footer>
 
 </body>
-
 </html>

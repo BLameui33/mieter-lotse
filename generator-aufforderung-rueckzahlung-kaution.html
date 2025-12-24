@@ -2,137 +2,198 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Aufforderung zur Rückzahlung der Mietkaution erstellen</title>
-  <meta name="description" content="Erstellen Sie hier Ihr Schreiben an den Vermieter zur Aufforderung der Rückzahlung Ihrer Mietkaution und Kautionsabrechnung nach Auszug.">
-  <meta name="keywords" content="Mietkaution zurückfordern, Kautionsrückzahlung, Schreiben, Generator, Vorlage, Mieter, Vermieter, Auszug, Kautionsabrechnung">
+  <title>Mietkaution zurückfordern | Kautionsabrechnung & Zinsen (§ 551 BGB) | Mieter-Lotse</title>
+  <meta name="description" content="Erstellen Sie ein Schreiben zur Aufforderung der Rückzahlung Ihrer Mietkaution inklusive Zinsen und Kautionsabrechnung nach Auszug. Rechtsgrundlage zur Anlage/Verzinsung: § 551 BGB. Kostenlos, ohne Registrierung.">
+  <meta name="robots" content="index,follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/logo-lotse-fav.png">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script defer src="rueckzahlung-kaution_script.js"></script>
   <link rel="stylesheet" href="/css/generator.css">
-</head>
-<body>
 
+  <!-- Schema.org (YMYL/Legal) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Aufforderung zur Rückzahlung der Mietkaution",
+    "description": "Generator für ein Aufforderungsschreiben zur Rückzahlung der Mietkaution inklusive Zinsen und Abrechnung nach Auszug.",
+    "inLanguage": "de",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Mieter-Lotse",
+      "url": "https://mieter-lotse.de"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Mieter-Lotse",
+      "url": "https://mieter-lotse.de"
+    },
+    "about": [
+      { "@type": "Thing", "name": "Mietkaution" },
+      { "@type": "Thing", "name": "Kautionsabrechnung" },
+      { "@type": "Thing", "name": "BGB § 551" }
+    ],
+    "lastReviewed": "2025-12-13",
+    "reviewedBy": { "@type": "Organization", "name": "Mieter-Lotse Redaktion" }
+  }
+  </script>
+</head>
+
+<body>
   <header class="site-header">
     <a href="index.html" class="site-logo">Mieter-Lotse</a>
-</header>
+  </header>
 
-<div class="page-container">
-  <h1>Aufforderung zur Rückzahlung der Mietkaution</h1>
-  <p class="info-box">
-    Mit diesem Formular können Sie Ihren ehemaligen Vermieter schriftlich auffordern, die von Ihnen geleistete Mietkaution nebst Zinsen zurückzuzahlen und darüber abzurechnen.
-    Weitere Informationen finden Sie auf unserer <a href="info-rueckzahlung-kaution.html">Info-Seite zur Mietkaution</a>.
-  </p>
-  <p class="warning-box"><strong>Hinweis:</strong> Dem Vermieter steht nach Auszug eine angemessene Prüf- und Überlegungsfrist zu (i.d.R. 3-6 Monate), bevor die Kaution abgerechnet und ausgezahlt werden muss. Fordern Sie die Kaution nicht vorzeitig zurück.</p>
-<p class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 10px;">
-  <strong>Hinweis:</strong> Dieses Tool ersetzt keine Rechtsberatung. Es dient der allgemeinen Unterstützung bei der Antragstellung. Bei Unsicherheiten wenden Sie sich bitte an eine anerkannte Beratungsstelle oder einen Rechtsanwalt.
-</p>
-<p class="highlight-box" style="background-color: #fff3f3; border-left: 4px solid #e53935; padding: 10px; margin-top: 10px;">
-  <strong>Technischer Hinweis:</strong> Um das PDF erfolgreich herunterzuladen, öffnen Sie diese Seite bitte in einem Internet-Browser wie <strong>Chrome, Firefox oder Safari</strong>. In der Google-App (z. B. über die Suchleiste auf dem Startbildschirm) funktioniert der Download leider nicht zuverlässig.
-</p>
-<div class="highlight-box pruefdatum-box" role="note" aria-label="Zuletzt geprüft">
-  <p><strong>Zuletzt geprüft:</strong> <span id="pruefdatum">13.12.2025</span></p>
-</div>
+  <div class="page-container">
+    <h1>Aufforderung zur Rückzahlung der Mietkaution</h1>
 
-  <form id="kautionRueckzahlungForm">
-    <fieldset>
-      <legend>1. Angaben zum Mieter / zur Mieterin (Kautionsgeber:in)</legend>
-      <label for="mieterName">Vor- und Nachname (aller im Mietvertrag genannten Mieter):</label>
-      <input type="text" id="mieterName" required placeholder="z.B. Erika Mustermann und Max Mustermann">
-      <label for="mieterAlteAdresse">Anschrift der ehemaligen Mietwohnung (für die die Kaution hinterlegt wurde):</label>
-      <textarea id="mieterAlteAdresse" rows="3" required placeholder="Straße, Hausnr., PLZ, Ort, ggf. Etage"></textarea>
-      <label for="mieterNeueAdresse">Ihre aktuelle (neue) Anschrift für die Antwort des Vermieters:</label>
-      <textarea id="mieterNeueAdresse" rows="3" required></textarea>
-      <label for="mieterTelefon">Telefonnummer (für Rückfragen, optional):</label>
-      <input type="text" id="mieterTelefon">
-    </fieldset>
+    <p class="info-box">
+      Mit diesem Formular können Sie Ihren ehemaligen Vermieter schriftlich auffordern, die von Ihnen geleistete Mietkaution zurückzuzahlen und darüber abzurechnen.
+      <strong>Zinsen/Erträge:</strong> Bei einer als Geldsumme geleisteten Sicherheit muss der Vermieter diese getrennt von seinem Vermögen anlegen; die Erträge stehen dem Mieter zu und erhöhen die Sicherheit (§ 551 Abs. 3 BGB). [page:0]
+      Weitere Informationen finden Sie auf unserer <a href="info-rueckzahlung-kaution.html">Info-Seite zur Mietkaution</a>.
+    </p>
 
-    <fieldset>
-      <legend>2. Angaben zum ehemaligen Vermieter / zur Hausverwaltung</legend>
-      <label for="vermieterName">Name des Vermieters / der Hausverwaltung:</label>
-      <input type="text" id="vermieterName" required>
-      <label for="vermieterAdresse">Anschrift des Vermieters / der Hausverwaltung:</label>
-      <textarea id="vermieterAdresse" rows="3" required></textarea>
-    </fieldset>
+    <p class="warning-box">
+      <strong>Wichtig:</strong> Es gibt keine starre gesetzliche „3–6 Monate“-Frist.
+      In der Praxis wird Vermietern nach Auszug häufig eine angemessene Prüf- und Abrechnungszeit zugestanden (z.B. zur Prüfung von Schäden oder offenen Forderungen); bei noch ausstehender Betriebskostenabrechnung kann ein angemessener Teil der Kaution vorübergehend einbehalten werden.
+    </p>
 
-    <fieldset>
-      <legend>3. Angaben zum Mietverhältnis und zur Kaution</legend>
-      <label for="mietbeginnDatum">Beginn des Mietverhältnisses (Datum):</label>
-      <input type="date" id="mietbeginnDatum" required>
-      <label for="mietendeDatum">Ende des Mietverhältnisses / Datum der Wohnungsübergabe:</label>
-      <input type="date" id="mietendeDatum" required>
-      <label for="kautionshoehe">Höhe der ursprünglich gezahlten Kaution (in EUR):</label>
-      <input type="number" id="kautionshoehe" step="0.01" placeholder="z.B. 1500.00" required>
-      <label for="kautionsart">Art der Kaution (falls bekannt):</label>
-      <select id="kautionsart">
-        <option value="Barkaution">Barkaution (auf Kautionskonto)</option>
-        <option value="Bankbürgschaft">Bankbürgschaft</option>
-        <option value="Verpfändetes Sparbuch">Verpfändetes Sparbuch</option>
-        <option value="Sonstige">Sonstige / Nicht bekannt</option>
-      </select>
-      <label for="nebenkostenAbrechnungErhalten">Liegt die letzte Nebenkostenabrechnung für den gesamten Mietzeitraum bereits vor?</label>
-      <select id="nebenkostenAbrechnungErhalten" required>
-        <option value="">Bitte wählen...</option>
-        <option value="ja">Ja, alle Abrechnungen liegen vor und sind beglichen/verrechnet.</option>
-        <option value="nein_ausstehend">Nein, die letzte Nebenkostenabrechnung steht noch aus.</option>
-        <option value="nein_strittig">Nein, es gibt noch strittige Punkte bezüglich der Nebenkosten.</option>
-      </select>
-    </fieldset>
+    <p class="info-box">
+      <strong>Hinweis zur Datenspeicherung:</strong>
+      Die Funktionen „Eingaben speichern“ und „Gespeicherte Eingaben laden“ nutzen den localStorage Ihres Browsers (gerät-/browserbezogen).
+      Es findet dabei keine automatische Übermittlung Ihrer Formulardaten an Mieter-Lotse statt.
+    </p>
 
-    <fieldset>
-      <legend>4. Forderung und Fristsetzung</legend>
-      <label for="fristRueckzahlungKaution">Ich bitte um Rückzahlung der Kaution nebst Zinsen und um eine detaillierte Kautionsabrechnung bis zum (Datum): <small>(Setzen Sie eine angemessene Frist, z.B. 14 Tage ab heute, wenn die übliche Überlegungsfrist des Vermieters verstrichen ist.)</small></label>
-      <input type="date" id="fristRueckzahlungKaution" required>
-      <label for="bankverbindungRueckzahlung">Bankverbindung für die Rückzahlung der Kaution:</label>
-      <input type="text" id="kontoinhaberKaution" placeholder="Kontoinhaber:in (falls abweichend von Mieter:in)" style="margin-bottom: 0.5rem;">
-      <input type="text" id="ibanKaution" placeholder="IBAN" required style="margin-bottom: 0.5rem;">
-      <input type="text" id="bicKaution" placeholder="BIC (optional)">
-      <label for="bemerkungenKaution">Zusätzliche Bemerkungen oder Hinweise an den Vermieter (optional):</label>
-      <textarea id="bemerkungenKaution" rows="3" placeholder="z.B. Hinweis auf das Übergabeprotokoll, Bestätigung der Mängelfreiheit bei Auszug."></textarea>
-    </fieldset>
-    
-    <fieldset>
-        <legend>5. Beizufügende Anlagen (optional, Kopien sind ausreichend)</legend>
-        <div class="checkbox-group">
-            <label><input type="checkbox" name="anlagenKaution" value="Kopie des Mietvertrages (Passage zur Kaution)"> Kopie des Mietvertrages (Passage zur Kaution)</label>
-            <label><input type="checkbox" name="anlagenKaution" value="Kopie des Wohnungsübergabeprotokolls"> Kopie des Wohnungsübergabeprotokolls</label>
-            <label><input type="checkbox" name="anlagenKaution" value="Nachweis über die Kautionszahlung (z.B. Kontoauszug)"> Nachweis über die Kautionszahlung</label>
-        </div>
-        <label for="anlageSonstigesKaution">Sonstige Anlagen:</label>
-        <input type="text" id="anlageSonstigesKaution">
-    </fieldset>
+    <p class="info-box" style="background-color:#fff8e1; border-left:4px solid #ff9800; padding:10px; margin-top:10px;">
+      <strong>Wichtiger Hinweis:</strong> Dieses Tool ersetzt keine Rechtsberatung.
+      Ob und in welcher Höhe der Vermieter (vorübergehend) einbehalten darf, hängt vom Einzelfall (z.B. Schäden, Mietrückstände, Nebenkosten) ab.
+    </p>
 
-    <div class="button-group">
-      <button type="button" id="saveBtnKaution" class="button-secondary">Eingaben speichern</button>
-      <button type="button" id="loadBtnKaution" class="button-secondary">Gespeicherte Eingaben laden</button>
-      <button type="submit" class="button-primary">📄 Aufforderungsschreiben-PDF erstellen</button>
+    <p class="highlight-box" style="background-color:#fff3f3; border-left:4px solid #e53935; padding:10px; margin-top:10px;">
+      <strong>Technischer Hinweis:</strong> Um das PDF erfolgreich herunterzuladen, öffnen Sie diese Seite bitte in einem Internet-Browser wie <strong>Chrome, Firefox oder Safari</strong>. In der Google-App (z. B. über die Suchleiste auf dem Startbildschirm) funktioniert der Download leider nicht zuverlässig.
+    </p>
+
+    <div class="highlight-box pruefdatum-box" role="note" aria-label="Redaktionell geprüft">
+      <p><strong>Redaktionell geprüft:</strong> <span id="pruefdatum">13.12.2025</span></p>
     </div>
-  </form>
-</div>
 
-<div id="spendenPopupKaution" class="popup-overlay">
-  <div class="popup-content">
-    <h2>Danke für deine Nutzung 💛</h2>
-    <p>Wenn dir dieses Tool geholfen hat, unterstütze das Projekt gerne mit einer kleinen Spende:</p>
-    <form action="https://www.paypal.com/donate" method="post" target="_blank">
-      <input type="hidden" name="business" value="info@kassen-lotse.de" />
-      <input type="hidden" name="charset" value="utf-8">
-      <input type="hidden" name="item_name" value="Unterstützung für das Projekt Mieter-Lotse" />
-      <input type="hidden" name="currency_code" value="EUR" />
-      <input type="submit" value="Spenden mit PayPal" />
+    <form id="kautionRueckzahlungForm" autocomplete="on">
+      <fieldset>
+        <legend>1. Angaben zum Mieter / zur Mieterin (Kautionsgeber:in)</legend>
+
+        <label for="mieterName">Vor- und Nachname (aller im Mietvertrag genannten Mieter):</label>
+        <input type="text" id="mieterName" name="mieterName" required placeholder="z.B. Erika Mustermann und Max Mustermann" autocomplete="name">
+
+        <label for="mieterAlteAdresse">Anschrift der ehemaligen Mietwohnung:</label>
+        <textarea id="mieterAlteAdresse" name="mieterAlteAdresse" rows="3" required placeholder="Straße, Hausnr., PLZ, Ort, ggf. Etage" autocomplete="street-address"></textarea>
+
+        <label for="mieterNeueAdresse">Ihre aktuelle (neue) Anschrift für die Antwort:</label>
+        <textarea id="mieterNeueAdresse" name="mieterNeueAdresse" rows="3" required autocomplete="street-address"></textarea>
+
+        <label for="mieterTelefon">Telefonnummer (optional):</label>
+        <input type="tel" id="mieterTelefon" name="mieterTelefon" autocomplete="tel">
+      </fieldset>
+
+      <fieldset>
+        <legend>2. Angaben zum ehemaligen Vermieter / zur Hausverwaltung</legend>
+
+        <label for="vermieterName">Name des Vermieters / der Hausverwaltung:</label>
+        <input type="text" id="vermieterName" name="vermieterName" required autocomplete="organization">
+
+        <label for="vermieterAdresse">Anschrift des Vermieters / der Hausverwaltung:</label>
+        <textarea id="vermieterAdresse" name="vermieterAdresse" rows="3" required autocomplete="street-address"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. Angaben zum Mietverhältnis und zur Kaution</legend>
+
+        <label for="mietbeginnDatum">Beginn des Mietverhältnisses:</label>
+        <input type="date" id="mietbeginnDatum" name="mietbeginnDatum" required autocomplete="off">
+
+        <label for="mietendeDatum">Ende des Mietverhältnisses / Datum der Wohnungsübergabe:</label>
+        <input type="date" id="mietendeDatum" name="mietendeDatum" required autocomplete="off">
+
+        <label for="kautionshoehe">Höhe der ursprünglich gezahlten Kaution (in EUR):</label>
+        <input type="number" id="kautionshoehe" name="kautionshoehe" step="0.01" min="0" placeholder="z.B. 1500.00" required inputmode="decimal" autocomplete="off">
+
+        <label for="kautionsart">Art der Kaution (falls bekannt):</label>
+        <select id="kautionsart" name="kautionsart" autocomplete="off">
+          <option value="Barkaution">Barkaution (Geldsumme)</option>
+          <option value="Bankbürgschaft">Bankbürgschaft</option>
+          <option value="Verpfändetes Sparbuch">Verpfändetes Sparbuch</option>
+          <option value="Sonstige">Sonstige / Nicht bekannt</option>
+        </select>
+
+        <label for="nebenkostenAbrechnungErhalten">Liegt die letzte Nebenkostenabrechnung für den gesamten Mietzeitraum bereits vor?</label>
+        <select id="nebenkostenAbrechnungErhalten" name="nebenkostenAbrechnungErhalten" required autocomplete="off">
+          <option value="">Bitte wählen...</option>
+          <option value="ja">Ja, alle Abrechnungen liegen vor und sind erledigt.</option>
+          <option value="nein_ausstehend">Nein, die letzte Nebenkostenabrechnung steht noch aus.</option>
+          <option value="nein_strittig">Nein, es gibt noch strittige Punkte bezüglich der Nebenkosten.</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>4. Forderung und Fristsetzung</legend>
+
+        <label for="fristRueckzahlungKaution">
+          Bitte um Rückzahlung der Kaution (inkl. Zinsen/Erträge) und um Kautionsabrechnung bis zum (Datum):
+          <small>Setzen Sie eine Frist erst dann „scharf“, wenn eine angemessene Prüfzeit verstrichen ist.</small>
+        </label>
+        <input type="date" id="fristRueckzahlungKaution" name="fristRueckzahlungKaution" required autocomplete="off">
+
+        <label>Bankverbindung für die Rückzahlung:</label>
+        <input type="text" id="kontoinhaberKaution" name="kontoinhaberKaution" placeholder="Kontoinhaber:in (falls abweichend)" style="margin-bottom:0.5rem;" autocomplete="name">
+        <input type="text" id="ibanKaution" name="ibanKaution" placeholder="IBAN" required style="margin-bottom:0.5rem;"
+               autocomplete="off" inputmode="text" pattern="^[A-Z]{2}[0-9A-Z]{13,32}$" title="IBAN ohne Leerzeichen, z.B. DE89370400440532013000">
+        <input type="text" id="bicKaution" name="bicKaution" placeholder="BIC (optional)" autocomplete="off" inputmode="text">
+
+        <label for="bemerkungenKaution">Zusätzliche Bemerkungen (optional):</label>
+        <textarea id="bemerkungenKaution" name="bemerkungenKaution" rows="3" placeholder="z.B. Hinweis auf Übergabeprotokoll, Zählerstände, Mängelfreiheit."></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>5. Beizufügende Anlagen (optional, Kopien)</legend>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="anlagenKaution" value="Kopie des Mietvertrages (Passage zur Kaution)"> Kopie des Mietvertrages (Passage zur Kaution)</label>
+          <label><input type="checkbox" name="anlagenKaution" value="Kopie des Wohnungsübergabeprotokolls"> Kopie des Wohnungsübergabeprotokolls</label>
+          <label><input type="checkbox" name="anlagenKaution" value="Nachweis über die Kautionszahlung (z.B. Kontoauszug)"> Nachweis über die Kautionszahlung</label>
+        </div>
+
+        <label for="anlageSonstigesKaution">Sonstige Anlagen:</label>
+        <input type="text" id="anlageSonstigesKaution" name="anlageSonstigesKaution" autocomplete="off">
+      </fieldset>
+
+      <div class="button-group">
+        <button type="button" id="saveBtnKaution" class="button-secondary">Eingaben speichern</button>
+        <button type="button" id="loadBtnKaution" class="button-secondary">Gespeicherte Eingaben laden</button>
+        <button type="submit" class="button-primary">📄 Aufforderungsschreiben-PDF erstellen</button>
+      </div>
     </form>
-    <button id="closePopupBtnKaution" class="popup-close-button">Schließen</button>
   </div>
-</div>
 
-<footer>
-  <div class="mini-footer-hint">
-  <p>Brauchen Sie mehr Unterstützung bei Anträgen, Behördenbriefen oder komplexen Schreiben?</p>
-  <a href="https://clerion.de" class="mini-footer-link">Clerion - Ihr digitaler Behörden-Assistent</a>
+  <div id="spendenPopupKaution" class="popup-overlay">
+    <div class="popup-content">
+      <h2>Danke für deine Nutzung</h2>
+      <p>Wenn dieses Tool geholfen hat, unterstützt eine kleine Spende das Projekt gerne.</p>
+      <form action="https://www.paypal.com/donate" method="post" target="_blank">
+        <input type="hidden" name="business" value="info@kassen-lotse.de" />
+        <input type="hidden" name="charset" value="utf-8">
+        <input type="hidden" name="item_name" value="Unterstützung für das Projekt Mieter-Lotse" />
+        <input type="hidden" name="currency_code" value="EUR" />
+        <input type="submit" value="Spenden mit PayPal" />
+      </form>
+      <button id="closePopupBtnKaution" class="popup-close-button">Schließen</button>
+    </div>
   </div>
+
+  <footer>
+    <div class="mini-footer-hint">
+      <p>Brauchen Sie mehr Unterstützung bei Anträgen, Behördenbriefen oder komplexen Schreiben?</p>
+      <a href="https://clerion.de" class="mini-footer-link">Clerion - Ihr digitaler Behörden-Assistent</a>
+    </div>
     <p>&copy; 2025 Mieter-Lotse | <a href="über.html">Über uns</a> | <a href="index.html">Zurück zur Startseite</a> | <a href="info-rueckzahlung-kaution.html">Infos Kautionsrückzahlung</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
-</footer>
-
+  </footer>
 </body>
 </html>
-

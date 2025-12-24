@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>Mieterhöhung prüfen 2025 | Kappungsgrenze, Fristen & Schnell-Check</title>
-  <meta name="description" content="Schneller Check für Mieterhöhungen bei Bestandsmieten: Prozentvergleich, Kappungsgrenze (15/20 %), Frist seit der letzten Erhöhung, Sonderfälle (Modernisierung, Index-, Staffelmiete) und Praxis-Checkliste.">
+
+  <meta name="description" content="Schnell-Check für Mieterhöhungen nach § 558 BGB: Prozentvergleich, Kappungsgrenze (15/20 % in 3 Jahren), Sperrfrist (frühestens 1 Jahr; wirksam nach 15 Monaten) und Hinweise zur Begründung in Textform (§ 558a BGB). Sonderfälle (Modernisierung, Index-, Staffelmiete) werden markiert.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://www.mieter-lotse.tld/mieterhoehung-grobraster.html">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,26 @@
   <meta property="og:title" content="Mieterhöhung prüfen 2025 | Kappungsgrenze & Fristen">
   <meta property="og:description" content="Prozentvergleich, Kappungsgrenze, Fristen und Sonderfälle im Schnell-Check. Mit verständlicher Checkliste.">
   <meta property="og:type" content="website">
+
+  <!-- YMYL/Trust: WebPage + lastReviewed -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"Mieterhöhung - Grobraster (Schnell-Check)",
+    "description":"Tool zur groben Einordnung einer Mieterhöhung (Prozentvergleich, Kappungsgrenze, Fristen) und Checkliste zur formalen Prüfung.",
+    "inLanguage":"de",
+    "isPartOf":{"@type":"WebSite","name":"Mieter-Lotse","url":"https://www.mieter-lotse.tld/"},
+    "publisher":{"@type":"Organization","name":"Mieter-Lotse","url":"https://www.mieter-lotse.tld/"},
+    "about":[
+      {"@type":"Thing","name":"Mieterhöhung (§ 558 BGB)"},
+      {"@type":"Thing","name":"Kappungsgrenze"},
+      {"@type":"Thing","name":"Begründung in Textform (§ 558a BGB)"}
+    ],
+    "lastReviewed":"2025-12-13",
+    "reviewedBy":{"@type":"Organization","name":"Mieter-Lotse Redaktion"}
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -27,56 +48,58 @@
       <p>
         Mit diesem Tool ordnest du eine <strong>Mieterhöhung bei Bestandsmieten</strong> grob ein:
         Wir berechnen den <strong>Prozentsatz</strong> zwischen alter und neuer Kaltmiete, prüfen
-        die <strong>Kappungsgrenze</strong> (in angespannten Märkten meist <strong>15&nbsp;%</strong>, sonst <strong>20&nbsp;%</strong>)
-        und beachten die <strong>Frist</strong> seit der letzten Erhöhung.
+        die <strong>Kappungsgrenze</strong> (in angespannten Märkten oft <strong>15&nbsp;%</strong>, sonst <strong>20&nbsp;%</strong>)
+        und beachten die <strong>Sperr-/Wartefristen</strong> bei § 558 BGB. 
       </p>
       <p>
         <em>Sonderfälle</em> wie <strong>Modernisierung</strong> sowie <strong>Index-</strong> und
         <strong>Staffelmieten</strong> folgen eigenen Regeln – wir markieren sie deutlich.
         Ergebnis: <em>voraussichtlich im Rahmen</em> / <em>grenzwertig</em> / <em>auffällig</em>.
+        Hinweis: Entscheidend sind auch die formalen Anforderungen (Textform/Begründung) nach § 558a BGB. 
       </p>
     </div>
-   <div class="highlight-box pruefdatum-box" role="note" aria-label="Zuletzt geprüft">
-  <p><strong>Zuletzt geprüft:</strong> <span id="pruefdatum">13.12.2025</span></p>
-</div>
 
-    <form id="mh-form" class="pflegegrad-form" aria-describedby="mh_ergebnis" novalidate>
+    <div class="highlight-box pruefdatum-box" role="note" aria-label="Zuletzt geprüft">
+      <p><strong>Redaktionell geprüft:</strong> <span id="pruefdatum">13.12.2025</span></p>
+    </div>
+
+    <form id="mh-form" class="pflegegrad-form" aria-describedby="mh_ergebnis" novalidate autocomplete="on">
       <!-- 1) Angaben -->
       <fieldset class="pflegegrad-fieldset active-step">
         <legend>1. Angaben zur Mieterhöhung</legend>
 
         <label class="pflegegrad-label" for="mh_alt">
           Bisherige Kaltmiete (€/Monat)
-          <input type="number" id="mh_alt" min="0" step="1" placeholder="z. B. 650" />
+          <input type="number" id="mh_alt" min="0" step="1" placeholder="z. B. 650" inputmode="numeric" autocomplete="off" />
         </label>
 
         <label class="pflegegrad-label" for="mh_neu">
           Neue Kaltmiete laut Schreiben (€/Monat)
-          <input type="number" id="mh_neu" min="0" step="1" placeholder="z. B. 728" />
+          <input type="number" id="mh_neu" min="0" step="1" placeholder="z. B. 728" inputmode="numeric" autocomplete="off" />
         </label>
 
         <label class="pflegegrad-label" for="mh_last_date">
           Datum der <strong>letzten</strong> Mieterhöhung (falls unbekannt: schätzen)
-          <input type="date" id="mh_last_date" />
+          <input type="date" id="mh_last_date" autocomplete="off" />
         </label>
 
         <div class="pflegegrad-label">
           Markt-/Sonderform
           <div style="display:grid; gap:.6rem; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
             <label for="mh_angespannt">Angespannter Wohnungsmarkt?
-              <select id="mh_angespannt">
+              <select id="mh_angespannt" autocomplete="off">
                 <option value="ja">Ja (Kappungsgrenze 15 %)</option>
                 <option value="nein" selected>Nein (Kappungsgrenze 20 %)</option>
               </select>
             </label>
             <label for="mh_mod">Modernisierung als Begründung?
-              <select id="mh_mod">
+              <select id="mh_mod" autocomplete="off">
                 <option value="nein" selected>Nein</option>
                 <option value="ja">Ja (Sonderregeln)</option>
               </select>
             </label>
             <label for="mh_sondermiete">Index- oder Staffelmiete?
-              <select id="mh_sondermiete">
+              <select id="mh_sondermiete" autocomplete="off">
                 <option value="keine" selected>Keine</option>
                 <option value="index">Indexmiete (VPI)</option>
                 <option value="staffel">Staffelmiete</option>
@@ -87,13 +110,14 @@
 
         <label class="pflegegrad-label" for="mh_mietspiegel">
           Optional: Ortsübliche Vergleichsmiete laut Mietspiegel (€/Monat)
-          <input type="number" id="mh_mietspiegel" min="0" step="1" placeholder="falls vorhanden" />
+          <input type="number" id="mh_mietspiegel" min="0" step="1" placeholder="falls vorhanden" inputmode="numeric" autocomplete="off" />
         </label>
 
         <p class="hinweis">
-          Grobe Regeln bei Bestandsmieten: <strong>Kappungsgrenze innerhalb von 3 Jahren</strong> (15&nbsp;%/20&nbsp;%),
-          <strong>Mindestsperrfrist</strong> seit der letzten Erhöhung typ. 12 Monate (Wirksamkeit nach rund 15 Monaten).
-          Bei <em>Modernisierung</em> oder <em>Index/Staffel</em> gelten andere Mechaniken.
+          Grobe Regeln bei Bestandsmieten nach § 558 BGB:
+          Der Vermieter kann die Zustimmung zur Erhöhung bis zur ortsüblichen Vergleichsmiete verlangen, wenn die Miete zum Zeitpunkt des Wirksamwerdens seit <strong>15 Monaten</strong> unverändert ist; das Verlangen kann frühestens <strong>ein Jahr</strong> nach der letzten Mieterhöhung geltend gemacht werden. 
+          Zusätzlich gilt bei Erhöhungen nach § 558 Abs. 1 die <strong>Kappungsgrenze</strong> in drei Jahren (20 % bzw. 15 % in bestimmten Gebieten). 
+          Für die Wirksamkeit ist außerdem relevant, dass das Mieterhöhungsverlangen <strong>in Textform</strong> erfolgt und begründet wird (§ 558a BGB; z.B. Mietspiegel, Mietdatenbank, Gutachten oder drei Vergleichswohnungen). 
         </p>
       </fieldset>
 
@@ -105,11 +129,10 @@
 
     <section id="mh_ergebnis" aria-live="polite"></section>
 
-    <!-- Erklärteil: verständlicher machen -->
     <section style="margin-top:1.25rem" aria-label="Erläuterungen & Beispiele">
       <h2>So ordnest du das Ergebnis ein</h2>
       <ul>
-        <li><strong>Im Rahmen:</strong> Erhöhung liegt innerhalb der Kappungsgrenze und Fristen – formale Prüfung trotzdem nötig.</li>
+        <li><strong>Im Rahmen:</strong> Erhöhung liegt innerhalb der Kappungsgrenze und Fristen – formale Prüfung trotzdem nötig (Textform/Begründung).</li>
         <li><strong>Grenzwertig:</strong> knapp an der Grenze oder Frist unklar – Angaben sorgfältig prüfen (Begründung, Mietspiegel, Zeitraum).</li>
         <li><strong>Auffällig:</strong> über Kappungsgrenze, falscher Zeitraum oder Sonderfall ohne passende Begründung.</li>
       </ul>
@@ -117,20 +140,20 @@
       <h3>Beispielrechnung</h3>
       <p class="hinweis">
         Alt: 650 €, Neu: 728 € → Steigerung = (728−650)/650 = <strong>12,0&nbsp;%</strong>.<br>
-        Letzte Erhöhung vor 18 Monaten, Gebiet <em>angespannt</em> (15&nbsp;%). Ergebnis: <em>tendenziell im Rahmen</em>
-        – formale Anforderungen (Begründung, Mietspiegel) noch prüfen.
+        Gebiet <em>angespannt</em> (15&nbsp;%), letzte Erhöhung vor 18 Monaten: rechnerisch <em>tendenziell im Rahmen</em> –
+        dennoch muss das Verlangen in Textform erfolgen und begründet sein (§ 558a BGB).
       </p>
     </section>
 
     <section aria-label="Checkliste">
       <h2>Checkliste: Das sollte im Erhöhungsschreiben stehen</h2>
       <ul>
-        <li><strong>Begründung:</strong> Bezug auf Mietspiegel, Vergleichswohnungen oder Kosten (je nach Art).</li>
-        <li><strong>Fristen:</strong> Mindestens 12 Monate seit letzter Erhöhung; 3-Jahres-Kappungsgrenze beachten.</li>
-        <li><strong>Höhe:</strong> Prozentrechnung nachvollziehbar? Passt sie zur Kappungsgrenze (15/20&nbsp;%)?</li>
+        <li><strong>Textform & Begründung:</strong> Das Erhöhungsverlangen muss in Textform erklärt und begründet werden (§ 558a Abs. 1 BGB).</li>
+        <li><strong>Zulässige Begründungsmittel:</strong> z.B. Mietspiegel, Mietdatenbank, Sachverständigengutachten oder Benennung von drei Vergleichswohnungen (§ 558a Abs. 2 BGB).</li>
+        <li><strong>Fristen:</strong> § 558: frühestens ein Jahr seit letzter Erhöhung; Wirksamwerden erst nach 15 Monaten unveränderter Miete (§ 558 Abs. 1 BGB).</li>
+        <li><strong>Kappungsgrenze:</strong> innerhalb von 3 Jahren max. 20 % bzw. 15 % in bestimmten Gebieten (§ 558 Abs. 3 BGB).</li>
         <li><strong>Mietspiegel:</strong> Merkmale (Baujahr, Lage, Ausstattung) korrekt zugeordnet?</li>
-        <li><strong>Sonderfälle:</strong> Modernisierung (Umlageanteil, Ankündigung) / Index (VPI-Nachweis) / Staffel (vereinbarter Plan).</li>
-        <li><strong>Form:</strong> Schriftform, Adressdaten, Fristen zur Zustimmung/Widerspruch.</li>
+        <li><strong>Sonderfälle:</strong> Modernisierung/Index/Staffel folgen eigenen Regeln (im Tool nur Markierung, keine Detailprüfung).</li>
       </ul>
       <p class="hinweis">Bei Unsicherheit: <strong>Mieterverein</strong> oder Rechtsberatung hinzuziehen.</p>
     </section>
@@ -138,9 +161,7 @@
     <div class="warning-box">
       <p>
         <strong>Wichtig:</strong> Der Schnell-Check ist <strong>vereinfacht</strong>.
-        Maßgeblich sind die <strong>Formalia des Mieterhöhungsverlangens</strong>, die <strong>örtlichen Kappungsgrenzen</strong>,
-        der <strong>Mietspiegel</strong> sowie <strong>Fristen</strong>. Bei Sonderfällen (Modernisierung, Index, Staffel):
-        stets die speziellen Regeln prüfen.
+        Maßgeblich sind u.a. Kappungsgrenze und Sperrfristen nach § 558 BGB sowie Form/Begründung nach § 558a BGB; bei Sonderfällen gelten andere Vorschriften.
       </p>
     </div>
   
