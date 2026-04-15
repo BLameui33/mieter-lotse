@@ -366,6 +366,122 @@ footer a:hover {
   }
 }
 
+/* === GRUND-DESIGN LOTSE === */
+        .lotse-wrapper {
+            max-width: 800px; /* Etwas breiter für die 3 Boxen */
+            margin: 40px auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            border-top: 6px solid #0056b3; 
+        }
+
+        /* === KOPFZEILE & ERKLÄRUNG === */
+        .lotse-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .lotse-header h2 {
+            color: #0056b3;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .lotse-header p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.5;
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+        }
+
+        #lotse-frage {
+            font-size: 22px;
+            color: #222;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        /* === ANTWORT-CONTAINER === */
+        #lotse-antworten {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        /* === LAYOUT FÜR DIE STARTSEITE (3 BOXEN) === */
+        #lotse-antworten.is-start-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        /* === STANDARD BUTTON-DESIGN === */
+        .lotse-btn {
+            padding: 16px 24px;
+            background-color: #f8f9fa;
+            color: #333;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lotse-btn:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 86, 179, 0.2);
+        }
+
+        /* === SPEZIELLES DESIGN FÜR START-BOXEN === */
+        .is-start-grid .lotse-btn {
+            flex-direction: column;
+            padding: 30px 20px;
+            text-align: center;
+            height: 100%;
+        }
+        
+        .lotse-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* === ZURÜCK-BUTTON === */
+        .lotse-footer {
+            text-align: center;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        #lotse-zurueck {
+            background: transparent;
+            color: #666;
+            border: none;
+            font-size: 15px;
+            cursor: pointer;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.2s;
+        }
+        
+        #lotse-zurueck:hover {
+            background: #f1f1f1;
+            color: #222;
+        }
+
   </style>
 </head>
 <body>
@@ -391,6 +507,23 @@ footer a:hover {
             <li>Am Ende erhalten Sie ein <strong>fertig formuliertes PDF-Dokument</strong>, das Sie ausdrucken, unterschreiben und einreichen können.</li>
         </ul>
     </div>
+
+    <div class="lotse-wrapper" id="lotse-container">
+        
+        <div class="lotse-header">
+            <h2>Der Digitale Lotse</h2>
+            <p>Finden Sie schnell das passende Formular, den richtigen Rechner oder wichtige Informationen zu Ihrem Anliegen. Wählen Sie einfach den Bereich aus, in dem Sie Unterstützung benötigen.</p>
+        </div>
+
+        <h3 id="lotse-frage">Lade Lotse...</h3>
+        
+        <div id="lotse-antworten"></div>
+        
+        <div class="lotse-footer">
+            <button id="lotse-zurueck" onclick="lotseZurueck()" style="display: none;">
+                &#8592; Einen Schritt zurück
+            </button>
+        </div>
 
     <section class="promo-teaser" aria-labelledby="promo-headline">
 
@@ -669,6 +802,8 @@ footer a:hover {
 <footer>
     <p>&copy; 2026 Mieter-Lotse | <a href="über.html">Über uns & Redaktionsrichtlinien</a> | <a href="spenden.html">Unterstützen</a> | <a href="impressum-mieter-lotse.html">Impressum</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a></p>
   </footer>
+
+  <script src="lotse.js"></script>
 </body>
 </html>
 
