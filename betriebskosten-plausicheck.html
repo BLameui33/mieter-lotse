@@ -5,7 +5,7 @@
   <title>Betriebskostenabrechnung prüfen 2026 | m² Plausibilitätscheck</title>
   <meta name="description" content="Schneller Plausibilitätscheck für Betriebskosten 2026: reale Kosten pro m²/Monat berechnen, Ergebnis einordnen und Checkliste nutzen.">
   <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://www.mieter-lotse.tld/betriebskosten-plausicheck.html">
+  <link rel="canonical" href="https://www.mieter-lotse.de/betriebskosten-plausicheck.html">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/logo-lotse-fav.png">
   <link rel="stylesheet" href="/css/style.css">
@@ -77,95 +77,90 @@
   </div>
 
   <div class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 15px;">
-    <strong>Wichtiger Hinweis (YMYL):</strong> Dieses Tool stellt keine verbindliche Rechtsberatung dar. Ein „auffälliges“ Ergebnis bedeutet nicht automatisch, dass die Abrechnung rechtlich falsch ist (z.B. bei extremem individuellem Heizverhalten), und ein „unauffälliges“ Ergebnis schützt nicht vor inhaltlichen Fehlern (z.B. falschen Verteilerschlüsseln). Bei konkreten rechtlichen Schritten ziehen Sie einen Mieterverein oder Fachanwalt für Mietrecht hinzu.
+    <strong>Wichtiger Hinweis:</strong> Dieses Tool stellt keine verbindliche Rechtsberatung dar. Ein „auffälliges“ Ergebnis bedeutet nicht automatisch, dass die Abrechnung rechtlich falsch ist (z.B. bei extremem individuellem Heizverhalten), und ein „unauffälliges“ Ergebnis schützt nicht vor inhaltlichen Fehlern (z.B. falschen Verteilerschlüsseln). Bei konkreten rechtlichen Schritten ziehen Sie einen Mieterverein oder Fachanwalt für Mietrecht hinzu.
   </div>
 
   <div class="info-box" style="background-color: #e3f2fd; border-left: 4px solid #2196f3; padding: 10px; margin-top: 15px;">
     <strong>Hinweis zur Datenspeicherung:</strong> Ihre Eingaben sind sicher. Die Berechnungen erfolgen direkt in Ihrem Browser. Es werden keine Finanz- oder Wohnungsdaten an unsere Server übertragen.
   </div>
 
-  <div class="highlight-box" style="background-color: #fff3f3; border-left: 4px solid #e53935; padding: 10px; margin-top: 15px;">
-    <strong>Technischer Hinweis:</strong> Falls Sie das Prüfergebnis später als PDF speichern möchten, nutzen Sie bitte Browser wie <strong>Chrome, Firefox oder Safari</strong>. In bestimmten In-App-Browsern kann es zu Problemen beim Download kommen.
-  </div>
+  
 
   <div class="highlight-box pruefdatum-box" role="note" aria-label="Redaktionell geprüft" style="margin-top: 15px; margin-bottom: 30px;">
     <p><strong>Redaktionell geprüft am:</strong> <span id="pruefdatum">28.04.2026</span></p>
   </div>
 
     <form id="bk-form" class="pflegegrad-form" aria-describedby="bk_ergebnis" novalidate>
-      <!-- Schritt 1: Eingaben -->
-      <fieldset class="pflegegrad-fieldset active-step">
-        <legend>1. Deine Angaben</legend>
+  <!-- Schritt 1: Eingaben -->
+  <fieldset class="pflegegrad-fieldset active-step">
+    <legend>1. Deine Angaben zur Wohnung</legend>
 
-        <label class="pflegegrad-label" for="bk_flaeche">
-          Wohnfläche (m²)
-          <input type="number" id="bk_flaeche" min="5" max="500" step="0.5" placeholder="z. B. 65" />
+    <div style="display:grid; gap:.6rem; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
+      <label class="pflegegrad-label" for="bk_flaeche">Wohnfläche (m²)
+        <input type="number" id="bk_flaeche" min="5" max="500" step="0.5" placeholder="z. B. 65" required />
+      </label>
+
+      <label class="pflegegrad-label" for="bk_personen">Personen im Haushalt
+        <input type="number" id="bk_personen" min="1" max="10" step="1" value="1" required />
+      </label>
+    </div>
+
+    <div style="display:grid; gap:.6rem; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); margin-top: 1rem;">
+      <label class="pflegegrad-label" for="bk_voraus">Bisherige Vorauszahlung (€/Monat)
+        <input type="number" id="bk_voraus" min="0" step="1" placeholder="z. B. 200" required />
+      </label>
+
+      <label class="pflegegrad-label" for="bk_nachzahlung">Nachzahlung (+) oder Rückzahlung (−)
+        <input type="number" id="bk_nachzahlung" step="1" placeholder="z.B. 180 oder -90" required />
+      </label>
+    </div>
+
+    <div style="display:grid; gap:.6rem; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); margin-top: 1rem;">
+      <label class="pflegegrad-label" for="bk_mit_heizung">Inklusive Heizung/Warmwasser?
+        <select id="bk_mit_heizung">
+          <option value="ja" selected>Ja (Warmmiete)</option>
+          <option value="nein">Nein (nur kalte Betriebskosten)</option>
+        </select>
+      </label>
+      
+      <label class="pflegegrad-label" for="bk_monate">Abrechnungszeitraum (Monate)
+        <input type="number" id="bk_monate" min="1" max="24" step="1" value="12" />
+      </label>
+    </div>
+  </fieldset>
+
+  <!-- Schritt 2: Experten-Band (Versteckt für bessere UX) -->
+  <details class="pflegegrad-fieldset" style="margin-top: 1rem; cursor: pointer;">
+    <summary style="font-weight: bold; padding: 0.5rem 0;">⚙️ Experten-Einstellungen (Referenzwerte anpassen)</summary>
+    <div style="margin-top: 1rem;">
+      <p class="hinweis">
+        Das Tool berechnet die Referenzwerte automatisch basierend auf aktuellen Durchschnittswerten (Betriebskostenspiegel). Hier kannst du sie manuell überschreiben.
+      </p>
+      <div style="display:grid; gap:.6rem; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
+        <label class="pflegegrad-label" for="bk_band_min">Unteres Band (€/m²/Monat)
+          <input type="number" id="bk_band_min" min="0" step="0.1" value="3.50" />
         </label>
-
-        <label class="pflegegrad-label" for="bk_voraus">
-          Monatliche Vorauszahlung Betriebskosten (€/Monat)
-          <input type="number" id="bk_voraus" min="0" step="1" placeholder="z. B. 200" />
+        <label class="pflegegrad-label" for="bk_band_max">Oberes Band (€/m²/Monat)
+          <input type="number" id="bk_band_max" min="0" step="0.1" value="5.50" />
         </label>
-
-        <div class="pflegegrad-label">
-          Abrechnungszeitraum (Monate)
-          <input type="number" id="bk_monate" min="1" max="24" step="1" value="12" />
-        </div>
-
-        <label class="pflegegrad-label" for="bk_nachzahlung">
-          Ergebnis der Abrechnung (Gesamtbetrag für den Zeitraum): Nachzahlung <strong>+</strong> / Rückzahlung <strong>−</strong>
-          <input type="number" id="bk_nachzahlung" step="1" placeholder="z. B. 180 (Nachzahlung) oder -90 (Rückzahlung)" />
+        <label class="pflegegrad-label" for="bk_tol_plus">Toleranz oben (%)
+          <input type="number" id="bk_tol_plus" min="0" max="50" step="1" value="15" />
         </label>
-
-        <label class="pflegegrad-label" for="bk_mit_heizung">
-          Enthalten die Betriebskosten <strong>Heizung/Warmwasser</strong>?
-          <select id="bk_mit_heizung">
-            <option value="ja" selected>Ja (Brutto inkl. Heizung)</option>
-            <option value="nein">Nein (nur „kalte“ Betriebskosten)</option>
-          </select>
+        <label class="pflegegrad-label" for="bk_tol_minus">Toleranz unten (%)
+          <input type="number" id="bk_tol_minus" min="0" max="50" step="1" value="15" />
         </label>
-
-        <p class="hinweis">
-          So rechnet der Check: <em>(Vorauszahlung × Monate ± Nach-/Rückzahlung) ÷ Monate ÷ m²</em> ⇒ Kosten pro m²/Monat.
-        </p>
-      </fieldset>
-
-      <!-- Schritt 2: Referenzband -->
-      <fieldset class="pflegegrad-fieldset">
-        <legend>2. Richtwert-Band (anpassbar)</legend>
-
-        <p class="hinweis">
-          Grobe Orientierung (regional unterschiedlich): <em>inkl. Heizung</em> ca. <strong>3,50–5,50 €/m²</strong>,
-          <em>ohne Heizung</em> ca. <strong>1,80–3,20 €/m²</strong>. Passe die Werte bei Bedarf an (z. B. ältere Gebäude, Fernwärme).
-        </p>
-
-        <div style="display:grid; gap:.6rem; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
-          <label class="pflegegrad-label" for="bk_band_min">Unteres Band (€/m²/Monat)
-            <input type="number" id="bk_band_min" min="0" step="0.1" value="3.50" />
-          </label>
-          <label class="pflegegrad-label" for="bk_band_max">Oberes Band (€/m²/Monat)
-            <input type="number" id="bk_band_max" min="0" step="0.1" value="5.50" />
-          </label>
-          <label class="pflegegrad-label" for="bk_tol_plus">Toleranz „grenzwertig“ über Oberband (%)
-            <input type="number" id="bk_tol_plus" min="0" max="50" step="1" value="15" />
-          </label>
-          <label class="pflegegrad-label" for="bk_tol_minus">Toleranz „auffällig niedrig“ unter Unterband (%)
-            <input type="number" id="bk_tol_minus" min="0" max="50" step="1" value="15" />
-          </label>
-        </div>
-
-        <p class="hinweis">
-          Wenn du <strong>„ohne Heizung“</strong> gewählt hast, stelle das Band z. B. auf <strong>1,80–3,20 €/m²</strong>.
-        </p>
-      </fieldset>
-
-      <div class="button-container">
-        <button type="button" id="bk_check" class="button">Plausicheck starten</button>
-        <button type="reset" id="bk_reset" class="button button-secondary">Eingaben zurücksetzen</button>
       </div>
-    </form>
+    </div>
+  </details>
 
-    <section id="bk_ergebnis" aria-live="polite"></section>
+  <div class="button-container" style="margin-top: 1.5rem;">
+    <button type="button" id="bk_check" class="button" style="background-color: #2563eb; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">Plausicheck starten</button>
+  </div>
+  
+  <section id="bk_ergebnis" aria-live="polite" style="margin-top: 2rem;"></section>
+</form>
+
+    
 
     <!-- Erklärteil: verständlicher machen -->
     <section style="margin-top:1.25rem" aria-label="Erläuterungen & Beispiele">
@@ -288,8 +283,10 @@
     
     <h3 style="font-size: 1.1em; color: #333; margin-top: 0; margin-bottom: 8px;">Wer hat diese Inhalte erstellt?</h3>
     <p style="font-size: 0.9em; color: #555; max-width: 700px; margin: 0 auto 12px auto; line-height: 1.5;">
-        Unsere Ratgeber und Generatoren basieren auf der strikten Auswertung aktueller Gesetzestexte. Sie werden von <strong>Jan (Projektleitung) & Team</strong> entwickelt und durch unser Netzwerk aus <strong>Fachberatern</strong> regelmäßig auf fachliche Korrektheit geprüft.
-    </p>
+        Unsere Ratgeber und Generatoren basieren auf der strikten Auswertung aktueller Gesetzestexte. Sie werden von <strong>Jan (Projektleitung) & Team</strong> entwickelt und durch unser Netzwerk aus Fachberatern regelmäßig auf fachliche Korrektheit geprüft. 
+        <br><br>
+        <em>Wichtiger Hinweis: Unser Tool generiert Standardverträge zur Selbsthilfe und ersetzt keine anwaltliche Einzelfallprüfung.</em>
+    </p>
     
     <div style="margin-bottom: 25px;">
         <a href="über.html" style="display: inline-block; font-size: 0.9em; color: #0056b3; text-decoration: underline; font-weight: bold;">

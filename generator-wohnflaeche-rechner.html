@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Wohnflächen-Rechner & Messprotokoll Generator (WoFlV)</title>
+
+  <meta name="description" content="Kostenloser PDF-Generator: Berechnen Sie Ihre genaue Wohnfläche nach WoFlV (inkl. Dachschrägen & Balkon) und erstellen Sie ein offizielles Messprotokoll.">
+  <meta name="robots" content="index,follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="/logo-lotse-fav.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <link rel="stylesheet" href="/css/generator.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Generator: Wohnflächen-Rechner & Messprotokoll",
+    "description": "Erstellen Sie ein rechtssicheres Messprotokoll zur Wohnflächenberechnung nach der Wohnflächenverordnung (WoFlV). Automatischer Rechner für Schrägen und Balkone.",
+    "inLanguage": "de",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Mieter-Lotse",
+      "url": "https://mieter-lotse.de"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Mieter-Lotse",
+      "url": "https://mieter-lotse.de"
+    },
+    "about": [
+      { "@type": "Thing", "name": "Wohnflächenberechnung" },
+      { "@type": "Thing", "name": "Wohnflächenverordnung WoFlV" },
+      { "@type": "Thing", "name": "Messprotokoll" }
+    ],
+    "lastReviewed": "2026-05-01",
+    "reviewedBy": { "@type": "Organization", "name": "Mieter-Lotse Redaktion" }
+  }
+  </script>
+  <style>
+      .room-box {
+          background-color: #f8f9fa;
+          border: 1px solid #cfd8dc;
+          border-left: 5px solid #2196f3;
+          border-radius: 4px;
+          padding: 15px;
+          margin-bottom: 15px;
+          position: relative;
+      }
+      .room-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 10px;
+          border-bottom: 1px solid #e0e0e0;
+          padding-bottom: 5px;
+      }
+      .room-title {
+          font-weight: bold;
+          font-size: 1.1em;
+          color: #1a237e;
+      }
+      .remove-room-btn {
+          background-color: #ffebee;
+          color: #c62828;
+          border: 1px solid #ef9a9a;
+          padding: 5px 10px;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 0.85em;
+      }
+      .remove-room-btn:hover { background-color: #ef9a9a; }
+      .calc-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 15px;
+      }
+      .calc-grid-item {
+          display: flex;
+          flex-direction: column;
+      }
+      .calc-grid-item label {
+          font-size: 0.85em;
+          margin-bottom: 3px;
+      }
+      .calc-grid-item input {
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+      }
+      .room-total {
+          margin-top: 10px;
+          text-align: right;
+          font-weight: bold;
+          color: #2e7d32;
+      }
+      .grand-total-box {
+          background-color: #e8f5e9;
+          border: 2px solid #4caf50;
+          padding: 20px;
+          border-radius: 8px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          text-align: center;
+      }
+      .grand-total-val {
+          font-size: 2em;
+          font-weight: bold;
+          color: #1b5e20;
+          display: block;
+          margin-top: 10px;
+      }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="site-logo">Mieter-Lotse</a>
+</header>
+
+<div class="page-container">
+
+  <h1>Generator: Wohnflächen-Rechner (nach WoFlV) inkl. PDF-Protokoll</h1>
+<div class="usp-bar">
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    Nach WoFlV-Standard
+  </div>
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    Autom. Berechnung
+  </div>
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    Offizielles PDF
+  </div>
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    100% Kostenlos
+  </div>
+</div>
+
+   <a href="miete-nebenkosten.html" class="category-badge">
+    Zur Übersicht: Miete-Nebenkosten
+</a>
+
+  <p><em>Fachlich geprüft | Stand: 30.04.2026</em></p>
+
+  <a href="#messForm" class="button jump-button" style="margin-bottom: 20px; display: inline-block;">Direkt zum Rechner springen</a>
+
+  <div class="info-box">
+    <p>
+      Einfach nur Länge mal Breite messen, reicht vor Gericht nicht aus. Wer beweisen will, dass die Wohnung kleiner ist als im Mietvertrag angegeben, muss ein sauberes Aufmaß nach der <strong>Wohnflächenverordnung (WoFlV)</strong> vorlegen.
+    </p>
+    <p>
+      <strong>Dieser Rechner nimmt Ihnen die Arbeit ab.</strong> Fügen Sie einfach jeden Raum Ihrer Wohnung hinzu. Geben Sie die Grundmaße (Länge x Breite) ein. Haben Sie eine Dachschräge oder einen Balkon? Tragen Sie die Flächen in die Sonderfelder ein – das Tool halbiert bzw. viertelt diese Werte automatisch und addiert alles zur rechtlich korrekten Gesamtwohnfläche. Das generierte PDF-Protokoll können Sie direkt an den Vermieter senden.
+    </p>
+  </div>
+
+  <div class="info-box warning" style="border-left: 4px solid #ff9800; padding: 15px; margin-top: 20px; background-color: #fff8e1;">
+    <h2>Kurze Erinnerung zur Mess-Regel:</h2>
+    <ul style="margin-top: 5px; margin-bottom: 0; padding-left: 20px;">
+      <li><strong>100 % Fläche:</strong> Alle Räume mit einer Deckenhöhe über 2,00 Meter.</li>
+      <li><strong>50 % Fläche:</strong> Bereiche unter Dachschrägen mit Deckenhöhe zwischen 1,00 und 2,00 Metern (sowie unbeheizte Wintergärten).</li>
+      <li><strong>25 % Fläche (max. 50 %):</strong> Balkone, Terrassen und Loggien werden im Regelfall zu einem Viertel angerechnet (in Ausnahmefällen bis zur Hälfte).</li>
+      <li><strong>0 % Fläche:</strong> Bereiche unter 1,00 Meter Deckenhöhe, Kellerräume, Dachböden und Waschküchen.</li>
+    </ul>
+  </div>
+
+  <div class="info-box" style="background-color: #e8f5e9; border-left: 4px solid #4caf50; padding: 10px; margin-top: 15px;">
+    <strong>Erfolgs-Tipp: Von Wand zu Wand messen.</strong> Messen Sie immer auf Fußbodenhöhe von der fertigen Wand zur fertigen Wand. Fußleisten (Scheuerleisten) werden ignoriert, Sie müssen diese also nicht abziehen. Am genauesten und einfachsten funktioniert das Aufmaß mit einem digitalen Laser-Entfernungsmesser (gibt es im Baumarkt oft für unter 30 Euro).
+  </div>
+
+  <div class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 15px;">
+    <strong>Wichtiger Hinweis (Die 10-Prozent-Regel):</strong> Dieses Tool hilft Ihnen bei der Einschätzung. Damit Sie jedoch Geld vom Vermieter zurückfordern oder die Miete mindern können, muss die tatsächliche Wohnfläche <strong>mehr als 10 Prozent</strong> unter der im Mietvertrag angegebenen Fläche liegen (BGH-Rechtsprechung). Bei Mieterhöhungen gilt hingegen sofort die tatsächliche Fläche, ohne Toleranzgrenze.
+  </div>
+
+  <div class="info-box" style="background-color: #e3f2fd; border-left: 4px solid #2196f3; padding: 10px; margin-top: 15px;">
+    <strong>Absolute Datensicherheit:</strong> Die detaillierten Maße Ihrer Wohnung sind privat. Alle Berechnungen dieses Tools erfolgen lokal in Ihrem Browser (JavaScript/localStorage). Wir übertragen Ihre Eingaben nicht an unsere Server.
+  </div>
+
+  <div class="highlight-box" style="background-color: #fff3f3; border-left: 4px solid #e53935; padding: 10px; margin-top: 15px;">
+    <strong>Technischer Hinweis:</strong> Um das fertige Mess-Protokoll als PDF herunterzuladen, verwenden Sie bitte Standard-Browser wie <strong>Chrome, Firefox oder Safari</strong>. In den In-App-Browsern (z. B. Google-Such-App) schlägt der PDF-Export oft fehl.
+  </div>
+
+  <div class="highlight-box pruefdatum-box" role="note" aria-label="Redaktionell geprüft" style="margin-top: 15px; margin-bottom: 30px;">
+    <p><strong>Redaktionell geprüft am:</strong> <span id="pruefdatum">01.05.2026</span></p>
+  </div>
+
+  <form id="messForm">
+    <fieldset>
+      <legend>1. Objekt- & Kontaktdaten</legend>
+      <label for="mName">Ihr Vor- und Nachname (Ersteller des Protokolls):</label>
+      <input type="text" id="mName" required>
+      <label for="wAdresse">Adresse der vermessenen Wohnung:</label>
+      <textarea id="wAdresse" rows="2" placeholder="Straße, Hausnr., Stockwerk, PLZ, Ort" required></textarea>
+      
+      <label for="messDatum" style="margin-top: 10px;">Datum der Vermessung:</label>
+      <input type="date" id="messDatum" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Die Raum-Vermessung (Eingabe in Metern)</legend>
+      <p style="font-size: 0.85em; color: #555; margin-bottom: 15px;">Fügen Sie für jeden Raum (Wohnzimmer, Küche, Bad, Balkon etc.) einen Block hinzu. <em>Tipp: Bei komplexen Räumen messen Sie in Rechtecken und legen für jeden Teilbereich einen eigenen "Raum" an (z. B. "Wohnzimmer Teil 1", "Wohnzimmer Teil 2").</em></p>
+      
+      <div id="roomContainer">
+          <!-- Room Template is injected here -->
+      </div>
+
+      <button type="button" id="addRoomBtn" class="button-secondary" style="width: 100%; border: 2px dashed #2196f3; color: #2196f3; background: #fff;">+ Weiteren Raum hinzufügen</button>
+      
+      <div class="grand-total-box">
+          Gesamte Wohnfläche nach WoFlV:
+          <span class="grand-total-val"><span id="grandTotalDisplay">0.00</span> qm</span>
+      </div>
+    </fieldset>
+
+    <div class="button-group">
+      <button type="submit" id="generatePdfBtn" class="button-primary">📄 Offizielles Messprotokoll generieren</button>
+    </div>
+  </form>
+  <hr>
+
+  <h2>Häufige Fragen (FAQ) zur Wohnflächenberechnung</h2>
+  <details>
+    <summary>Zählen die Flächen unter Badewanne oder Küchenzeile mit?</summary>
+    <p>Ja. Die Grundflächen von sogenannten fest eingebauten Gegenständen – dazu gehören Badewannen, Duschtassen, Einbauküchen, fest gemauerte Öfen oder auch Einbauschränke – gehören vollständig zur Wohnfläche. Sie dürfen diese Flächen nicht abziehen.</p>
+  </details>
+  <details>
+    <summary>Was ist mit Schornsteinen oder freistehenden Säulen im Raum?</summary>
+    <p>Hier greift eine Sonderregel der WoFlV: Schornsteine, Säulen, Pfeiler oder Vormauerungen werden von der Wohnfläche <strong>abgezogen</strong>, sofern sie eine Grundfläche von mehr als 0,1 Quadratmetern (1000 cm²) haben und höher als 1,50 Meter sind.</p>
+  </details>
+  <details>
+    <summary>Gehören Treppen innerhalb der Wohnung (Maisonette) zur Wohnfläche?</summary>
+    <p>Nein, Treppen mit <strong>mehr als drei Steigungen</strong> (Stufen) sowie deren Treppenabsätze werden nicht zur Wohnfläche gezählt. Der Raum <em>unter</em> der Treppe wird jedoch ganz normal nach den Höhen-Regeln (wie bei Dachschrägen) berechnet.</p>
+  </details>
+
+  <aside class="highlight-box" role="complementary" aria-label="Weiterführende Informationen" style="margin-top: 30px;">
+    <h2 style="margin-top:0">Wohnfläche falsch? So wehren Sie sich!</h2>
+    <p>
+      Ihr Protokoll zeigt, dass die Wohnung deutlich kleiner ist als im Mietvertrag? Leiten Sie jetzt die nächsten Schritte ein:
+    </p>
+    <p style="margin-bottom:.4rem;">
+      <a href="generator-wohnflaeche-rueckforderung.html" class="button button-secondary" title="Generator Rückforderung Wohnfläche">Generator: Zu viel gezahlte Miete zurückfordern</a>
+      <a href="info-wohnflaeche-rechner.html" class="button button-secondary" title="Ratgeber Wohnfläche">Ratgeber: Alles zur Wohnflächenverordnung (WoFlV)</a>
+      <a href="rechner-mietminderung.html" class="button button-secondary" title="Mietminderungsrechner">Generator: Laufende Miete mindern</a>
+      <a href="miete-nebenkosten.html" class="button button-secondary" title="Übersicht Miete & Nebenkosten">Zur Übersicht: Miete & Nebenkosten</a>
+    </p>
+  </aside>
+
+  <h2>Quellen &amp; weiterführende Links</h2>
+  <div class="kl-highlight kl-sources-box" aria-label="Quellen und weiterführende Links">
+    <ul>
+      <li>
+        <a href="https://www.gesetze-im-internet.de/woflv/" target="_blank" rel="noopener">
+          Bundesministerium der Justiz – Wohnflächenverordnung (WoFlV) im Volltext
+        </a>
+      </li>
+      <li>
+        <a href="https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/kundenrechte/wohnflaeche-berechnen-was-zaehlt-als-wohnflaeche-10433" target="_blank" rel="noopener">
+          Verbraucherzentrale – Wohnfläche berechnen: Was zählt dazu, was nicht?
+        </a>
+      </li>
+      <li>
+        <a href="https://juris.bundesgerichtshof.de/cgi-bin/rechtsprechung/document.py?Gericht=bgh&Art=en&nr=72877" target="_blank" rel="noopener">
+          Bundesgerichtshof – BGH VIII ZR 266/14 (Wegfall der 10%-Grenze bei Mieterhöhungen)
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- Spenden / Success Popup -->
+<div id="spendenPopup" class="popup-overlay" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center;">
+  <div class="popup-content" style="background: #fff; padding: 30px; border-radius: 8px; max-width: 500px; text-align: center;">
+      <h2>Messprotokoll erfolgreich erstellt!</h2>
+      <p>Ihr Protokoll wurde als detailliertes PDF-Dokument generiert.</p>
+      <p style="margin-top:15px; font-size: 0.9em; color: #555;">Drucken Sie das Dokument aus und unterschreiben Sie es. Es dient als perfekte Anlage für Ihr Forderungsschreiben an den Vermieter.</p>
+      <p style="margin-top:15px; font-size: 0.9em; color: #555;">Wenn dieses intelligente Tool Ihnen geholfen hat, den Betrug an der Wohnfläche aufzudecken, freuen wir uns sehr über eine Unterstützung unseres kostenlosen Projekts!</p>
+      <form action="https://www.paypal.com/donate" method="post" target="_blank" style="margin-top: 15px;">
+          <input type="hidden" name="business" value="info@kassen-lotse.de" />
+          <input type="hidden" name="item_name" value="Unterstützung Mieter-Lotse Rechner" />
+          <input type="hidden" name="currency_code" value="EUR" />
+          <input type="submit" value="Spenden mit PayPal" style="background-color: #ffc439; border: none; padding: 0.9rem 1.8rem; font-weight: bold; border-radius: 5px; cursor: pointer; color: #333; font-size: 1em;"/>
+      </form>
+      <button id="closePopupBtn" class="popup-close-button" style="margin-top: 15px; background: none; border: 1px solid #ccc; padding: 8px 15px; cursor: pointer; border-radius: 4px;">Schließen</button>
+  </div>
+</div>
+
+<div style="background-color: #f8f9fa; border-top: 2px solid #e0e0e0; padding: 25px 15px; margin-top: 40px; text-align: center; font-family: sans-serif;">
+    <h3 style="font-size: 1.1em; color: #333; margin-top: 0; margin-bottom: 8px;">Wer hat diese Inhalte erstellt?</h3>
+    <p style="font-size: 0.9em; color: #555; max-width: 700px; margin: 0 auto 12px auto; line-height: 1.5;">
+        Unsere Ratgeber und Generatoren basieren auf der strikten Auswertung aktueller Gesetzestexte. Sie werden von <strong>Jan (Projektleitung) & Team</strong> entwickelt und durch unser Netzwerk aus Fachberatern regelmäßig auf fachliche Korrektheit geprüft. 
+        <br><br>
+        <em>Wichtiger Hinweis: Unser Tool generiert Standardverträge zur Selbsthilfe und ersetzt keine anwaltliche Einzelfallprüfung.</em>
+    </p>
+    <div style="margin-bottom: 25px;">
+        <a href="über.html" style="display: inline-block; font-size: 0.9em; color: #0056b3; text-decoration: underline; font-weight: bold;">
+            Mehr über unsere Redaktion & Arbeitsweise erfahren
+        </a>
+    </div>
+</div>
+
+<footer>
+  <div class="mini-footer-hint">
+  <p>Sie wollen Rückzahlungen einfordern, sind sich aber unsicher beim Anschreiben? Nutzen Sie unsere KI.</p>
+  <a href="https://clerion.de" class="mini-footer-link">Clerion - Ihr digitaler Assistent</a>
+  </div>
+    <p>&copy; 2026 Mieter-Lotse | <a href="über.html">Über uns & Redaktionsrichtlinien</a> | <a href="index.html">Zurück zur Startseite</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    const container = document.getElementById('roomContainer');
+    const addBtn = document.getElementById('addRoomBtn');
+    const totalDisplay = document.getElementById('grandTotalDisplay');
+    let roomCount = 0;
+
+    function formatNumber(num) {
+        return (Math.round(num * 100) / 100).toFixed(2);
+    }
+
+    function calculateTotals() {
+        let grandTotal = 0;
+        const rooms = document.querySelectorAll('.room-box');
+        
+        rooms.forEach(room => {
+            const l = parseFloat(room.querySelector('.inp-l').value) || 0;
+            const w = parseFloat(room.querySelector('.inp-w').value) || 0;
+            const area50 = parseFloat(room.querySelector('.inp-50').value) || 0;
+            const area25 = parseFloat(room.querySelector('.inp-25').value) || 0;
+
+            const base100 = l * w;
+            const add50 = area50 * 0.5;
+            const add25 = area25 * 0.25;
+            
+            const roomTotal = base100 + add50 + add25;
+            room.querySelector('.room-total-val').innerText = formatNumber(roomTotal);
+            grandTotal += roomTotal;
+        });
+
+        totalDisplay.innerText = formatNumber(grandTotal);
+    }
+
+    function createRoomHTML(id) {
+        return `
+            <div class="room-header">
+                <input type="text" class="room-name-input" placeholder="Raumname (z. B. Wohnzimmer)" style="font-weight: bold; border: none; background: transparent; font-size: 1.1em; width: 70%;" required>
+                ${id > 1 ? `<button type="button" class="remove-room-btn">Entfernen</button>` : ''}
+            </div>
+            
+            <div class="calc-grid">
+                <div class="calc-grid-item">
+                    <label>Länge (m) - für 100% Fläche:</label>
+                    <input type="number" class="inp-l" step="0.01" min="0" placeholder="z.B. 5.00">
+                </div>
+                <div class="calc-grid-item">
+                    <label>Breite (m) - für 100% Fläche:</label>
+                    <input type="number" class="inp-w" step="0.01" min="0" placeholder="z.B. 4.00">
+                </div>
+            </div>
+            
+            <div class="calc-grid" style="margin-top: 10px;">
+                <div class="calc-grid-item">
+                    <label>Fläche unter Dachschräge (qm):<br><span style="font-size: 0.8em; color: #555;">(Höhe 1m - 2m, zählt zu 50%)</span></label>
+                    <input type="number" class="inp-50" step="0.01" min="0" placeholder="z.B. 3.50">
+                </div>
+                <div class="calc-grid-item">
+                    <label>Balkon / Terrasse (qm):<br><span style="font-size: 0.8em; color: #555;">(zählt standardmäßig zu 25%)</span></label>
+                    <input type="number" class="inp-25" step="0.01" min="0" placeholder="z.B. 4.00">
+                </div>
+            </div>
+            
+            <div class="room-total">
+                Fläche für diesen Raum: <span class="room-total-val">0.00</span> qm
+            </div>
+        `;
+    }
+
+    function addRoom() {
+        roomCount++;
+        const div = document.createElement('div');
+        div.className = 'room-box';
+        div.id = 'room_' + roomCount;
+        div.innerHTML = createRoomHTML(roomCount);
+        
+        // Add event listeners to inputs
+        const inputs = div.querySelectorAll('input[type="number"]');
+        inputs.forEach(inp => inp.addEventListener('input', calculateTotals));
+
+        // Add remove listener
+        const remBtn = div.querySelector('.remove-room-btn');
+        if(remBtn) {
+            remBtn.addEventListener('click', function() {
+                div.remove();
+                calculateTotals();
+            });
+        }
+
+        container.appendChild(div);
+        
+        // Focus first input of new room
+        if(roomCount > 1) {
+            div.querySelector('.room-name-input').focus();
+        }
+    }
+
+    // Initialize first room
+    addRoom();
+    
+    // Add Room Button
+    addBtn.addEventListener('click', addRoom);
+
+    // Generate PDF
+    document.getElementById('messForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        
+        const mName = document.getElementById('mName').value;
+        const wAdr = document.getElementById('wAdresse').value;
+        
+        let mDatum = document.getElementById('messDatum').value;
+        if(mDatum) {
+            const d = new Date(mDatum);
+            mDatum = d.toLocaleDateString('de-DE');
+        }
+
+        // --- PDF FORMATTING ---
+        doc.setFont("helvetica");
+
+        // Header Design
+        doc.setFillColor(33, 150, 243);
+        doc.rect(0, 0, 210, 30, 'F');
+        doc.setTextColor(255, 255, 255);
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(18);
+        doc.text("Messprotokoll zur Wohnflächenberechnung", 20, 18);
+        doc.setFontSize(10);
+        doc.text("Nach den Richtlinien der Wohnflächenverordnung (WoFlV)", 20, 25);
+
+        doc.setTextColor(0, 0, 0);
+        
+        // Meta Info
+        let yPos = 40;
+        doc.setFont("helvetica", "bold");
+        doc.text("Objekt / Wohnung:", 20, yPos);
+        doc.setFont("helvetica", "normal");
+        
+        let adrLines = doc.splitTextToSize(wAdr, 100);
+        doc.text(adrLines, 60, yPos);
+        yPos += (adrLines.length * 5) + 5;
+        
+        doc.setFont("helvetica", "bold"); doc.text("Vermessen am:", 20, yPos);
+        doc.setFont("helvetica", "normal"); doc.text(mDatum, 60, yPos); yPos += 7;
+        
+        doc.setFont("helvetica", "bold"); doc.text("Erstellt durch:", 20, yPos);
+        doc.setFont("helvetica", "normal"); doc.text(mName, 60, yPos); yPos += 15;
+
+        // Line
+        doc.setDrawColor(200, 200, 200);
+        doc.line(20, yPos, 190, yPos);
+        yPos += 10;
+
+        // Room Data
+        const rooms = document.querySelectorAll('.room-box');
+        
+        rooms.forEach((room, index) => {
+            
+            // Page break check
+            if (yPos > 240) {
+                doc.addPage();
+                yPos = 20;
+            }
+
+            const rName = room.querySelector('.room-name-input').value || `Raum ${index + 1}`;
+            const l = parseFloat(room.querySelector('.inp-l').value) || 0;
+            const w = parseFloat(room.querySelector('.inp-w').value) || 0;
+            const area50 = parseFloat(room.querySelector('.inp-50').value) || 0;
+            const area25 = parseFloat(room.querySelector('.inp-25').value) || 0;
+            
+            const base100 = l * w;
+            const add50 = area50 * 0.5;
+            const add25 = area25 * 0.25;
+            const roomTotal = base100 + add50 + add25;
+
+            // Box for room
+            doc.setFillColor(245, 245, 245);
+            doc.rect(20, yPos - 5, 170, 8, 'F');
+            doc.setFont("helvetica", "bold");
+            doc.text(rName, 22, yPos);
+            doc.setFont("helvetica", "normal");
+            doc.text(`${formatNumber(roomTotal)} qm`, 185, yPos, {align: 'right'});
+            
+            yPos += 8;
+            
+            // Details
+            doc.setFontSize(9);
+            if(base100 > 0) {
+                doc.text(`Grundfläche (100%): ${formatNumber(l)}m x ${formatNumber(w)}m`, 25, yPos);
+                doc.text(`= ${formatNumber(base100)} qm`, 150, yPos, {align: 'right'});
+                yPos += 5;
+            }
+            if(area50 > 0) {
+                doc.text(`Dachschräge (50%): ${formatNumber(area50)} qm Grundfläche`, 25, yPos);
+                doc.text(`= ${formatNumber(add50)} qm`, 150, yPos, {align: 'right'});
+                yPos += 5;
+            }
+            if(area25 > 0) {
+                doc.text(`Balkon/Terrasse (25%): ${formatNumber(area25)} qm Grundfläche`, 25, yPos);
+                doc.text(`= ${formatNumber(add25)} qm`, 150, yPos, {align: 'right'});
+                yPos += 5;
+            }
+            
+            yPos += 5; // Spacing to next room
+            doc.setFontSize(11);
+        });
+
+        // Grand Total Box
+        // check page break for total box
+        if (yPos > 240) {
+            doc.addPage();
+            yPos = 20;
+        }
+
+        yPos += 5;
+        doc.setDrawColor(33, 150, 243);
+        doc.setLineWidth(0.5);
+        doc.rect(20, yPos, 170, 15);
+        
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(14);
+        doc.text("Gesamtwohnfläche nach WoFlV:", 25, yPos + 10);
+        
+        const gTotal = document.getElementById('grandTotalDisplay').innerText;
+        doc.setTextColor(33, 150, 243);
+        doc.text(`${gTotal} qm`, 185, yPos + 10, {align: 'right'});
+
+        // Signature
+        yPos += 40;
+        doc.setTextColor(0,0,0);
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(11);
+        doc.text("Ich bestätige die Richtigkeit der durchgeführten Messungen nach den Vorgaben der Wohnflächenverordnung.", 20, yPos);
+        yPos += 20;
+        doc.line(20, yPos, 80, yPos);
+        doc.text("Ort, Datum, Unterschrift Mieter", 20, yPos + 5);
+
+        // Save
+        doc.save("Messprotokoll_Wohnflaeche_" + mName.replace(/\s+/g, '_') + ".pdf");
+        
+        document.getElementById('spendenPopup').style.display = 'flex';
+    });
+
+    document.getElementById('closePopupBtn').addEventListener('click', function() {
+        document.getElementById('spendenPopup').style.display = 'none';
+    });
+});
+</script>
+</body>
+</html>

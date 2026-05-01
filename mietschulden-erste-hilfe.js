@@ -9,10 +9,6 @@ function stufeAmpel({ rueckstand, monate, mahnung, kuendigung }){
   const hatMahnung = mahnung === "ja";
   const hatKuendigung = kuendigung === "ja";
 
-  // Heuristik (sehr bewusst einfach):
-  // Rot: Kündigung ODER m >= 2 ODER Rückstand >= 1000 €
-  // Gelb: (sonst) Mahnung ODER m == 1 ODER Rückstand 200–999 €
-  // Grün: alles darunter
   if (hatKuendigung || m >= 2 || rs >= 1000){
     return { farbe: "rot", label: "Akut", beschr: "Sofort handeln – Kündigung/akute Räumungsgefahr möglich." };
   }
@@ -36,24 +32,32 @@ function badgeHTML(stufe){
 }
 
 function ratenvorschlag(rueckstand){
-  // Vorschlag: Rückstand in 6 Monaten tilgen, min. 50 € / Monat
   const basis = Math.max(0, rueckstand||0);
   const rate = Math.max(50, Math.ceil(basis / 6 / 10) * 10); // glatte Zehner
   const monate = Math.max(1, Math.ceil(basis / rate));
   return { rate, monate };
 }
 
-function ratenplanText({ rueckstand, rate, monate }){
-  const heute = new Date();
-  const fmt = heute.toLocaleDateString("de-DE");
-  return `Vor- und Nachname
-Straße Hausnummer
-PLZ Ort
+function ratenplanText({ rueckstand, rate, monate, absName, absStr, absOrt, empfName, empfStr, empfOrt }){
+  const heute = new Date().toLocaleDateString("de-DE");
+  
+  // Nutze Eingabefelder oder Fallbacks für die Text-Ansicht
+  const an = absName || "Vor- und Nachname";
+  const as = absStr || "Straße Hausnummer";
+  const ao = absOrt || "PLZ Ort";
+  const en = empfName || "Vermieter/in";
+  const es = empfStr || "Adresse";
+  const eo = empfOrt || "";
 
-Vermieter/in
-Adresse
+  return `${an}
+${as}
+${ao}
 
-${fmt}
+${en}
+${es}
+${eo}
+
+${heute}
 
 Betreff: Vorschlag zur Ratenzahlung wegen Mietrückstand
 
@@ -75,58 +79,164 @@ Mit freundlichen Grüßen
 (Unterschrift)`;
 }
 
+// NEU: PDF Generierung mit jsPDF
+// NEU: PDF Generierung mit jsPDF INKLUSIVE Tilgungsplan-Tabelle
+function generatePDF(input, raten) {
+  if (!window.jspdf) {
+    alert("Fehler beim Laden der PDF-Erstellung. Bitte Browser aktualisieren.");
+    return;
+  }
+  
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ format: 'a4' });
+  const heute = new Date().toLocaleDateString("de-DE");
+
+  const absName = input.absName || "[Dein Vor- und Nachname]";
+  const absStr = input.absStr || "[Deine Straße Hausnummer]";
+  const absOrt = input.absOrt || "[Deine PLZ Ort]";
+  const empfName = input.empfName || "[Name Vermieter / Verwaltung]";
+  const empfStr = input.empfStr || "[Straße Hausnummer]";
+  const empfOrt = input.empfOrt || "[PLZ Ort]";
+
+  // Absender klein über Sichtfenster
+  doc.setFontSize(8);
+  doc.setTextColor(100);
+  doc.text(`${absName} • ${absStr} • ${absOrt}`, 25, 45);
+
+  // Empfänger im Sichtfenster
+  doc.setFontSize(11);
+  doc.setTextColor(0);
+  doc.text(empfName, 25, 55);
+  doc.text(empfStr, 25, 62);
+  doc.text(empfOrt, 25, 69);
+
+  // Datum Rechts
+  doc.text(`${absOrt}, den ${heute}`, 185, 90, { align: "right" });
+
+  // Betreff
+  doc.setFont("helvetica", "bold");
+  doc.text("Vorschlag zur Ratenzahlung wegen Mietrückstand", 25, 110);
+
+  // Anschreiben
+  doc.setFont("helvetica", "normal");
+  const bodyText = `Sehr geehrte Damen und Herren,
+
+leider bin ich in eine finanzielle Notlage geraten, weshalb aktuell ein Mietrückstand in Höhe von ${euro(input.rueckstand)} entstanden ist. Der Erhalt meiner Wohnung ist mir extrem wichtig, daher möchte ich den Rückstand schnellstmöglich und zuverlässig ausgleichen.
+
+Um die Außenstände abzubauen, schlage ich Ihnen hiermit folgende verbindliche Ratenzahlung vor:`;
+
+  doc.text(bodyText, 25, 125, { maxWidth: 160, lineHeightFactor: 1.5 });
+
+  // --- NEU: DER KONKRETE RATENPLAN (TABELLE / LISTE) ---
+  let startY = 160;
+  doc.setFont("helvetica", "bold");
+  doc.text("Vorgeschlagener Tilgungsplan (zusätzlich zur laufenden Miete):", 25, startY);
+  
+  doc.setFont("helvetica", "normal");
+  startY += 8;
+
+  // Wir berechnen die Monate (Start ist der nächste Monat)
+  let currentDate = new Date();
+  let restSchuld = input.rueckstand;
+
+  for (let i = 1; i <= raten.monate; i++) {
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    let monatJahr = ("0" + (currentDate.getMonth() + 1)).slice(-2) + "." + currentDate.getFullYear();
+    
+    // Letzte Rate ist vielleicht etwas geringer als die anderen (Restbetrag)
+    let aktuelleRate = (restSchuld < raten.rate) ? restSchuld : raten.rate;
+    restSchuld -= aktuelleRate;
+
+    doc.text(`Rate ${i}:`, 30, startY);
+    doc.text(`fällig bis 03.${monatJahr}`, 55, startY);
+    doc.text(`-> ${euro(aktuelleRate)}`, 110, startY);
+    
+    startY += 7;
+
+    // Falls die Liste zu lang wird (Seitenumbruch verhindern)
+    if (startY > 250) {
+      doc.addPage();
+      startY = 20;
+    }
+  }
+
+  startY += 10;
+  const schlussText = `Ich versichere Ihnen, dass ich die laufende Miete ab sofort wieder pünktlich in voller Höhe überweisen werde (getrennt von der Rate).
+
+Ich bitte Sie herzlich um eine kurze Bestätigung dieses Ratenplans.
+
+Mit freundlichen Grüßen
+
+
+___________________________________
+${absName} (Unterschrift)`;
+
+  doc.text(schlussText, 25, startY, { maxWidth: 160, lineHeightFactor: 1.5 });
+  
+  // Download auslösen
+  doc.save("Ratenplan_Mietschulden.pdf");
+}
+
 function checklistHTML(input, stufe, raten){
-  // Bausteine je nach Lage
   const blocks = [];
 
-  // 1) Immer: Vermieter kontaktieren + Ratenplan
+  // NEU: PDF Download Box eingebaut über die Textarea
   blocks.push(`
     <h3>1) Sofort Vermieter kontaktieren – Ratenplan anbieten</h3>
     <p>Telefonisch ankündigen, danach <strong>schriftlich</strong> (per Einwurf/Einschreiben) bestätigen.</p>
     <ul>
       <li>Rückstand bestätigen und <strong>Raten</strong> anbieten: ${euro(raten.rate)} × ${raten.monate} Monate.</li>
       <li><strong>Laufende Miete</strong> ab sofort pünktlich zahlen (separat von den Raten).</li>
-      <li>Nachweis über Zahlungseingänge aufbewahren.</li>
     </ul>
-    <h4>Ratenplan-Vorlage</h4>
+
+    <h4>Dein persönlicher Ratenplan (PDF oder Text)</h4>
+    <div style="background-color: #f1f5f9; border: 1px solid #cbd5e1; padding: 15px; border-radius: 6px; margin-bottom: 15px;">
+      <p style="margin-top:0;"><strong>Empfehlung:</strong> Lade dir das Anschreiben als fertig formatiertes PDF (passend für Fensterumschläge) herunter. Einfach ausdrucken, unterschreiben, abschicken.</p>
+      <button type="button" id="btn_download_pdf" style="background-color: #ef4444; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+        📄 Als PDF herunterladen
+      </button>
+    </div>
+
+    <p style="margin-bottom: 5px;"><strong>Alternativ:</strong> Text in dein eigenes Word-Dokument kopieren:</p>
     <textarea id="ms_ratenbrief" style="width:100%;min-height:220px;">${ratenplanText({
       rueckstand: input.rueckstand,
       rate: raten.rate,
-      monate: raten.monate
+      monate: raten.monate,
+      absName: input.absName,
+      absStr: input.absStr,
+      absOrt: input.absOrt,
+      empfName: input.empfName,
+      empfStr: input.empfStr,
+      empfOrt: input.empfOrt
     })}</textarea>
     <div class="button-container" style="margin:1rem 0;">
       <button type="button" class="button" id="ms_copy">Text kopieren</button>
     </div>
   `);
 
-  // 2) Kostenübernahme prüfen
   blocks.push(`
     <h3>2) Kostenübernahme / Darlehen prüfen</h3>
     <ul>
-      <li><strong>Jobcenter (SGB II):</strong> In Notlagen sind <em>Darlehen</em> zur Sicherung der Unterkunft möglich (Mietschulden). Termin <strong>sofort</strong> anfragen.</li>
+      <li><strong>Jobcenter (SGB II):</strong> In Notlagen sind <em>Darlehen</em> zur Sicherung der Unterkunft möglich. Termin <strong>sofort</strong> anfragen.</li>
       <li><strong>Sozialamt (SGB XII):</strong> Wenn kein SGB II, dort <em>Hilfen zur Unterkunft</em> erfragen.</li>
-      <li>Unterlagen mitnehmen: Mahnung/Kündigung, Mietkontoauszug, Mietvertrag, Einkommensnachweise, Personalausweis.</li>
     </ul>
   `);
 
-  // 3) Rechtliche Hilfe
   blocks.push(`
     <h3>3) Rechtliche Hilfe & Beratung</h3>
     <ul>
       <li><strong>Mieterverein</strong> oder <strong>Fachanwält*in Mietrecht</strong> kontaktieren.</li>
-      <li><strong>Beratungshilfe</strong> beim Amtsgericht beantragen (geringe Eigenmittel → Schein für anwaltliche Beratung).</li>
-      <li>Bei Räumungsklage: <em>Fristen beachten</em> und umgehend reagieren.</li>
+      <li><strong>Beratungshilfe</strong> beim Amtsgericht beantragen.</li>
     </ul>
   `);
 
-  // 4) Speziell bei Kündigung: Schonfristzahlung-Hinweis (informativ, nicht rechtsverbindlich)
   if (input.kuendigung === "ja"){
     blocks.push(`
-      <h3>4) Wichtiger Hinweis bei Kündigung</h3>
-      <p>
-        Wird der <strong>gesamte Rückstand</strong> kurzfristig ausgeglichen (z. B. durch Darlehen), kann 
-        eine <em>fristlose Kündigung</em> in bestimmten Konstellationen geheilt werden (Stichwort „Schonfristzahlung“).
-        Bitte unbedingt mit Rechtsberatung klären und <strong>Fristen</strong> beachten.
+      <h3 style="color: #d32f2f;">4) WICHTIG: Kündigung liegt vor!</h3>
+      <p style="border-left: 4px solid #d32f2f; padding-left: 10px;">
+        Wird der <strong>gesamte Rückstand</strong> kurzfristig ausgeglichen, kann 
+        die fristlose Kündigung unter Umständen geheilt werden („Schonfristzahlung“).
+        <strong>Gehen Sie sofort mit der Kündigung zum Jobcenter/Sozialamt</strong> und klären Sie eine mögliche Übernahme!
       </p>
     `);
   }
@@ -148,8 +258,7 @@ function ergebnisHTML(input, stufe){
         <tbody>
           <tr><td>Rückstand</td><td>${euro(input.rueckstand)}</td></tr>
           <tr><td>Monate im Rückstand</td><td>${Math.max(0, Math.floor(input.monate||0))}</td></tr>
-          <tr><td>Mahnung erhalten</td><td>${input.mahnung === "ja" ? "Ja" : "Nein"}</td></tr>
-          <tr><td>Kündigung erhalten</td><td>${input.kuendigung === "ja" ? "Ja" : "Nein"}</td></tr>
+          <tr><td>Mahnung / Kündigung</td><td>${input.mahnung === "ja" ? "Mahnung" : ""} ${input.kuendigung === "ja" ? "Kündigung" : ""} ${input.mahnung==="nein" && input.kuendigung==="nein" ? "Nein":""}</td></tr>
         </tbody>
       </table>
 
@@ -175,13 +284,34 @@ document.addEventListener("DOMContentLoaded", () => {
       rueckstand: n(rs),
       monate: n(mo),
       mahnung: (ma && ma.value) || "nein",
-      kuendigung: (ku && ku.value) || "nein"
+      kuendigung: (ku && ku.value) || "nein",
+      
+      // Adressdaten fürs PDF
+      absName: document.getElementById("ms_abs_name") ? document.getElementById("ms_abs_name").value : "",
+      absStr: document.getElementById("ms_abs_str") ? document.getElementById("ms_abs_str").value : "",
+      absOrt: document.getElementById("ms_abs_ort") ? document.getElementById("ms_abs_ort").value : "",
+      empfName: document.getElementById("ms_empf_name") ? document.getElementById("ms_empf_name").value : "",
+      empfStr: document.getElementById("ms_empf_str") ? document.getElementById("ms_empf_str").value : "",
+      empfOrt: document.getElementById("ms_empf_ort") ? document.getElementById("ms_empf_ort").value : ""
     };
+
+    if(input.rueckstand <= 0) {
+      out.innerHTML = `<div class="warning-box">Bitte gib einen Mietrückstand an.</div>`;
+      return;
+    }
 
     const stufe = stufeAmpel(input);
     out.innerHTML = ergebnisHTML(input, stufe);
 
-    // Copy-Button für Ratenbrief aktivieren
+    // Event Listener für den NEUEN PDF Download Button
+    const pdfBtn = document.getElementById("btn_download_pdf");
+    if (pdfBtn) {
+      pdfBtn.addEventListener("click", () => {
+        generatePDF(input, ratenvorschlag(input.rueckstand));
+      });
+    }
+
+    // Originaler Copy-Button für Textarea
     const copyBtn = document.getElementById("ms_copy");
     const ta = document.getElementById("ms_ratenbrief");
     if (copyBtn && ta){

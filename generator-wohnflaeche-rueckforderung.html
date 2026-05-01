@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Generator: Miete zurückfordern wegen falscher Wohnfläche | PDF</title>
+
+  <meta name="description" content="Kostenloser PDF-Generator: Berechnen Sie die Abweichung Ihrer Wohnfläche und fordern Sie zu viel gezahlte Miete (inkl. Mietminderung) vom Vermieter zurück.">
+  <meta name="robots" content="index,follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="/logo-lotse-fav.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <link rel="stylesheet" href="/css/generator.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Generator: Rückforderung Miete wegen Wohnfläche",
+    "description": "Erstellen Sie ein rechtssicheres Schreiben an den Vermieter, um bei mehr als 10% Flächenabweichung die Miete zu mindern und rückwirkend zurückzufordern.",
+    "inLanguage": "de",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Mieter-Lotse",
+      "url": "https://mieter-lotse.de"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Mieter-Lotse",
+      "url": "https://mieter-lotse.de"
+    },
+    "about": [
+      { "@type": "Thing", "name": "Wohnflächenberechnung" },
+      { "@type": "Thing", "name": "Mietminderung" },
+      { "@type": "Thing", "name": "Rückforderung Miete" }
+    ],
+    "lastReviewed": "2026-05-01",
+    "reviewedBy": { "@type": "Organization", "name": "Mieter-Lotse Redaktion" }
+  }
+  </script>
+  <style>
+      .calc-box {
+          background-color: #f8f9fa;
+          border: 2px solid #2196f3;
+          border-radius: 8px;
+          padding: 20px;
+          margin-top: 15px;
+          margin-bottom: 20px;
+      }
+      .calc-result-box {
+          margin-top: 15px;
+          padding: 15px;
+          border-radius: 4px;
+          display: none;
+      }
+      .result-green { background-color: #e8f5e9; border: 1px solid #4caf50; color: #2e7d32; }
+      .result-red { background-color: #ffebee; border: 1px solid #f44336; color: #c62828; }
+      .calc-highlight {
+          font-size: 1.2em;
+          font-weight: bold;
+      }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="site-logo">Mieter-Lotse</a>
+</header>
+
+<div class="page-container">
+
+  <h1>Generator: Miete zurückfordern (Falsche Wohnfläche)</h1>
+<div class="usp-bar">
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    Integrierter Rechner
+  </div>
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    10% Regel (BGH)
+  </div>
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    Sofort-PDF
+  </div>
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    100% Kostenlos
+  </div>
+</div>
+
+   <a href="miete-nebenkosten.html" class="category-badge">
+    Zur Übersicht: Miete-Nebenkosten
+</a>
+
+  <p><em>Fachlich geprüft | Stand: 30.04.2026</em></p>
+
+  <a href="#flaecheForm" class="button jump-button" style="margin-bottom: 20px; display: inline-block;">Direkt zum Forderungs-Generator springen</a>
+
+  <div class="info-box">
+    <p>
+      Ist Ihre Wohnung kleiner als im Mietvertrag versprochen? Nach ständiger Rechtsprechung des Bundesgerichtshofs (BGH) liegt ein Sachmangel vor, wenn die tatsächliche Wohnfläche <strong>mehr als 10 Prozent</strong> unter der im Vertrag angegebenen Fläche liegt. Zusätze im Mietvertrag wie "ca." oder "etwa" ändern daran nichts!
+    </p>
+    <p>
+      <strong>Holen Sie sich Ihr Geld zurück.</strong> Wenn die 10-Prozent-Grenze überschritten ist, können Sie nicht nur die aktuelle Miete sofort prozentual mindern, sondern auch die zu viel gezahlte Miete der Vergangenheit nach § 812 BGB (ungerechtfertigte Bereicherung) zurückfordern. Tragen Sie Ihre Daten ein – unser Tool rechnet aus, ob Sie einen Anspruch haben, und generiert das passende Anwaltsschreiben.
+    </p>
+  </div>
+
+  <div class="info-box warning" style="border-left: 4px solid #e53935; padding: 15px; margin-top: 20px; background-color: #fff3f3;">
+    <h2>WICHTIG: Die Messung muss absolut stimmen!</h2>
+    <p>
+      Der Vermieter wird einer so hohen Geldforderung mit Sicherheit widersprechen. Senden Sie dieses Schreiben nur ab, wenn Sie sich Ihrer Messung absolut sicher sind (zwingend gemessen nach der Wohnflächenverordnung - WoFlV).
+    </p>
+    <ul style="margin-top: 5px; margin-bottom: 0; padding-left: 20px;">
+      <li>Flächen unter Dachschrägen (zwischen 1 und 2m Höhe) zählen nur zu 50 %.</li>
+      <li>Balkone und Terrassen zählen im Regelfall nur zu 25 % (maximal 50 %).</li>
+      <li>Keller- und Abstellräume außerhalb der Wohnung zählen gar nicht (0 %).</li>
+    </ul>
+    <p style="margin-top: 10px; font-size: 0.9em;"><em>Falls Sie noch nicht exakt gemessen haben, nutzen Sie zuerst unseren <a href="generator-wohnflaeche-rechner.html" style="color: #c62828;">WoFlV-Rechner inkl. Messprotokoll</a>.</em></p>
+  </div>
+
+  <div class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 15px;">
+    <strong>Wichtiger Hinweis (
+      Verjährung):</strong> Ihre Ansprüche auf Rückzahlung der Miete unterliegen der regelmäßigen Verjährungsfrist von <strong>3 Jahren</strong> (§ 195 BGB). Diese Frist beginnt am Ende des Jahres, in dem Sie von der falschen Quadratmeterzahl erfahren haben. Warten Sie also nicht zu lange mit der Einforderung, da sonst ältere Ansprüche verfallen!
+  </div>
+
+  <div class="info-box" style="background-color: #e8f5e9; border-left: 4px solid #4caf50; padding: 10px; margin-top: 15px;">
+    <strong>Erfolgs-Tipp: Messprotokoll direkt beilegen.</strong> Behaupten Sie die Abweichung nicht nur, sondern beweisen Sie sie sofort. Legen Sie Ihrem Forderungsschreiben eine detaillierte Aufstellung aller Räume bei. Je professioneller Ihr Aufmaß wirkt, desto eher ist der Vermieter (oder seine Rechtsabteilung) zu einer außergerichtlichen Einigung bereit.
+  </div>
+
+  <div class="info-box" style="background-color: #e3f2fd; border-left: 4px solid #2196f3; padding: 10px; margin-top: 15px;">
+    <strong>Datensicherheit:</strong> Dieses Dokument verarbeitet hohe finanzielle Summen. Die Berechnung und PDF-Erstellung erfolgt zu 100 % lokal im Speicher (localStorage) Ihres eigenen Browsers. Keine Übertragung an externe Server.
+  </div>
+
+  <div class="highlight-box" style="background-color: #fff3f3; border-left: 4px solid #e53935; padding: 10px; margin-top: 15px;">
+    <strong>Technischer Hinweis:</strong> Bitte nutzen Sie für einen fehlerfreien PDF-Download Browser wie <strong>Chrome, Firefox oder Safari</strong>. In bestimmten In-App-Browsern sozialer Medien kann der Download blockieren.
+  </div>
+
+  <div class="highlight-box pruefdatum-box" role="note" aria-label="Redaktionell geprüft" style="margin-top: 15px; margin-bottom: 30px;">
+    <p><strong>Redaktionell geprüft am:</strong> <span id="pruefdatum">01.05.2026</span></p>
+  </div>
+
+  <form id="flaecheForm">
+    <fieldset>
+      <legend>1. Ihre Kontaktdaten</legend>
+      <label for="mName">Vor- und Nachname:</label>
+      <input type="text" id="mName" required>
+      <label for="mAdresse">Adresse der betroffenen Wohnung (Straße, Hausnr., PLZ, Ort):</label>
+      <textarea id="mAdresse" rows="2" required></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Vermieter / Hausverwaltung</legend>
+      <label for="vName">Name des Vermieters:</label>
+      <input type="text" id="vName" required>
+      <label for="vAdresse">Anschrift des Vermieters:</label>
+      <textarea id="vAdresse" rows="2" required></textarea>
+    </fieldset>
+
+    <!-- LIVE CALCULATOR -->
+    <fieldset class="calc-box">
+      <legend style="background-color: #2196f3; color: white; padding: 5px 10px; border-radius: 4px;">3. Vertragsdaten & Berechnung</legend>
+      
+      <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 200px;">
+              <label for="qmVertrag">Wohnfläche <strong>laut Mietvertrag</strong> (qm):</label>
+              <input type="number" id="qmVertrag" step="0.1" placeholder="z. B. 100" required>
+          </div>
+          <div style="flex: 1; min-width: 200px;">
+              <label for="qmEcht"><strong>Tatsächliche</strong> Wohnfläche (qm):</label>
+              <input type="number" id="qmEcht" step="0.1" placeholder="z. B. 85" required>
+          </div>
+      </div>
+
+      <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 15px;">
+          <div style="flex: 1; min-width: 200px;">
+              <label for="mieteKalt">Aktuelle <strong>Kaltmiete</strong> mtl. (€):</label>
+              <input type="number" id="mieteKalt" step="0.01" placeholder="z. B. 800" required>
+          </div>
+          <div style="flex: 1; min-width: 200px;">
+              <label for="mieteNk">Aktuelle <strong>Nebenkostenvorauszahlung</strong> mtl. (€):</label>
+              <input type="number" id="mieteNk" step="0.01" placeholder="z. B. 200" required>
+          </div>
+      </div>
+      
+      <label for="monate" style="margin-top: 15px;">Für wie viele Monate fordern Sie die Miete zurück?</label>
+      <input type="number" id="monate" min="1" max="48" placeholder="Maximal ca. 36-48 Monate (Verjährung!)" required>
+      <p style="font-size: 0.85em; color: #555; margin-top: -10px;">(Die Verjährungsfrist beträgt 3 Jahre zum Jahresende. Geben Sie die Anzahl der Monate ein, die noch nicht verjährt sind.)</p>
+
+      <div id="calcResult" class="calc-result-box">
+          <!-- Result from JS -->
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. Bankverbindung für die Erstattung</legend>
+      <label for="iban">Ihre IBAN:</label>
+      <input type="text" id="iban" placeholder="DE..." required>
+    </fieldset>
+
+    <div class="button-group">
+      <button type="button" id="saveBtnFlaeche" class="button-secondary">Eingaben Speichern</button>
+      <button type="button" id="loadBtnFlaeche" class="button-secondary">Eingaben Laden</button>
+      <button type="submit" id="generatePdfBtn" class="button-primary" disabled>📄 Forderungsschreiben generieren</button>
+    </div>
+  </form>
+  <hr>
+
+  <h2>Häufige Fragen (FAQ) zur Wohnflächen-Rückforderung</h2>
+  <details>
+    <summary>Gilt die 10-Prozent-Grenze auch bei den Nebenkosten?</summary>
+    <p><strong>Nein!</strong> Das ist ein extrem wichtiger Punkt. Der BGH hat 2018 (Az. VIII ZR 220/17) entschieden: Bei der Betriebskostenabrechnung gibt es keine Toleranzgrenze. Auch wenn die Wohnung nur 3 % kleiner ist als im Vertrag steht, darf der Vermieter die Nebenkosten <strong>nur nach der tatsächlichen Wohnfläche</strong> abrechnen. Sie können fehlerhafte Nebenkostenabrechnungen daher auch bei kleinen Abweichungen korrigieren lassen.</p>
+  </details>
+  <details>
+    <summary>Was ist, wenn im Mietvertrag "Fläche unverbindlich" steht?</summary>
+    <p>Vermieter versuchen oft, sich mit Klauseln wie "Die angegebene Fläche dient nicht zur Festlegung des Mietgegenstandes" abzusichern. Der BGH hat auch hier klar geurteilt: Steht eine konkrete Quadratmeterzahl im Vertrag, begründet diese in der Regel eine verbindliche Beschaffenheitsvereinbarung. Eine Abweichung von über 10 % bleibt ein Mangel, solche Ausschlussklauseln sind meist unwirksam.</p>
+  </details>
+  <details>
+    <summary>Gilt die 10-Prozent-Regel auch bei Mieterhöhungen?</summary>
+    <p>Nein. Seit 2015 gilt (BGH Az. VIII ZR 266/14): Will der Vermieter die Miete bis zur ortsüblichen Vergleichsmiete erhöhen, darf er nur die <strong>tatsächliche Wohnfläche</strong> zugrunde legen. Ist die Wohnung kleiner als im Vertrag, berechnet sich die neue Miete nach den echten Quadratmetern. Ist sie kurioserweise größer, darf der Vermieter die größere Fläche für die Erhöhung nutzen.</p>
+  </details>
+
+  <aside class="highlight-box" role="complementary" aria-label="Weiterführende Informationen" style="margin-top: 30px;">
+    <h2 style="margin-top:0">Wohnfläche & Finanzen clever managen</h2>
+    <p>
+      Sichern Sie sich ab und fordern Sie Ihr Recht ein. Hier sind unsere passenden Tools:
+    </p>
+    <p style="margin-bottom:.4rem;">
+      <a href="generator-wohnflaeche-rechner.html" class="button button-secondary" title="Generator Wohnflächen-Rechner">Vorab-Check: Wohnfläche rechtssicher berechnen (WoFlV)</a>
+      <a href="info-wohnflaeche-rueckforderung.html" class="button button-secondary" title="Ratgeber Rückforderung">Ratgeber: So funktioniert die Rückforderung rechtlich</a>
+      <a href="generator-widerspruch-nebenkosten.html" class="button button-secondary" title="Generator Widerspruch Nebenkosten">Generator: Widerspruch gegen die Nebenkostenabrechnung</a>
+      <a href="miete-nebenkosten.html" class="button button-secondary" title="Übersicht Miete & Nebenkosten">Zur Übersicht: Miete & Nebenkosten</a>
+    </p>
+  </aside>
+
+  <h2>Quellen &amp; weiterführende Links</h2>
+  <div class="kl-highlight kl-sources-box" aria-label="Quellen und weiterführende Links">
+    <ul>
+      <li>
+        <a href="https://juris.bundesgerichtshof.de/cgi-bin/rechtsprechung/document.py?Gericht=bgh&Art=en&nr=28663" target="_blank" rel="noopener">
+          Bundesgerichtshof – BGH VIII ZR 133/03 (Grundsatzurteil zur 10-Prozent-Grenze)
+        </a>
+      </li>
+      <li>
+        <a href="https://www.gesetze-im-internet.de/bgb/__812.html" target="_blank" rel="noopener">
+          Bundesministerium der Justiz – § 812 BGB (Herausgabeanspruch / ungerechtfertigte Bereicherung)
+        </a>
+      </li>
+      <li>
+        <a href="https://www.mieterbund.de/mietrecht/mietrecht-a-z/wohnflaeche/" target="_blank" rel="noopener">
+          Deutscher Mieterbund – Ratgeber Wohnfläche: Was zählt und was Mieter tun können
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- Spenden / Success Popup -->
+<div id="spendenPopup" class="popup-overlay" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center;">
+  <div class="popup-content" style="background: #fff; padding: 30px; border-radius: 8px; max-width: 500px; text-align: center;">
+      <h2>Schreiben erfolgreich erstellt!</h2>
+      <p>Ihr Forderungsschreiben zur Mietminderung und Rückzahlung wurde als PDF generiert.</p>
+      <p style="margin-top:15px; font-size: 0.9em; color: #d32f2f;"><strong>Wichtig:</strong> Senden Sie dieses Schreiben als <strong>Einwurf-Einschreiben</strong> an den Vermieter. Legen Sie idealerweise eine Skizze oder das Protokoll Ihrer Wohnflächenberechnung bei, um Diskussionen vorzubeugen.</p>
+      <p style="margin-top:15px; font-size: 0.9em; color: #555;">Wenn dieses Tool Ihnen geholfen hat, mehrere hundert Euro zurückzuholen, freuen wir uns riesig über eine Unterstützung unseres kostenlosen Projekts!</p>
+      <form action="https://www.paypal.com/donate" method="post" target="_blank" style="margin-top: 15px;">
+          <input type="hidden" name="business" value="info@kassen-lotse.de" />
+          <input type="hidden" name="item_name" value="Unterstützung Mieter-Lotse Wohnfläche" />
+          <input type="hidden" name="currency_code" value="EUR" />
+          <input type="submit" value="Spenden mit PayPal" style="background-color: #ffc439; border: none; padding: 0.9rem 1.8rem; font-weight: bold; border-radius: 5px; cursor: pointer; color: #333; font-size: 1em;"/>
+      </form>
+      <button id="closePopupBtn" class="popup-close-button" style="margin-top: 15px; background: none; border: 1px solid #ccc; padding: 8px 15px; cursor: pointer; border-radius: 4px;">Schließen</button>
+  </div>
+</div>
+
+<div style="background-color: #f8f9fa; border-top: 2px solid #e0e0e0; padding: 25px 15px; margin-top: 40px; text-align: center; font-family: sans-serif;">
+    <h3 style="font-size: 1.1em; color: #333; margin-top: 0; margin-bottom: 8px;">Wer hat diese Inhalte erstellt?</h3>
+    <p style="font-size: 0.9em; color: #555; max-width: 700px; margin: 0 auto 12px auto; line-height: 1.5;">
+        Unsere Ratgeber und Generatoren basieren auf der strikten Auswertung aktueller Gesetzestexte. Sie werden von <strong>Jan (Projektleitung) & Team</strong> entwickelt und durch unser Netzwerk aus Fachberatern regelmäßig auf fachliche Korrektheit geprüft. 
+        <br><br>
+        <em>Wichtiger Hinweis: Unser Tool generiert Standardverträge zur Selbsthilfe und ersetzt keine anwaltliche Einzelfallprüfung.</em>
+    </p>
+    <div style="margin-bottom: 25px;">
+        <a href="über.html" style="display: inline-block; font-size: 0.9em; color: #0056b3; text-decoration: underline; font-weight: bold;">
+            Mehr über unsere Redaktion & Arbeitsweise erfahren
+        </a>
+    </div>
+</div>
+
+<footer>
+  <div class="mini-footer-hint">
+  <p>Vermieter akzeptiert Ihre Wohnflächenberechnung nicht? Lassen Sie die Lage von unserer KI analysieren.</p>
+  <a href="https://clerion.de" class="mini-footer-link">Clerion - Ihr digitaler Assistent</a>
+  </div>
+    <p>&copy; 2026 Mieter-Lotse | <a href="über.html">Über uns & Redaktionsrichtlinien</a> | <a href="index.html">Zurück zur Startseite</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Live Calculation Logic
+    const inputs = ['qmVertrag', 'qmEcht', 'mieteKalt', 'mieteNk', 'monate'];
+    let calcData = { valid: false };
+
+    function calculateRefund() {
+        const qmVertrag = parseFloat(document.getElementById('qmVertrag').value) || 0;
+        const qmEcht = parseFloat(document.getElementById('qmEcht').value) || 0;
+        const mieteKalt = parseFloat(document.getElementById('mieteKalt').value) || 0;
+        const mieteNk = parseFloat(document.getElementById('mieteNk').value) || 0;
+        const monate = parseInt(document.getElementById('monate').value) || 0;
+        
+        const resBox = document.getElementById('calcResult');
+        const pdfBtn = document.getElementById('generatePdfBtn');
+
+        if(qmVertrag === 0 || qmEcht === 0 || mieteKalt === 0) {
+            resBox.style.display = 'none';
+            pdfBtn.disabled = true;
+            calcData.valid = false;
+            return;
+        }
+
+        const warmMiete = mieteKalt + mieteNk;
+        const abweichungQm = qmVertrag - qmEcht;
+        const abweichungProzent = (abweichungQm / qmVertrag) * 100;
+        
+        resBox.className = "calc-result-box"; // reset classes
+
+        if (abweichungProzent > 10) {
+            // Mangel liegt vor
+            const minderungMonat = warmMiete * (abweichungProzent / 100);
+            const neueWarmMiete = warmMiete - minderungMonat;
+            const erstattungTotal = minderungMonat * monate;
+
+            resBox.classList.add("result-green");
+            resBox.innerHTML = `
+                Abweichung: <strong>${abweichungProzent.toFixed(2)} %</strong> (Mangel liegt vor!)<br><br>
+                Mietminderung für die Zukunft: <strong class="calc-highlight">${minderungMonat.toFixed(2)} € mtl.</strong><br>
+                (Ihre neue Bruttowarmmiete beträgt nur noch: ${neueWarmMiete.toFixed(2)} €)<br><br>
+                Rückforderung für ${monate} Monate: <strong class="calc-highlight">${erstattungTotal.toFixed(2)} €</strong>
+            `;
+            pdfBtn.disabled = false;
+            
+            calcData = {
+                valid: true,
+                abweichungProzent: abweichungProzent,
+                minderungMonat: minderungMonat,
+                neueWarmMiete: neueWarmMiete,
+                erstattungTotal: erstattungTotal,
+                warmMiete: warmMiete
+            };
+        } else if (abweichungProzent > 0 && abweichungProzent <= 10) {
+            // Kein Mangel nach BGH
+            resBox.classList.add("result-red");
+            resBox.innerHTML = `
+                Abweichung: <strong>${abweichungProzent.toFixed(2)} %</strong><br><br>
+                ⚠️ Die Abweichung liegt bei 10% oder darunter. Nach BGH-Rechtsprechung liegt rechtlich <strong>kein Sachmangel</strong> vor. Sie haben keinen Anspruch auf Minderung oder Rückzahlung.
+            `;
+            pdfBtn.disabled = true;
+            calcData.valid = false;
+        } else {
+            // Wohnung ist größer oder gleich
+            resBox.classList.add("result-red");
+            resBox.innerHTML = `Die tatsächliche Wohnfläche ist größer oder gleich der vertraglichen Fläche. Ein Anspruch besteht nicht.`;
+            pdfBtn.disabled = true;
+            calcData.valid = false;
+        }
+        resBox.style.display = 'block';
+    }
+
+    inputs.forEach(id => {
+        document.getElementById(id).addEventListener('input', calculateRefund);
+    });
+
+    // Save Data
+    document.getElementById('saveBtnFlaeche').addEventListener('click', function() {
+        const fields = ['mName', 'mAdresse', 'vName', 'vAdresse', 'qmVertrag', 'qmEcht', 'mieteKalt', 'mieteNk', 'monate', 'iban'];
+        fields.forEach(f => {
+            const el = document.getElementById(f);
+            if(el) localStorage.setItem('wf_' + f, el.value);
+        });
+        alert('Ihre Eingaben wurden lokal gespeichert.');
+    });
+
+    // Load Data
+    document.getElementById('loadBtnFlaeche').addEventListener('click', function() {
+        const fields = ['mName', 'mAdresse', 'vName', 'vAdresse', 'qmVertrag', 'qmEcht', 'mieteKalt', 'mieteNk', 'monate', 'iban'];
+        fields.forEach(f => {
+            const val = localStorage.getItem('wf_' + f);
+            if(val) document.getElementById(f).value = val;
+        });
+        calculateRefund();
+    });
+
+    // Generate PDF
+    document.getElementById('flaecheForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        if (!calcData.valid) return;
+
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        
+        const mName = document.getElementById('mName').value;
+        const mAdr = document.getElementById('mAdresse').value;
+        const vName = document.getElementById('vName').value;
+        const vAdr = document.getElementById('vAdresse').value;
+        
+        const qmVertrag = document.getElementById('qmVertrag').value;
+        const qmEcht = document.getElementById('qmEcht').value;
+        const monate = document.getElementById('monate').value;
+        const iban = document.getElementById('iban').value;
+
+        // --- PDF FORMATTING ---
+        doc.setFont("helvetica");
+
+        // Sender
+        doc.setFontSize(8);
+        doc.setTextColor(100, 100, 100);
+        let senderLine = mAdr.replace(/\n/g, ' • ');
+        doc.text(`${mName} • ${senderLine}`, 25, 45);
+
+        // Receiver
+        doc.setFontSize(11);
+        doc.setTextColor(0, 0, 0);
+        const receiverLines = doc.splitTextToSize(vName + "\n" + vAdr, 80);
+        doc.text(receiverLines, 25, 52);
+
+        // Date
+        const todayFormatted = new Date().toLocaleDateString('de-DE', {day: '2-digit', month: '2-digit', year: 'numeric'});
+        doc.text(todayFormatted, 185, 80, {align: 'right'});
+
+        // Subject
+        doc.setFont("helvetica", "bold");
+        doc.text(`Mietminderung und Rückforderung wegen Wohnflächenabweichung`, 25, 95);
+        doc.setFontSize(10);
+        doc.text(`Betreffende Wohnung: ${senderLine}`, 25, 102);
+
+        // Body Text
+        doc.setFontSize(11);
+        doc.setFont("helvetica", "normal");
+        let yPos = 117;
+        
+        let introText = "Sehr geehrte Damen und Herren,\n\n";
+        if(vName.toLowerCase().includes("herr ")) introText = "Sehr geehrter " + vName + ",\n\n";
+        else if (vName.toLowerCase().includes("frau ")) introText = "Sehr geehrte " + vName + ",\n\n";
+
+        let paragraphs = [];
+        paragraphs.push(`gemäß unserem Mietvertrag beträgt die Wohnfläche für die oben genannte Wohnung ${qmVertrag} Quadratmeter. Ein von mir veranlasstes detailliertes Aufmaß nach der Wohnflächenverordnung (WoFlV) hat jedoch ergeben, dass die tatsächliche Wohnfläche lediglich ${qmEcht} Quadratmeter beträgt.`);
+        
+        paragraphs.push(`Dies entspricht einer Abweichung von ${calcData.abweichungProzent.toFixed(2)} %. Nach ständiger Rechtsprechung des Bundesgerichtshofs (u.a. BGH, Az. VIII ZR 295/03) stellt eine Flächenabweichung von mehr als 10 Prozent einen erheblichen Sachmangel der Mietsache dar.`);
+        
+        paragraphs.push(`Ich mache hiermit von meinem Recht auf Mietminderung Gebrauch. Die Bruttowarmmiete in Höhe von ${calcData.warmMiete.toFixed(2)} EUR mindert sich ab dem kommenden Monat um ${calcData.abweichungProzent.toFixed(2)} % (${calcData.minderungMonat.toFixed(2)} EUR). Ich werde künftig nur noch die geminderte Miete in Höhe von ${calcData.neueWarmMiete.toFixed(2)} EUR überweisen.`);
+        
+        paragraphs.push(`Zusätzlich fordere ich gemäß § 812 BGB die in der Vergangenheit zu viel gezahlte Miete zurück. Für die vergangenen ${monate} Monate ergibt sich hieraus ein Erstattungsanspruch in Höhe von:`);
+
+        let fullText = introText + paragraphs.join("\n\n");
+        let bodyLines = doc.splitTextToSize(fullText, 160);
+        doc.text(bodyLines, 25, yPos);
+        yPos += (bodyLines.length * 5) + 5;
+
+        // Calculation Bold
+        doc.setFont("helvetica", "bold");
+        doc.text(`Gesamtforderung: ${calcData.erstattungTotal.toFixed(2)} EUR`, 25, yPos);
+        doc.setFont("helvetica", "normal");
+        yPos += 15;
+
+        // Deadline
+        let deadline = new Date();
+        deadline.setDate(deadline.getDate() + 14);
+        const dlFormatted = deadline.toLocaleDateString('de-DE');
+
+        let endText = `Ich fordere Sie auf, den Betrag von ${calcData.erstattungTotal.toFixed(2)} EUR bis spätestens zum ${dlFormatted} auf mein folgendes Konto zu überweisen:\n\nIBAN: ${iban}`;
+        let endText2 = "\n\nSollte die Frist fruchtlos verstreichen, werde ich den Rückforderungsbetrag gemäß § 556b BGB mit den zukünftigen Mietzahlungen aufrechnen. Weiterhin fordere ich Sie auf, künftige Nebenkostenabrechnungen auf Basis der korrekten tatsächlichen Wohnfläche von " + qmEcht + " Quadratmetern vorzunehmen.";
+        
+        let endLines = doc.splitTextToSize(endText + endText2, 160);
+        
+        if (yPos + (endLines.length * 5) > 260) {
+            doc.addPage();
+            yPos = 20;
+        }
+        
+        doc.text(endLines, 25, yPos);
+        yPos += (endLines.length * 5) + 15;
+
+        // Closing
+        doc.text("Mit freundlichen Grüßen,", 25, yPos);
+        yPos += 20;
+        doc.text(mName, 25, yPos);
+
+        // Save
+        doc.save("Wohnflaeche_Rueckforderung_" + mName.replace(/\s+/g, '_') + ".pdf");
+        
+        document.getElementById('spendenPopup').style.display = 'flex';
+    });
+
+    document.getElementById('closePopupBtn').addEventListener('click', function() {
+        document.getElementById('spendenPopup').style.display = 'none';
+    });
+});
+</script>
+</body>
+</html>

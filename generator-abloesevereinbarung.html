@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Ablösevereinbarung Generator & Wucher-Check | Kostenloses PDF</title>
+
+  <meta name="description" content="Küche vom Vormieter abkaufen? Prüfen Sie mit dem Wucher-Check, ob der Preis legal ist, und generieren Sie eine wasserdichte Ablösevereinbarung als PDF.">
+  <meta name="robots" content="index,follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="/logo-lotse-fav.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <link rel="stylesheet" href="/css/generator.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Generator: Ablösevereinbarung & Wucher-Check",
+    "description": "Kostenloser Generator zur Erstellung eines rechtssicheren Kaufvertrags (Ablöse) für Möbel und Einbauküchen vom Vormieter, inklusive gesetzlichem Wucher-Check nach § 4a WoVermRG.",
+    "inLanguage": "de",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Mieter-Lotse",
+      "url": "https://mieter-lotse.de"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Mieter-Lotse",
+      "url": "https://mieter-lotse.de"
+    },
+    "about": [
+      { "@type": "Thing", "name": "Ablösevereinbarung" },
+      { "@type": "Thing", "name": "Abstandszahlung" },
+      { "@type": "Thing", "name": "Küche vom Vormieter" }
+    ],
+    "lastReviewed": "2026-05-01",
+    "reviewedBy": { "@type": "Organization", "name": "Mieter-Lotse Redaktion" }
+  }
+  </script>
+  <style>
+      .wucher-box {
+          background-color: #f8f9fa;
+          border: 2px solid #cfd8dc;
+          border-radius: 8px;
+          padding: 20px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+      }
+      .wucher-result {
+          margin-top: 15px;
+          padding: 15px;
+          border-radius: 4px;
+          display: none;
+          font-weight: bold;
+      }
+      .wucher-green { background-color: #e8f5e9; border: 1px solid #4caf50; color: #2e7d32; }
+      .wucher-red { background-color: #ffebee; border: 1px solid #f44336; color: #c62828; }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="site-logo">Mieter-Lotse</a>
+</header>
+
+<div class="page-container">
+
+  <h1>Generator: Ablösevereinbarung & Wucher-Check</h1>
+<div class="usp-bar">
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    Inklusive Wucher-Check
+  </div>
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    Rechtssichere Klauseln
+  </div>
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    Sofort-PDF
+  </div>
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    100% Kostenlos
+  </div>
+</div>
+
+  <a href="einzug-auszug-kuendigung.html" class="category-badge">
+    Zur Übersicht: Einzug-Auszug
+</a>
+
+  <p><em>Fachlich geprüft | Stand: 30.04.2026</em></p>
+
+  <a href="#abloeseForm" class="button jump-button" style="margin-bottom: 20px; display: inline-block;">Direkt zum Ablöse-Generator springen</a>
+
+  <div class="info-box">
+    <p>
+      Sie haben die Zusage für die Wohnung fast sicher, aber der Vormieter verlangt, dass Sie seine alte Einbauküche oder das Sofa übernehmen? Grundsätzlich ist eine solche Ablösevereinbarung völlig legal – <strong>solange der Preis fair ist.</strong>
+    </p>
+    <p>
+      Oft versuchen Vormieter jedoch, durch maßlos überzogene Preise einen illegalen "Abstand" (eine Art Prämie für die Wohnungsübergabe) zu kassieren. Mit unserem Tool prüfen Sie zunächst, ob der geforderte Preis gesetzlich zulässig ist. Anschließend generiert das Tool einen <strong>rechtssicheren Kaufvertrag</strong>. Dieser enthält zwingend die rettende "aufschiebende Bedingung": Der Vertrag wird automatisch nichtig, falls Sie den Mietvertrag vom Vermieter doch nicht erhalten!
+    </p>
+  </div>
+
+  <div class="info-box warning" style="border-left: 4px solid #e53935; padding: 15px; margin-top: 20px;">
+    <h2>WICHTIG: Die 50-Prozent-Regel (§ 4a WoVermRG)</h2>
+    <p>
+      Ein Vormieter darf sich an Ihnen nicht ungerechtfertigt bereichern. Laut Wohnungsvermittlungsgesetz darf der Kaufpreis für Einbauten (wie Küchen oder Maßmöbel) den aktuellen <strong>Zeitwert um maximal 50 % übersteigen</strong>. Alles, was darüber hinausgeht, ist gesetzlich unwirksam (Wucher).
+    </p>
+    <p>
+      <em>Rechenbeispiel:</em> Eine Küche hatte vor 5 Jahren einen Neupreis von 4.000 €. Bei einer üblichen Lebensdauer von 10 Jahren beträgt der Zeitwert heute noch 2.000 €. Der Vormieter darf also maximal 3.000 € (2.000 € Zeitwert + 50 % Aufschlag) von Ihnen verlangen.
+    </p>
+  </div>
+
+  <div class="info-box" style="background-color: #e3f2fd; border-left: 4px solid #2196f3; padding: 10px; margin-top: 15px;">
+    <strong>Erfolgs-Tipp: Originalrechnungen zeigen lassen.</strong> Bevor Sie einem Kaufpreis zustimmen oder den Zeitwert schätzen, bestehen Sie freundlich, aber bestimmt darauf, die Originalkaufbelege zu sehen. Nur so können Sie das tatsächliche Alter und den Neupreis verlässlich bestimmen. Fehlen die Belege, sollten Sie den Wert eher niedrig ansetzen.
+  </div>
+
+  <div class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 15px;">
+    <strong>Wichtiger Hinweis:</strong> Dieses Tool stellt keine verbindliche Rechtsberatung dar. Haben Sie unter Druck bereits eine extrem überteuerte Ablöse gezahlt, um die Wohnung überhaupt zu bekommen? Die gute Nachricht: Vereinbarungen, die die 50-Prozent-Grenze überschreiten, sind in Höhe des zu viel gezahlten Betrags teilnichtig. Sie können die Differenz nachträglich – am besten mit Hilfe eines Mietervereins – vom Vormieter zurückfordern.
+  </div>
+
+  <div class="info-box" style="background-color: #e3f2fd; border-left: 4px solid #2196f3; padding: 10px; margin-top: 15px;">
+    <strong>Hinweis zur Datenspeicherung:</strong> Ihre sensiblen Vertragsdaten sind sicher. Die Funktionen „Speichern“ und „Laden“ nutzen ausschließlich den lokalen Speicher (localStorage) Ihres Browsers. Wir übertragen keine Summen oder persönlichen Daten an unsere Server.
+  </div>
+
+  <div class="highlight-box" style="background-color: #fff3f3; border-left: 4px solid #e53935; padding: 10px; margin-top: 15px;">
+    <strong>Technischer Hinweis:</strong> Um das fertige PDF des Kaufvertrags fehlerfrei herunterzuladen, nutzen Sie bitte Desktop- oder Standard-Mobile-Browser wie <strong>Chrome, Firefox oder Safari</strong>. In den In-App-Browsern (z. B. der Google-Such-App) ist der Download häufig blockiert.
+  </div>
+
+  <div class="highlight-box pruefdatum-box" role="note" aria-label="Redaktionell geprüft" style="margin-top: 15px; margin-bottom: 30px;">
+    <p><strong>Redaktionell geprüft am:</strong> <span id="pruefdatum">01.05.2026</span></p>
+  </div>
+
+  <form id="abloeseForm">
+    
+    <!-- INTEGRIERTER WUCHER-CHECK -->
+    <div class="wucher-box" id="wucherCheckArea">
+        <h3 style="margin-top: 0; color: #1a237e;">🔍 1. Der Wucher-Check (Ist der Preis legal?)</h3>
+        <p style="font-size: 0.9em; color: #555;">Wir berechnen den Zeitwert linear (Basis: 10 Jahre Lebensdauer für Standard-Möbel/Küchen) und prüfen, ob die Forderung des Vormieters im gesetzlichen Rahmen liegt.</p>
+        
+        <label for="cNeupreis">Ursprünglicher Neupreis der Gegenstände (in €):</label>
+        <input type="number" id="cNeupreis" placeholder="z. B. 4000" style="margin-bottom: 10px;">
+        
+        <label for="cAlter">Alter der Gegenstände (in Jahren):</label>
+        <input type="number" id="cAlter" placeholder="z. B. 5" style="margin-bottom: 10px;">
+        
+        <label for="cForderung">Preis, den der Vormieter verlangt (in €):</label>
+        <input type="number" id="cForderung" placeholder="z. B. 3500" style="margin-bottom: 15px;">
+        
+        <button type="button" id="btnWucherCheck" class="button-secondary" style="width: 100%;">Preis jetzt prüfen</button>
+
+        <div id="wucherResult" class="wucher-result"></div>
+    </div>
+
+    <fieldset>
+      <legend>2. Vertragsparteien</legend>
+      <label for="vName"><strong>Verkäufer</strong> (Bisheriger Mieter / Vormieter):</label>
+      <input type="text" id="vName" placeholder="Vor- und Nachname" required>
+      <label for="vAdresse">Anschrift des Verkäufers (nach Auszug):</label>
+      <input type="text" id="vAdresse" placeholder="Straße, PLZ, Ort" required>
+      
+      <label for="kName" style="margin-top: 15px;"><strong>Käufer</strong> (Nachmieter):</label>
+      <input type="text" id="kName" placeholder="Vor- und Nachname" required>
+      <label for="kAdresse">Derzeitige Anschrift des Käufers:</label>
+      <input type="text" id="kAdresse" placeholder="Straße, PLZ, Ort" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Die Wohnung</legend>
+      <label for="wAdresse">Adresse der Wohnung (in der die Gegenstände stehen):</label>
+      <input type="text" id="wAdresse" placeholder="Straße, Hausnr., Stockwerk, PLZ, Ort" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. Kaufgegenstände & Zustand</legend>
+      <label for="gegenstaende">Was genau wird verkauft? (Bitte so exakt wie möglich auflisten):</label>
+      <textarea id="gegenstaende" rows="4" placeholder="z. B.&#10;1x Einbauküche (Marke Nobilia) inkl. Elektrogeräte (Siemens Ofen, Bauknecht Kühlschrank)&#10;1x Kleiderschrank PAX (weiß) im Schlafzimmer" required></textarea>
+      
+      <label for="maengel">Bekannte Mängel (falls vorhanden):</label>
+      <input type="text" id="maengel" placeholder="z. B. Kratzer im Kochfeld, Tür vom Gefrierfach klemmt (oder: Keine Mängel bekannt)">
+    </fieldset>
+
+    <fieldset>
+      <legend>5. Kaufpreis & Bezahlung</legend>
+      <label for="kaufpreis">Vereinbarter Kaufpreis gesamt (in €):</label>
+      <input type="number" id="kaufpreis" required>
+      
+      <label for="zahlungsart">Wie wird bezahlt?</label>
+      <select id="zahlungsart" required>
+        <option value="bar">Barzahlung bei Wohnungsübergabe (gegen Quittung)</option>
+        <option value="ueberweisung">Überweisung (spätestens 7 Tage nach Mietvertragsbeginn)</option>
+      </select>
+      
+      <div id="ibanBox" style="display: none; margin-top: 10px;">
+        <label for="vIban">IBAN des Verkäufers:</label>
+        <input type="text" id="vIban" placeholder="DE...">
+      </div>
+    </fieldset>
+
+    <div class="button-group">
+      <button type="button" id="saveBtnAbloese" class="button-secondary">Eingaben Speichern</button>
+      <button type="button" id="loadBtnAbloese" class="button-secondary">Eingaben Laden</button>
+      <button type="submit" class="button-primary">Ablösevertrag als PDF erstellen</button>
+    </div>
+  </form>
+  <hr>
+
+  <h2>Häufige Fragen (FAQ) zur Ablösevereinbarung</h2>
+  <details>
+    <summary>Ist der Vertrag gültig, wenn der Vermieter mich ablehnt?</summary>
+    <p>Nein, nicht wenn Sie unseren Generator nutzen! Wir bauen standardmäßig eine "aufschiebende Bedingung" gemäß § 158 BGB in das Dokument ein. Der Vertrag entfaltet nur dann Rechtsgültigkeit, wenn Sie auch tatsächlich den Mietvertrag vom Vermieter unterschrieben zurückbekommen. Kaufen Sie Möbel niemals ohne diesen Satz!</p>
+  </details>
+  <details>
+    <summary>Was tue ich, wenn der Vormieter eine utopische Summe verlangt?</summary>
+    <p>Wenn Sie die Wohnung unbedingt wollen, können Sie den Vertrag zähneknirschend unterschreiben (sofern die "aufschiebende Bedingung" enthalten ist). Sobald Sie den Mietvertrag in der Tasche haben, können Sie sich auf § 4a WoVermRG berufen und den überhöhten Teil der Zahlung (alles was über Zeitwert + 50% liegt) zurückfordern. Achtung: Das kann zu einem Rechtsstreit führen, sichern Sie daher Beweise (Fotos der Möbel, Inserate).</p>
+  </details>
+  <details>
+    <summary>Gibt es eine Garantieberechtigung?</summary>
+    <p>Da es sich in der Regel um einen Privatkauf handelt, wird die Sachmängelhaftung (Gewährleistung) in unserem Vertrag ausgeschlossen ("Gekauft wie gesehen"). Sie sollten die Küche oder die Möbel vor der Unterschrift also genau auf Funktionstüchtigkeit prüfen.</p>
+  </details>
+
+  <aside class="highlight-box" role="complementary" aria-label="Weiterführende Informationen" style="margin-top: 30px;">
+    <h2 style="margin-top:0">Wohnungssuche & Einzug meistern</h2>
+    <p>
+      Sichern Sie sich Ihre Traumwohnung, ohne in rechtliche oder finanzielle Stolperfallen zu tappen. Nutzen Sie unsere Tools für den perfekten Start:
+    </p>
+    <p style="margin-bottom:.4rem;">
+      <a href="info-abloesevereinbarung.html" class="button button-secondary" title="Ratgeber Ablösevereinbarung">Ratgeber: Alles zu Ablöse, Abstand & Zeitwert</a>
+      <a href="generator-mieterselbstauskunft.html" class="button button-secondary" title="Generator Mieterselbstauskunft">Generator: DSGVO-konforme Mieterselbstauskunft</a>
+      <a href="generator-wohnungsbewerbung.html" class="button button-secondary" title="Generator Wohnungsbewerbung">Generator: Überzeugendes Bewerbungsanschreiben</a>
+      <a href="wohnungsbewerbung.html" class="button button-secondary" title="Übersicht Wohnungsbewerbung">Zur Übersicht: Wohnungsbewerbung</a>
+      <a href="einzug-auszug-kuendigung.html" class="button button-secondary" title="Übersicht Einzug und Auszug">Zur Übersicht: Einzug, Auszug & Kündigung</a>
+    </p>
+  </aside>
+
+  <h2>Quellen &amp; weiterführende Links</h2>
+  <div class="kl-highlight kl-sources-box" aria-label="Quellen und weiterführende Links">
+    <ul>
+      <li>
+        <a href="https://www.gesetze-im-internet.de/wovermrg/__4a.html" target="_blank" rel="noopener">
+          Bundesministerium der Justiz – § 4a WoVermRG (Unwirksamkeit von Vereinbarungen / Ablöse)
+        </a>
+      </li>
+      <li>
+        <a href="https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/kundenrechte/kueche-uebernehmen-abschlag-abloese-oder-abstand-fuer-die-wohnung-26522" target="_blank" rel="noopener">
+          Verbraucherzentrale – Küche übernehmen: Abschlag, Ablöse oder Abstand?
+        </a>
+      </li>
+      <li>
+        <a href="https://www.mieterbund.de/mietrecht/mietrecht-a-z/abloese-abstand/" target="_blank" rel="noopener">
+          Deutscher Mieterbund – Ratgeber zu Ablöse und Abstand
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+</div>
+
+<!-- Spenden / Success Popup -->
+<div id="spendenPopup" class="popup-overlay" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center;">
+  <div class="popup-content" style="background: #fff; padding: 30px; border-radius: 8px; max-width: 500px; text-align: center;">
+      <h2>Kaufvertrag erfolgreich erstellt!</h2>
+      <p>Ihre rechtssichere Ablösevereinbarung wurde als PDF generiert.</p>
+      <p style="margin-top:15px; font-size: 0.9em; color: #555;">Drucken Sie das Dokument in zweifacher Ausfertigung aus (einmal für Sie, einmal für den Vormieter), sobald beide Parteien unterschreiben.</p>
+      <p style="margin-top:15px; font-size: 0.9em; color: #555;">Wenn Ihnen dieses Tool geholfen hat, unterstützen Sie unsere kostenlose Arbeit gerne mit einer kleinen Spende.</p>
+      <form action="https://www.paypal.com/donate" method="post" target="_blank" style="margin-top: 15px;">
+          <input type="hidden" name="business" value="info@kassen-lotse.de" />
+          <input type="hidden" name="item_name" value="Unterstützung für das Projekt Mieter-Lotse" />
+          <input type="hidden" name="currency_code" value="EUR" />
+          <input type="submit" value="Spenden mit PayPal" style="background-color: #ffc439; border: none; padding: 0.9rem 1.8rem; font-weight: bold; border-radius: 5px; cursor: pointer; color: #333; font-size: 1em;"/>
+      </form>
+      <button id="closePopupBtn" class="popup-close-button" style="margin-top: 15px; background: none; border: 1px solid #ccc; padding: 8px 15px; cursor: pointer; border-radius: 4px;">Schließen</button>
+  </div>
+</div>
+
+<div style="background-color: #f8f9fa; border-top: 2px solid #e0e0e0; padding: 25px 15px; margin-top: 40px; text-align: center; font-family: sans-serif;">
+    <h3 style="font-size: 1.1em; color: #333; margin-top: 0; margin-bottom: 8px;">Wer hat diese Inhalte erstellt?</h3>
+    <p style="font-size: 0.9em; color: #555; max-width: 700px; margin: 0 auto 12px auto; line-height: 1.5;">
+        Unsere Ratgeber und Generatoren basieren auf der strikten Auswertung aktueller Gesetzestexte. Sie werden von <strong>Jan (Projektleitung) & Team</strong> entwickelt und durch unser Netzwerk aus Fachberatern regelmäßig auf fachliche Korrektheit geprüft. 
+        <br><br>
+        <em>Wichtiger Hinweis: Unser Tool generiert Standardverträge zur Selbsthilfe und ersetzt keine anwaltliche Einzelfallprüfung.</em>
+    </p>
+    <div style="margin-bottom: 25px;">
+        <a href="über.html" style="display: inline-block; font-size: 0.9em; color: #0056b3; text-decoration: underline; font-weight: bold;">
+            Mehr über unsere Redaktion & Arbeitsweise erfahren
+        </a>
+    </div>
+</div>
+
+<footer>
+  <div class="mini-footer-hint">
+  <p>Vormieter zahlt den Wucher-Betrag nicht zurück? Lassen Sie ein Forderungsschreiben von unserer KI generieren.</p>
+  <a href="https://clerion.de" class="mini-footer-link">Clerion - Ihr digitaler Assistent</a>
+  </div>
+    <p>&copy; 2026 Mieter-Lotse | <a href="über.html">Über uns & Redaktionsrichtlinien</a> | <a href="index.html">Zurück zur Startseite</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Wucher-Check Logic
+    document.getElementById('btnWucherCheck').addEventListener('click', function() {
+        const neupreis = parseFloat(document.getElementById('cNeupreis').value);
+        const alter = parseFloat(document.getElementById('cAlter').value);
+        const forderung = parseFloat(document.getElementById('cForderung').value);
+        const resBox = document.getElementById('wucherResult');
+
+        if(isNaN(neupreis) || isNaN(alter) || isNaN(forderung) || neupreis <= 0) {
+            alert("Bitte füllen Sie Neupreis, Alter und geforderten Preis korrekt aus.");
+            return;
+        }
+
+        // Calculation: Linear depreciation over 10 years
+        let zeitwert = 0;
+        if (alter < 10) {
+            zeitwert = (neupreis / 10) * (10 - alter);
+        } // If older than 10 years, Zeitwert is technically near 0.
+
+        const maxLegalPrice = zeitwert * 1.5; // + 50% limit (§ 4a WoVermRG)
+        
+        resBox.className = "wucher-result"; // reset classes
+
+        let html = `<strong>Ergebnis der Berechnung:</strong><br>`;
+        html += `Geschätzter Zeitwert heute: ca. ${zeitwert.toFixed(2)} €<br>`;
+        html += `Gesetzliche Obergrenze (+50%): <strong>${maxLegalPrice.toFixed(2)} €</strong><br><br>`;
+
+        if (forderung <= maxLegalPrice) {
+            resBox.classList.add("wucher-green");
+            html += `✅ <strong>Der Preis ist legal.</strong> Die Forderung von ${forderung} € liegt innerhalb des rechtlichen Rahmens und stellt keinen Wucher dar.`;
+        } else {
+            resBox.classList.add("wucher-red");
+            const ueberzahlung = forderung - maxLegalPrice;
+            html += `⚠️ <strong>Achtung, Wucher-Gefahr!</strong> Der geforderte Preis übersteigt die gesetzliche Grenze um ${ueberzahlung.toFixed(2)} €.<br><br>`;
+            html += `<span style="font-weight:normal; font-size:0.9em;">Sie können versuchen, den Preis auf ${maxLegalPrice.toFixed(2)} € herunterzuhandeln. Alternativ: Unterschreiben Sie (um die Wohnung zu bekommen) und fordern Sie die Überzahlung später gemäß § 4a WoVermRG zurück.</span>`;
+        }
+
+        resBox.innerHTML = html;
+        resBox.style.display = "block";
+    });
+
+    // Payment UI Logic
+    const paymentSelect = document.getElementById('zahlungsart');
+    const ibanBox = document.getElementById('ibanBox');
+    const ibanInput = document.getElementById('vIban');
+
+    paymentSelect.addEventListener('change', function() {
+        if(this.value === 'ueberweisung') {
+            ibanBox.style.display = 'block';
+            ibanInput.setAttribute('required', 'required');
+        } else {
+            ibanBox.style.display = 'none';
+            ibanInput.removeAttribute('required');
+        }
+    });
+
+    // Save Data
+    document.getElementById('saveBtnAbloese').addEventListener('click', function() {
+        const fields = ['vName', 'vAdresse', 'kName', 'kAdresse', 'wAdresse', 'gegenstaende', 'maengel', 'kaufpreis', 'zahlungsart', 'vIban'];
+        fields.forEach(f => {
+            const el = document.getElementById(f);
+            if(el) localStorage.setItem('abloese_' + f, el.value);
+        });
+        alert('Ihre Eingaben wurden lokal gespeichert.');
+    });
+
+    // Load Data
+    document.getElementById('loadBtnAbloese').addEventListener('click', function() {
+        const fields = ['vName', 'vAdresse', 'kName', 'kAdresse', 'wAdresse', 'gegenstaende', 'maengel', 'kaufpreis', 'zahlungsart', 'vIban'];
+        fields.forEach(f => {
+            const val = localStorage.getItem('abloese_' + f);
+            if(val) document.getElementById(f).value = val;
+        });
+        paymentSelect.dispatchEvent(new Event('change'));
+    });
+
+    // Generate PDF Contract
+    document.getElementById('abloeseForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        
+        const vName = document.getElementById('vName').value;
+        const vAdr = document.getElementById('vAdresse').value;
+        const kName = document.getElementById('kName').value;
+        const kAdr = document.getElementById('kAdresse').value;
+        const wAdr = document.getElementById('wAdresse').value;
+        
+        const items = document.getElementById('gegenstaende').value;
+        const maengel = document.getElementById('maengel').value || "Keine Mängel bekannt.";
+        const preis = document.getElementById('kaufpreis').value;
+        const zArt = document.getElementById('zahlungsart').value;
+        const iban = document.getElementById('vIban').value;
+
+        // --- PDF LAYOUT (Contract Style) ---
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(18);
+        doc.text("Kaufvertrag / Ablösevereinbarung", 105, 20, {align: 'center'});
+        
+        doc.setFontSize(11);
+        doc.setFont("helvetica", "normal");
+        
+        let yPos = 35;
+
+        // Parties
+        doc.setFont("helvetica", "bold"); doc.text("Zwischen dem Verkäufer (Vormieter):", 20, yPos); doc.setFont("helvetica", "normal");
+        yPos += 7;
+        doc.text(vName + ", " + vAdr, 20, yPos);
+        yPos += 12;
+
+        doc.setFont("helvetica", "bold"); doc.text("und dem Käufer (Nachmieter):", 20, yPos); doc.setFont("helvetica", "normal");
+        yPos += 7;
+        doc.text(kName + ", " + kAdr, 20, yPos);
+        yPos += 15;
+
+        // Condition Precedent (Most important part!)
+        doc.setFillColor(240, 240, 240);
+        doc.rect(20, yPos, 170, 25, 'F');
+        doc.setFont("helvetica", "bold");
+        doc.text("§ 1 Aufschiebende Bedingung (Wirksamkeit des Vertrages)", 23, yPos + 7);
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(10);
+        const conditionText = "Dieser Vertrag wird unter der aufschiebenden Bedingung (§ 158 Abs. 1 BGB) geschlossen, dass zwischen dem Käufer und dem Vermieter der Wohnung (" + wAdr + ") ein rechtswirksamer Mietvertrag zustande kommt. Kommt der Mietvertrag nicht zustande, ist dieser Kaufvertrag nichtig.";
+        const cLines = doc.splitTextToSize(conditionText, 164);
+        doc.text(cLines, 23, yPos + 13);
+        yPos += 35;
+        doc.setFontSize(11);
+
+        // Object
+        doc.setFont("helvetica", "bold"); doc.text("§ 2 Kaufgegenstand", 20, yPos); doc.setFont("helvetica", "normal");
+        yPos += 7;
+        doc.text("Verkauft werden folgende Gegenstände in der Wohnung:", 20, yPos);
+        yPos += 7;
+        const iLines = doc.splitTextToSize(items, 170);
+        doc.text(iLines, 20, yPos);
+        yPos += (iLines.length * 5) + 5;
+        
+        doc.text("Bekannte Mängel: " + maengel, 20, yPos);
+        yPos += 15;
+
+        // Price & Payment
+        doc.setFont("helvetica", "bold"); doc.text("§ 3 Kaufpreis und Zahlung", 20, yPos); doc.setFont("helvetica", "normal");
+        yPos += 7;
+        doc.text(`Der vereinbarte Kaufpreis beträgt insgesamt: ${preis} Euro.`, 20, yPos);
+        yPos += 7;
+        
+        if(zArt === 'bar') {
+            doc.text("Der Betrag wird bei Schlüsselübergabe bzw. Mietbeginn in bar fällig.", 20, yPos);
+            yPos += 7;
+            doc.text("Der Verkäufer quittiert den Erhalt des Betrages hiermit (nach Unterschrift):", 20, yPos);
+            yPos += 7;
+            doc.text("Betrag erhalten am: ___________________  Unterschrift Verkäufer: _______________________", 20, yPos);
+        } else {
+            doc.text("Der Betrag ist spätestens 7 Tage nach Mietvertragsbeginn per Banküberweisung fällig.", 20, yPos);
+            yPos += 7;
+            doc.text("Kontoverbindung des Verkäufers (IBAN): " + iban, 20, yPos);
+        }
+        yPos += 15;
+
+        // Warranty
+        doc.setFont("helvetica", "bold"); doc.text("§ 4 Gewährleistungsausschluss", 20, yPos); doc.setFont("helvetica", "normal");
+        yPos += 7;
+        const gText = "Der Verkauf erfolgt unter Ausschluss jeglicher Sachmängelhaftung (gekauft wie gesehen). Die Haftung auf Schadenersatz wegen Verletzungen von Gesundheit, Körper oder Leben und grob fahrlässiger und/oder vorsätzlicher Verletzungen der Pflichten des Verkäufers bleibt uneingeschränkt.";
+        const gLines = doc.splitTextToSize(gText, 170);
+        doc.text(gLines, 20, yPos);
+        yPos += (gLines.length * 5) + 15;
+
+        // Signatures
+        doc.text("Ort, Datum", 20, yPos);
+        yPos += 15;
+        doc.line(20, yPos, 85, yPos);
+        doc.line(105, yPos, 170, yPos);
+        yPos += 5;
+        doc.text("Unterschrift Verkäufer (Vormieter)", 20, yPos);
+        doc.text("Unterschrift Käufer (Nachmieter)", 105, yPos);
+
+        // Save
+        doc.save("Abloesevereinbarung_" + kName.replace(/\s+/g, '_') + ".pdf");
+        
+        document.getElementById('spendenPopup').style.display = 'flex';
+    });
+
+    document.getElementById('closePopupBtn').addEventListener('click', function() {
+        document.getElementById('spendenPopup').style.display = 'none';
+    });
+});
+</script>
+</body>
+</html>

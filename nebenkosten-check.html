@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Nebenkosten-Check: Ist Ihre Nachzahlung zu hoch? - Rechner</title>
+  <meta name="description" content="Nebenkostenabrechnung prüfen: Kostenloser Rechner vergleicht Ihre Abrechnung mit dem Betriebskostenspiegel. Finden Sie Formfehler und überhöhte Kosten.">
+  <meta name="keywords" content="Nebenkostenabrechnung prüfen, Nachzahlung zu hoch, Betriebskostenspiegel, Nebenkosten Rechner, kalte Betriebskosten, Formfehler Nebenkosten">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/logo-lotse-fav.png">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <style>
+      .calculator-container {
+          background-color: #ffffff;
+          border: 1px solid #d1d5db;
+          border-top: 5px solid #ff9800;
+          border-radius: 8px;
+          padding: 25px;
+          margin-top: 30px;
+          margin-bottom: 40px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      }
+      .calc-section-title {
+          font-size: 1.2em;
+          color: #e65100;
+          margin-bottom: 15px;
+          border-bottom: 2px solid #fff3e0;
+          padding-bottom: 5px;
+      }
+      .input-group {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 15px;
+          flex-wrap: wrap;
+      }
+      .input-group label {
+          flex: 1;
+          min-width: 200px;
+          font-weight: 500;
+      }
+      .input-wrapper {
+          display: flex;
+          align-items: center;
+          flex: 1;
+          min-width: 150px;
+      }
+      .input-wrapper input, .input-wrapper select {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          font-size: 1em;
+      }
+      .input-wrapper input.with-addon {
+          border-radius: 4px 0 0 4px;
+          text-align: right;
+      }
+      .input-wrapper .addon {
+          background-color: #f5f5f5;
+          border: 1px solid #ccc;
+          border-left: none;
+          padding: 10px 15px;
+          border-radius: 0 4px 4px 0;
+          color: #555;
+      }
+      .result-box {
+          margin-top: 30px;
+          padding: 25px;
+          border-radius: 8px;
+          display: none;
+      }
+      .result-green { background-color: #e8f5e9; border: 2px solid #4caf50; }
+      .result-yellow { background-color: #fff8e1; border: 2px solid #ff9800; }
+      .result-red { background-color: #ffebee; border: 2px solid #f44336; }
+      .summary-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 15px;
+          margin-top: 20px;
+          background: rgba(255,255,255,0.6);
+          padding: 15px;
+          border-radius: 5px;
+      }
+      .summary-item {
+          display: flex;
+          flex-direction: column;
+      }
+      .summary-item strong { 
+          font-size: 1.4em; 
+          margin-top: 5px; 
+      }
+      /* Neuer PDF-Button Style */
+      .pdf-button {
+          background-color: #ef4444;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 5px;
+          font-weight: bold;
+          cursor: pointer;
+          margin-top: 15px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          justify-content: center;
+          width: 100%;
+      }
+      .pdf-button:hover { background-color: #dc2626; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bis wann muss der Vermieter die Nebenkostenabrechnung schicken?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Abrechnung muss Ihnen spätestens 12 Monate nach Ende des Abrechnungszeitraums vorliegen. Beispiel: Geht die Abrechnung über das Kalenderjahr 2025, muss das Schreiben spätestens am 31.12.2026 bei Ihnen im Briefkasten sein. Verpasst der Vermieter diese Frist, müssen Sie Nachzahlungen nicht mehr leisten!"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Darf der Vermieter Reparaturen über die Nebenkosten abrechnen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. Reparaturkosten, Instandhaltungen und Verwaltungskosten (z.B. Bankgebühren oder Porto) dürfen nicht auf den Mieter umgelegt werden. Finden Sie solche Posten, können Sie widersprechen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Muss ich die hohe Nachzahlung sofort überweisen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sie haben nach Erhalt der Abrechnung 30 Tage Zeit, die Nachzahlung zu leisten. Wenn Sie Zweifel an der Richtigkeit haben, sollten Sie den Betrag 'unter Vorbehalt' überweisen und beim Vermieter die Belegeinsicht (Rechnungskopien) anfordern."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Betriebskosten-Plausicheck Rechner",
+  "description": "Kostenloser Rechner zur Plausibilitätsprüfung der Nebenkostenabrechnung. Vergleicht Ihre abgerechneten Betriebskosten mit den Durchschnittswerten des Mieterbundes.",
+  "applicationCategory": "CalculatorApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Mieter-Lotse Team"
+  }
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="site-logo">Mieter-Lotse</a>
+</header>
+
+<div class="page-container">
+  <h1>Rechner: Betriebskosten-Plausicheck – Nebenkostenabrechnung prüfen</h1>
+<div class="usp-bar">
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    Plausibilitäts-Prüfung
+  </div>
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    Nach Betriebskostenspiegel
+  </div>
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    Formfehler finden
+  </div>
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    100% Kostenlos
+  </div>
+</div>
+
+  <a href="miete-nebenkosten.html" class="category-badge">
+    Zur Übersicht: Miete & Nebenkosten
+  </a>
+
+  <div class="info-box">
+    <p>
+      Jedes Jahr das gleiche Spiel: Die Betriebskostenabrechnung flattert ins Haus und fordert eine horrende Nachzahlung. Der Schreck ist groß, doch blindes Zahlen ist der falsche Weg. Schätzungen zufolge ist <strong>etwa jede zweite Nebenkostenabrechnung in Deutschland fehlerhaft!</strong> Oft werden Positionen abgerechnet, die der Mieter gar nicht tragen muss, oder Rechenfehler treiben die Summe in die Höhe.
+    </p>
+    <p>
+      <strong>Bringen Sie Licht ins Dunkel.</strong> Unser Rechner vergleicht die geforderten Kosten aus Ihrem Brief detailliert mit den aktuellen Durchschnittswerten (Betriebskostenspiegel) des Deutschen Mieterbundes. So sehen Sie Raum für Raum und Posten für Posten sofort, ob Ihre Kosten extrem vom bundesweiten oder regionalen Durchschnitt abweichen und sich ein tiefergehender rechtlicher Widerspruch lohnt.
+    </p>
+  </div>
+
+  <div class="info-box warning" style="border-left: 4px solid #e53935; padding: 15px; margin-top: 20px;">
+    <h2>WICHTIG: Die 12-Monate-Ausschlussfrist (§ 556 BGB)</h2>
+    <p>
+      Vermieter haben für die Abrechnung nicht ewig Zeit. Das Gesetz zieht eine harte Grenze:
+    </p>
+    <ul style="margin-top: 5px; margin-bottom: 15px; padding-left: 20px;">
+      <li><strong>Abrechnungsfrist:</strong> Die Abrechnung muss Ihnen spätestens <strong>12 Monate nach Ende des Abrechnungszeitraums</strong> zugehen. (Beispiel: Für das Kalenderjahr 2024 muss die Abrechnung bis zum 31.12.2025 bei Ihnen im Briefkasten liegen).</li>
+      <li><strong>Konsequenz:</strong> Kommt die Abrechnung auch nur einen Tag zu spät, darf der Vermieter <strong>keine Nachzahlungen</strong> mehr von Ihnen fordern!</li>
+      <li><strong>Ausnahme:</strong> Ein Guthaben zu Ihren Gunsten muss der Vermieter Ihnen trotzdem auszahlen, auch wenn er die Frist verpasst hat.</li>
+    </ul>
+  </div>
+
+  <div class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 15px;">
+    <strong>Wichtiger Hinweis:</strong> Dieser Rechner führt eine reine Plausibilitätsprüfung (Kosten pro Quadratmeter) durch. Ein "rotes" Ergebnis bedeutet nicht automatisch, dass die Abrechnung rechtlich falsch ist (Sie könnten z. B. einfach extrem viel geheizt haben). Umgekehrt garantiert ein "grünes" Ergebnis nicht, dass alles stimmt (z.B. wenn ein falscher Verteilerschlüssel genutzt wurde). Er ersetzt keine rechtliche Detailprüfung, ist aber der beste erste Schritt, um Ausreißer zu identifizieren.
+  </div>
+
+  <div class="info-box" style="background-color: #e8f5e9; border-left: 4px solid #4caf50; padding: 10px; margin-top: 15px;">
+    <strong>Erfolgs-Tipp: Zahlung nur "unter Vorbehalt".</strong> Wenn das Tool massive Ausreißer anzeigt (z. B. extrem hohe Hausmeisterkosten), kürzen Sie die Nachzahlung nicht einfach eigenmächtig. Überweisen Sie die geforderte Summe pünktlich (meist innerhalb von 30 Tagen), aber vermerken Sie im Verwendungszweck zwingend: <em>"Zahlung unter Vorbehalt der Rückforderung"</em>. So geraten Sie nicht in Zahlungsverzug, können das Geld aber nach Prüfung der Belege zurückverlangen.
+  </div>
+
+  <div class="info-box" style="background-color: #e3f2fd; border-left: 4px solid #2196f3; padding: 10px; margin-top: 15px;">
+    <strong>Datensicherheit:</strong> Die Werte Ihrer Nebenkostenabrechnung werden ausschließlich lokal in Ihrem Webbrowser (localStorage) verarbeitet. Wir speichern oder übertragen diese finanziellen Daten nicht.
+  </div>
+
+  <div class="kl-highlight kl-author-box" aria-label="Autor und Aktualisierung" style="background-color: #f5f5f5; border: 1px solid #e0e0e0; padding: 15px; margin-top: 20px; border-radius: 4px; display: flex; align-items: center; gap: 10px;">
+    <strong>Autor:</strong> <a id="kl-page-author" href="ueber.html" target="_blank" style="color: #2196f3; text-decoration: none;">Mieter-Lotse Team</a>
+    <span class="kl-sep" style="color: #9e9e9e;">•</span>
+    <strong>Letzte Aktualisierung:</strong> <span id="kl-page-lastupdated">01.05.2026</span>
+  </div>
+
+  <div class="calculator-container" id="calculator">
+      <form id="nkCalcForm">
+          
+          <h2 class="calc-section-title">1. Eckdaten & Wohnung</h2>
+          
+          <div class="input-group">
+              <label for="qm">Wohnfläche laut Mietvertrag:</label>
+              <div class="input-wrapper">
+                  <input type="number" id="qm" class="with-addon" placeholder="z. B. 75" min="10" required>
+                  <span class="addon">qm</span>
+              </div>
+          </div>
+
+          <div class="input-group">
+              <label for="region">In welcher Region wohnen Sie?</label>
+              <div class="input-wrapper">
+                  <select id="region">
+                      <option value="west_city">Westdeutschland (Großstadt)</option>
+                      <option value="west_rural" selected>Westdeutschland (Ländlich)</option>
+                      <option value="east">Ostdeutschland / Berlin</option>
+                  </select>
+              </div>
+          </div>
+
+          <div class="input-group">
+              <label for="buildingAge">Baujahr / Sanierungsstand:</label>
+              <div class="input-wrapper">
+                  <select id="buildingAge">
+                      <option value="old">Altbau (vor 1977, unbesaniert)</option>
+                      <option value="med" selected>Bestand (1978 - 2010)</option>
+                      <option value="new">Neubau / KfW-Standard (ab 2011)</option>
+                  </select>
+              </div>
+          </div>
+
+          <div class="input-group">
+              <label for="heatingType">Heizungsart:</label>
+              <div class="input-wrapper">
+                  <select id="heatingType">
+                      <option value="gas" selected>Erdgas</option>
+                      <option value="oil">Heizöl</option>
+                      <option value="fern">Fernwärme</option>
+                      <option value="pump">Wärmepumpe / Pellets</option>
+                  </select>
+              </div>
+          </div>
+
+          <div class="input-group">
+              <label for="heatingIncluded">Sind Heizung & Warmwasser in der Abrechnung enthalten?</label>
+              <div class="input-wrapper">
+                  <select id="heatingIncluded" required>
+                      <option value="yes" selected>Ja (Standard: "Warm-Nebenkosten")</option>
+                      <option value="no">Nein (Heizung/Gas läuft über eigenen Zähler/Vertrag)</option>
+                  </select>
+              </div>
+          </div>
+
+          <h2 class="calc-section-title" style="margin-top: 30px;">2. Die Kosten (Für das komplette Jahr)</h2>
+          
+          <div class="input-group">
+              <label for="prepMonth">Ihre monatliche Nebenkosten-Vorauszahlung:<br><span style="font-size: 0.8em; color: #777; font-weight: normal;">(Nur der NK-Teil, ohne Kaltmiete)</span></label>
+              <div class="input-wrapper">
+                  <input type="number" id="prepMonth" class="with-addon" placeholder="z. B. 150" min="0" step="10" required>
+                  <span class="addon">€</span>
+              </div>
+          </div>
+          
+          <div class="input-group">
+              <label for="resultType">Ergebnis der Abrechnung:</label>
+              <div class="input-wrapper">
+                  <select id="resultType" required>
+                      <option value="nachzahlung">Ich muss nachzahlen</option>
+                      <option value="guthaben">Ich bekomme Geld zurück (Guthaben)</option>
+                  </select>
+              </div>
+          </div>
+
+          <div class="input-group">
+              <label for="resultAmount">Betrag der Nachzahlung / des Guthabens:</label>
+              <div class="input-wrapper">
+                  <input type="number" id="resultAmount" class="with-addon" placeholder="z. B. 350" min="0" step="10" required>
+                  <span class="addon">€</span>
+              </div>
+          </div>
+
+          <details style="margin-bottom: 20px; cursor: pointer; color: #555; font-size: 0.9em;">
+              <summary>Adressdaten für Widerspruchs-Briefkopf (optional für PDF)</summary>
+              <div style="padding: 10px; border: 1px solid #ddd; margin-top: 10px; display: grid; gap: 10px;">
+                  <input type="text" id="pdf_mieter" placeholder="Dein Name & Adresse">
+                  <input type="text" id="pdf_vermieter" placeholder="Name & Adresse Vermieter">
+              </div>
+          </details>
+
+          <button type="button" id="btnCalculateNK" class="button-primary" style="width: 100%; margin-top: 20px; font-size: 1.1em; padding: 15px; cursor: pointer;">📊 Abrechnung prüfen</button>
+      </form>
+
+      <div id="resultBoxNK" class="result-box">
+          <h3 id="resTitle" style="margin-top: 0; font-size: 1.5em; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 10px;"></h3>
+          
+          <p id="resText" style="line-height: 1.6;"></p>
+
+          <div class="summary-grid">
+              <div class="summary-item">
+                  <span style="color: #555; font-size: 0.9em;">Ihre gesamten Kosten im Jahr:</span>
+                  <strong id="resTotalCost" style="color: #2196f3;">0 €</strong>
+              </div>
+              <div class="summary-item">
+                  <span style="color: #555; font-size: 0.9em;">Ihre Kosten pro qm/Monat:</span>
+                  <strong id="resPerSqm" style="color: #c62828;">0,00 €</strong>
+              </div>
+              <div class="summary-item" style="grid-column: span 2; background-color: #fff; padding: 10px; border: 1px solid #ccc;">
+                  <span style="color: #555; font-size: 0.9em;">Vergleichswert (Spezifischer Benchmark):</span>
+                  <strong id="resBenchmark" style="font-size: 1.1em;">~ 0,00 € pro qm/Monat</strong>
+              </div>
+          </div>
+          
+          <div id="actionHint" style="margin-top: 20px;"></div>
+
+          <div id="pdfExport" style="display: none; border-top: 1px solid #ddd; padding-top: 20px; margin-top: 20px;">
+              <p><strong>Handeln Sie jetzt:</strong> Ihre Abrechnung weist Auffälligkeiten auf. Laden Sie hier ein vorgefertigtes Widerspruchsschreiben inkl. Forderung zur Belegeinsicht herunter.</p>
+              <button type="button" id="btnDownloadPDF" class="pdf-button">
+                  📄 Widerspruch & Belegeinsicht (PDF)
+              </button>
+          </div>
+      </div>
+  </div>
+
+  <h2>Die 3 größten Fehler in der Abrechnung</h2>
+  <p>Bevor Sie die Abrechnung inhaltlich prüfen, checken Sie diese drei formalen KO-Kriterien. Ist nur eines davon erfüllt, müssen Sie die Nachzahlung gar nicht erst leisten!</p>
+  
+  <ol>
+      <li style="margin-bottom: 10px;"><strong>Die 12-Monats-Frist (Der Klassiker):</strong> Der Vermieter muss Ihnen die Abrechnung spätestens 12 Monate nach Ende der Abrechnungsperiode zukommen lassen. <em>Beispiel: Abrechnungszeitraum ist 01.01. bis 31.12.2025. Das Schreiben muss spätestens am 31.12.2026 bei Ihnen sein. Kommt es am 2. Januar 2027, müssen Sie die Nachzahlung rechtlich nicht mehr leisten!</em></li>
+      <li style="margin-bottom: 10px;"><strong>Der falsche Abrechnungszeitraum:</strong> Eine Abrechnung darf immer nur exakt 365 Tage (ein Jahr) umfassen. Rechnet der Vermieter z. B. 14 Monate auf einmal ab, ist die Abrechnung formal unwirksam.</li>
+      <li style="margin-bottom: 10px;"><strong>"Nicht umlagefähige" Kosten:</strong> Schauen Sie sich die Einzelposten an. Kosten für Reparaturen am Haus, Instandhaltungsrücklagen, Bankgebühren des Vermieters oder das Porto für die Abrechnung dürfen <strong>nicht</strong> auf Sie umgelegt werden!</li>
+  </ol>
+
+  <h2>Was tun, wenn die Kosten viel zu hoch sind?</h2>
+  <p>Zeigt unser Rechner ein rotes Ergebnis, sollten Sie die Posten der Abrechnung genau prüfen. Die häufigsten Kostentreiber sind <strong>Heizung, Hausmeister und Gebäudereinigung</strong>.</p>
+  <p>Ihre rechtlichen Möglichkeiten:</p>
+  <ul>
+      <li><strong>Belegeinsicht fordern:</strong> Schreiben Sie dem Vermieter und fordern Sie Kopien der Rechnungen (z. B. der Hausmeister-Rechnung) an. Er ist verpflichtet, Ihnen diese zu zeigen (ggf. gegen Kopierkosten).</li>
+      <li><strong>Widerspruch einlegen:</strong> Sie haben nach Erhalt der Abrechnung 12 Monate Zeit, Einwände (Widerspruch) zu erheben.</li>
+      <li><strong>Unter Vorbehalt zahlen:</strong> Wenn die Zahlungsfrist drängt, überweisen Sie die Nachzahlung, aber geben Sie im Verwendungszweck zwingend <em>"Zahlung unter Vorbehalt der rechtlichen Prüfung"</em> an.</li>
+  </ul>
+
+  <hr>
+  <h2>Häufige Fragen (FAQ) zur Nebenkostenabrechnung</h2>
+  <details>
+    <summary>Was darf der Vermieter NICHT als Nebenkosten umlegen?</summary>
+    <p>Die Betriebskostenverordnung (BetrKV) regelt abschließend, was umgelegt werden darf. Klassische "Vermieter-Posten", die Sie <strong>nicht</strong> zahlen müssen, sind: Reparaturen und Instandhaltungskosten (Ausnahme: Wartungsverträge wie bei der Heizung), Bankgebühren, Porto, Kontoführungsgebühren des Vermieters sowie sämtliche <strong>Verwaltungskosten</strong> (Hausverwaltung).</p>
+  </details>
+  <details>
+    <summary>Darf der Vermieter "Sonstige Betriebskosten" pauschal abrechnen?</summary>
+    <p>Nein. Unter der Position "Sonstige Betriebskosten" dürfen zwar z. B. die Wartung von Feuerlöschern oder die Dachrinnenreinigung abgerechnet werden – aber nur, wenn diese Positionen bereits <strong>konkret im Mietvertrag benannt</strong> wurden. Ein allgemeiner Punkt "Sonstige Kosten: 150 €" in der Abrechnung ist nicht zulässig und angreifbar.</p>
+  </details>
+  <details>
+    <summary>Wie kann ich prüfen, ob die abgerechneten Summen wirklich stimmen?</summary>
+    <p>Sie haben als Mieter ein gesetzliches <strong>Recht auf Belegeinsicht</strong> (§ 259 BGB). Sie können vom Vermieter verlangen, dass er Ihnen die Originalrechnungen (z. B. der Stadtwerke oder des Hausmeisters) vorlegt. Erst wenn Sie die Rechnungen geprüft haben, können Sie sicher sein, ob die umgelegten Kosten tatsächlich entstanden sind.</p>
+  </details>
+
+  <aside class="highlight-box" role="complementary" aria-label="Weiterführende Informationen" style="margin-top: 30px;">
+    <h2 style="margin-top:0">Wehren Sie sich gegen falsche Abrechnungen</h2>
+    <p>
+      Hat der Check gravierende Abweichungen ergeben? Sichern Sie sich ab und fordern Sie Ihre Rechte ein:
+    </p>
+    <p style="margin-bottom:.4rem;">
+      <a href="generator-belegeinsicht.html" class="button button-secondary" title="Generator Belegeinsicht">Generator: Belegeinsicht beim Vermieter anfordern</a>
+      <a href="generator-widerspruch-nebenkosten.html" class="button button-secondary" title="Generator Widerspruch Nebenkosten">Generator: Offiziellen Widerspruch einlegen</a>
+      <a href="info-nebenkosten.html" class="button button-secondary" title="Ratgeber Nebenkosten">Ratgeber: Welche Nebenkosten sind überhaupt umlagefähig?</a>
+      <a href="miete-nebenkosten.html" class="button button-secondary" title="Übersicht Miete & Nebenkosten">Zur Übersicht: Miete & Nebenkosten</a>
+    </p>
+  </aside>
+
+  <h2>Quellen &amp; weiterführende Links</h2>
+  <div class="kl-highlight kl-sources-box" aria-label="Quellen und weiterführende Links">
+    <ul>
+      <li>
+        <a href="https://www.gesetze-im-internet.de/bgb/__556.html" target="_blank" rel="noopener">
+          Bundesministerium der Justiz – § 556 BGB (Vereinbarungen über Betriebskosten & Fristen)
+        </a>
+      </li>
+      <li>
+        <a href="https://www.gesetze-im-internet.de/betrkv/" target="_blank" rel="noopener">
+          Bundesministerium der Justiz – Betriebskostenverordnung (BetrKV)
+        </a>
+      </li>
+      <li>
+        <a href="https://www.mieterbund.de/mietrecht/betriebskostenspiegel/" target="_blank" rel="noopener">
+          Deutscher Mieterbund – Der aktuelle Betriebskostenspiegel für Deutschland
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<div style="background-color: #f8f9fa; border-top: 2px solid #e0e0e0; padding: 25px 15px; margin-top: 40px; text-align: center; font-family: sans-serif;">
+    <h3 style="font-size: 1.1em; color: #333; margin-top: 0; margin-bottom: 8px;">Wer hat diese Inhalte erstellt?</h3>
+    <p style="font-size: 0.9em; color: #555; max-width: 700px; margin: 0 auto 12px auto; line-height: 1.5;">
+        Unsere Ratgeber und Generatoren basieren auf der strikten Auswertung aktueller Gesetzestexte. Sie werden von <strong>Jan (Projektleitung) & Team</strong> entwickelt und durch unser Netzwerk aus Fachberatern regelmäßig auf fachliche Korrektheit geprüft. 
+        <br><br>
+        <em>Wichtiger Hinweis: Unser Tool generiert Standardverträge zur Selbsthilfe und ersetzt keine anwaltliche Einzelfallprüfung.</em>
+    </p>
+    <div style="margin-bottom: 25px;">
+        <a href="über.html" style="display: inline-block; font-size: 0.9em; color: #0056b3; text-decoration: underline; font-weight: bold;">
+            Mehr über unsere Redaktion & Arbeitsweise erfahren
+        </a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Mieter-Lotse | <a href="über.html">Über uns & Redaktionsrichtlinien</a> | <a href="index.html">Zurück zur Startseite</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    document.getElementById('btnCalculateNK').addEventListener('click', function() {
+        
+        const qm = parseFloat(document.getElementById('qm').value) || 0;
+        const region = document.getElementById('region').value;
+        const buildingAge = document.getElementById('buildingAge').value;
+        const heatingType = document.getElementById('heatingType').value;
+        const heatingIncluded = document.getElementById('heatingIncluded').value;
+        const prepMonth = parseFloat(document.getElementById('prepMonth').value) || 0;
+        const resultType = document.getElementById('resultType').value;
+        const resultAmount = parseFloat(document.getElementById('resultAmount').value) || 0;
+
+        if (qm === 0 || prepMonth === 0) {
+            alert("Bitte füllen Sie Wohnfläche und Vorauszahlung korrekt aus.");
+            return;
+        }
+
+        // --- Berechnung ---
+        const totalPrep = prepMonth * 12;
+        let totalCost = (resultType === 'nachzahlung') ? totalPrep + resultAmount : totalPrep - resultAmount;
+        const costPerMonth = totalCost / 12;
+        const costPerSqm = costPerMonth / qm;
+
+        // --- Präzise Benchmark-Logik 2026 ---
+        let baseCold = 2.20; // Durchschnitt kalte NK (Müll, Steuer, Versicherung)
+        let baseHeating = 1.35; // Durchschnitt Heizkosten
+
+        // Regional-Anpassung
+        if (region === 'west_city') baseCold *= 1.15;
+        if (region === 'east') baseCold *= 0.85;
+
+        // Baujahr-Faktor für Heizung
+        let heatFactor = 1.0;
+        if (buildingAge === 'old') heatFactor = 1.5; // Altbau braucht deutlich mehr
+        if (buildingAge === 'new') heatFactor = 0.6; // Neubau ist effizienter
+
+        // Heizart-Faktor
+        if (heatingType === 'fern') heatFactor *= 1.25;
+        if (heatingType === 'pump') heatFactor *= 0.85;
+
+        const finalBenchmark = (heatingIncluded === 'yes') 
+            ? baseCold + (baseHeating * heatFactor) 
+            : baseCold;
+
+        const limitYellow = finalBenchmark * 1.15; // 15% Puffer
+        const limitRed = finalBenchmark * 1.35;    // 35% drüber ist extrem kritisch
+
+        // --- UI Update ---
+        const resultBox = document.getElementById('resultBoxNK');
+        const title = document.getElementById('resTitle');
+        const text = document.getElementById('resText');
+        const hint = document.getElementById('actionHint');
+        const pdfExport = document.getElementById('pdfExport');
+
+        resultBox.className = "result-box";
+        pdfExport.style.display = 'none';
+
+        document.getElementById('resTotalCost').innerText = totalCost.toFixed(2).replace('.', ',') + " € / Jahr";
+        document.getElementById('resPerSqm').innerText = costPerSqm.toFixed(2).replace('.', ',') + " €";
+        document.getElementById('resBenchmark').innerText = `~ ${finalBenchmark.toFixed(2).replace('.', ',')} € pro qm/Monat (für Ihr Profil)`;
+
+        if (costPerSqm <= limitYellow) {
+            resultBox.classList.add("result-green");
+            title.innerHTML = "✅ Ihre Kosten liegen im Normalbereich.";
+            text.innerHTML = `Mit <strong>${costPerSqm.toFixed(2).replace('.', ',')} €/qm</strong> liegen Ihre Nebenkosten absolut im Rahmen vergleichbarer Objekte.`;
+            hint.innerHTML = `<p style="font-size:0.9em;">Ein Widerspruch lohnt sich hier meist nur bei offensichtlichen Formfehlern.</p>`;
+        } 
+        else if (costPerSqm <= limitRed) {
+            resultBox.classList.add("result-yellow");
+            title.innerHTML = "⚠️ Ihre Kosten sind leicht erhöht.";
+            text.innerHTML = `Mit <strong>${costPerSqm.toFixed(2).replace('.', ',')} €/qm</strong> liegen Sie etwas über dem berechneten Richtwert von ${finalBenchmark.toFixed(2).replace('.', ',')} €/qm.`;
+            hint.innerHTML = `<p style="font-size:0.9em;"><strong>Empfehlung:</strong> Prüfen Sie gezielt Posten wie Hausmeister oder Gebäudereinigung.</p>`;
+            pdfExport.style.display = 'block';
+        } 
+        else {
+            resultBox.classList.add("result-red");
+            title.innerHTML = "❌ Ihre Kosten sind auffällig hoch!";
+            text.innerHTML = `Mit <strong>${costPerSqm.toFixed(2).replace('.', ',')} €/qm</strong> liegen Sie massiv über dem Richtwert von ${finalBenchmark.toFixed(2).replace('.', ',')} €/qm. Dies deutet auf Fehler oder Unwirtschaftlichkeit hin.`;
+            hint.innerHTML = `<p style="font-size:0.9em; font-weight:bold; color: #c62828;">Handlungsempfehlung: Widerspruch einlegen & Belege prüfen!</p>`;
+            pdfExport.style.display = 'block';
+        }
+
+        resultBox.style.display = 'block';
+        resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        // PDF Download Listener
+        document.getElementById('btnDownloadPDF').onclick = function() {
+            generateNKPDF(costPerSqm, finalBenchmark, totalCost);
+        };
+    });
+
+    // --- PDF Generator Funktion ---
+    function generateNKPDF(ist, benchmark, gesamt) {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        const heute = new Date().toLocaleDateString("de-DE");
+
+        const mieter = document.getElementById('pdf_mieter').value || "[Dein Name & Adresse]";
+        const vermieter = document.getElementById('pdf_vermieter').value || "[Vermieter Name & Adresse]";
+
+        doc.setFontSize(10);
+        doc.text(mieter, 20, 20);
+        doc.text("----------------------------------", 20, 25);
+        doc.text(vermieter, 20, 35);
+        doc.text(`Datum: ${heute}`, 150, 35);
+
+        doc.setFontSize(12);
+        doc.setFont("helvetica", "bold");
+        doc.text("Widerspruch zur Betriebskostenabrechnung & Belegeinsicht", 20, 55);
+
+        doc.setFontSize(10);
+        doc.setFont("helvetica", "normal");
+        const brieftext = `Sehr geehrte Damen und Herren,
+
+hiermit lege ich formell Widerspruch gegen die mir zugestellte Betriebskostenabrechnung ein. 
+
+Nach einer Plausibilitätsprüfung weichen meine Kosten mit ${ist.toFixed(2).replace('.', ',')} €/qm erheblich vom Durchschnittswert vergleichbarer Objekte (${benchmark.toFixed(2).replace('.', ',')} €/qm) ab. Zur Prüfung der Abrechnung fordere ich Sie gemäß § 259 BGB auf, mir Einsicht in sämtliche Originalbelege zu gewähren.
+
+Bitte teilen Sie mir innerhalb von 14 Tagen einen Termin zur Belegeinsicht mit oder senden Sie mir alternativ Rechnungskopien gegen Kostenerstattung zu. 
+
+Bis zur abschließenden Klärung erfolgt eine etwaige Nachzahlung lediglich unter Vorbehalt.
+
+Mit freundlichen Grüßen,
+
+___________________________
+(Unterschrift)`;
+
+        doc.text(brieftext, 20, 70, { maxWidth: 170, lineHeightFactor: 1.5 });
+
+        // Seite 2: Checkliste
+        doc.addPage();
+        doc.setFont("helvetica", "bold");
+        doc.text("Anhang: Checkliste für die Belegeinsicht", 20, 20);
+        doc.setFont("helvetica", "normal");
+        const liste = `
+1. Heizkosten: Stimmen die Zählerstände mit dem Ableseprotokoll überein?
+2. Hausmeister: Wurden Reparaturen fälschlicherweise umgelegt?
+3. Gebäudereinigung: Wurde die Leistung tatsächlich im abgerechneten Umfang erbracht?
+4. Versicherung: Sind die Versicherungskosten im Vergleich zum Vorjahr plausibel?
+5. Verteilerschlüssel: Wird korrekt nach m² oder Personen abgerechnet?
+        `;
+        doc.text(liste, 20, 35, { maxWidth: 170, lineHeightFactor: 1.5 });
+
+        doc.save("Widerspruch_Nebenkosten.pdf");
+    }
+
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Kautionsrechner: Höhe, Ratenzahlung & Rückzahlungs-Fristen prüfen</title>
+  <meta name="description" content="Wie hoch darf die Mietkaution sein? Berechnen Sie die gesetzliche Höchstgrenze, Ihren Ratenplan und prüfen Sie, wann der Vermieter die Kaution zurückzahlen muss.">
+  <meta name="keywords" content="Kautionsrechner, Mietkaution berechnen, Ratenzahlung Kaution § 551 BGB, Kautionsrückzahlung Frist, 3 Nettokaltmieten, Mietrecht Kaution">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/logo-lotse-fav.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+      .calculator-container {
+          background-color: #ffffff;
+          border: 1px solid #d1d5db;
+          border-top: 5px solid #009688;
+          border-radius: 8px;
+          padding: 25px;
+          margin-top: 30px;
+          margin-bottom: 40px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      }
+      .calc-section-title {
+          font-size: 1.2em;
+          color: #00796b;
+          margin-bottom: 15px;
+          border-bottom: 2px solid #e0f2f1;
+          padding-bottom: 5px;
+      }
+      .input-group {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 15px;
+          flex-wrap: wrap;
+      }
+      .input-group label {
+          flex: 1;
+          min-width: 200px;
+          font-weight: 500;
+      }
+      .input-wrapper {
+          display: flex;
+          align-items: center;
+          flex: 1;
+          min-width: 150px;
+      }
+      .input-wrapper input {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px 0 0 4px;
+          text-align: right;
+          font-size: 1em;
+      }
+      .input-wrapper .addon {
+          background-color: #f5f5f5;
+          border: 1px solid #ccc;
+          border-left: none;
+          padding: 10px 15px;
+          border-radius: 0 4px 4px 0;
+          color: #555;
+      }
+      .result-box {
+          margin-top: 30px;
+          padding: 25px;
+          border-radius: 8px;
+          display: none;
+          background-color: #f1f8f7;
+          border: 2px solid #009688;
+      }
+      .summary-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 15px;
+          margin-top: 20px;
+      }
+      .summary-item {
+          background: #fff;
+          padding: 15px;
+          border-radius: 5px;
+          border: 1px solid #cfd8dc;
+      }
+      .summary-item strong { 
+          display: block;
+          font-size: 1.3em; 
+          color: #00796b;
+          margin-top: 5px; 
+      }
+      .alert-red {
+          color: #c62828;
+          font-weight: bold;
+          background-color: #ffebee;
+          padding: 10px;
+          border-radius: 4px;
+          margin-top: 10px;
+          border-left: 4px solid #c62828;
+      }
+      .timeline-box {
+          margin-top: 20px;
+          padding: 15px;
+          background-color: #fff;
+          border-left: 4px solid #2196f3;
+      }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Mietkaution Rechner",
+  "description": "Berechnen Sie kostenlos die gesetzlich maximal zulässige Höhe Ihrer Mietkaution (3 Nettokaltmieten) und Ihren rechtlichen Anspruch auf Ratenzahlung beim Einzug.",
+  "applicationCategory": "CalculatorApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Mieter-Lotse Team"
+  }
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="site-logo">Mieter-Lotse</a>
+</header>
+
+<div class="page-container">
+  <h1>Kautionsrechner: Alles zu Höhe, Ratenzahlung & Rückgabe</h1>
+<div class="usp-bar">
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    Höchstgrenzen-Check
+  </div>
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    Gesetzliche Ratenzahlung
+  </div>
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    Rückgabe-Fristen
+  </div>
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    100% Kostenlos
+  </div>
+</div>
+
+  <a href="einzug-auszug-kuendigung.html" class="category-badge">
+    Zur Übersicht: Einzug, Auszug & Kündigung
+  </a>
+
+  <div class="info-box">
+    <p>
+      Die Mietkaution ist für Vermieter eine wichtige Sicherheit – für Mieter ist sie oft eine enorme finanzielle Belastung beim Umzug, da neben Möbeln und Transporter eine hohe Einmalzahlung fällig wird. <strong>Was viele nicht wissen:</strong> Der Gesetzgeber hat sehr strikte Regeln aufgestellt, wie hoch die Kaution überhaupt sein darf und wie Sie diese bezahlen können.
+    </p>
+    <p>
+      <strong>Lassen Sie sich nicht übervorteilen!</strong> Unser Kautionsrechner hilft Ihnen dabei, die gesetzlich maximal zulässige Summe exakt zu berechnen. So akzeptieren Sie keine unzulässigen Forderungen und können sofort Ihren Rechtsanspruch auf Ratenzahlung berechnen und nutzen.
+    </p>
+  </div>
+
+  <div class="info-box warning" style="border-left: 4px solid #e53935; padding: 15px; margin-top: 20px;">
+    <h2>WICHTIG: Die gesetzlichen Grenzen (§ 551 BGB)</h2>
+    <p>
+      Das Bürgerliche Gesetzbuch schützt Mieter vor überzogenen Kautionsforderungen. Folgende zwei Regeln sind zwingend und können durch den Mietvertrag <strong>nicht</strong> zu Ihrem Nachteil abgeändert werden:
+    </p>
+    <ul style="margin-top: 5px; margin-bottom: 15px; padding-left: 20px;">
+      <li><strong>Maximale Höhe:</strong> Die Kaution darf höchstens <strong>drei Nettokaltmieten</strong> betragen. Betriebskosten- oder Heizkostenvorauszahlungen dürfen bei der Berechnung nicht mit einbezogen werden!</li>
+      <li><strong>Das Recht auf Ratenzahlung:</strong> Sie müssen die Kaution niemals auf einen Schlag bezahlen. Sie haben das gesetzliche Recht, die Kaution in <strong>drei gleichen monatlichen Raten</strong> zu zahlen. Die erste Rate ist zu Beginn des Mietverhältnisses (nicht bei Vertragsunterschrift!) fällig.</li>
+    </ul>
+  </div>
+
+  <div class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 15px;">
+    <strong>Wichtiger Hinweis:</strong> Verlangt der Vermieter z. B. im Mietvertrag vier Kaltmieten oder schließt die Ratenzahlung aus, ist diese Klausel teilweise unwirksam. Sie können den Mietvertrag beruhigt unterschreiben, müssen aber dennoch maximal drei Kaltmieten zahlen (und das auf Wunsch in Raten). Haben Sie aus Unwissenheit bereits zu viel bezahlt, können Sie den überschüssigen Betrag jederzeit vom Vermieter zurückfordern.
+  </div>
+
+  <div class="info-box" style="background-color: #e8f5e9; border-left: 4px solid #4caf50; padding: 10px; margin-top: 15px;">
+    <strong>Erfolgs-Tipp: Anlage nachweisen lassen.</strong> Der Vermieter ist gesetzlich verpflichtet, Ihre Kaution getrennt von seinem eigenen Vermögen auf einem Sonderkonto (Treuhandkonto) anzulegen – mitsamt den üblichen Zinsen. Sie haben das Recht, jederzeit einen Nachweis über diese insolvenzsichere Anlage zu fordern. Tut er dies nicht, dürfen Sie theoretisch einen Teil der laufenden Miete zurückbehalten (Zurückbehaltungsrecht), bis der Nachweis erbracht ist.
+  </div>
+
+  <div class="info-box" style="background-color: #e3f2fd; border-left: 4px solid #2196f3; padding: 10px; margin-top: 15px;">
+    <strong>Datensicherheit:</strong> Die Eingabe Ihrer Mietkosten dient nur der Berechnung in Ihrem Browser. Es findet keine Übertragung dieser finanziellen Daten an unsere Server statt.
+  </div>
+
+  <div class="kl-highlight kl-author-box" aria-label="Autor und Aktualisierung" style="background-color: #f5f5f5; border: 1px solid #e0e0e0; padding: 15px; margin-top: 20px; border-radius: 4px; display: flex; align-items: center; gap: 10px;">
+    <strong>Autor:</strong> <a id="kl-page-author" href="ueber.html" target="_blank" style="color: #2196f3; text-decoration: none;">Mieter-Lotse Team</a>
+    <span class="kl-sep" style="color: #9e9e9e;">•</span>
+    <strong>Letzte Aktualisierung:</strong> <span id="kl-page-lastupdated">01.05.2026</span>
+  </div>
+
+  <div class="calculator-container" id="calculator">
+      <form id="depositForm">
+          
+          <h2 class="calc-section-title">1. Mietdaten eingeben</h2>
+          <div class="input-group">
+              <label for="coldRent">Nettokaltmiete mtl.:<br><span style="font-size: 0.8em; color: #777; font-weight: normal;">(Ohne Nebenkosten/Heizung)</span></label>
+              <div class="input-wrapper">
+                  <input type="number" id="coldRent" placeholder="z. B. 750" min="0" required>
+                  <span class="addon">€</span>
+              </div>
+          </div>
+
+          <div class="input-group">
+              <label for="demandedDeposit">Geforderte Kaution vom Vermieter:<br><span style="font-size: 0.8em; color: #777; font-weight: normal;">(Optional zum Check)</span></label>
+              <div class="input-wrapper">
+                  <input type="number" id="demandedDeposit" placeholder="z. B. 2250" min="0">
+                  <span class="addon">€</span>
+              </div>
+          </div>
+
+          <h2 class="calc-section-title" style="margin-top: 30px;">2. Rückzahlungs-Check (Optional)</h2>
+          <div class="input-group">
+              <label for="moveOutDate">Wann sind Sie ausgezogen? / Wann endet der Vertrag?</label>
+              <div class="input-wrapper">
+                  <input type="date" id="moveOutDate" style="border-radius: 4px;">
+              </div>
+          </div>
+
+          <button type="button" id="btnCalcDeposit" class="button-primary" style="width: 100%; margin-top: 20px; font-size: 1.1em; padding: 15px;">📊 Kaution & Fristen berechnen</button>
+      </form>
+
+      <div id="resultBox" class="result-box">
+          <h3 style="margin-top: 0; color: #004d40;">Analyse Ihrer Mietkaution</h3>
+          
+          <div class="summary-grid">
+              <div class="summary-item">
+                  <span style="color: #555; font-size: 0.9em;">Gesetzliche Höchstgrenze:</span>
+                  <strong id="resMax">0 €</strong>
+              </div>
+              <div class="summary-item">
+                  <span style="color: #555; font-size: 0.9em;">Mögliche Ratenzahlung:</span>
+                  <strong id="resInstallment">3 Raten á 0 €</strong>
+              </div>
+          </div>
+
+          <div id="resAlert" class="alert-red" style="display: none;">
+              ⚠️ <strong>Achtung:</strong> Der Vermieter fordert mehr als die gesetzlich erlaubten 3 Kaltmieten! Sie müssen nur den gesetzlichen Höchstbetrag zahlen.
+          </div>
+
+          <div id="timelineBox" class="timeline-box" style="display: none;">
+              <h4 style="margin-top: 0;">📅 Wichtige Fristen für die Rückzahlung:</h4>
+              <ul id="timelineList" style="margin-bottom: 0; padding-left: 20px; font-size: 0.95em;">
+                  </ul>
+          </div>
+          
+          <div style="margin-top: 20px; font-size: 0.9em; line-height: 1.5; color: #444; background: #fff; padding: 15px; border-radius: 4px;">
+              <strong>Rechtstipp:</strong> Gemäß § 551 Abs. 3 BGB muss der Vermieter die Kaution getrennt von seinem Privatvermögen bei einem Kreditinstitut zu dem für Spareinlagen mit dreimonatiger Kündigungsfrist üblichen Zinssatz anlegen. Die Zinsen stehen Ihnen als Mieter zu!
+          </div>
+      </div>
+  </div>
+
+  <h2>Die wichtigsten Regeln zur Mietkaution</h2>
+  
+  <h3>1. Wie hoch darf die Kaution maximal sein?</h3>
+  <p>Die Obergrenze ist in § 551 Abs. 1 BGB unmissverständlich geregelt: <strong>Maximal drei Nettokaltmieten.</strong> Nebenkosten- oder Heizkostenvorauszahlungen dürfen nicht mit eingerechnet werden. Höhere Forderungen sind unwirksam – auch wenn sie im Mietvertrag stehen.</p>
+
+  <h3>2. Ihr Recht auf Ratenzahlung</h3>
+  <p>Sie müssen die Kaution nicht am ersten Tag komplett auf den Tisch legen. Laut § 551 Abs. 2 BGB haben Sie ein <strong>gesetzliches Recht auf Zahlung in drei gleichen Monatsraten</strong>. 
+  <ul>
+      <li>Die erste Rate wird zu Beginn des Mietverhältnisses fällig.</li>
+      <li>Die weiteren Raten zusammen mit den folgenden zwei Mietzahlungen.</li>
+  </ul>
+  Vermieter versuchen oft, dieses Recht im Vertrag auszuschließen ("Kaution ist bei Schlüsselübergabe voll fällig"). Solche Klauseln sind unwirksam!</p>
+
+  <h3>3. Wann muss der Vermieter die Kaution zurückzahlen?</h3>
+  <p>Hier gibt es kein festes Datum im Gesetz, aber die Rechtsprechung hat klare Leitplanken gesetzt:</p>
+  <ul>
+      <li><strong>Prüfungsfrist:</strong> Dem Vermieter wird eine angemessene Zeit (meist 3 bis 6 Monate) eingeräumt, um zu prüfen, ob Schäden an der Wohnung vorliegen.</li>
+      <li><strong>Teil-Einbehalt für Nebenkosten:</strong> Der Vermieter darf einen angemessenen Teil der Kaution (z. B. 2-3 monatliche NK-Vorauszahlungen) einbehalten, bis die nächste Nebenkostenabrechnung erstellt ist. Das kann bis zu 12 Monate dauern.</li>
+      <li><strong>Verjährung von Schäden:</strong> Ersatzansprüche des Vermieters wegen Veränderungen oder Verschlechterungen der Wohnung verjähren nach <strong>6 Monaten</strong> (§ 548 BGB). Spätestens dann muss der Großteil der Kaution abgerechnet sein.</li>
+  </ul>
+
+  <section class="promo-teaser" aria-labelledby="promo-headline" role="region" style="margin-top: 40px;">
+  <h2 id="promo-headline">
+    <span class="icon" aria-hidden="true">💡</span>
+    Vermieter zahlt die Kaution nicht zurück?
+  </h2>
+  <p class="lead">
+    Sind Sie schon länger als 6 Monate ausgezogen und der Vermieter reagiert nicht auf Ihre Anrufe? Unsere KI Clerion erstellt Ihnen ein rechtssicheres Mahnschreiben zur Kautionsrückforderung inkl. Fristsetzung.
+  </p>
+  <div class="promo-ctas">
+    <a href="https://clerion.de" class="btn btn-primary" rel="noopener" target="_blank">
+      Kautions-Mahnung erstellen
+    </a>
+  </div>
+</section>
+
+  <h2>Häufige Fragen (FAQ) zur Mietkaution beim Einzug</h2>
+  <details>
+    <summary>Darf der Vermieter "Bargeld gegen Schlüssel" fordern?</summary>
+    <p>Nein. Eine solche Forderung – oft "Bargeld gegen Schlüssel bei der Übergabe" genannt – hebelt Ihr Recht auf Ratenzahlung aus und ist rechtlich unwirksam. Der Vermieter darf Ihnen die Wohnungsübergabe nicht verweigern, wenn Sie nur die erste von drei gesetzlich erlaubten Raten dabei haben (oder vorab überwiesen haben).</p>
+  </details>
+  <details>
+    <summary>Steigt die Kaution bei einer Mieterhöhung an?</summary>
+    <p>Glücklicherweise nicht. Die Höhe der Mietkaution wird einmalig zu Beginn des Mietverhältnisses basierend auf der <em>damaligen</em> Nettokaltmiete berechnet. Erhöht sich Ihre Miete im Laufe der Jahre, darf der Vermieter keine Nachzahlung (Aufstockung) der Kaution von Ihnen verlangen.</p>
+  </details>
+  <details>
+    <summary>Muss der Vermieter eine Kautionsbürgschaft akzeptieren?</summary>
+    <p>Nein. Eine Kautionsbürgschaft (z. B. durch eine Bank, eine Versicherung oder auch die Eltern) ist eine mögliche Alternative zur Barkaution, aber der Vermieter ist nicht verpflichtet, diese zu akzeptieren. Er kann auf einer klassischen Überweisung oder einem verpfändeten Sparbuch bestehen.</p>
+  </details>
+
+  <aside class="highlight-box" role="complementary" aria-label="Weiterführende Informationen" style="margin-top: 30px;">
+    <h2 style="margin-top:0">Rund um das Thema Kaution</h2>
+    <p>
+      Alles klar bei der Höhe? Machen Sie sich auch schon mit der Rückzahlung beim Auszug vertraut:
+    </p>
+    <p style="margin-bottom:.4rem;">
+      <a href="info-rueckzahlung-kaution.html" class="button button-secondary" title="Ratgeber Kautionsrückzahlung">Ratgeber: So sichern Sie sich Ihre Kaution beim Auszug</a>
+      <a href="generator-aufforderung-rueckzahlung-kaution.html" class="button button-secondary" title="Generator Kaution einfordern">Generator: Kaution vom alten Vermieter zurückfordern</a>
+      <a href="generator-kautionsabrechnung.html" class="button button-secondary" title="Generator Kautionsabrechnung anfechten">Generator: Widerspruch gegen fehlerhafte Abzüge</a>
+      <a href="einzug-auszug-kuendigung.html" class="button button-secondary" title="Übersicht Einzug und Auszug">Zur Übersicht: Einzug, Auszug & Kündigung</a>
+    </p>
+  </aside>
+
+  <h2>Quellen &amp; weiterführende Links</h2>
+  <div class="kl-highlight kl-sources-box" aria-label="Quellen und weiterführende Links">
+    <ul>
+      <li>
+        <a href="https://www.gesetze-im-internet.de/bgb/__551.html" target="_blank" rel="noopener">
+          Bundesministerium der Justiz – § 551 BGB (Begrenzung und Anlage von Mietsicherheiten)
+        </a>
+      </li>
+      <li>
+        <a href="https://www.mieterbund.de/mietrecht/mietrecht-a-z/mietkaution/" target="_blank" rel="noopener">
+          Deutscher Mieterbund – Ratgeber: Mietkaution beim Ein- und Auszug
+        </a>
+      </li>
+      <li>
+        <a href="https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/kundenrechte/mietkaution-so-legen-sie-das-geld-sicher-an-und-bekommen-es-zurueck-10444" target="_blank" rel="noopener">
+          Verbraucherzentrale – Mietkaution sicher anlegen
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<div style="background-color: #f8f9fa; border-top: 2px solid #e0e0e0; padding: 25px 15px; margin-top: 40px; text-align: center; font-family: sans-serif;">
+    <h3 style="font-size: 1.1em; color: #333; margin-top: 0; margin-bottom: 8px;">Wer hat diese Inhalte erstellt?</h3>
+    <p style="font-size: 0.9em; color: #555; max-width: 700px; margin: 0 auto 12px auto; line-height: 1.5;">
+        Unsere Ratgeber und Generatoren basieren auf der strikten Auswertung aktueller Gesetzestexte. Sie werden von <strong>Jan (Projektleitung) & Team</strong> entwickelt und durch unser Netzwerk aus Fachberatern regelmäßig auf fachliche Korrektheit geprüft. 
+        <br><br>
+        <em>Wichtiger Hinweis: Unser Tool generiert Standardverträge zur Selbsthilfe und ersetzt keine anwaltliche Einzelfallprüfung.</em>
+    </p>
+    <div style="margin-bottom: 25px;">
+        <a href="über.html" style="display: inline-block; font-size: 0.9em; color: #0056b3; text-decoration: underline; font-weight: bold;">
+            Mehr über unsere Redaktion & Arbeitsweise erfahren
+        </a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Mieter-Lotse | <a href="über.html">Über uns & Redaktionsrichtlinien</a> | <a href="index.html">Zurück zur Startseite</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    document.getElementById('btnCalcDeposit').addEventListener('click', function() {
+        
+        const coldRent = parseFloat(document.getElementById('coldRent').value) || 0;
+        const demanded = parseFloat(document.getElementById('demandedDeposit').value) || 0;
+        const moveOutStr = document.getElementById('moveOutDate').value;
+
+        if (coldRent <= 0) {
+            alert("Bitte geben Sie die Nettokaltmiete ein.");
+            return;
+        }
+
+        const maxLegal = coldRent * 3;
+        const installment = maxLegal / 3;
+
+        // Display results
+        const resBox = document.getElementById('resultBox');
+        document.getElementById('resMax').innerText = maxLegal.toFixed(2).replace('.', ',') + " €";
+        document.getElementById('resInstallment').innerText = "3 Raten á " + installment.toFixed(2).replace('.', ',') + " €";
+
+        // Check if overcharged
+        const alertBox = document.getElementById('resAlert');
+        if (demanded > maxLegal) {
+            alertBox.style.display = 'block';
+        } else {
+            alertBox.style.display = 'none';
+        }
+
+        // Timeline Logic
+        const timelineBox = document.getElementById('timelineBox');
+        const list = document.getElementById('timelineList');
+        list.innerHTML = ""; // reset
+
+        if (moveOutStr) {
+            const moveOut = new Date(moveOutStr);
+            
+            // 3 Months Point
+            let date3m = new Date(moveOut);
+            date3m.setMonth(date3m.getMonth() + 3);
+            
+            // 6 Months Point (Statute of limitations)
+            let date6m = new Date(moveOut);
+            date6m.setMonth(date6m.getMonth() + 6);
+
+            list.innerHTML += `<li><strong>Ab sofort:</strong> Der Vermieter muss den Erhalt der Kaution bestätigen und die Anlage auf einem Treuhandkonto nachweisen.</li>`;
+            list.innerHTML += `<li><strong>Bis ${date3m.toLocaleDateString('de-DE')}:</strong> Üblicher Zeitraum für die erste Teilrückzahlung (sofern keine offensichtlichen Schäden vorliegen).</li>`;
+            list.innerHTML += `<li><strong>Bis ${date6m.toLocaleDateString('de-DE')}:</strong> Nach 6 Monaten verjähren Ersatzansprüche des Vermieters für Schäden (§ 548 BGB). Spätestens jetzt sollte die Abrechnung erfolgen.</li>`;
+            list.innerHTML += `<li><strong>Sonderfall Nebenkosten:</strong> Ein angemessener Teilbetrag darf bis zur nächsten NK-Abrechnung (maximal 12 Monate nach dem Abrechnungszeitraum) einbehalten werden.</li>`;
+            
+            timelineBox.style.display = 'block';
+        } else {
+            timelineBox.style.display = 'none';
+        }
+
+        resBox.style.display = 'block';
+        resBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Mietminderungs-Rechner: Kostenlos Mietminderung berechnen & Tabelle</title>
+  <meta name="description" content="Heizung kaputt, Schimmel oder Baulärm? Berechnen Sie Ihre legitime Mietminderung tagegenau aus der Bruttowarmmiete. Kostenloser Rechner inkl. Minderungstabelle.">
+  <meta name="keywords" content="Mietminderungsrechner, Mietminderung berechnen, Mietminderungstabelle, Bruttowarmmiete Minderung, Heizungsausfall Mietminderung, Schimmel Minderung, Baulärm">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/logo-lotse-fav.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+      .calculator-container {
+          background-color: #ffffff;
+          border: 1px solid #d1d5db;
+          border-top: 5px solid #c62828;
+          border-radius: 8px;
+          padding: 25px;
+          margin-top: 30px;
+          margin-bottom: 40px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      }
+      .calc-section-title {
+          font-size: 1.2em;
+          color: #c62828;
+          margin-bottom: 15px;
+          border-bottom: 2px solid #ffebee;
+          padding-bottom: 5px;
+      }
+      .input-group {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 15px;
+          flex-wrap: wrap;
+      }
+      .input-group label {
+          flex: 1;
+          min-width: 200px;
+          font-weight: 500;
+      }
+      .input-wrapper {
+          display: flex;
+          align-items: center;
+          flex: 1;
+          min-width: 150px;
+      }
+      .input-wrapper input, .input-wrapper select {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          font-size: 1em;
+      }
+      .input-wrapper input.with-addon {
+          border-radius: 4px 0 0 4px;
+          text-align: right;
+      }
+      .input-wrapper .addon {
+          background-color: #f5f5f5;
+          border: 1px solid #ccc;
+          border-left: none;
+          padding: 10px 15px;
+          border-radius: 0 4px 4px 0;
+          color: #555;
+      }
+      .result-box {
+          margin-top: 30px;
+          padding: 25px;
+          border-radius: 8px;
+          display: none;
+          background-color: #f8f9fa;
+          border: 2px solid #2196f3;
+      }
+      .summary-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 15px;
+          margin-top: 20px;
+          background: #fff;
+          padding: 15px;
+          border-radius: 5px;
+          border: 1px solid #e0e0e0;
+      }
+      .summary-item {
+          display: flex;
+          flex-direction: column;
+      }
+      .summary-item strong { 
+          font-size: 1.4em; 
+          margin-top: 5px; 
+      }
+      table.minderung-table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 20px;
+          margin-bottom: 30px;
+      }
+      table.minderung-table th, table.minderung-table td {
+          border: 1px solid #ddd;
+          padding: 12px;
+          text-align: left;
+      }
+      table.minderung-table th {
+          background-color: #fce4ec;
+          color: #c62828;
+      }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wird die Mietminderung von der Kaltmiete oder Warmmiete berechnet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Mietminderung wird immer von der Bruttowarmmiete (Kaltmiete plus Nebenkosten- und Heizkostenvorauszahlungen) berechnet. Dies hat der Bundesgerichtshof (BGH) in einem Grundsatzurteil (Az. VIII ZR 347/04) verbindlich entschieden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Darf ich die Miete einfach einbehalten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein! Wenn Sie die Miete einfach kürzen und Ihre Minderungsquote vor Gericht später als zu hoch eingestuft wird, geraten Sie in Zahlungsverzug. Ab einem Rückstand von mehr als einer Monatsmiete darf der Vermieter Ihnen fristlos kündigen. Zahlen Sie die Miete immer in voller Höhe, aber unter dem schriftlichen Vorbehalt der Rückforderung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ab wann darf ich die Miete mindern?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Das Recht auf Mietminderung entsteht automatisch ab dem Tag, an dem der Vermieter von dem Mangel erfährt (Mängelanzeige). Sie dürfen nicht rückwirkend für die Zeit mindern, in der der Vermieter den Schaden noch gar nicht kannte."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Mietminderung Rechner",
+  "description": "Berechnen Sie Ihre zulässige Mietminderung bei Wohnungsmängeln absolut präzise und tagegenau anhand Ihrer Bruttowarmmiete.",
+  "applicationCategory": "CalculatorApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Mieter-Lotse Team"
+  }
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="site-logo">Mieter-Lotse</a>
+</header>
+
+<div class="page-container">
+  <h1>Mietminderungs-Rechner: Ihre Kürzung tagegenau berechnen</h1>
+<div class="usp-bar">
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    Basis: Bruttowarmmiete
+  </div>
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    Tagenaue Berechnung
+  </div>
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    BGH-Rechtsprechung
+  </div>
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    100% Kostenlos
+  </div>
+</div>
+
+ <a href="maengel-wohnalltag.html" class="category-badge">
+    Zur Übersicht: Mängel-Wohnalltag
+</a>
+
+  <div class="info-box">
+    <p>
+      Die Heizung ist eiskalt, schwarzer Schimmel breitet sich im Schlafzimmer aus oder die Bohrhämmer der Großbaustelle nebenan rauben Ihnen den Schlaf? Wenn Ihre Wohnung einen erheblichen Mangel aufweist, müssen Sie rechtlich nicht die volle Miete zahlen. 
+    </p>
+    <p>
+      <strong>Doch Vorsicht: Wer einfach Geld einbehält und sich verrechnet, riskiert die fristlose Kündigung der Wohnung.</strong> Unser Rechner hilft Ihnen, die zulässige Minderungsquote absolut präzise und tagegenau anhand Ihrer Miete zu berechnen. So behalten Sie den Überblick, welchen Betrag Sie vom Vermieter zurückfordern können, sobald der Mangel behoben ist.
+    </p>
+  </div>
+
+  <div class="info-box warning" style="border-left: 4px solid #e53935; padding: 15px; margin-top: 20px; background-color: #fff3f3;">
+    <h2>WICHTIG: Die Kündigungsfalle umgehen!</h2>
+    <p>
+      Ziehen Sie die hier berechnete Summe <strong>niemals einfach eigenmächtig von Ihrer monatlichen Miet-Überweisung ab!</strong> Wenn ein Richter später entscheidet, dass Ihre angesetzte Prozent-Quote zu hoch war, gelten Sie rechtlich als "im Zahlungsrückstand". Erreicht dieser Rückstand die Höhe einer vollen Monatsmiete, darf der Vermieter Sie fristlos vor die Tür setzen.
+    </p>
+    <p style="font-weight: bold; margin-top: 10px; color: #c62828;">Der sichere Weg: "Zahlung unter Vorbehalt"</p>
+    <p>
+      Zahlen Sie die volle Miete einfach weiter, aber schreiben Sie dem Vermieter sofort (mit unserem <a href="generator-mietminderungsschreiben.html" style="color: #c62828;">Generator</a>), dass künftige Mietzahlungen ab der Mängelanzeige ausdrücklich <em>"unter Vorbehalt der Rückforderung"</em> erfolgen. Sobald der Mangel behoben ist, fordern Sie den exakt berechneten Betrag für den defekten Zeitraum in einer Summe vom Vermieter zurück.
+    </p>
+  </div>
+
+  <div class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 15px;">
+    <strong>Erfolgs-Tipp: Basis ist immer die Bruttowarmmiete!</strong> Viele Mieter (und sogar einige Vermieter) glauben fälschlicherweise, dass die Minderung nur von der Kaltmiete berechnet wird. Das ist falsch. Der Bundesgerichtshof (BGH) hat klar entschieden: Bemessungsgrundlage für die Minderung ist immer die <strong>Bruttowarmmiete</strong> (also Kaltmiete inklusive aller Heiz- und Nebenkostenvorauszahlungen). Unser Rechner berücksichtigt das automatisch.
+  </div>
+
+  <div class="info-box" style="background-color: #e3f2fd; border-left: 4px solid #2196f3; padding: 10px; margin-top: 15px;">
+    <strong>Datensicherheit:</strong> Ihre Miet- und Rechendaten bleiben zu 100 % privat. Die Berechnung erfolgt ausschließlich lokal im Speicher Ihres Webbrowsers. Wir übertragen keine Summen an unsere Server.
+  </div>
+
+  <div class="kl-highlight kl-author-box" aria-label="Autor und Aktualisierung" style="background-color: #f5f5f5; border: 1px solid #e0e0e0; padding: 15px; margin-top: 20px; border-radius: 4px; display: flex; align-items: center; gap: 10px;">
+    <strong>Autor:</strong> <a id="kl-page-author" href="ueber.html" target="_blank" style="color: #2196f3; text-decoration: none;">Mieter-Lotse Team</a>
+    <span class="kl-sep" style="color: #9e9e9e;">•</span>
+    <strong>Letzte Aktualisierung:</strong> <span id="kl-page-lastupdated">01.05.2026</span>
+  </div>
+
+  <!-- CALCULATOR SECTION -->
+  <div class="calculator-container" id="calculator">
+      <form id="minderungForm">
+          
+          <h2 class="calc-section-title">1. Ihre monatliche Miete</h2>
+          <p style="font-size: 0.85em; color: #555; margin-bottom: 15px;">Gemäß BGH (Az. VIII ZR 347/04) wird die Minderung immer von der <strong>Bruttowarmmiete</strong> berechnet, nicht von der Kaltmiete!</p>
+          
+          <div class="input-group">
+              <label for="rentCold">Kaltmiete (Grundmiete):</label>
+              <div class="input-wrapper">
+                  <input type="number" id="rentCold" class="with-addon" placeholder="z. B. 800" min="0" step="10" required>
+                  <span class="addon">€</span>
+              </div>
+          </div>
+          <div class="input-group">
+              <label for="rentUtils">Nebenkosten inkl. Heizung:<br><span style="font-size: 0.8em; color: #777; font-weight: normal;">(Ihre mtl. Vorauszahlung)</span></label>
+              <div class="input-wrapper">
+                  <input type="number" id="rentUtils" class="with-addon" placeholder="z. B. 250" min="0" step="10" required>
+                  <span class="addon">€</span>
+              </div>
+          </div>
+
+          <h2 class="calc-section-title" style="margin-top: 30px;">2. Art und Dauer des Mangels</h2>
+          
+          <div class="input-group">
+              <label for="mangelArt">Um welchen Mangel handelt es sich?</label>
+              <div class="input-wrapper">
+                  <select id="mangelArt" required>
+                      <option value="" disabled selected>Bitte Mangel auswählen...</option>
+                      <option value="100">Heizung Totalausfall (im Winter, Wohnung eiskalt) - ca. 100%</option>
+                      <option value="50">Heizung Teilausfall (Wohnung kühlt auf 15 Grad ab) - ca. 50%</option>
+                      <option value="20">Heizung Ausfall (nur ein einzelnes Zimmer kalt) - ca. 20%</option>
+                      <option value="15">Warmwasser Totalausfall - ca. 15%</option>
+                      <option value="20">Schimmel (erheblich, in Wohn- oder Schlafzimmer) - ca. 20%</option>
+                      <option value="10">Schimmel (leicht, z.B. nur Fugen im Bad) - ca. 10%</option>
+                      <option value="25">Baulärm (massiv, Presslufthammer im Nachbarhaus) - ca. 25%</option>
+                      <option value="15">Baulärm (Fassadengerüst mit Verdunkelung) - ca. 15%</option>
+                      <option value="10">Aufzug defekt (ab 4. Obergeschoss) - ca. 10%</option>
+                      <option value="5">Aufzug defekt (1. oder 2. Obergeschoss) - ca. 5%</option>
+                      <option value="100">Wasserschaden (Wohnung faktisch unbewohnbar) - ca. 100%</option>
+                      <option value="custom">Eigene Minderungsquote eingeben...</option>
+                  </select>
+              </div>
+          </div>
+
+          <div class="input-group" id="customQuoteBox" style="display: none;">
+              <label for="customQuote">Ihre individuelle Quote (in %):</label>
+              <div class="input-wrapper">
+                  <input type="number" id="customQuote" class="with-addon" placeholder="z. B. 12" min="1" max="100">
+                  <span class="addon">%</span>
+              </div>
+          </div>
+
+          <div class="input-group">
+              <label for="mangelTage">Wie viele Tage bestand der Mangel?<br><span style="font-size: 0.8em; color: #777; font-weight: normal;">(Gezählt ab dem Tag Ihrer Mängelanzeige beim Vermieter!)</span></label>
+              <div class="input-wrapper">
+                  <input type="number" id="mangelTage" class="with-addon" placeholder="z. B. 14" min="1" max="365" required>
+                  <span class="addon">Tage</span>
+              </div>
+          </div>
+
+          <button type="button" id="btnCalculate" class="button-primary" style="width: 100%; margin-top: 20px; font-size: 1.1em; padding: 15px;">📊 Mietminderung berechnen</button>
+      </form>
+
+      <!-- RESULT BOX -->
+      <div id="resultBox" class="result-box">
+          <h3 style="margin-top: 0; color: #1a237e; font-size: 1.5em; border-bottom: 1px solid #ccc; padding-bottom: 10px;">Ergebnis Ihrer Berechnung</h3>
+          
+          <p style="font-size: 0.9em; color: #555;">Basis: Bruttowarmmiete von <span id="resBrutto" style="font-weight: bold;">0 €</span>. Die monatliche Miete wird juristisch zur Berechnung stets durch 30 Tage geteilt (Tagesmiete: <span id="resTagesmiete">0 €</span>).</p>
+
+          <div class="summary-grid">
+              <div class="summary-item">
+                  <span style="color: #555; font-size: 0.9em;">Angesetzte Minderungsquote:</span>
+                  <strong id="resQuote" style="color: #2196f3;">0 %</strong>
+              </div>
+              <div class="summary-item">
+                  <span style="color: #555; font-size: 0.9em;">Dauer des Mangels:</span>
+                  <strong id="resTage">0 Tage</strong>
+              </div>
+              <div class="summary-item" style="grid-column: span 2; background-color: #e8f5e9; padding: 15px; border: 1px solid #4caf50; border-radius: 4px; margin-top: 10px;">
+                  <span style="color: #2e7d32; font-size: 1em;">Ihre gesamte Mietminderung für diesen Zeitraum:</span>
+                  <strong id="resMinderung" style="color: #1b5e20; font-size: 2em;">0,00 €</strong>
+              </div>
+          </div>
+          
+          <div style="margin-top: 20px; background-color: #fff; padding: 15px; border-left: 4px solid #ff9800;">
+              <strong>Wie geht es jetzt weiter?</strong>
+              <p style="margin-bottom: 10px; font-size: 0.9em;">Fordern Sie diesen Betrag am Ende des Monats vom Vermieter zurück (sofern Sie die Zahlung unter Vorbehalt gestellt haben). Kündigen Sie an, diesen Betrag andernfalls mit der übernächsten Mietzahlung zu verrechnen (Aufrechnung).</p>
+          </div>
+      </div>
+  </div>
+
+  <h2>Mietminderungstabelle: Urteile im Überblick</h2>
+  <p>Vermieter streiten gerne über die Höhe der Minderung. Es gibt im Gesetz keine festen Prozentzahlen für jeden Mangel. Richter entscheiden immer im <strong>Einzelfall</strong>. Dennoch haben sich durch hunderte Urteile klare Richtwerte herausgebildet, an denen Sie sich orientieren können:</p>
+
+  <table class="minderung-table">
+      <thead>
+          <tr>
+              <th>Mangel</th>
+              <th>Gericht / Aktenzeichen</th>
+              <th>Ø Minderung</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td><strong>Heizung Totalausfall</strong><br><span style="font-size:0.85em; font-weight:normal;">Wohnung kühlt im Winter auf unter 15°C ab</span></td>
+              <td>LG Berlin, Az. 65 S 70/92</td>
+              <td><strong>100 %</strong></td>
+          </tr>
+          <tr>
+              <td><strong>Wasserschaden & Trocknungsgeräte</strong><br><span style="font-size:0.85em; font-weight:normal;">Unerträglicher Lärm der Trockner in der Wohnung</span></td>
+              <td>AG Schöneberg, Az. 109 C 256/07</td>
+              <td><strong>100 %</strong></td>
+          </tr>
+          <tr>
+              <td><strong>Massiver Baulärm (außen)</strong><br><span style="font-size:0.85em; font-weight:normal;">Großbaustelle direkt auf dem Nachbargrundstück</span></td>
+              <td>LG Darmstadt, Az. 6 S 211/13</td>
+              <td><strong>20 - 25 %</strong></td>
+          </tr>
+          <tr>
+              <td><strong>Schimmel (mittelschwer)</strong><br><span style="font-size:0.85em; font-weight:normal;">Gesundheitsgefährdung im Schlaf- und Wohnzimmer</span></td>
+              <td>LG Berlin, Az. 65 S 205/10</td>
+              <td><strong>20 %</strong></td>
+          </tr>
+          <tr>
+              <td><strong>Warmwasser fällt aus</strong><br><span style="font-size:0.85em; font-weight:normal;">Kein Duschen/Baden möglich</span></td>
+              <td>AG Köln, Az. 206 C 251/01</td>
+              <td><strong>15 %</strong></td>
+          </tr>
+          <tr>
+              <td><strong>Aufzug defekt</strong><br><span style="font-size:0.85em; font-weight:normal;">Mieter wohnt im 4. oder 5. Obergeschoss</span></td>
+              <td>AG Mitte, Az. 2 C 17/07</td>
+              <td><strong>10 - 15 %</strong></td>
+          </tr>
+          <tr>
+              <td><strong>Undichte Fenster</strong><br><span style="font-size:0.85em; font-weight:normal;">Zugluft im Winter</span></td>
+              <td>LG Kassel, Az. 1 S 274/82</td>
+              <td><strong>5 %</strong></td>
+          </tr>
+      </tbody>
+  </table>
+
+  <h2>Wann Sie nicht mindern dürfen</h2>
+  <p>Die Minderung ist ausgeschlossen, wenn einer der folgenden Punkte zutrifft:</p>
+  <ul>
+      <li><strong>Sie haben den Mangel nicht gemeldet:</strong> Solange der Vermieter nichts von dem Problem weiß, können Sie auch keine Miete mindern!</li>
+      <li><strong>Sie haben den Mangel selbst verursacht:</strong> Wenn das Waschbecken gerissen ist, weil Sie eine Parfümflasche hineinfallen ließen, ist der Vermieter nicht schuld (hier greift Ihre Haftpflicht).</li>
+      <li><strong>Unerhebliche Kleinigkeiten:</strong> Eine durchgebrannte Glühbirne im Hausflur oder ein tropfender Wasserhahn rechtfertigen keine prozentuale Mietminderung (Bagatellschäden).</li>
+      <li><strong>Mangel war bei Einzug bekannt:</strong> Wenn Sie die Wohnung besichtigt haben und wussten, dass direkt nebenan eine laute Disco ist, können Sie später nicht wegen Lärm mindern ("gekauft wie gesehen").</li>
+  </ul>
+
+  <h2>Häufige Fragen (FAQ) zur Mietminderung</h2>
+  <details>
+    <summary>Ab wann genau darf ich die Miete mindern?</summary>
+    <p>Das Gesetz sagt unmissverständlich: Sie dürfen die Miete erst ab dem Tag mindern, an dem der Vermieter <strong>nachweislich von dem Mangel erfahren hat</strong> (§ 536c BGB). Eine rückwirkende Minderung für die Zeit, in der Sie geschwiegen und gehofft haben, dass es von alleine besser wird, ist ausgeschlossen. Zeigen Sie Mängel daher immer sofort an!</p>
+  </details>
+  <details>
+    <summary>Woher weiß ich, wie viel Prozent (Quote) angemessen sind?</summary>
+    <p>Im Gesetz stehen keine festen Quoten. Gerichte entscheiden immer im Einzelfall nach der "Gebrauchsbeeinträchtigung". Orientierung bieten sogenannte Mietminderungstabellen, die Tausende vergangene Gerichtsurteile sammeln (z. B. 20 % bei Heizungsausfall im Winter, 10 % bei erheblichem Baulärm, 100 % bei Unbewohnbarkeit). <strong>Tipp:</strong> Setzen Sie die Quote im Zweifel lieber etwas niedriger (konservativer) an.</p>
+  </details>
+  <details>
+    <summary>Darf ich bei einem kaputten Aufzug mindern?</summary>
+    <p>Das hängt von Ihrer Etage und Ihren körperlichen Einschränkungen ab. Wohnen Sie im 5. Stock und sind auf den Aufzug angewiesen, ist eine Minderung von ca. 10 bis 15 % realistisch. Wohnen Sie jedoch im Erdgeschoss oder 1. Stock und nutzen den Aufzug ohnehin kaum, liegt keine erhebliche Beeinträchtigung vor – eine Minderung ist dann meist nicht zulässig.</p>
+  </details>
+
+  <aside class="highlight-box" role="complementary" aria-label="Weiterführende Informationen" style="margin-top: 30px;">
+    <h2 style="margin-top:0">Mängel rechtssicher melden</h2>
+    <p>
+      Bevor Sie rechnen, müssen Sie den Mangel korrekt beim Vermieter anzeigen. Nutzen Sie unsere Helfer:
+    </p>
+    <p style="margin-bottom:.4rem;">
+      <a href="generator-maengelanzeige.html" class="button button-secondary" title="Generator Mängelanzeige">Schritt 1: Mängelanzeige sofort erstellen & Frist setzen</a>
+      <a href="generator-mietminderungsschreiben.html" class="button button-secondary" title="Generator Mietminderung">Schritt 2: Zahlung unter Vorbehalt offiziell ankündigen</a>
+      <a href="info-mietminderung.html" class="button button-secondary" title="Ratgeber Mietminderung">Ratgeber: Minderungstabellen & Rechte im Überblick</a>
+      <a href="maengel-wohnalltag.html" class="button button-secondary" title="Übersicht Mängel & Wohnalltag">Zur Übersicht: Mängel & Wohnalltag</a>
+    </p>
+  </aside>
+
+  <h2>Quellen &amp; weiterführende Links</h2>
+  <div class="kl-highlight kl-sources-box" aria-label="Quellen und weiterführende Links">
+    <ul>
+      <li>
+        <a href="https://www.gesetze-im-internet.de/bgb/__536.html" target="_blank" rel="noopener">
+          Bundesministerium der Justiz – § 536 BGB (Mietminderung bei Sach- und Rechtsmängeln)
+        </a>
+      </li>
+      <li>
+        <a href="https://juris.bundesgerichtshof.de/cgi-bin/rechtsprechung/document.py?Gericht=bgh&Art=en&nr=32371" target="_blank" rel="noopener">
+          Bundesgerichtshof – BGH XII ZR 225/03 (Grundsatzurteil: Bruttowarmmiete als Basis)
+        </a>
+      </li>
+      <li>
+        <a href="https://www.mieterbund.de/mietrecht/mietrecht-a-z/mietminderung/" target="_blank" rel="noopener">
+          Deutscher Mieterbund – Ratgeber & Richtwerte zur Mietminderung
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<div style="background-color: #f8f9fa; border-top: 2px solid #e0e0e0; padding: 25px 15px; margin-top: 40px; text-align: center; font-family: sans-serif;">
+    <h3 style="font-size: 1.1em; color: #333; margin-top: 0; margin-bottom: 8px;">Wer hat diese Inhalte erstellt?</h3>
+    <p style="font-size: 0.9em; color: #555; max-width: 700px; margin: 0 auto 12px auto; line-height: 1.5;">
+        Unsere Ratgeber und Generatoren basieren auf der strikten Auswertung aktueller Gesetzestexte. Sie werden von <strong>Jan (Projektleitung) & Team</strong> entwickelt und durch unser Netzwerk aus Fachberatern regelmäßig auf fachliche Korrektheit geprüft. 
+        <br><br>
+        <em>Wichtiger Hinweis: Unser Tool generiert Standardverträge zur Selbsthilfe und ersetzt keine anwaltliche Einzelfallprüfung.</em>
+    </p>
+    <div style="margin-bottom: 25px;">
+        <a href="über.html" style="display: inline-block; font-size: 0.9em; color: #0056b3; text-decoration: underline; font-weight: bold;">
+            Mehr über unsere Redaktion & Arbeitsweise erfahren
+        </a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Mieter-Lotse | <a href="über.html">Über uns & Redaktionsrichtlinien</a> | <a href="index.html">Zurück zur Startseite</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    const mangelArtSelect = document.getElementById('mangelArt');
+    const customQuoteBox = document.getElementById('customQuoteBox');
+    
+    // Show custom input if chosen
+    mangelArtSelect.addEventListener('change', function() {
+        if (this.value === 'custom') {
+            customQuoteBox.style.display = 'flex';
+        } else {
+            customQuoteBox.style.display = 'none';
+        }
+    });
+
+    // Calculation
+    document.getElementById('btnCalculate').addEventListener('click', function() {
+        
+        const rentCold = parseFloat(document.getElementById('rentCold').value) || 0;
+        const rentUtils = parseFloat(document.getElementById('rentUtils').value) || 0;
+        const tage = parseInt(document.getElementById('mangelTage').value) || 0;
+        
+        let quote = 0;
+        if (mangelArtSelect.value === 'custom') {
+            quote = parseFloat(document.getElementById('customQuote').value) || 0;
+        } else {
+            quote = parseFloat(mangelArtSelect.value) || 0;
+        }
+
+        if (rentCold === 0 || rentUtils === 0 || tage === 0 || quote === 0) {
+            alert("Bitte füllen Sie alle Felder (Miete, Mangel und Tage) vollständig aus.");
+            return;
+        }
+
+        if (quote > 100) {
+            alert("Die Minderungsquote kann nicht größer als 100% sein.");
+            return;
+        }
+
+        // BGH Logic: Bruttowarmmiete is basis
+        const bruttowarm = rentCold + rentUtils;
+        
+        // BGH Logic: Month is calculated as 30 days for reduction purposes (or exact month days, 30 is industry standard)
+        const tagesmiete = bruttowarm / 30;
+        
+        // Calculate reduction
+        const tagesMinderung = tagesmiete * (quote / 100);
+        const gesamtMinderung = tagesMinderung * tage;
+
+        // UI Updates
+        document.getElementById('resBrutto').innerText = bruttowarm.toFixed(2) + " €";
+        document.getElementById('resTagesmiete').innerText = tagesmiete.toFixed(2) + " €";
+        
+        document.getElementById('resQuote').innerText = quote + " %";
+        document.getElementById('resTage').innerText = tage + " Tage";
+        
+        // Ensure we don't reduce more than 100% of the rent if days > 30 for a month
+        // In reality, reduction goes over months, but for UX, we show absolute sum.
+        document.getElementById('resMinderung').innerText = gesamtMinderung.toFixed(2) + " €";
+
+        // Display Box
+        const resultBox = document.getElementById('resultBox');
+        resultBox.style.display = 'block';
+        resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
+});
+</script>
+</body>
+</html>

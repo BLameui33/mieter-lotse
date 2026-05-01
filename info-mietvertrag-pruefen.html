@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Mietvertrag prüfen: Interaktive Checkliste & Klausel-Check</title>
+  <meta name="description" content="Unterschreiben Sie nicht blind! Prüfen Sie Ihren Mietvertrag mit unserer interaktiven Checkliste auf unwirksame Klauseln (Schönheitsreparaturen, Haustiere, etc.).">
+  <meta name="keywords" content="Mietvertrag prüfen, unwirksame Klauseln, Schönheitsreparaturen, Kleinreparaturklausel, Kündigungsverzicht, Haustierverbot, Mietrecht">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/logo-lotse-fav.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/generator.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was passiert, wenn eine Klausel im Mietvertrag unwirksam ist?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wenn eine einzelne Klausel ungültig ist (z.B. ein starres Haustierverbot oder unzulässige Renovierungspflichten), wird nicht der gesamte Mietvertrag ungültig. Stattdessen tritt an die Stelle der unwirksamen Klausel die gesetzliche Regelung aus dem BGB – was fast immer vorteilhafter für Sie als Mieter ist."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Darf der Vermieter ein generelles Haustierverbot in den Vertrag schreiben?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. Nach der Rechtsprechung des BGH ist ein generelles Verbot von Hunden und Katzen unwirksam, da es den Mieter unangemessen benachteiligt. Es muss immer eine Einzelfallabwägung stattfinden. Kleintiere dürfen ohnehin immer gehalten werden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Muss ich beim Auszug immer renovieren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein, nur wenn die Klausel zu Schönheitsreparaturen im Vertrag wirksam formuliert ist. Enthält der Vertrag 'starre Fristen' (z.B. 'alle 3 Jahre muss gestrichen werden') oder ziehen Sie in eine unrenovierte Wohnung ohne angemessenen Ausgleich ein, ist die Klausel oft hinfällig und Sie müssen gar nicht streichen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Darf der Vermieter bei einer Indexmiete noch andere Mieterhöhungen fordern?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. Haben Sie eine Indexmiete (gekoppelt an die Inflation) vereinbart, darf der Vermieter die Miete nicht zusätzlich noch an die ortsübliche Vergleichsmiete anpassen. Auch Modernisierungsumlagen sind während einer Indexmiete stark eingeschränkt und nur erlaubt, wenn der Vermieter gesetzlich zur Modernisierung gezwungen wurde."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie lange darf ein Kündigungsverzicht maximal dauern?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ein beidseitiger Kündigungsverzicht (Mindestmietdauer) in einem Standard-Mietvertrag darf maximal für 4 Jahre vereinbart werden. Ist ein längerer Zeitraum angegeben, ist die gesamte Klausel unwirksam und Sie können mit der gesetzlichen Frist von 3 Monaten kündigen."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  .check-box {
+      background-color: #f8f9fa;
+      border: 1px solid #cfd8dc;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+  }
+  .check-question {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+  }
+  .check-options label {
+      display: block;
+      margin-bottom: 8px;
+      cursor: pointer;
+  }
+  #analysisResult {
+      display: none;
+      margin-top: 30px;
+      padding: 25px;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  .warning-item {
+      border-left: 4px solid #f44336;
+      background-color: #ffebee;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 0 4px 4px 0;
+  }
+  .warning-item h4 {
+      margin-top: 0;
+      color: #c62828;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+  }
+  .success-result {
+      border-left: 4px solid #4caf50;
+      background-color: #e8f5e9;
+      padding: 15px;
+      color: #2e7d32;
+      border-radius: 0 4px 4px 0;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="site-logo">Mieter-Lotse</a>
+</header>
+
+<div class="page-container">
+  <h1>Interaktiver Check: Prüfen Sie Ihren Mietvertrag auf fiese Fallen</h1>
+<div class="usp-bar">
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    Sofort-Analyse
+  </div>
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    BGH-Rechtsprechung
+  </div>
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    Geld sparen
+  </div>
+  <div class="usp-item">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg>
+    100% Anonym
+  </div>
+</div>
+
+  <a href="einzug-auszug-kuendigung.html" class="category-badge">
+    Zur Übersicht: Einzug, Auszug & Kündigung
+  </a>
+
+  <p class="highlight-box" style="margin-top: 20px;">
+    Herzlichen Glückwunsch, Sie haben die Zusage für die Wohnung! Doch bevor Sie den Mietvertrag unterschreiben, sollten Sie das Kleingedruckte genau prüfen. <strong>Jeder zweite deutsche Mietvertrag enthält ungültige Klauseln.</strong> Vermieter nutzen oft veraltete Vorlagen, die Ihnen teure Renovierungen, unzulässige Reparaturkosten oder starre Kündigungsfristen aufbürden wollen.
+  </p>
+
+  <p class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 10px;">
+  <strong>Wichtiger Hinweis:</strong> Dieses Tool bietet eine Ersteinschätzung basierend auf gängiger BGH-Rechtsprechung und ersetzt keine verbindliche anwaltliche Prüfung. Wenn Sie sich bei einer Klausel unsicher sind, unterschreiben Sie nicht blind, sondern konsultieren Sie einen Fachanwalt oder Mieterverein.
+</p>
+
+  <div class="kl-highlight kl-author-box" aria-label="Autor und Aktualisierung">
+  <strong>Autor:</strong> <a id="kl-page-author" href="über.html" target="_blank">Mieter-Lotse Team</a>
+  <span class="kl-sep">•</span>
+  <strong>Letzte Aktualisierung:</strong> <span id="kl-page-lastupdated">30.04.2026</span>
+</div>
+
+  <h2 id="tool-start">Der Mietvertrag-Prüfer</h2>
+  <p>Nehmen Sie Ihren Vertragsentwurf zur Hand. Beantworten Sie die folgenden Fragen, um herauszufinden, ob Ihr Vermieter potenziell unwirksame Klauseln eingebaut hat.</p>
+
+  <form id="contractCheckForm">
+      
+      <div class="check-box">
+          <div class="check-question">1. Schönheitsreparaturen: Was steht zum Thema "Streichen/Renovieren" im Vertrag?</div>
+          <div class="check-options">
+              <label><input type="radio" name="reno" value="starr"> Es sind starre Fristen genannt (z.B. "Die Küche muss zwingend alle 3 Jahre gestrichen werden")</label>
+              <label><input type="radio" name="reno" value="flexibel"> Es sind weiche Fristen genannt (z.B. "im Allgemeinen nach 3 Jahren" oder "nach Bedarf")</label>
+              <label><input type="radio" name="reno" value="nichts"> Es steht nichts dazu im Vertrag</label>
+          </div>
+      </div>
+
+      <div class="check-box">
+          <div class="check-question">2. Zustand der Wohnung: In welchem Zustand übernehmen Sie die Wohnung?</div>
+          <div class="check-options">
+              <label><input type="radio" name="zustand" value="unrenoviert"> Die Wohnung wird unrenoviert übergeben (ich streiche beim Einzug selbst) und ich erhalte dafür keinen finanziellen Ausgleich (z.B. mietfreie Zeit).</label>
+              <label><input type="radio" name="zustand" value="renoviert"> Die Wohnung ist frisch renoviert oder ich erhalte einen angemessenen Ausgleich.</label>
+          </div>
+      </div>
+
+      <div class="check-box">
+          <div class="check-question">3. Kleinreparaturklausel: Gibt es eine Grenze für kleine Reparaturen (z.B. tropfender Wasserhahn)?</div>
+          <div class="check-options">
+              <label><input type="radio" name="kleinrep" value="hoch"> Ja, der Betrag pro Einzelreparatur liegt über 120 Euro (oder es gibt gar keine Obergrenze).</label>
+              <label><input type="radio" name="kleinrep" value="ok"> Ja, aber der Betrag ist auf max. 100 bis 120 Euro pro Reparatur (und max. 6-8% der Jahresmiete) begrenzt.</label>
+              <label><input type="radio" name="kleinrep" value="nein"> Nein, es gibt keine solche Klausel.</label>
+          </div>
+      </div>
+
+      <div class="check-box">
+          <div class="check-question">4. Haustiere: Was sagt der Vertrag zu Tieren?</div>
+          <div class="check-options">
+              <label><input type="radio" name="tier" value="verbot"> Es herscht ein generelles, absolutes Haustierverbot (z.B. "Das Halten von Tieren ist untersagt").</label>
+              <label><input type="radio" name="tier" value="erlaubnis"> Die Haltung von Hunden/Katzen bedarf der vorherigen Erlaubnis des Vermieters.</label>
+              <label><input type="radio" name="tier" value="erlaubt"> Haustiere sind erlaubt oder nicht erwähnt.</label>
+          </div>
+      </div>
+
+      <div class="check-box">
+          <div class="check-question">5. Kündigungsausschluss: Haben Sie eine Mindestmietdauer?</div>
+          <div class="check-options">
+              <label><input type="radio" name="mindest" value="lang"> Ja, beide Parteien verzichten für MEHR als 4 Jahre auf ihr Kündigungsrecht.</label>
+              <label><input type="radio" name="mindest" value="ok"> Ja, aber maximal für bis zu 4 Jahre.</label>
+              <label><input type="radio" name="mindest" value="nein"> Nein, es gilt die normale gesetzliche Kündigungsfrist.</label>
+          </div>
+      </div>
+
+      <div class="check-box">
+          <div class="check-question">6. Mieterhöhungen: Ist eine Staffel- oder Indexmiete vereinbart?</div>
+          <div class="check-options">
+              <label><input type="radio" name="miete" value="staffelFalsch"> Ja, eine Staffelmiete, ABER es fehlt das genaue Datum oder der exakte Euro-Betrag (es sind z.B. nur Prozentangaben gemacht).</label>
+              <label><input type="radio" name="miete" value="indexKombi"> Ja, eine Indexmiete, UND der Vermieter behält sich im Vertrag trotzdem noch weitere Mieterhöhungen (z.B. auf die ortsübliche Vergleichsmiete) vor.</label>
+              <label><input type="radio" name="miete" value="ok"> Ja, alles ist exakt nach Gesetz ausgewiesen / Nein, es ist eine ganz normale Miete vereinbart.</label>
+          </div>
+      </div>
+
+      <button type="button" id="analyzeBtn" class="button-primary" style="width: 100%; font-size: 1.1em; padding: 15px;">🔍 Vertrag jetzt auswerten</button>
+  </form>
+
+  <div id="analysisResult">
+      <!-- Wird durch JS befüllt -->
+  </div>
+
+  <hr style="margin-top: 40px;">
+
+  <section class="promo-teaser" aria-labelledby="promo-headline" role="region">
+      <h2 id="promo-headline">
+        <span class="icon" aria-hidden="true">💡</span>
+        Ist Ihr Vertrag komplexer?
+      </h2>
+      <p class="lead">
+        Staffelmiete, Indexmiete, seltsame Betriebskostenabrechnungen oder handschriftliche Ergänzungen im Mietvertrag? Wenn unser Basis-Check nicht ausreicht, prüft unsere KI Clerion Ihr Dokument tiefgehend auf rechtliche Schwachstellen.
+      </p>
+      <div class="promo-ctas">
+        <a href="https://clerion.de" class="btn btn-primary" rel="noopener" target="_blank">
+          Mietvertrag von Clerion prüfen lassen
+        </a>
+      </div>
+  </section>
+
+  <section class="kl-fallbeispiele" aria-labelledby="kl-fallbeispiele-head" style="margin-top: 40px;">
+  <h2 id="kl-fallbeispiele-head">Fallbeispiele: Die teuersten Vertragsfallen</h2>
+
+  <article class="kl-fall" aria-labelledby="fall-1">
+    <h3 id="fall-1">Beispiel 1: Der unrenovierte Einzug</h3>
+    <p><strong>Die Situation:</strong> Herr Weber unterschreibt einen Vertrag. Dort steht: "Der Mieter übernimmt die Wohnung im vorhandenen (unrenovierten) Zustand. Beim Auszug ist die Wohnung fachgerecht weiß gestrichen zu übergeben."</p>
+    <p><strong>Das rechtliche Problem:</strong> Diese Klausel ist unwirksam. Der BGH hat entschieden: Wer unrenoviert einzieht und dafür keinen Ausgleich (z.B. eine Monatsmiete erlassen) bekommt, muss beim Auszug auch nicht renovieren. Der Mieter würde sonst die Wohnung besser hinterlassen, als er sie vorgefunden hat.</p>
+    <p><strong>Das Ergebnis:</strong> Herr Weber kann beim Auszug besenrein übergeben und spart sich tausende Euro für den Maler.</p>
+  </article>
+
+  <article class="kl-fall" aria-labelledby="fall-2">
+    <h3 id="fall-2">Beispiel 2: Das absolute Haustierverbot</h3>
+    <p><strong>Die Situation:</strong> Frau Müller möchte sich einen kleinen Mops anschaffen. Im Vertrag steht: "Die Haltung von Haustieren jeglicher Art ist strengstens untersagt."</p>
+    <p><strong>Das rechtliche Problem:</strong> Ein pauschales Verbot benachteiligt den Mieter unangemessen. Kleintiere (Hamster, Zierfische) dürfen ohnehin immer gehalten werden. Bei Hunden und Katzen muss der Vermieter die Interessen im Einzelfall abwägen.</p>
+    <p><strong>Das Ergebnis:</strong> Die gesamte Klausel ist unwirksam. Frau Müller muss theoretisch nicht einmal mehr um Erlaubnis fragen (es ist dennoch ratsam, es der Harmonie wegen zu tun).</p>
+  </article>
+</section>
+
+  <h2>Häufig gestellte Fragen (FAQ) zum Mietvertrag</h2>
+  <div class="faq-section">
+      <h3>Was passiert, wenn eine Klausel im Mietvertrag unwirksam ist?</h3>
+      <p>Es passiert das Beste, was Ihnen als Mieter passieren kann: Die unwirksame Klausel fällt komplett weg. Stattdessen greift automatisch das gesetzliche Mietrecht aus dem BGB, welches stark mieterfreundlich ist. Der Rest des Vertrages bleibt voll gültig (sogenannte salvatorische Klausel).</p>
+
+      <h3>Sollte ich den Vermieter auf unwirksame Klauseln hinweisen?</h3>
+      <p>Strategisch gesehen: Nein. Unterschreiben Sie den Vertrag einfach. Wenn der Vermieter eine ungültige Klausel eingebaut hat (z.B. zur Renovierung), ist das sein Problem. Wenn Sie ihn vorher darauf hinweisen, formuliert er sie womöglich rechtssicher um – und Sie haben einen echten Nachteil.</p>
+
+      <h3>Sind handschriftliche Zusätze gültig?</h3>
+      <p>Ja, sogenannte Individualvereinbarungen, die handschriftlich hinzugefügt und von beiden Seiten abgezeichnet wurden, haben sogar Vorrang vor dem vorgedruckten Text. Hier müssen Sie besonders aufpassen, da diese seltener von der strengen AGB-Kontrolle gekippt werden.</p>
+
+      <h3>Darf der Vermieter bei einer Indexmiete noch andere Mieterhöhungen fordern?</h3>
+      <p>Nein. Haben Sie eine Indexmiete (gekoppelt an die Inflation) vereinbart, darf der Vermieter die Miete nicht zusätzlich noch an die ortsübliche Vergleichsmiete anpassen. Auch Modernisierungsumlagen sind während einer Indexmiete stark eingeschränkt und nur erlaubt, wenn der Vermieter gesetzlich zur Modernisierung gezwungen wurde.</p>
+
+      <h3>Kann ich trotz Kündigungsverzicht früher ausziehen?</h3>
+      <p>Ein wirksamer Kündigungsverzicht (max. 4 Jahre) bindet Sie grundsätzlich. Ein vorzeitiger Auszug ist nur mit einem Aufhebungsvertrag oder in Härtefällen (z.B. berufsbedingter Umzug in eine andere Stadt, Familienzuwachs) möglich, wenn Sie einen geeigneten Nachmieter stellen ("Ersatzmieter").</p>
+  </div>
+
+  <aside class="highlight-box" role="complementary" aria-label="Weiterführende Informationen" style="margin-top: 30px;">
+    <h2 style="margin-top:0">Vertrag unterschrieben? So geht es weiter</h2>
+    <p>
+      Machen Sie beim Einzug alles richtig, um Ihre Kaution langfristig zu sichern:
+    </p>
+    <p style="margin-bottom:.4rem;">
+      <a href="generator-wohnungsuebergabeprotokoll.html" class="button button-secondary" title="Übergabeprotokoll Generator">Wichtig: Wohnungsübergabeprotokoll (PDF)</a>
+      <a href="info-kautionsabrechnung.html" class="button button-secondary" title="Ratgeber Kaution">Wann muss die Kaution gezahlt werden?</a>
+      <a href="maengel-wohnalltag.html" class="button button-secondary" title="Mängel & Wohnalltag">Was tun bei ersten Mängeln?</a>
+    </p>
+  </aside>
+
+  <h2>Quellen &amp; weiterführende Links</h2>
+  <div class="kl-highlight kl-sources-box" aria-label="Quellen und weiterführende Links">
+    <ul>
+      <li>
+          <a href="https://www.mieterbund.de/mietrecht/mietvertrag.html" target="_blank" rel="noopener">
+              Deutscher Mieterbund – Tipps zum Mietvertrag
+          </a>
+      </li>
+      <li>
+          <a href="https://www.bmj.de/DE/themen/bauen_wohnen/mietrecht/mietrecht_node.html" target="_blank" rel="noopener">
+              BMJ – Das deutsche Mietrecht im Überblick
+          </a>
+      </li>
+      <li>
+          <a href="https://juris.bundesgerichtshof.de/cgi-bin/rechtsprechung/document.py?Gericht=bgh&Art=en&nr=70566" target="_blank" rel="noopener">
+              BGH, Az. VIII ZR 185/14 (Entscheidung zu unrenoviert übergebenen Wohnungen)
+          </a>
+      </li>
+  </ul>
+  </div>
+
+</div>
+
+<div style="background-color: #f8f9fa; border-top: 2px solid #e0e0e0; padding: 25px 15px; margin-top: 40px; text-align: center; font-family: sans-serif;">
+    <h3 style="font-size: 1.1em; color: #333; margin-top: 0; margin-bottom: 8px;">Wer hat diese Inhalte erstellt?</h3>
+    <p style="font-size: 0.9em; color: #555; max-width: 700px; margin: 0 auto 12px auto; line-height: 1.5;">
+        Unsere Ratgeber und Generatoren basieren auf der strikten Auswertung aktueller Gesetzestexte. Sie werden von <strong>Jan (Projektleitung) & Team</strong> entwickelt und durch unser Netzwerk aus Fachberatern regelmäßig auf fachliche Korrektheit geprüft. 
+        <br><br>
+        <em>Wichtiger Hinweis: Unser Tool generiert Standardverträge zur Selbsthilfe und ersetzt keine anwaltliche Einzelfallprüfung.</em>
+    </p>
+    <div style="margin-bottom: 25px;">
+        <a href="über.html" style="display: inline-block; font-size: 0.9em; color: #0056b3; text-decoration: underline; font-weight: bold;">
+            Mehr über unsere Redaktion & Arbeitsweise erfahren
+        </a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Mieter-Lotse | <a href="über.html">Über uns & Redaktionsrichtlinien</a> | <a href="index.html">Zurück zur Startseite</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const analyzeBtn = document.getElementById('analyzeBtn');
+    const resultBox = document.getElementById('analysisResult');
+
+    analyzeBtn.addEventListener('click', function() {
+        // Validation check if all radios are selected
+        
+        const radios = ['reno', 'zustand', 'kleinrep', 'tier', 'mindest', 'miete']; // 'miete' hinzugefügt
+        let allAnswered = true;
+        
+        radios.forEach(name => {
+            if(!document.querySelector(`input[name="${name}"]:checked`)) {
+                allAnswered = false;
+            }
+        });
+
+        if(!allAnswered) {
+            alert("Bitte beantworten Sie alle 5 Fragen, um den Check durchzuführen.");
+            return;
+        }
+
+        let warnings = [];
+
+        // 1. Schönheitsreparaturen
+        const reno = document.querySelector('input[name="reno"]:checked').value;
+        if (reno === 'starr') {
+            warnings.push({
+                title: "⚠️ Unwirksame Renovierungsklausel (Starre Fristen)",
+                desc: "Ihr Vertrag verlangt Renovierungen nach festen Zeiträumen (z.B. 'alle 3 Jahre'). Der BGH hat entschieden, dass starre Fristen den Mieter unangemessen benachteiligen. <strong>Folge:</strong> Die gesamte Klausel ist nichtig. Sie müssen beim Auszug voraussichtlich gar nicht streichen!"
+            });
+        }
+
+        // 2. Zustand
+        const zustand = document.querySelector('input[name="zustand"]:checked').value;
+        if (zustand === 'unrenoviert' && reno !== 'nichts') {
+            warnings.push({
+                title: "⚠️ Unwirksame Renovierungsklausel (Unrenovierter Einzug)",
+                desc: "Sie übernehmen die Wohnung unrenoviert, sollen aber laut Vertrag renovieren? Ohne angemessenen finanziellen Ausgleich (z.B. mietfreie Zeit) ist die Abwälzung der Schönheitsreparaturen auf Sie unwirksam (BGH-Urteil). Sie übergeben die Wohnung beim Auszug lediglich besenrein."
+            });
+        }
+
+        // 3. Kleinreparaturen
+        const kleinrep = document.querySelector('input[name="kleinrep"]:checked').value;
+        if (kleinrep === 'hoch') {
+            warnings.push({
+                title: "⚠️ Fehlerhafte Kleinreparaturklausel",
+                desc: "Die Kostenobergrenze pro Einzelreparatur ist mit über 120 Euro zu hoch oder es fehlt eine Deckelung für das gesamte Jahr (meist 8% der Jahresmiete). <strong>Folge:</strong> Die Klausel kippt komplett. Der Vermieter muss alle Reparaturen selbst zahlen."
+            });
+        }
+
+        // 4. Haustiere
+        const tier = document.querySelector('input[name="tier"]:checked').value;
+        if (tier === 'verbot') {
+            warnings.push({
+                title: "⚠️ Unzulässiges generelles Haustierverbot",
+                desc: "Ein pauschales Verbot von Hunden und Katzen ist unwirksam. Der Vermieter muss immer im Einzelfall entscheiden, ob das Tier stört. Kleintiere dürfen ohnehin immer gehalten werden. Die Verbotsklausel in Ihrem Vertrag ist rechtlich wertlos."
+            });
+        }
+
+        // 5. Mindestmietdauer
+        const mindest = document.querySelector('input[name="mindest"]:checked').value;
+        if (mindest === 'lang') {
+            warnings.push({
+                title: "⚠️ Ungültiger Kündigungsverzicht",
+                desc: "Ein Kündigungsausschluss in Formularverträgen darf maximal für 4 Jahre geschlossen werden. Geht er darüber hinaus, ist die Klausel nichtig. Sie können in diesem Fall mit der normalen gesetzlichen Frist von 3 Monaten kündigen."
+            });
+        }
+
+        // 6. Miete
+        const miete = document.querySelector('input[name="miete"]:checked').value;
+        if (miete === 'staffelFalsch') {
+            warnings.push({
+                title: "⚠️ Unwirksame Staffelmiete",
+                desc: "Bei einer Staffelmiete muss der exakte Geldbetrag der Erhöhung (oder die neue Gesamtmiete) sowie das genaue Datum im Vertrag stehen. Prozentangaben reichen rechtlich nicht aus! Fehlen diese konkreten Zahlen, ist die Staffelklausel oft unwirksam."
+            });
+        } else if (miete === 'indexKombi') {
+            warnings.push({
+                title: "⚠️ Fehlerhafte Indexmiete",
+                desc: "Während einer laufenden Indexmiete sind andere 'normale' Mieterhöhungen (z.B. Anpassung an die ortsübliche Vergleichsmiete) gesetzlich strikt ausgeschlossen! Eine Klausel, die dem Vermieter beides erlaubt, benachteiligt Sie unangemessen."
+            });
+        }
+
+        // Render Results
+        resultBox.style.display = "block";
+        resultBox.innerHTML = "";
+
+        if (warnings.length === 0) {
+            resultBox.innerHTML = `
+                <div class="success-result">
+                    <h3 style="margin-top:0; display:flex; align-items:center; gap:8px;">✅ Keine Auffälligkeiten gefunden</h3>
+                    <p>Basierend auf Ihren Angaben enthält der Vertrag keine der typischen offensichtlichen Fallen. Die Klauseln scheinen den gesetzlichen Vorgaben zu entsprechen.</p>
+                    <p style="font-size: 0.9em; color: #555;">Hinweis: Dies ist eine automatisierte Einschätzung und garantiert keine lückenlose Rechtssicherheit.</p>
+                </div>
+            `;
+        } else {
+            let html = `<h3>Ergebnis: Wir haben ${warnings.length} problematische Klausel(n) gefunden!</h3>`;
+            html += `<p style="margin-bottom: 20px;">Die gute Nachricht: Wenn eine Klausel unwirksam ist, ist das zu Ihrem Vorteil. Die Klausel entfällt ersatzlos und es greift das mieterfreundliche Gesetz.</p>`;
+            
+            warnings.forEach(w => {
+                html += `
+                    <div class="warning-item">
+                        <h4>${w.title}</h4>
+                        <p style="margin:0;">${w.desc}</p>
+                    </div>
+                `;
+            });
+
+            html += `<p style="font-size: 0.9em; color: #555; margin-top: 20px;">Strategie-Tipp: Klären Sie den Vermieter nicht vorab über seine Fehler auf. Unterschreiben Sie den Vertrag. Die unwirksamen Klauseln können Ihnen später nicht zum Nachteil ausgelegt werden.</p>`;
+            resultBox.innerHTML = html;
+        }
+
+        // Scroll to results
+        resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+});
+</script>
+</body>
+</html>
