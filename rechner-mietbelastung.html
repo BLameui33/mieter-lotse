@@ -9,99 +9,209 @@
   <link rel="icon" href="/logo-lotse-fav.png">
   <link rel="stylesheet" href="/css/style.css">
   <style>
-      .calculator-container {
-          background-color: #ffffff;
-          border: 1px solid #d1d5db;
-          border-top: 5px solid #2196f3;
-          border-radius: 8px;
-          padding: 25px;
-          margin-top: 30px;
-          margin-bottom: 40px;
-          box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      }
-      .calc-section-title {
-          font-size: 1.2em;
-          color: #1a237e;
-          margin-bottom: 15px;
-          border-bottom: 2px solid #e3f2fd;
-          padding-bottom: 5px;
-      }
-      .input-group {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: 15px;
-          flex-wrap: wrap;
-      }
-      .input-group label {
-          flex: 1;
-          min-width: 200px;
-          font-weight: 500;
-      }
-      .input-wrapper {
-          display: flex;
-          align-items: center;
-          flex: 1;
-          min-width: 150px;
-      }
-      .input-wrapper input {
-          width: 100%;
-          padding: 10px;
-          border: 1px solid #ccc;
-          border-radius: 4px 0 0 4px;
-          text-align: right;
-          font-size: 1em;
-      }
-      .input-wrapper .currency {
-          background-color: #f5f5f5;
-          border: 1px solid #ccc;
-          border-left: none;
-          padding: 10px 15px;
-          border-radius: 0 4px 4px 0;
-          color: #555;
-      }
-      .result-box {
-          margin-top: 30px;
-          padding: 25px;
-          border-radius: 8px;
-          display: none;
-      }
-      .result-green { background-color: #e8f5e9; border: 2px solid #4caf50; }
-      .result-yellow { background-color: #fff8e1; border: 2px solid #ff9800; }
-      .result-red { background-color: #ffebee; border: 2px solid #f44336; }
-      
-      .progress-bar-bg {
-          background-color: #e0e0e0;
-          height: 25px;
-          border-radius: 15px;
-          width: 100%;
-          margin: 15px 0;
-          overflow: hidden;
-          position: relative;
-      }
-      .progress-bar-fill {
-          height: 100%;
-          border-radius: 15px;
-          transition: width 0.5s ease-in-out;
-          display: flex;
-          align-items: center;
-          justify-content: flex-end;
-          padding-right: 10px;
-          color: white;
-          font-weight: bold;
-          font-size: 0.9em;
-      }
-      .summary-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 15px;
-          margin-top: 20px;
-          background: rgba(255,255,255,0.6);
-          padding: 15px;
-          border-radius: 5px;
-      }
-      .summary-item strong { display: block; font-size: 1.2em; }
-  </style>
+  .calculator-container {
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-top: 4px solid #4da3ff;
+    border-radius: 8px;
+    padding: 25px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+
+  .calc-section-title {
+    font-size: 1.1em;
+    color: #1a3a5c;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e3f0ff;
+    padding-bottom: 5px;
+  }
+
+  .input-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .input-group label {
+    flex: 1;
+    min-width: 200px;
+    font-weight: 500;
+    color: #333;
+  }
+
+  .input-wrapper {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 150px;
+  }
+
+  .input-wrapper input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    text-align: right;
+    font-size: 1em;
+    transition: border-color 0.2s;
+  }
+
+  .input-wrapper input:focus {
+    outline: none;
+    border-color: #4da3ff;
+  }
+
+  .input-wrapper .currency {
+    background-color: #f0f7ff;
+    border: 1px solid #ccc;
+    border-left: none;
+    padding: 10px 15px;
+    border-radius: 0 4px 4px 0;
+    color: #4da3ff;
+    font-weight: 600;
+  }
+
+  /* Rechnen-Button */
+  #btnCalculate {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    font-size: 1.05em;
+    font-weight: 600;
+    background-color: #4da3ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  @media (hover: hover) {
+    #btnCalculate:hover {
+      background-color: #3390ff;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    }
+  }
+
+  #btnCalculate:active {
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  }
+
+  /* Ergebnis-Box */
+  .result-box {
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 8px;
+    display: none;
+    border: 1px solid #b5d4f4;
+    background-color: #f0f7ff;
+  }
+
+  .result-box h3 {
+    margin-top: 0;
+    font-size: 1.3em;
+    border-bottom: 1px solid #b5d4f4;
+    padding-bottom: 10px;
+    color: #1a3a5c;
+  }
+
+  /* Fortschrittsbalken */
+  .progress-bar-bg {
+    background-color: #e3f0ff;
+    height: 28px;
+    border-radius: 6px;
+    width: 100%;
+    margin: 15px 0;
+    overflow: hidden;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.5s ease-in-out, background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 12px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9em;
+  }
+
+  /* Ergebnis-Farben – alle in Blautönen mit semantischen Akzenten */
+  .result-green { background-color: #f0f7ff; border: 1px solid #4da3ff; }
+  .result-yellow { background-color: #f0f7ff; border: 1px solid #4da3ff; }
+  .result-red    { background-color: #f0f7ff; border: 1px solid #4da3ff; }
+
+  /* Balkenfarben bleiben semantisch (grün/gelb/rot) für schnelle Lesbarkeit */
+  .bar-good   { background-color: #2e9e6b; }
+  .bar-warn   { background-color: #e8a020; }
+  .bar-danger { background-color: #d94f4f; }
+
+  /* Kennzahlen-Grid */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .summary-item {
+    background-color: #e3f0ff;
+    border-radius: 6px;
+    padding: 12px 15px;
+  }
+
+  .summary-item span {
+    display: block;
+    font-size: 0.82em;
+    color: #4a6a8a;
+    margin-bottom: 4px;
+  }
+
+  .summary-item strong {
+    display: block;
+    font-size: 1.25em;
+    color: #1a3a5c;
+  }
+
+  /* Action-Hint-Bereich */
+  #actionHint {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #333;
+    background-color: #e3f0ff;
+    border-radius: 6px;
+    padding: 15px;
+  }
+
+  /* Bewerben-Button im Ergebnis */
+  #actionHint a.button-primary {
+    display: inline-block;
+    background-color: #4da3ff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s;
+  }
+
+  #actionHint a.button-primary:hover {
+    background-color: #3390ff;
+  }
+
+  @media (max-width: 600px) {
+    .summary-grid { grid-template-columns: 1fr; }
+    .input-group { flex-direction: column; align-items: stretch; }
+    .input-wrapper { min-width: 100%; }
+  }
+</style>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -182,9 +292,9 @@
   </div>
 </div>
 
-  <a href="wohnungsbewerbung.html" class="category-badge" style="display: inline-block; background-color: #e3f2fd; color: #0d47a1; border: 1px solid #90caf9; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-weight: 500; transition: background-color 0.2s;">
-    <span style="margin-right: 5px;"></span> <strong>Bewerbungs-Hub:</strong> Entdecken Sie alle Tools für die Wohnungssuche
-  </a>
+  <a href="wohnungsbewerbung.html" class="category-badge">
+   Tipp: Entdecken Sie hier alle 5 kostenlosen Tools für Ihre perfekte Wohnungsbewerbung im großen Hub!
+</a>
 
   <div class="info-box">
     <p>
@@ -219,10 +329,8 @@
     <strong>Ihre Daten bleiben absolut privat:</strong> Alle Angaben zu Ihrem Gehalt und Ihrer Wunschmiete werden ausschließlich lokal im Zwischenspeicher Ihres Webbrowsers verarbeitet. Es findet keine Übertragung an uns oder an Dritte statt.
   </div>
 
-  <div class="kl-highlight kl-author-box" aria-label="Autor und Aktualisierung" style="background-color: #f5f5f5; border: 1px solid #e0e0e0; padding: 15px; margin-top: 20px; border-radius: 4px; display: flex; align-items: center; gap: 10px;">
-    <strong>Autor:</strong> <a id="kl-page-author" href="ueber.html" target="_blank" style="color: #2196f3; text-decoration: none;">Mieter-Lotse Team</a>
-    <span class="kl-sep" style="color: #9e9e9e;">•</span>
-    <strong>Letzte Aktualisierung:</strong> <span id="kl-page-lastupdated">01.05.2026</span>
+  <div class="highlight-box pruefdatum-box" role="note" aria-label="Redaktionell geprüft" style="margin-top: 15px; margin-bottom: 30px;">
+    <p><strong>Redaktionell geprüft am:</strong> <span id="pruefdatum">01.05.2026</span></p>
   </div>
 
   <!-- CALCULATOR SECTION -->
@@ -454,21 +562,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (ratio <= 30) {
             resultBox.classList.add("result-green");
-            bar.style.backgroundColor = "#2e7d32";
+            bar.className = "progress-bar-fill bar-good";
             title.innerHTML = "✅ Perfekt! Sehr gute Bonität.";
             text.innerHTML = `Ihre Mietbelastung liegt bei hervorragenden <strong>${ratio.toFixed(1)} %</strong>. Vermieter lieben diesen Wert. Ihr Einkommen reicht völlig aus, um diese Wohnung langfristig sicher zu bezahlen. Die Wohnungssuche sollte aus finanzieller Sicht kein Problem für Sie sein.`;
             hint.innerHTML = `<a href="generator-bewerbungsmappe.html" class="button button-primary" style="display:inline-block;">Jetzt Bewerbungsmappe erstellen</a>`;
         } 
         else if (ratio > 30 && ratio <= 40) {
             resultBox.classList.add("result-yellow");
-            bar.style.backgroundColor = "#ff9800";
+            bar.className = "progress-bar-fill bar-warn";
             title.innerHTML = "⚠️ Akzeptabel, aber an der Grenze.";
             text.innerHTML = `Ihre Mietbelastung liegt bei <strong>${ratio.toFixed(1)} %</strong>. Damit liegen Sie leicht über der perfekten 30%-Regel, aber noch im Rahmen dessen, was viele Vermieter in teuren Großstädten akzeptieren. Sie sollten jedoch keine negativen Schufa-Einträge haben.`;
             hint.innerHTML = `<p style="font-size:0.9em; font-weight:bold;">Tipp für das Anschreiben:</p><p style="font-size:0.9em; margin-top:-5px;">Betonen Sie in Ihrer Bewerbung zwingend Ihr unbefristetes Arbeitsverhältnis oder weisen Sie auf Ersparnisse hin, um Bedenken auszuräumen.</p>`;
         } 
         else {
             resultBox.classList.add("result-red");
-            bar.style.backgroundColor = "#c62828";
+            bar.className = "progress-bar-fill bar-danger";
             title.innerHTML = "❌ Kritisch! Sehr hohes Ablehnungsrisiko.";
             text.innerHTML = `Ihre Mietbelastung liegt bei <strong>${ratio.toFixed(1)} %</strong> und verschlingt einen Großteil Ihres Einkommens. Bei großen Hausverwaltungen greifen hier oft automatische Filter, die Ihre Bewerbung sofort aussortieren, da das Risiko eines Zahlungsausfalls als zu hoch bewertet wird.`;
             hint.innerHTML = `<p style="font-size:0.9em; font-weight:bold; color: #c62828;">Wie Sie die Wohnung trotzdem bekommen:</p><p style="font-size:0.9em; margin-top:-5px;">Sie benötigen Sicherheiten! Bieten Sie dem Vermieter direkt im ersten Anschreiben eine <strong>Mietbürgschaft</strong> (z.B. der Eltern) an. Ohne einen solventen Bürgen sind Ihre Chancen leider sehr gering.</p>`;

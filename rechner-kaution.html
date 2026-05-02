@@ -9,99 +9,184 @@
   <link rel="icon" href="/logo-lotse-fav.png">
   <link rel="stylesheet" href="/css/style.css">
   <style>
-      .calculator-container {
-          background-color: #ffffff;
-          border: 1px solid #d1d5db;
-          border-top: 5px solid #009688;
-          border-radius: 8px;
-          padding: 25px;
-          margin-top: 30px;
-          margin-bottom: 40px;
-          box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      }
-      .calc-section-title {
-          font-size: 1.2em;
-          color: #00796b;
-          margin-bottom: 15px;
-          border-bottom: 2px solid #e0f2f1;
-          padding-bottom: 5px;
-      }
-      .input-group {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: 15px;
-          flex-wrap: wrap;
-      }
-      .input-group label {
-          flex: 1;
-          min-width: 200px;
-          font-weight: 500;
-      }
-      .input-wrapper {
-          display: flex;
-          align-items: center;
-          flex: 1;
-          min-width: 150px;
-      }
-      .input-wrapper input {
-          width: 100%;
-          padding: 10px;
-          border: 1px solid #ccc;
-          border-radius: 4px 0 0 4px;
-          text-align: right;
-          font-size: 1em;
-      }
-      .input-wrapper .addon {
-          background-color: #f5f5f5;
-          border: 1px solid #ccc;
-          border-left: none;
-          padding: 10px 15px;
-          border-radius: 0 4px 4px 0;
-          color: #555;
-      }
-      .result-box {
-          margin-top: 30px;
-          padding: 25px;
-          border-radius: 8px;
-          display: none;
-          background-color: #f1f8f7;
-          border: 2px solid #009688;
-      }
-      .summary-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 15px;
-          margin-top: 20px;
-      }
-      .summary-item {
-          background: #fff;
-          padding: 15px;
-          border-radius: 5px;
-          border: 1px solid #cfd8dc;
-      }
-      .summary-item strong { 
-          display: block;
-          font-size: 1.3em; 
-          color: #00796b;
-          margin-top: 5px; 
-      }
-      .alert-red {
-          color: #c62828;
-          font-weight: bold;
-          background-color: #ffebee;
-          padding: 10px;
-          border-radius: 4px;
-          margin-top: 10px;
-          border-left: 4px solid #c62828;
-      }
-      .timeline-box {
-          margin-top: 20px;
-          padding: 15px;
-          background-color: #fff;
-          border-left: 4px solid #2196f3;
-      }
-  </style>
+  .calculator-container {
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-top: 4px solid #4da3ff;
+    border-radius: 8px;
+    padding: 25px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+
+  .calc-section-title {
+    font-size: 1.1em;
+    color: #1a3a5c;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e3f0ff;
+    padding-bottom: 5px;
+  }
+
+  .input-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .input-group label {
+    flex: 1;
+    min-width: 200px;
+    font-weight: 500;
+    color: #333;
+  }
+
+  .input-wrapper {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 150px;
+  }
+
+  .input-wrapper input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    text-align: right;
+    font-size: 1em;
+    transition: border-color 0.2s;
+  }
+
+  .input-wrapper input[type="date"] {
+    border-radius: 4px;
+    text-align: left;
+  }
+
+  .input-wrapper input:focus {
+    outline: none;
+    border-color: #4da3ff;
+  }
+
+  .input-wrapper .addon {
+    background-color: #f0f7ff;
+    border: 1px solid #ccc;
+    border-left: none;
+    padding: 10px 15px;
+    border-radius: 0 4px 4px 0;
+    color: #4da3ff;
+    font-weight: 600;
+  }
+
+  #btnCalcDeposit {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    font-size: 1.05em;
+    font-weight: 600;
+    background-color: #4da3ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  @media (hover: hover) {
+    #btnCalcDeposit:hover {
+      background-color: #3390ff;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    }
+  }
+
+  #btnCalcDeposit:active {
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  }
+
+  .result-box {
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 8px;
+    display: none;
+    background-color: #f0f7ff;
+    border: 1px solid #b5d4f4;
+  }
+
+  .result-box h3 {
+    margin-top: 0;
+    color: #1a3a5c;
+    border-bottom: 1px solid #b5d4f4;
+    padding-bottom: 10px;
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .summary-item {
+    background-color: #e3f0ff;
+    border-radius: 6px;
+    padding: 12px 15px;
+    border: none;
+  }
+
+  .summary-item span {
+    display: block;
+    font-size: 0.82em;
+    color: #4a6a8a;
+    margin-bottom: 4px;
+  }
+
+  .summary-item strong {
+    display: block;
+    font-size: 1.25em;
+    color: #1a3a5c;
+    margin-top: 0;
+  }
+
+  .alert-red {
+    color: #a32d2d;
+    font-weight: 600;
+    background-color: #fcebeb;
+    padding: 12px 15px;
+    border-radius: 6px;
+    margin-top: 15px;
+    border-left: 4px solid #d94f4f;
+  }
+
+  .timeline-box {
+    margin-top: 20px;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    border-left: 4px solid #4da3ff;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .timeline-box h4 {
+    margin-top: 0;
+    color: #1a3a5c;
+  }
+
+  .timeline-box ul {
+    margin-bottom: 0;
+    padding-left: 20px;
+    font-size: 0.95em;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    .summary-grid { grid-template-columns: 1fr; }
+    .input-group { flex-direction: column; align-items: stretch; }
+    .input-wrapper { min-width: 100%; }
+  }
+</style>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -186,10 +271,8 @@
     <strong>Datensicherheit:</strong> Die Eingabe Ihrer Mietkosten dient nur der Berechnung in Ihrem Browser. Es findet keine Übertragung dieser finanziellen Daten an unsere Server statt.
   </div>
 
-  <div class="kl-highlight kl-author-box" aria-label="Autor und Aktualisierung" style="background-color: #f5f5f5; border: 1px solid #e0e0e0; padding: 15px; margin-top: 20px; border-radius: 4px; display: flex; align-items: center; gap: 10px;">
-    <strong>Autor:</strong> <a id="kl-page-author" href="ueber.html" target="_blank" style="color: #2196f3; text-decoration: none;">Mieter-Lotse Team</a>
-    <span class="kl-sep" style="color: #9e9e9e;">•</span>
-    <strong>Letzte Aktualisierung:</strong> <span id="kl-page-lastupdated">01.05.2026</span>
+  <div class="highlight-box pruefdatum-box" role="note" aria-label="Redaktionell geprüft" style="margin-top: 15px; margin-bottom: 30px;">
+    <p><strong>Redaktionell geprüft am:</strong> <span id="pruefdatum">01.05.2026</span></p>
   </div>
 
   <div class="calculator-container" id="calculator">

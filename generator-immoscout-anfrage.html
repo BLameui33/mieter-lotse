@@ -40,7 +40,7 @@
   </script>
   <style>
       #generatedTextResult {
-          display: none;
+          
           background-color: #f8f9fa;
           border: 2px solid #4caf50;
           border-radius: 8px;
@@ -194,7 +194,7 @@
 
   <!-- Container for the generated Text -->
   <div id="generatedTextContainer" style="display: none;">
-      <div id="generatedTextResult"></div>
+      <textarea id="generatedTextResult" rows="20" style="width:100%; font-family: inherit; font-size: 1em; line-height: 1.5;"></textarea>
       <button type="button" id="copyTextBtn" class="copy-btn">📋 Text in die Zwischenablage kopieren</button>
       <p style="font-size: 0.85em; color: #555; margin-top: 10px;">Tipp: Kopieren Sie diesen Text und fügen Sie ihn direkt in das Nachrichtenfeld bei ImmoScout, Kleinanzeigen oder Immowelt ein.</p>
   </div>
@@ -397,13 +397,14 @@ ${name}
         const msg = buildMessageText();
         const resBox = document.getElementById('generatedTextResult');
         resBox.textContent = msg;
+        resBox.style.display = 'block';
         document.getElementById('generatedTextContainer').style.display = 'block';
         resBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
 
     // Copy to Clipboard
     document.getElementById('copyTextBtn').addEventListener('click', function() {
-        const textToCopy = document.getElementById('generatedTextResult').textContent;
+        const textToCopy = document.getElementById('generatedTextResult').value;
         navigator.clipboard.writeText(textToCopy).then(() => {
             const btn = document.getElementById('copyTextBtn');
             const originalText = btn.textContent;

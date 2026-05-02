@@ -129,6 +129,31 @@
 .result-green { background-color: #e8f5e9; border: 1px solid #4caf50; color: #2e7d32; }
 .result-yellow { background-color: #fff8e1; border: 1px solid #ff9800; color: #f57f17; }
 .result-red { background-color: #ffebee; border: 1px solid #f44336; color: #c62828; }
+
+.button-primary {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.05em;
+  font-weight: 600;
+  background-color: #4da3ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+@media (hover: hover) {
+  .button-primary:hover {
+    background-color: #3390ff;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  }
+}
+
+.button-primary:active {
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
 </style>
 </head>
 <body>
@@ -181,7 +206,7 @@
     <label for="calc-miete"><strong>Warmmiete der gewünschten Wohnung:</strong></label>
     <input type="number" id="calc-miete" placeholder="z.B. 1100" required>
 
-    <button type="button" id="calc-btn" class="button-primary" style="width: 100%;">Budget checken</button>
+    <button type="button" id="calc-btn" class="button-primary">Budget checken</button>
 
     <div id="calc-result" class="result-box">
       <!-- Ergebnis wird per JS eingefügt -->

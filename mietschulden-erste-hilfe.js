@@ -10,7 +10,7 @@ function stufeAmpel({ rueckstand, monate, mahnung, kuendigung }){
   const hatKuendigung = kuendigung === "ja";
 
   if (hatKuendigung || m >= 2 || rs >= 1000){
-    return { farbe: "rot", label: "Akut", beschr: "Sofort handeln – Kündigung/akute Räumungsgefahr möglich." };
+    return { farbe: "rot", label: "Akut", beschr: "Sie sollten handeln – Kündigung/akute Räumungsgefahr möglich." };
   }
   if (hatMahnung || m === 1 || (rs >= 200 && rs < 1000)){
     return { farbe: "gelb", label: "Dringend", beschr: "Kurzfristig handeln – Rückstand zügig klären." };
@@ -125,10 +125,11 @@ leider bin ich in eine finanzielle Notlage geraten, weshalb aktuell ein Mietrüc
 
 Um die Außenstände abzubauen, schlage ich Ihnen hiermit folgende verbindliche Ratenzahlung vor:`;
 
-  doc.text(bodyText, 25, 125, { maxWidth: 160, lineHeightFactor: 1.5 });
+  const bodyLines = doc.splitTextToSize(bodyText, 160);
+const lineHeight = 6.5;
+doc.text(bodyLines, 25, 125, { lineHeightFactor: 1.5 });
 
-  // --- NEU: DER KONKRETE RATENPLAN (TABELLE / LISTE) ---
-  let startY = 160;
+let startY = 125 + (bodyLines.length * lineHeight) + 10;
   doc.setFont("helvetica", "bold");
   doc.text("Vorgeschlagener Tilgungsplan (zusätzlich zur laufenden Miete):", 25, startY);
   
