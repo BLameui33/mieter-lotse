@@ -921,6 +921,30 @@ details p {
 }
 
 
+div[style*="background-color: #f8f9fa"][style*="border-top: 2px solid #e0e0e0"] {
+  padding: 30px 20px !important;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+div[style*="background-color: #f8f9fa"][style*="border-top: 2px solid #e0e0e0"] h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+div[style*="background-color: #f8f9fa"][style*="border-top: 2px solid #e0e0e0"] a {
+  color: #4da3ff !important;
+  text-decoration: none !important;
+  border: 1px solid #4da3ff;
+  padding: 6px 16px;
+  border-radius: 6px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+div[style*="background-color: #f8f9fa"][style*="border-top: 2px solid #e0e0e0"] a:hover {
+  background-color: #4da3ff;
+  color: #ffffff !important;
+}
+
 
 
 
