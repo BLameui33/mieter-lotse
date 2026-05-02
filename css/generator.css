@@ -702,29 +702,41 @@ details p {
 
 
 div[style*="background-color: #f8f9fa"][style*="border-top: 2px solid #e0e0e0"] {
-  padding: 30px 20px !important;
-  border-bottom: 2px solid #e0e0e0;
+  background-color: #ffffff !important;
+  border-top: none !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 8px !important;
+  max-width: 680px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 28px 32px !important;
 }
 
 div[style*="background-color: #f8f9fa"][style*="border-top: 2px solid #e0e0e0"] h3 {
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-size: 0.75em !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: #888 !important;
+  margin-bottom: 12px !important;
+}
+
+div[style*="background-color: #f8f9fa"][style*="border-top: 2px solid #e0e0e0"] p {
+  color: #444 !important;
 }
 
 div[style*="background-color: #f8f9fa"][style*="border-top: 2px solid #e0e0e0"] a {
   color: #4da3ff !important;
   text-decoration: none !important;
-  border: 1px solid #4da3ff;
-  padding: 6px 16px;
-  border-radius: 6px;
-  transition: background-color 0.2s, color 0.2s;
+  font-weight: 600 !important;
+  border-bottom: 1px solid #4da3ff !important;
+  padding-bottom: 1px !important;
 }
 
 div[style*="background-color: #f8f9fa"][style*="border-top: 2px solid #e0e0e0"] a:hover {
-  background-color: #4da3ff;
-  color: #ffffff !important;
+  color: #3390ff !important;
+  border-bottom-color: #3390ff !important;
 }
-
 
 
 
