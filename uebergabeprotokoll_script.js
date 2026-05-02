@@ -100,10 +100,10 @@ document.addEventListener('DOMContentLoaded', function() {
             doc.setFont("times", "normal");
             items.forEach(item => {
                 doc.text(item + ":", margin + 5, y);
-                doc.line(margin + 30, y, pageWidth - margin, y); // Linie für Notizen
+                doc.line(margin + 30, y + 1.5, pageWidth - margin, y + 1.5); // Linie 1.5mm unterhalb der Textbasislinie
                 y += lineHeight;
             });
-            doc.line(margin, y - lineHeight, pageWidth - margin, y - lineHeight);
+            doc.line(margin, y - lineHeight + 1.5, pageWidth - margin, y - lineHeight + 1.5);
             y += smallLineHeight;
         }
 
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (row[1]) { // Nur Zeilen mit Zählernummer anzeigen
                 doc.text(row[0], margin, y);
                 doc.text(row[1], margin + 40, y);
-                doc.line(margin + 90, y, pageWidth - margin, y);
+                doc.line(margin + 90, y + 1.5, pageWidth - margin, y + 1.5);
                 y += lineHeight;
             }
         });
@@ -185,9 +185,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         addSectionTitle("5. Sonstige Anmerkungen / Vereinbarungen");
-        doc.line(margin, y, pageWidth - margin, y); y += lineHeight;
-        doc.line(margin, y, pageWidth - margin, y); y += lineHeight;
-        doc.line(margin, y, pageWidth - margin, y); y += lineHeight;
+        doc.line(margin, y + 1.5, pageWidth - margin, y + 1.5); y += lineHeight;
+        doc.line(margin, y + 1.5, pageWidth - margin, y + 1.5); y += lineHeight;
+        doc.line(margin, y + 1.5, pageWidth - margin, y + 1.5); y += lineHeight;
 
         addSectionTitle("6. Unterschriften");
         y += lineHeight;
