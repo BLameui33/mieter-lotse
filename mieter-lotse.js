@@ -7,7 +7,8 @@
  *
  * Usage:
  * 1) Datei speichern unter /js/Mieter-lotse.js
- * 2) <script src="/js/Mieter-lotse.js" defer></script> vor </body> einfügen
+ * 2) <script src="/js/Mieter-lotse.js" defer></script> vor <script src="paypal-buttons.js"></script>
+</body> einfügen
  *
  * Elemente (falls vorhanden) werden automatisch befüllt:
  *  - #kl-page-author oder #kl-page-author-inline
@@ -198,6 +199,7 @@ footer { margin-top:18px; font-size:11px; color:#555; border-top:1px solid #eee;
     }, ${CONFIG.printDelayMs});
   };
 </script>
+<script src="paypal-buttons.js"></script>
 </body>
 </html>`;
   }
