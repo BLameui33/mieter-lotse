@@ -627,8 +627,10 @@ details p {
 }
 .info-box.warning {
   border-left: 4px solid #4da3ff !important;
-  background: #f4f9ff;
-  border-radius: 8px;
+  background-color: #f4f9ff !important;
+  padding: 20px !important; 
+  margin-top: 20px !important; 
+  border-radius: 8px; 
 }
 
 @media (max-width: 600px) {
