@@ -1,6 +1,7 @@
 [
   {
     "slug": "schimmel",
+    "menu_title": "Schimmelbefall",
     "seo_title": "Mietminderung Schimmel: Schreiben online erstellen (PDF)",
     "seo_desc": "Schimmel in der Wohnung? Erstellen Sie kostenlos ein rechtssicheres Schreiben zur Mietminderung wegen Schimmelbefall an den Vermieter.",
     "h1": "Mietminderungsschreiben wegen Schimmelbefall erstellen",
@@ -15,6 +16,7 @@
   },
   {
     "slug": "heizungsausfall",
+    "menu_title": "Heizungsausfall",
     "seo_title": "Mietminderung Heizungsausfall: Musterbrief & PDF-Vorlage",
     "seo_desc": "Heizung kaputt oder kalt? Berechnen und generieren Sie kostenlos Ihr Schreiben zur Mietminderung bei Heizungsausfall. Direkt als PDF.",
     "h1": "Mietminderungsschreiben bei Heizungsausfall erstellen",
@@ -29,6 +31,7 @@
   },
   {
     "slug": "warmwasserausfall",
+    "menu_title": "Warmwasserausfall",
     "seo_title": "Mietminderung kein Warmwasser: Muster & PDF-Generator",
     "seo_desc": "Warmwasser geht nicht? Berechnen Sie die Mietminderung bei Warmwasserausfall und erstellen Sie das Anschreiben als kostenloses PDF.",
     "h1": "Mietminderungsschreiben wegen Warmwasserausfalls",
@@ -43,6 +46,7 @@
   },
   {
     "slug": "baulaerm-nachbarn",
+    "menu_title": "Lärmbelästigung",
     "seo_title": "Mietminderung Lärmbelästigung & Baulärm | PDF-Schreiben",
     "seo_desc": "Ruhestörung durch Baustelle oder Nachbarn? Generieren Sie ein rechtssicheres Schreiben zur Mietminderung wegen Lärm.",
     "h1": "Mietminderungsschreiben wegen erheblicher Lärmbelästigung",
@@ -57,6 +61,7 @@
   },
   {
     "slug": "wasserschaden",
+    "menu_title": "Wasserschaden",
     "seo_title": "Mietminderung Wasserschaden & Feuchtigkeit | PDF Vorlage",
     "seo_desc": "Feuchte Wände oder Decken? Berechnen Sie Ihre Mietminderung bei einem Wasserschaden und erstellen Sie das Schreiben an den Vermieter.",
     "h1": "Mietminderungsschreiben wegen eines Wasserschadens",
@@ -71,6 +76,7 @@
   },
   {
     "slug": "geruest-plane",
+    "menu_title": "Baugerüst & Plane",
     "seo_title": "Mietminderung Baugerüst & Plane vor Fenstern | PDF",
     "seo_desc": "Wohnung eingerüstet und verdunkelt? Erstellen Sie kostenlos ein Schreiben zur Mietminderung wegen eines Baugerüsts vor den Fenstern.",
     "h1": "Mietminderungsschreiben wegen Einrüstung / Baugerüst",
@@ -85,6 +91,7 @@
   },
   {
     "slug": "fahrstuhlausfall",
+    "menu_title": "Fahrstuhlausfall",
     "seo_title": "Mietminderung Fahrstuhlausfall / Aufzug defekt | PDF",
     "seo_desc": "Aufzug im Mietshaus über längere Zeit defekt? Berechnen Sie Ihre Mietminderung und generieren Sie das Anschreiben kostenlos.",
     "h1": "Mietminderungsschreiben wegen Ausfalls des Fahrstuhls",
@@ -99,6 +106,7 @@
   },
   {
     "slug": "undichte-fenster",
+    "menu_title": "Undichte Fenster",
     "seo_title": "Mietminderung undichte Fenster & Zugluft | PDF Vorlage",
     "seo_desc": "Es zieht durch die Fenster und die Heizkosten steigen? Schreiben zur Mietminderung wegen undichter Fenster kostenlos erstellen.",
     "h1": "Mietminderungsschreiben wegen undichter Fenster (Zugluft)",
