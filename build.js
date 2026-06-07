@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const outputDir = path.join(__dirname, 'src', 'ml');
+const outputDir = path.join(__dirname, 'docs', 'ml');
 if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
 
 console.log('🚀 Starte Generierung der Mieter-Lotse pSEO-Seiten...\n');
@@ -76,7 +76,7 @@ function buildMietminderung() {
     });
 
     // Info-Seite aktualisieren
-    const infoPagePath = path.join(__dirname, 'src', 'info-mietminderung.html');
+    const infoPagePath = path.join(__dirname, 'docs', 'info-mietminderung.html');
     if (fs.existsSync(infoPagePath)) {
         let infoPageContent = fs.readFileSync(infoPagePath, 'utf8');
         let dropdownHtml = `
@@ -161,7 +161,7 @@ function buildMaengelanzeige() {
     });
 
     // Info-Seite aktualisieren
-    const infoPagePath = path.join(__dirname, 'src', 'info-maengelanzeige.html');
+    const infoPagePath = path.join(__dirname, 'docs', 'info-maengelanzeige.html');
     if (fs.existsSync(infoPagePath)) {
         let infoPageContent = fs.readFileSync(infoPagePath, 'utf8');
         let dropdownHtml = `
@@ -241,7 +241,7 @@ function buildNebenkosten() {
     });
 
     // Info-Seite aktualisieren
-    const infoPagePath = path.join(__dirname, 'src', 'info-nebenkosten.html');
+    const infoPagePath = path.join(__dirname, 'docs', 'info-nebenkosten.html');
     if (fs.existsSync(infoPagePath)) {
         let infoPageContent = fs.readFileSync(infoPagePath, 'utf8');
         let dropdownHtml = `
@@ -321,7 +321,7 @@ function buildWohnungsbewerbung() {
     });
 
     // Info-Seite aktualisieren
-    const infoPagePath = path.join(__dirname, 'src', 'info-wohnungsbewerbung.html');
+    const infoPagePath = path.join(__dirname, 'docs', 'info-wohnungsbewerbung.html');
     if (fs.existsSync(infoPagePath)) {
         let infoPageContent = fs.readFileSync(infoPagePath, 'utf8');
         let dropdownHtml = `
@@ -404,7 +404,7 @@ function buildVermieterkuendigung() {
     });
 
     // Info-Seite aktualisieren
-    const infoPagePath = path.join(__dirname, 'src', 'info-kuendigung-vermieter.html');
+    const infoPagePath = path.join(__dirname, 'docs', 'info-kuendigung-vermieter.html');
     if (fs.existsSync(infoPagePath)) {
         let infoPageContent = fs.readFileSync(infoPagePath, 'utf8');
         let dropdownHtml = `
@@ -485,7 +485,7 @@ function buildUntervermietung() {
     });
 
     // Info-Seite aktualisieren
-    const infoPagePath = path.join(__dirname, 'src', 'info-untervermietung.html');
+    const infoPagePath = path.join(__dirname, 'docs', 'info-untervermietung.html');
     if (fs.existsSync(infoPagePath)) {
         let infoPageContent = fs.readFileSync(infoPagePath, 'utf8');
         let dropdownHtml = `
@@ -567,7 +567,7 @@ function buildMieterhoehung() {
     });
 
     // Info-Seite aktualisieren
-    const infoPagePath = path.join(__dirname, 'src', 'info-mieterhoehung.html');
+    const infoPagePath = path.join(__dirname, 'docs', 'info-mieterhoehung.html');
     if (fs.existsSync(infoPagePath)) {
         let infoPageContent = fs.readFileSync(infoPagePath, 'utf8');
         let dropdownHtml = `
@@ -677,7 +677,7 @@ function buildWohnflaecheRueckforderung() {
     });
 
     // Info-Seite aktualisieren (Hub-Seite)
-    const infoPagePath = path.join(__dirname, 'src', 'info-wohnflaeche-rueckforderung.html');
+    const infoPagePath = path.join(__dirname, 'docs', 'info-wohnflaeche-rueckforderung.html');
     if (fs.existsSync(infoPagePath)) {
         let infoPageContent = fs.readFileSync(infoPagePath, 'utf8');
         let dropdownHtml = `
