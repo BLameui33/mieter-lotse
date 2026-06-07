@@ -1,0 +1,101 @@
+[
+  {
+    "slug": "hausmeister",
+    "menu_title": "Hausmeisterkosten",
+    "seo_title": "Widerspruch Nebenkosten: Hausmeister | PDF-Vorlage",
+    "seo_desc": "Hausmeisterkosten in der Nebenkostenabrechnung zu hoch? Oft sind unzulässige Reparaturen enthalten. Kostenloser Generator für Ihren Widerspruch.",
+    "h1": "Widerspruch: Unzulässige Hausmeisterkosten in der Abrechnung",
+    "info_titel": "Achtung bei Hausmeisterkosten: Reparaturen sind Vermietersache!",
+    "info_text": "Hausmeisterkosten gehören zu den am häufigsten fehlerhaften Positionen. Der Grund: Hausmeister übernehmen im Alltag oft auch Reparaturen (Instandhaltung) oder Verwaltungsaufgaben (z. B. Wohnungsübergaben). Diese Kosten dürfen nicht auf Sie als Mieter umgelegt werden. Der Vermieter muss sie nach dem sogenannten Trennungsprinzip sauber herausrechnen.",
+    "prefill_position": "Hausmeisterkosten / Hauswart",
+    "prefill_begruendung": "Ich widerspreche der Position 'Hausmeisterkosten'. In den abgerechneten Kosten sind augenscheinlich auch Instandhaltungsarbeiten, Reparaturen oder Verwaltungstätigkeiten enthalten. Solche Kosten sind gemäß § 1 Abs. 2 und § 2 Nr. 14 BetrKV nicht umlagefähig. Ich fordere Sie auf, die Kosten nach dem Trennungsprinzip nachvollziehbar darzulegen und den nicht umlagefähigen Anteil herauszurechnen."
+  },
+  {
+    "slug": "gartenpflege",
+    "menu_title": "Gartenpflege",
+    "seo_title": "Widerspruch Nebenkosten: Gartenpflege | PDF-Vorlage",
+    "seo_desc": "Widerspruch gegen Gartenpflegekosten in der Betriebskostenabrechnung. Oft werden unzulässige Neubepflanzungen abgerechnet. Jetzt PDF erstellen.",
+    "h1": "Widerspruch gegen die Abrechnung von Gartenpflegekosten",
+    "info_titel": "Gartenpflege: Nur laufende Pflegekosten sind erlaubt",
+    "info_text": "Regelmäßiges Rasenmähen, Heckenschneiden und Unkrautjäten dürfen abgerechnet werden. Aber: Wenn der Vermieter kranke Bäume nach einem Sturm fällen lässt, den Garten nach Jahren komplett neu anlegt oder teure Gartengeräte (wie einen Rasentraktor) kauft, sind das Instandsetzungs- oder Anschaffungskosten. Diese muss er selbst zahlen.",
+    "prefill_position": "Gartenpflegekosten",
+    "prefill_begruendung": "Ich beanstande die umgelegten Kosten für die Gartenpflege. Umlagefähig sind gemäß § 2 Nr. 10 BetrKV ausschließlich die laufenden, regelmäßig wiederkehrenden Pflegekosten. Kosten für das Fällen von Altbäumen, die Beseitigung von Sturmschäden oder eine komplette strukturelle Neubepflanzung stellen keine Betriebskosten dar. Ich bitte um eine Bereinigung der Abrechnung."
+  },
+  {
+    "slug": "verspaetet",
+    "menu_title": "Verfristet (Abrechnung zu spät)",
+    "seo_title": "Widerspruch verfristete Nebenkostenabrechnung | PDF Vorlage",
+    "seo_desc": "Nebenkostenabrechnung zu spät erhalten? Nach Ablauf von 12 Monaten verfällt die Nachforderung (§ 556 BGB). Erstellen Sie hier Ihren Widerspruch.",
+    "h1": "Widerspruch wegen verspäteter Nebenkostenabrechnung",
+    "info_titel": "Die 12-Monats-Ausschlussfrist: Ist der Vermieter zu spät?",
+    "info_text": "Der Vermieter hat genau ein Jahr Zeit, um Ihnen die Abrechnung nach Ende des Abrechnungszeitraums zukommen zu lassen (Beispiel: Für das Kalenderjahr 2024 muss die Abrechnung spätestens am 31.12.2025 in Ihrem Briefkasten sein). Trifft das Schreiben auch nur einen Tag zu spät ein, ist eine Nachforderung gesetzlich ausgeschlossen – es sei denn, der Vermieter hat die Verspätung nicht selbst verschuldet.",
+    "prefill_position": "Abrechnung ist formell verfristet (§ 556 Abs. 3 BGB)",
+    "prefill_begruendung": "Die vorliegende Nebenkostenabrechnung ist mir erst nach Ablauf der gesetzlichen zwölfmonatigen Abrechnungsfrist des § 556 Abs. 3 BGB zugegangen. Die Geltendmachung einer Nachforderung ist damit gesetzlich ausgeschlossen. Ein etwaiges Guthaben zu meinen Gunsten bleibt von dieser Verfristung unberührt und ist umgehend an mich auszuzahlen."
+  },
+  {
+    "slug": "verteilerschluessel",
+    "menu_title": "Falscher Verteilerschlüssel",
+    "seo_title": "Widerspruch Nebenkosten: Verteilerschlüssel | PDF-Vorlage",
+    "seo_desc": "Wird nach Personen statt nach Quadratmetern abgerechnet? Widersprechen Sie einem falschen Verteilerschlüssel in der Nebenkostenabrechnung.",
+    "h1": "Widerspruch: Falscher Verteilerschlüssel angewendet",
+    "info_titel": "Wurde richtig umgelegt? Der Verteilerschlüssel",
+    "info_text": "Wenn im Mietvertrag kein konkreter Umlageschlüssel vereinbart wurde, gilt das Gesetz: Betriebskosten müssen zwingend nach dem Anteil der Wohnfläche (Quadratmeter) aufgeteilt werden (§ 556a BGB). Möchte der Vermieter plötzlich nach Personen (Köpfen) oder Wohneinheiten abrechnen, bedarf dies einer vertraglichen Grundlage oder strenger gesetzlicher Voraussetzungen.",
+    "prefill_position": "Angewendeter Umlageschlüssel / Verteilerschlüssel",
+    "prefill_begruendung": "Ich widerspreche dem in der Abrechnung angewendeten Verteilerschlüssel für die betroffenen Positionen. Laut mietvertraglicher Vereinbarung (bzw. hilfsweise gemäß § 556a BGB) ist die Umlage nach dem Anteil der Wohnfläche vorzunehmen. Die Abrechnung weicht ohne rechtliche Grundlage hiervon ab. Ich bitte um eine korrigierte Berechnung nach Quadratmetern."
+  },
+  {
+    "slug": "sonstige-betriebskosten",
+    "menu_title": "Sonstige Betriebskosten",
+    "seo_title": "Widerspruch 'Sonstige Betriebskosten' | PDF-Vorlage",
+    "seo_desc": "Versteckte Kosten unter 'Sonstiges'? Sonstige Betriebskosten müssen im Mietvertrag explizit benannt sein. Widerspruchs-Generator.",
+    "h1": "Widerspruch gegen 'Sonstige Betriebskosten'",
+    "info_titel": "Die Beliebte Sammelfalle: 'Sonstige Betriebskosten'",
+    "info_text": "Die Position 'Sonstige Betriebskosten' (Nr. 17 der BetrKV) wird von Vermietern gerne als Auffangbecken für alles Mögliche genutzt. Das ist jedoch unzulässig! Diese Position darf nur abgerechnet werden, wenn die konkreten Kostenarten (z. B. Wartung von Rauchmeldern, Dachrinnenreinigung oder Prüfung von Feuerlöschern) im Mietvertrag ausdrücklich einzeln genannt wurden.",
+    "prefill_position": "Sonstige Betriebskosten (Position 17 BetrKV)",
+    "prefill_begruendung": "Ich beanstande die unter 'Sonstige Betriebskosten' umgelegten Beträge. Diese Kostenposition ist nur dann umlagefähig, wenn die konkreten Einzelmaßnahmen im Mietvertrag ausdrücklich und detailliert vereinbart wurden. Eine pauschale Verweisung reicht nicht aus. Da eine entsprechende vertragliche Vereinbarung fehlt, ist diese Position vollständig zu streichen."
+  },
+  {
+    "slug": "verwaltungskosten",
+    "menu_title": "Verwaltungskosten & Bankgebühren",
+    "seo_title": "Widerspruch Nebenkosten: Verwaltungskosten | PDF Vorlage",
+    "seo_desc": "Verwaltungskosten, Porto oder Bankgebühren in der Abrechnung entdeckt? Diese Kosten sind nicht umlagefähig. Kostenloser Widerspruchs-Generator.",
+    "h1": "Widerspruch: Unzulässige Verwaltungskosten in der Abrechnung",
+    "info_titel": "Verwaltung und Kontogebühren zahlt allein der Vermieter",
+    "info_text": "Kosten für die Hausverwaltung, Honorare für Steuerberater, Kontoführungsgebühren der Bank, Porto oder Telefonkosten des Vermieters sind laut Gesetz ausdrücklich KEINE Betriebskosten (§ 1 Abs. 2 BetrKV). Sie gehören zu den Verwaltungskosten und müssen zu 100 % vom Vermieter getragen werden.",
+    "prefill_position": "Hausverwaltungskosten / Bankgebühren / Portokosten",
+    "prefill_begruendung": "Ich widerspreche der Umlage von Verwaltungskosten, Bank- bzw. Kontoführungsgebühren und allgemeinen Portokosten. Gemäß § 1 Abs. 2 Nr. 1 der Betriebskostenverordnung (BetrKV) gehören die Kosten der zur Verwaltung des Gebäudes erforderlichen Arbeitskräfte und Einrichtungen ausdrücklich nicht zu den Betriebskosten. Ich fordere Sie auf, diese Posten restlos aus der Abrechnung zu entfernen."
+  },
+  {
+    "slug": "gewerbeanteil",
+    "menu_title": "Gewerbeanteil nicht abgezogen",
+    "seo_title": "Widerspruch Nebenkosten: Gewerbeanteil | PDF Vorlage",
+    "seo_desc": "Gewerbe im Haus treibt die Nebenkosten in die Höhe? Vermieter müssen den Gewerbeanteil herausrechnen. Erstellen Sie hier Ihren Widerspruch.",
+    "h1": "Widerspruch: Fehlender Vorwegabzug des Gewerbeanteils",
+    "info_titel": "Mischobjekte: Wenn Gewerbe die Kosten hochtreibt",
+    "info_text": "Befinden sich im Mietshaus auch gewerbliche Einheiten (z. B. ein Restaurant, ein Friseursalon, Arztpraxen oder Büros), verursachen diese meist einen ungleich höheren Verbrauch an Wasser, Müll oder erfordern teurere Versicherungen. Der Vermieter muss diesen Gewerbeanteil zwingend vorab herausrechnen (Vorwegabzug), damit Wohnungsmieter nicht benachteiligt werden.",
+    "prefill_position": "Fehlender Vorwegabzug für gewerbliche Einheiten",
+    "prefill_begruendung": "In unserem Gebäude befinden sich neben Wohnungen auch gewerbliche Einheiten (z. B. [Bitte Art des Gewerbes eintragen, z. B. Gastronomie / Ladengeschäft]). Gewerbliche Nutzer verursachen erfahrungsgemäß einen erheblich höheren Kostenaufwand (u. a. bei Müllentsorgung, Wasserverbrauch oder Sachversicherungen). Aus der Abrechnung geht nicht hervor, dass ein ordnungsgemäßer Vorwegabzug des Gewerbeanteils stattgefunden hat. Ich bitte um Korrektur."
+  },
+  {
+    "slug": "heizkostenv-verstoss",
+    "menu_title": "Verstoß gegen HeizkostenV (15 % Kürzung)",
+    "seo_title": "Widerspruch Heizkostenabrechnung: 15% Kürzung | PDF Vorlage",
+    "seo_desc": "Heizkosten wurden pauschal statt nach Verbrauch abgerechnet? Nutzen Sie Ihr gesetzliches 15%-Kürzungsrecht nach der Heizkostenverordnung.",
+    "h1": "Widerspruch: Fehlende verbrauchsabhängige Heizkostenabrechnung",
+    "info_titel": "Ihr Joker: Das 15%-Kürzungsrecht nach HeizkostenV",
+    "info_text": "Heiz- und Warmwasserkosten müssen laut Gesetz (Heizkostenverordnung) zu mindestens 50 % bis maximal 70 % nach dem tatsächlichen, gemessenen Verbrauch abgerechnet werden. Rechnet der Vermieter stattdessen rein pauschal nach Quadratmetern ab (obwohl Zähler vorhanden sind oder installiert werden müssten), haben Sie als Mieter das Recht, den Heizkostenanteil um satte 15 % zu kürzen!",
+    "prefill_position": "Heiz- und Warmwasserkosten (Abrechnung nach Fläche)",
+    "prefill_begruendung": "Die Heiz- und Warmwasserkosten wurden in der vorliegenden Abrechnung nicht verbrauchsabhängig, sondern ausschließlich nach Fläche abgerechnet, obwohl gesetzlich eine verbrauchsabhängige Erfassung vorgeschrieben ist. Gemäß § 12 Abs. 1 der Heizkostenverordnung (HeizkostenV) mache ich daher von meinem gesetzlichen Kürzungsrecht Gebrauch und mindere den auf mich entfallenden Anteil der Heizkosten pauschal um 15 %."
+  },
+  {
+    "slug": "wirtschaftlichkeitsgebot",
+    "menu_title": "Verstoß gegen Wirtschaftlichkeitsgebot",
+    "seo_title": "Widerspruch Nebenkosten: Wirtschaftlichkeitsgebot | PDF",
+    "seo_desc": "Nebenkosten explodiert ohne Grund? Der Vermieter muss wirtschaftlich handeln (§ 556 BGB). Widerspruch wegen extrem gestiegener Kosten erstellen.",
+    "h1": "Widerspruch: Verstoß gegen das mietrechtliche Wirtschaftlichkeitsgebot",
+    "info_titel": "Der Vermieter darf Ihr Geld nicht verschleudern",
+    "info_text": "Der Vermieter ist gesetzlich verpflichtet, bei Dienstleistern und Verträgen auf ein angemessenes Kosten-Nutzen-Verhältnis zu achten (§ 556 Abs. 3 BGB). Schließt er beispielsweise einen völlig überteuerten Vertrag für die Treppenhausreinigung oder die Gebäudeversicherung ab, der extrem über dem regionalen Betriebskostenspiegel liegt, muss er die Mehrkosten begründen oder sie selbst tragen.",
+    "prefill_position": "Auffällige Kostensteigerung bei der Position: [Bitte Position eintragen, z. B. Sach- und Haftpflichtversicherungen]",
+    "prefill_begruendung": "Ich rüge bezüglich der Position [Name der Position] einen Verstoß gegen das mietrechtliche Wirtschaftlichkeitsgebot gemäß § 556 Abs. 3 BGB. Die Kosten für diese Dienstleistung/Versicherung sind im Vergleich zum Vorjahr ohne ersichtlichen Grund sprunghaft gestiegen und weichen massiv von marktüblichen Durchschnittswerten ab. Bis zum Nachweis der Wirtschaftlichkeit behalte ich mir den entsprechenden Kürzungsbetrag vor."
+  }
+]

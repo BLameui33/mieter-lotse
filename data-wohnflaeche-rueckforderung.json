@@ -1,0 +1,135 @@
+[
+  {
+    "slug": "dachschraegen",
+    "menu_title": "Falsch berechnete Dachschrägen",
+    "seo_title": "Wohnfläche Dachschrägen falsch berechnet? | Miete zurückfordern",
+    "seo_desc": "Wurden Dachschrägen im Mietvertrag zu 100% als Wohnfläche berechnet? Fordern Sie zu viel gezahlte Miete zurück. Kostenloser PDF-Generator.",
+    "h1": "Miete zurückfordern: Dachschrägen falsch berechnet",
+    "info_titel": "Der Klassiker im Dachgeschoss: Die Schrägen",
+    "info_text": "Ein enorm häufiger Fehler bei Dachgeschosswohnungen: Die gesamte Grundfläche wird berechnet. Laut Wohnflächenverordnung (WoFlV) gilt jedoch: Flächen mit einer Raumhöhe unter 1 Meter zählen zu 0 % zur Wohnfläche. Flächen zwischen 1 und 2 Metern Höhe zählen nur zur Hälfte (50 %). Erst ab einer Höhe von 2 Metern darf voll berechnet werden.",
+    "prefill_sachverhalt": "Fehlerhafte Einbeziehung von Grundflächen unter Dachschrägen",
+    "prefill_begruendung": "Nach einer präzisen Nachmessung der Wohnung wurde festgestellt, dass die Wohnfläche im Mietvertrag mit [QM laut Vertrag] m² angegeben ist, die tatsächliche Fläche jedoch nur [Tatsächliche QM] m² beträgt. Dieser erhebliche Unterschied resultiert daraus, dass Flächen unter den Dachschrägen mit einer lichten Höhe von unter einem Meter voll (statt zu 0 %) bzw. Flächen zwischen einem und zwei Metern Höhe voll (statt zu 50 %) angerechnet wurden. Da die Abweichung die Erheblichkeitsgrenze von 10 % überschreitet, fordere ich die zu viel gezahlte Miete zurück."
+  },
+  {
+    "slug": "balkon-terrasse",
+    "menu_title": "Balkon & Terrasse falsch berechnet",
+    "seo_title": "Wohnfläche Balkon falsch berechnet? | Miete zurückfordern",
+    "seo_desc": "Zählt der Balkon voll zur Wohnfläche? Nein! Fordern Sie Miete zurück, wenn Balkone oder Terrassen falsch berechnet wurden. Kostenloser Rechner.",
+    "h1": "Miete zurückfordern: Balkon und Terrasse falsch berechnet",
+    "info_titel": "Ein Balkon ist kein Wohnzimmer",
+    "info_text": "Oft schlagen Vermieter die vollen Quadratmeter des Balkons oder der Terrasse auf die Wohnfläche auf. Die Wohnflächenverordnung sagt aber klar: Balkone, Loggien und Terrassen dürfen im Regelfall nur zu 25 % angerechnet werden. Nur in absoluten Ausnahmefällen (z. B. extrem hochwertige Ausstattung, exklusive Aussicht) sind maximal 50 % zulässig. Wurden 100 % berechnet, ist die Abrechnung angreifbar.",
+    "prefill_sachverhalt": "Unzulässige Vollanrechnung von Balkon-/Terrassenflächen",
+    "prefill_begruendung": "Die vertraglich vereinbarte Wohnfläche ist unrichtig, da der zur Wohnung gehörende Balkon / die Terrasse zu 100 % in die Wohnflächenberechnung einbezogen wurde. Gemäß § 4 Nr. 4 der Wohnflächenverordnung (WoFlV) sind Balkone und Terrassen jedoch im Regelfall nur mit einem Viertel (25 %) anzusetzen. Durch die korrekte Berechnung verringert sich die Gesamtwohnfläche um mehr als 10 %, weshalb ein Anspruch auf Rückerstattung der überzahlten Miete besteht."
+  },
+  {
+    "slug": "keller-abstellraum",
+    "menu_title": "Keller & externe Abstellräume",
+    "seo_title": "Zählt der Keller zur Wohnfläche? | Miete zurückfordern",
+    "seo_desc": "Wurde Ihr Kellerraum zur Wohnfläche gezählt? Fordern Sie zu viel gezahlte Miete zurück. Rechner für Mietminderung bei falscher Wohnfläche.",
+    "h1": "Miete zurückfordern: Keller als Wohnfläche berechnet",
+    "info_titel": "Kellerräume sind keine Wohnfläche",
+    "info_text": "Zubehörräume, die sich außerhalb der eigentlichen Wohnung befinden, zählen gesetzlich zu 0 % zur Wohnfläche. Dazu gehören klassische Kellerräume, Dachböden, gemeinsame Waschküchen oder externe Abstellräume außerhalb der Wohneinheit. Hat der Vermieter diese Flächen im Mietvertrag einfach zur Wohnfläche addiert, überschreiten Sie extrem schnell die magische 10-Prozent-Grenze.",
+    "prefill_sachverhalt": "Unzulässige Miteinbeziehung von Zubehörräumen (Keller/Abstellraum)",
+    "prefill_begruendung": "In der Wohnflächenangbe des Mietvertrags wurden fälschlicherweise die Quadratmeter des Kellerraums / des externen Abstellraums mit eingerechnet. Gemäß § 2 Abs. 3 WoFlV gehören Keller-, Boden- und Wirtschaftsräume explizit nicht zur Wohnfläche. Die tatsächliche Wohnfläche unterschreitet den vertraglichen Wert somit erheblich. Ich fordere Sie daher auf, die zu viel gezahlte Miete gemäß § 812 BGB zu erstatten."
+  },
+  {
+    "slug": "treppen-flure",
+    "menu_title": "Treppen & Flure (Maisonette)",
+    "seo_title": "Zählen Treppen zur Wohnfläche? | Miete zurückfordern",
+    "seo_desc": "Treppen in Maisonette-Wohnungen werden oft falsch berechnet. Prüfen Sie die Wohnfläche und fordern Sie Miete zurück. Kostenloser PDF-Generator.",
+    "h1": "Miete zurückfordern: Treppen & Flure falsch berechnet",
+    "info_titel": "Vorsicht bei Maisonette-Wohnungen und innenliegenden Treppen",
+    "info_text": "Wer eine Wohnung über zwei Etagen (Maisonette) hat, zahlt oft unwissentlich zu viel Miete. Treppen mit mehr als drei Steigungen (Stufen) und deren Treppenabsätze dürfen nach der Wohnflächenverordnung überhaupt nicht zur Wohnfläche gerechnet werden. Der Raum *unter* einer Treppe wird zudem wie eine Dachschräge behandelt (unter 1m Höhe = 0 %, zwischen 1-2m = 50 %).",
+    "prefill_sachverhalt": "Fehlerhafte Berechnung von innenliegenden Treppenläufen",
+    "prefill_begruendung": "Bei der Überprüfung der Wohnfläche der gemieteten Maisonette-Wohnung wurde festgestellt, dass die Treppenläufe sowie die dazugehörigen Absätze voll in die Wohnfläche eingerechnet wurden. Nach § 3 Abs. 3 Nr. 2 WoFlV sind Treppen mit mehr als drei Steigungen jedoch komplett von der Wohnflächenberechnung auszunehmen. Hierdurch ergibt sich eine unzulässige Flächenabweichung zu meinen Ungunsten."
+  },
+  {
+    "slug": "wintergarten-unbeheizt",
+    "menu_title": "Unbeheizter Wintergarten",
+    "seo_title": "Wohnfläche Wintergarten falsch berechnet | PDF Vorlage",
+    "seo_desc": "Ist Ihr Wintergarten unbeheizt, darf er nicht voll zur Wohnfläche zählen. Erstellen Sie hier ein Schreiben zur Mietrückforderung.",
+    "h1": "Miete zurückfordern: Unbeheizter Wintergarten voll berechnet",
+    "info_titel": "Ein kalter Wintergarten zählt nur zur Hälfte",
+    "info_text": "Wintergärten steigern die Lebensqualität, werden aber flächenmäßig oft falsch erfasst. Hier entscheidet die Heizung: Ist der Wintergarten beheizt, zählt er zu 100 % zur Wohnfläche. Ist er jedoch unbeheizt (oder verfügt nur über einen Alibi-Heizstrahler), darf er laut § 4 Nr. 3 WoFlV nur zu genau 50 % (zur Hälfte) angerechnet werden.",
+    "prefill_sachverhalt": "Falsche Anrechnung eines unbeheizten Wintergartens",
+    "prefill_begruendung": "Die Wohnflächenberechnung im Mietvertrag ist fehlerhaft, da der zur Wohnung gehörende Wintergarten vollumfänglich als Wohnfläche angesetzt wurde. Da es sich jedoch um einen unbeheizten Wintergarten handelt, darf dieser nach § 4 Nr. 3 WoFlV lediglich mit der Hälfte seiner Fläche (50 %) berücksichtigt werden. Dadurch weicht die reale Wohnfläche maßgeblich vom Mietvertrag ab."
+  },
+  {
+    "slug": "pfeiler-schornsteine",
+    "menu_title": "Säulen, Pfeiler & Schornsteine",
+    "seo_title": "Abzug von Säulen und Schornsteinen bei Wohnfläche | PDF",
+    "seo_desc": "Große Pfeiler oder Schornsteine in der Wohnung? Diese Flächen müssen von der Wohnfläche abgezogen werden. Jetzt Miete zurückfordern.",
+    "h1": "Miete zurückfordern: Pfeiler und Schornsteine mitberechnet",
+    "info_titel": "Wo man nicht stehen kann, ist keine Wohnfläche",
+    "info_text": "In vielen Altbauwohnungen oder modernen Lofts gibt es freistehende Säulen, dicke Wandpfeiler oder Schornsteine. Beträgt deren Grundfläche mehr als 0,1 Quadratmeter UND sind sie höher als 1,50 Meter, müssen diese Flächen zwingend von der Wohnfläche abgezogen werden (§ 3 Abs. 3 WoFlV). Viele Vermieter messen einfach stumpf von Außenwand zu Außenwand und ignorieren diese Abzüge.",
+    "prefill_sachverhalt": "Fehlender Abzug von baulichen Elementen (Säulen/Schornsteine)",
+    "prefill_begruendung": "Bei der Ermittlung der Wohnfläche wurden freistehende Säulen / tragende Pfeiler / Schornsteinzüge fälschlicherweise der Wohnfläche zugeschlagen. Gemäß § 3 Abs. 3 Nr. 1 WoFlV sind bauliche Elemente mit einer Grundfläche von mehr und als 0,1 m² und einer Höhe von über 1,50 m vollständig von der Wohnfläche abzuziehen. Die vertragliche Quadratmeterzahl ist somit nachweislich zu hoch angesetzt."
+  },
+  {
+    "slug": "wandnischen-fenster",
+    "menu_title": "Fenster- & Wandnischen",
+    "seo_title": "Zählen Fensternischen zur Wohnfläche? | PDF-Vorlage",
+    "seo_desc": "Bodentiefe Fenster oder Wandnischen in der Wohnung? Wenn sie nicht tief genug sind, zählen sie nicht zur Wohnfläche. Miete zurückfordern.",
+    "h1": "Miete zurückfordern: Nischen fälschlicherweise mitberechnet",
+    "info_titel": "Wann Nischen zur Wohnfläche gehören – und wann nicht",
+    "info_text": "Bodentiefe Fenster oder dekorative Wandnischen werden gerne in die Fläche eingerechnet. Das Gesetz setzt hier jedoch strikte Mindestmaße vor: Eine Nische darf NUR DANN mitberechnet werden, wenn sie bis zum Fußboden herunterreicht UND mindestens 13 Zentimeter tief ist (§ 3 Abs. 2 WoFlV). Flachere Nischen zählen zu 0 %.",
+    "prefill_sachverhalt": "Unzulässige Einbeziehung von flachen Wand- oder Fensternischen",
+    "prefill_begruendung": "In der Wohnflächenaufstellung wurden diverse Fenster- und Wandnischen berücksichtigt, die nicht die gesetzlichen Mindestvoraussetzungen erfüllen. Nach § 3 Abs. 2 Nr. 2 WoFlV dürfen Nischen nur eingerechnet werden, wenn sie bis zum Boden gehen und eine Tiefe von mindestens 13 cm aufweisen. Da dies hier nicht der Fall ist, ist die vertragliche Wohnfläche formell falsch und zu hoch angegeben."
+  },
+  {
+    "slug": "putzabzug-rohbaumasze",
+    "menu_title": "Rohbaumaße statt Fertigmaße (Putzabzug)",
+    "seo_title": "Vermieter hat Rohbaumaße berechnet? | Miete zurückholen",
+    "seo_desc": "Wurde der Innenputz bei der Wohnfläche vergessen? Rohbaumaße machen Wohnungen künstlich größer. Nutzen Sie unseren PDF-Generator.",
+    "h1": "Miete zurückfordern: Berechnung nach Rohbaumaßen",
+    "info_titel": "Der vergessene Putzabzug bei Neubauten",
+    "info_text": "Sehr oft kopieren Vermieter die Quadratmeterzahlen einfach aus den alten Architektenplänen der Bauphase in den Mietvertrag. Das Problem: Diese Pläne basieren meist auf den 'Rohbaumaßen'. Wenn danach der Verputzer kommt, gehen durch den Wandputz auf allen Seiten circa 1 bis 2 Zentimeter verloren. Die Wohnflächenverordnung verlangt zwingend die Berechnung nach 'Fertigmaßen' (also inklusive Putz).",
+    "prefill_sachverhalt": "Verwendung von Rohbaumaßen statt fertigen Innenmaßen",
+    "prefill_begruendung": "Die Wohnflächenangabe im Mietvertrag basiert offensichtlich auf den ursprünglichen Rohbaumaßen des Gebäudes und nicht auf den tatsächlichen Fertigmaßen nach dem Innenverputz. Da die Wohnflächenverordnung zwingend die Messung der fertigen Wandoberflächen vorschreibt, weicht die reale Wohnfläche aufgrund des fehlenden Putzabzugs massiv vom Vertrag ab, was mich zur Rückforderung berechtigt."
+  },
+  {
+    "slug": "single-berufstaetig",
+    "menu_title": "Als Single (Berufstätig)",
+    "seo_title": "Wohnungsbewerbung als Single Berufstätig | PDF Mappe",
+    "seo_desc": "Die perfekte Bewerbung für alleinstehende Berufstätige. Anschreiben mit Fokus auf festem Einkommen & ruhigem Lebensstil. Kostenlos als PDF.",
+    "h1": "Bewerbungsmappe: Wohnungsbewerbung als berufstätiger Single",
+    "info_titel": "Der Traum für Vermieter: Ruhig, solvent, pflegeleicht",
+    "info_text": "Vermieter lieben berufstätige Singles: Kaum Abnutzung der Wohnung, geregeltes, ungeteiltes Einkommen und keine potenziellen Beziehungsdramen. Betonen Sie im Anschreiben einfach Ihre finanzielle Unabhängigkeit und Ihren ruhigen Lebensstil nach Feierabend.",
+    "prefill_beruf": "Angestellte(r) in Vollzeit",
+    "prefill_motivation": "Ich bin als alleinstehende(r) Berufstätige(r) in einem unbefristeten Arbeitsverhältnis tätig und suche eine gemütliche, gut angebundene Wohnung. Da ich beruflich voll eingespannt bin, schätze ich ein ruhiges und gepflegtes Wohnumfeld nach Feierabend sehr. Eine absolut pünktliche Mietzahlung sowie ein pfleglicher Umgang mit Ihrem Eigentum sind für mich selbstverständlich."
+  },
+  {
+    "slug": "familie",
+    "menu_title": "Als Familie (mit Kindern)",
+    "seo_title": "Wohnungsbewerbung für Familien | PDF-Bewerbungsmappe",
+    "seo_desc": "Erfolgreich bewerben als Familie mit Kindern. Vorlage für das Anschreiben mit Fokus auf langfristiger Stabilität & sicherem Einkommen. Kostenlos.",
+    "h1": "Bewerbungsmappe: Wohnungsbewerbung als Familie",
+    "info_titel": "Sorgen abbauen: Das solide Nest präsentieren",
+    "info_text": "Manche Vermieter fürchten insgeheim Kinderlärm oder vermehrte Abnutzung. Kontern Sie das, indem Sie Stabilität und Langfristigkeit betonen. Vermieter schätzen Familien als extrem treue Mieter, die nicht nach zwei Jahren wieder ausziehen. Heben Sie das krisensichere Familieneinkommen hervor.",
+    "prefill_beruf": "Berufstätige Eltern / Angestellte",
+    "prefill_motivation": "Wir suchen für unsere kleine Familie ein langfristiges, harmonisches und liebevolles Zuhause. Durch unsere festen Anstellungen ist das Familieneinkommen absolut krisensicher und eine dauerhaft verlässliche Mietzahlung garantiert. Uns ist ein gutes, nachbarschaftliches Verhältnis sehr wichtig, und wir suchen eine Umgebung, in der unsere Kinder geborgen aufwachsen können."
+  },
+  {
+    "slug": "selbststaendig",
+    "menu_title": "Als Selbstständiger / Freiberufler",
+    "seo_title": "Wohnungsbewerbung für Selbstständige | PDF-Generator",
+    "seo_desc": "Wohnungssuche als Selbstständiger? Entkräften Sie Sorgen vor Einkommensschwankungen. Anschreiben inkl. BWA-Hinweis kostenlos als PDF erstellen.",
+    "h1": "Bewerbungsmappe: Wohnungsbewerbung für Selbstständige",
+    "info_titel": "Sicherheit trotz schwankendem Einkommen zeigen",
+    "info_text": "Private Vermieter und Hausverwaltungen scheuen oft das Risiko unregelmäßiger Einkünfte bei Selbstständigen. Punkten Sie hier, indem Sie proaktiv Transparenz anbieten und die letzte BWA (Betriebswirtschaftliche Auswertung) oder Steuerbescheide erwähnen. Das signalisiert sofort Professionalität.",
+    "prefill_beruf": "Selbstständige(r) / Freiberufler(in)",
+    "prefill_motivation": "Als erfolgreiche(r) Selbstständige(r) suche ich nach einer ansprechenden Wohnung, die mir als privater Rückzugsort dient. Meine geschäftliche Situation ist seit Jahren stabil und konsolidiert, was ich Ihnen gerne durch aktuelle Steuerbescheide und eine betriebswirtschaftliche Auswertung (BWA) meines Steuerberaters belege. Ich bin an einem verlässlichen, langfristigen Mietverhältnis interessiert."
+  },
+  {
+    "slug": "rentner",
+    "menu_title": "Als Rentner / Senior",
+    "seo_title": "Wohnungsbewerbung für Rentner & Senioren | PDF-Vorlage",
+    "seo_desc": "Bewerbungsmappe für Senioren. Erstellen Sie ein Anschreiben mit Fokus auf krisensicherer Rente, Ruhe und Zuverlässigkeit. 100% kostenlos.",
+    "h1": "Bewerbungsmappe: Wohnungsbewerbung im Ruhestand",
+    "info_titel": "Die sicherste Miete der Welt: Die staatliche Rente",
+    "info_text": "Senioren sind auf dem Mietmarkt heiß begehrt: Die Rente kommt garantiert jeden Monat (kann nicht gekündigt werden), sie feiern keine lauten Partys und pflegen die Wohnung meist vorbildlich. Betonen Sie Ihre Absicht, sich langfristig niederzulassen und Ihren Lebensabend in einer gepflegten Nachbarschaft zu verbringen.",
+    "prefill_beruf": "Rentner / Pensionär",
+    "prefill_motivation": "Da ich mich im wohlverdienten Ruhestand befinde, suche ich eine gemütliche, gut gelegene Wohnung für meinen Lebensabend. Meine Rente/Pension ist staatlich garantiert und absolut krisensicher, sodass eine lückenlose und pünktliche Mietzahlung jederzeit gewährleistet ist. Ich bin eine sehr ruhige, ordentliche Person und schätze eine intakte Hausgemeinschaft."
+  }
+
+]

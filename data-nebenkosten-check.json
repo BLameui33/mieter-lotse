@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "heizkosten",
+    "menu_title": "Heizkosten & Warmwasser",
+    "seo_title": "Heizkosten Check: Ist die Abrechnung zu hoch? | Rechner",
+    "seo_desc": "Prüfen Sie Ihre Heizkostenabrechnung. Vergleichen Sie Ihre Kosten mit dem Durchschnitt und fordern Sie bei überhöhten Preisen Belegeinsicht an.",
+    "h1": "Nebenkosten-Check: Sind Ihre Heizkosten zu hoch?",
+    "info_titel": "Der größte Kostentreiber: Heizung und Warmwasser",
+    "info_text": "Heizkosten machen meist 50 bis 70 Prozent der gesamten Nebenkosten aus. Hier passieren die häufigsten Fehler (z.B. falsche Schätzungen, defekte Zähler oder nicht beachtete Preisbremsen). Geben Sie Ihre Gesamtkosten ein, um zu prüfen, ob Sie deutlich über dem bundesweiten Durchschnitt liegen."
+  },
+  {
+    "slug": "hausmeister",
+    "menu_title": "Hausmeisterkosten",
+    "seo_title": "Hausmeisterkosten prüfen: Sind sie zu hoch? | NK-Rechner",
+    "seo_desc": "Sind Ihre Hausmeisterkosten in der Nebenkostenabrechnung plausibel? Prüfen Sie die Kosten pro Quadratmeter und finden Sie versteckte Reparaturkosten.",
+    "h1": "Nebenkosten-Check: Sind die Hausmeisterkosten zu hoch?",
+    "info_titel": "Versteckte Reparaturen beim Hauswart?",
+    "info_text": "Hausmeisterkosten sind extrem fehleranfällig. Oft werden Reparaturarbeiten, die der Vermieter eigentlich selbst zahlen muss, unrechtmäßig auf die Mieter umgelegt. Prüfen Sie mit unserem Rechner, ob Ihre Nebenkosten insgesamt auffällig hoch sind und fordern Sie dann die Belege des Hausmeisters an."
+  },
+  {
+    "slug": "wasser-abwasser",
+    "menu_title": "Wasser & Abwasser",
+    "seo_title": "Wasserkosten prüfen: Abrechnung zu hoch? | Rechner",
+    "seo_desc": "Prüfen Sie Ihre Wasserkosten in der Nebenkostenabrechnung. Oft werden falsche Verteilerschlüssel (z.B. nach Quadratmeter statt Verbrauch) angewendet.",
+    "h1": "Nebenkosten-Check: Zu hohe Wasser- und Abwasserkosten?",
+    "info_titel": "Wenn der Wasserzähler scheinbar durchdreht",
+    "info_text": "Stark gestiegene Wasserkosten können ein Indiz für unentdeckte Rohrbrüche im Haus oder falsch abgelesene Zähler sein. Wenn es in Ihrem Haus keine eigenen Wasserzähler gibt, wird oft unfair nach Wohnfläche statt nach Verbrauch abgerechnet. Nutzen Sie unseren Rechner für einen ersten Plausibilitäts-Check."
+  },
+  {
+    "slug": "gebaeudereinigung",
+    "menu_title": "Gebäudereinigung (Treppenhaus)",
+    "seo_title": "Gebäudereinigung prüfen: Nebenkosten Check | Rechner",
+    "seo_desc": "Treppenhausreinigung zu teuer? Vergleichen Sie Ihre Nebenkostenabrechnung mit dem Betriebskostenspiegel. Kostenloser Online-Rechner.",
+    "h1": "Nebenkosten-Check: Ist die Gebäudereinigung zu teuer?",
+    "info_titel": "Wirtschaftlichkeitsgebot bei der Putzfirma",
+    "info_text": "Der Vermieter darf nicht einfach den teuersten Reinigungsservice beauftragen. Er ist dem 'Gebot der Wirtschaftlichkeit' verpflichtet. Wenn Ihre Gesamtabrechnung durch exorbitante Putzkosten nach oben getrieben wird, sollten Sie aktiv werden. Prüfen Sie jetzt Ihre Werte."
+  },
+  {
+    "slug": "grundsteuer",
+    "menu_title": "Grundsteuer",
+    "seo_title": "Grundsteuer in den Nebenkosten prüfen | Rechner",
+    "seo_desc": "Darf der Vermieter die Grundsteuer umlegen? Ja, aber oft gibt es Fehler beim Verteilerschlüssel. Prüfen Sie Ihre Nebenkostenabrechnung.",
+    "h1": "Nebenkosten-Check: Grundsteuer korrekt abgerechnet?",
+    "info_titel": "Die Grundsteuer: Eine ungeliebte Umlage",
+    "info_text": "Ja, die Grundsteuer gehört zu den 'kalten Betriebskosten' und darf auf Sie umgelegt werden. Allerdings passieren hier oft Fehler beim Verteilerschlüssel, wenn im Haus z.B. auch Gewerbeflächen sind. Diese müssen zwingend herausgerechnet werden. Überprüfen Sie Ihre Gesamtkosten."
+  }
+]

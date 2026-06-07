@@ -1,0 +1,57 @@
+[
+  {
+    "slug": "student",
+    "menu_title": "Als Student / Azubi",
+    "seo_title": "Wohnungsbewerbung Student / Azubi | PDF-Bewerbungsmappe",
+    "seo_desc": "Die perfekte Bewerbungsmappe für Studenten & Azubis. Anschreiben inkl. Hinweis auf Elternbürgschaft und Selbstauskunft in einer kostenlosen PDF-Datei.",
+    "h1": "Bewerbungsmappe: Wohnungsbewerbung als Student oder Azubi",
+    "info_titel": "Als Student punkten: Die Elternbürgschaft zieht!",
+    "info_text": "Vermieter haben bei jungen Menschen oft Angst vor Mietausfällen. Punkten Sie, indem Sie offensiv eine freiwillige Mietbürgschaft Ihrer Eltern anbieten. Haken Sie unten im Generator unbedingt die 'Freiwillige Mietbürgschaft' als Anlage an!",
+    "prefill_beruf": "Student / Auszubildender",
+    "prefill_motivation": "Da ich mein Studium / meine Ausbildung in Kürze beginne bzw. fortsetze, suche ich eine ruhige und zentral gelegene Wohnung. Die Finanzierung der Miete ist durch meine Eltern (eine freiwillige Mietbürgschaft liegt bei) sowie mein eigenes festes Einkommen vollständig und verlässlich gesichert. Ich bin ein ruhiger Mieter und an einem langfristigen Mietverhältnis interessiert."
+  },
+  {
+    "slug": "paar",
+    "menu_title": "Als Paar (Doppelverdiener)",
+    "seo_title": "Wohnungsbewerbung als Paar | PDF-Bewerbungsmappe",
+    "seo_desc": "Bewerbungsmappe für Paare erstellen. Anschreiben mit Fokus auf doppelter Bonität, langfristiger Planung und Selbstauskunft. Kostenlos als PDF.",
+    "h1": "Bewerbungsmappe: Wohnungsbewerbung als Paar",
+    "info_titel": "Das Traum-Szenario für Vermieter: Doppeltes Einkommen",
+    "info_text": "Zwei Gehälter bedeuten für den Vermieter doppelte Sicherheit. Betonen Sie in Ihrem Anschreiben, dass Sie beide in festen, unbefristeten Arbeitsverhältnissen stehen und die Wohnung langfristig Ihr neues gemeinsames Zuhause werden soll.",
+    "prefill_beruf": "Angestellte (beide in Vollzeit)",
+    "prefill_motivation": "Wir sind ein ruhiges, berufstätiges Paar und suchen nach einer langfristigen gemeinsamen Bleibe, in der wir uns rundum wohlfühlen können. Da wir beide in festen und unbefristeten Arbeitsverhältnissen stehen, ist eine verlässliche und pünktliche Mietzahlung garantiert. Ihre Wohnung hat uns bei der Besichtigung durch ihren Schnitt und die Lage sofort begeistert."
+  },
+  {
+    "slug": "wg-gruendung",
+    "menu_title": "Als WG / Wohngemeinschaft",
+    "seo_title": "Wohnungsbewerbung für eine WG | PDF-Bewerbungsmappe",
+    "seo_desc": "Bewerben Sie sich erfolgreich als WG. PDF-Generator für Anschreiben (Hauptmieter/Untermieter-Struktur) und Selbstauskunft. 100% kostenlos.",
+    "h1": "Bewerbungsmappe: Wohnungsbewerbung als WG",
+    "info_titel": "Nehmen Sie dem Vermieter die WG-Angst",
+    "info_text": "Viele Eigentümer fürchten bei WGs häufige Mieterwechsel und unklare Haftung. Bieten Sie klare Strukturen an: Einer wird Hauptmieter und haftet voll, die anderen werden Untermieter. Betonen Sie zudem, dass Sie eine Zweck-WG oder ein ruhiger Haushalt sind.",
+    "prefill_beruf": "Studenten / Berufstätige (WG)",
+    "prefill_motivation": "Wir suchen für unsere geplante, ruhige Wohngemeinschaft eine passende Wohnung. Um Ihnen als Vermieter maximale Sicherheit und minimalen Verwaltungsaufwand zu bieten, schlagen wir vor, dass eine Person als alleiniger Hauptmieter in den Vertrag eintritt und die volle finanzielle Haftung übernimmt. Wir sind ein verantwortungsbewusster Haushalt ohne Partylärm."
+  },
+  {
+    "slug": "mit-haustier",
+    "menu_title": "Mit Haustier (Hund/Katze)",
+    "seo_title": "Wohnungsbewerbung mit Haustier | PDF-Bewerbungsmappe",
+    "seo_desc": "Wohnungssuche mit Hund oder Katze? Erstellen Sie eine Bewerbungsmappe, die dem Vermieter die Sorge vor Tierschäden nimmt. Inkl. PDF-Generator.",
+    "h1": "Bewerbungsmappe: Wohnungsbewerbung mit Haustier",
+    "info_titel": "Mit offenen Karten spielen: Ihr Vierbeiner im Anschreiben",
+    "info_text": "Verschweigen Sie Haustiere niemals, das führt später nur zu Ärger. Erwähnen Sie im Anschreiben direkt, dass Ihr Tier stubenrein, ruhig und haftpflichtversichert ist. Ein süßes Foto des Tieres in der Mappe wirkt oft Wunder!",
+    "prefill_beruf": "Angestellter",
+    "prefill_motivation": "Ihre schöne Wohnung entspricht genau meinen Vorstellungen. Zu meinem kleinen Haushalt gehört zudem ein sehr ruhiger, gut erzogener Hund (stubenrein und bellt nicht). Eine vollumfängliche Tierhalterhaftpflichtversicherung liegt selbstverständlich vor. Wir suchen ein ruhiges, langfristiges Zuhause und würden uns sehr über eine Zusage freuen."
+  },
+  {
+    "slug": "wbs",
+    "menu_title": "Mit Wohnberechtigungsschein (WBS)",
+    "seo_title": "Wohnungsbewerbung mit WBS | PDF-Bewerbungsmappe",
+    "seo_desc": "Bewerbungsmappe für WBS-Wohnungen (Sozialwohnungen). Kostenloser PDF-Generator für Anschreiben und Selbstauskunft. Direkt ausdrucken.",
+    "h1": "Bewerbungsmappe: Wohnungsbewerbung mit WBS",
+    "info_titel": "Der WBS als Schlüssel zur Sozialwohnung",
+    "info_text": "Bei WBS-Wohnungen geht es vor allem darum, dass die bürokratischen Voraussetzungen stimmen. Erwähnen Sie direkt im ersten Satz, dass Ihnen ein gültiger WBS für die entsprechende Wohnungsgröße vorliegt.",
+    "prefill_beruf": "Arbeitssuchend / Rentner / Geringverdiener",
+    "prefill_motivation": "Ich interessiere mich sehr für Ihre angebotene Wohnung, da Schnitt und Lage ideal für mich sind. Ein gültiger Wohnberechtigungsschein (WBS), der exakt auf die Wohnungsgröße und Zimmeranzahl ausgestellt ist, liegt mir bereits vor und befindet sich in den Anlagen. Die Mietzahlung ist verlässlich und lückenlos durch das zuständige Amt / meine Einkünfte gesichert."
+  }
+]

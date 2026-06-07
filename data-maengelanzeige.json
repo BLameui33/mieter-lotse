@@ -1,0 +1,123 @@
+[
+  {
+    "slug": "schimmel",
+    "menu_title": "Schimmelbefall",
+    "seo_title": "Mängelanzeige Schimmel | PDF-Vorlage für Mieter",
+    "seo_desc": "Kostenlose Vorlage: Mängelanzeige bei Schimmelbefall an den Vermieter erstellen. Rechtssicher mit Fristsetzung nach § 536c BGB. Ohne Anmeldung.",
+    "h1": "Mängelanzeige an den Vermieter wegen Schimmelbefall",
+    "info_titel": "Schimmel in der Wohnung sofort melden!",
+    "info_text": "Schimmel ist nicht nur ein optischer Makel, sondern gefährdet massiv Ihre Gesundheit. Melden Sie den Befall umgehend schriftlich, um Folgeschäden und eine eigene Mitverantwortung (z. B. wegen verletzter Lüftungspflichten) auszuschließen. Unsere Vorlage ist bereits rechtssicher vorformuliert.",
+    "prefill_mangel_beschreibung": "Es hat sich sichtbarer und großflächiger Schimmelpilzbefall gebildet. Der Befall weitet sich trotz nachweislich regelmäßigem und fachgerechtem Stoßlüften sowie ausreichendem Beheizen der Räume weiter aus. Es besteht akute Gesundheitsgefahr.",
+    "prefill_mangel_ort": "[Bitte genauen Raum und Stelle angeben, z. B. Badezimmerdecke hinten rechts oder Schlafzimmer Außenwand hinter dem Kleiderschrank]"
+  },
+  {
+    "slug": "heizungsausfall",
+    "menu_title": "Heizungsausfall",
+    "seo_title": "Mängelanzeige Heizungsausfall | PDF-Vorlage für Mieter",
+    "seo_desc": "Heizung defekt oder wird nicht warm? Kostenlose PDF-Vorlage für die Mängelanzeige an den Vermieter. Rechtssicher, schnell und ohne Anmeldung.",
+    "h1": "Mängelanzeige wegen Heizungsausfall erstellen",
+    "info_titel": "Kalte Wohnung? Handeln Sie schnell!",
+    "info_text": "Ein Ausfall der Heizung – besonders während der Heizperiode (Oktober bis April) – stellt einen erheblichen Mietmangel dar. Hier sind sehr kurze Fristen zur Behebung (oft nur 1 bis 3 Tage) angemessen. Fordern Sie den Vermieter unverzüglich zur Reparatur auf.",
+    "prefill_mangel_beschreibung": "Die Heizkörper in der Wohnung bleiben komplett kalt bzw. werden nicht ausreichend warm. Eine normale Beheizung ist nicht möglich. Die Raumtemperatur liegt dauerhaft deutlich unterhalb der mietrechtlich zulässigen Mindesttemperatur von 20 bis 22 Grad Celsius.",
+    "prefill_mangel_ort": "Ganze Wohnung / [Alternativ betroffene Räume eintragen, z. B. Wohnzimmer und Kinderzimmer]"
+  },
+  {
+    "slug": "warmwasser",
+    "menu_title": "Kein Warmwasser",
+    "seo_title": "Mängelanzeige Warmwasserausfall | PDF-Vorlage für Mieter",
+    "seo_desc": "Kein warmes Wasser in Küche oder Bad? Erstellen Sie eine rechtssichere Mängelanzeige an Ihren Vermieter. Einfach ausfüllen und als PDF herunterladen.",
+    "h1": "Mängelanzeige: Ausfall der Warmwasserversorgung",
+    "info_titel": "Kein warmes Wasser? Das steht Ihnen zu.",
+    "info_text": "Ein Ausfall der Warmwasserversorgung mindert den Wohnwert massiv. Dem Mieter muss grundsätzlich rund um die Uhr warmes Wasser (mindestens 40 bis 50 Grad nach kurzer Vorlaufzeit) zur Verfügung stehen. Setzen Sie dem Vermieter eine kurze, verbindliche Frist.",
+    "prefill_mangel_beschreibung": "Die Warmwasserversorgung ist komplett ausgefallen bzw. unzureichend. Das Wasser aus den Leitungen bleibt dauerhaft kalt oder lauwarm. Eine vertragsgemäße Nutzung der Dusche, Badewanne sowie fließendes Warmwasser in der Küche ist nicht gegeben.",
+    "prefill_mangel_ort": "Badezimmer und Küche / [Oder betroffenen Raum eintragen]"
+  },
+  {
+    "slug": "laermbelaestigung",
+    "menu_title": "Lärmbelästigung",
+    "seo_title": "Mängelanzeige Lärmbelästigung & Ruhestörung | PDF-Vorlage",
+    "seo_desc": "Ruhestörung durch Nachbarn oder Baulärm? Mit dieser kostenlosen Mängelanzeige fordern Sie Ihren Vermieter rechtssicher auf, für Ruhe zu sorgen.",
+    "h1": "Mängelanzeige wegen erheblicher Lärmbelästigung",
+    "info_titel": "Ruhestörung durch Nachbarn oder Baustellenlärm",
+    "info_text": "Wenn ständiger Lärm die Nutzung Ihrer Wohnung einschränkt, ist der Vermieter in der Pflicht, Maßnahmen zu ergreifen (z. B. Abmahnung der Störer). Wichtig: Führen Sie unbedingt parallel ein detailliertes Lärmprotokoll (Datum, Uhrzeit, Art und Intensität des Lärms) und legen Sie es diesem Schreiben bei.",
+    "prefill_mangel_beschreibung": "Es kommt zu wiederholten, massiven und andauernden Lärmbelästigungen, die das zumutbare Maß der spürbaren Wohnqualität und die gesetzlichen Ruhezeiten verletzen. Die genauen Zeiten, Dauern und die Art der Ruhestörungen sind dem beigefügten Lärmprotokoll zu entnehmen.",
+    "prefill_mangel_ort": "Wohnung / [Bitte Lärmquelle eintragen, z. B. Wohnung direkt über mir / Baustelle im Innenhof]"
+  },
+  {
+    "slug": "undichtes-fenster",
+    "menu_title": "Undichte Fenster",
+    "seo_title": "Mängelanzeige undichte Fenster & Zugluft | PDF-Vorlage",
+    "seo_desc": "Es zieht durch die Fenster? Erstellen Sie eine Mängelanzeige für Ihren Vermieter. Kostenlos, rechtssicher & direkt als PDF zum Download.",
+    "h1": "Mängelanzeige wegen undichter Fenster (Zugluft / Feuchtigkeit)",
+    "info_titel": "Zugluft abstellen und Heizkosten sparen",
+    "info_text": "Undichte Fenster führen nicht nur zu spürbarer Zugluft und unangenehmer Kälte, sondern treiben auch Ihre Heizkosten massiv in die Höhe. Zudem steigt das Risiko von Kondenswasser- und Schimmelbildung. Der Vermieter muss die Fenster in einem dichten, vertragsgemäßen Zustand halten.",
+    "prefill_mangel_beschreibung": "Die Fenster schließen nicht mehr bündig und dicht ab. Es kommt zu einer permanenten, spürbaren Zugluft sowie zu einem erheblichen Wärmeverlust. Bei starkem Regen dringt zudem Feuchtigkeit über den Rahmen in den Innenraum.",
+    "prefill_mangel_ort": "[Bitte betroffene Fenster eintragen, z. B. Fenster im Wohnzimmer links und Schlafzimmerfenster]"
+  },
+  {
+    "slug": "wasserschaden",
+    "menu_title": "Wasserschaden / Feuchte Wände",
+    "seo_title": "Mängelanzeige Wasserschaden & Feuchtigkeit | PDF-Vorlage",
+    "seo_desc": "Wasserschaden in der Wohnung? Nutzen Sie unsere kostenlose Vorlage zur Mängelanzeige an den Vermieter. Rechtssicher mit Fristsetzung.",
+    "h1": "Mängelanzeige wegen Wasserschadens / feuchter Wände",
+    "info_titel": "Akuter Wasserschaden? Sofort handeln!",
+    "info_text": "Ein Wasserschaden (z. B. durch einen Rohrbruch beim Nachbarn oder ein undichtes Dach) erfordert sofortiges Handeln, um die Bausubstanz zu retten und Schimmel zu verhindern. Bei akuten Notfällen (Überschwemmung) informieren Sie den Vermieter vorab telefonisch oder rufen Sie die Feuerwehr.",
+    "prefill_mangel_beschreibung": "Es ist ein sichtbarer Wasserschaden aufgetreten. Es bilden sich feuchte Flecken, Verfärbungen und Putzabplatzungen an der Wand bzw. Decke. Es ist zu befürchten, dass Feuchtigkeit fortlaufend in das Mauerwerk eindringt.",
+    "prefill_mangel_ort": "[Bitte genauen Ort angeben, z. B. Badezimmerdecke oder Küchenwand zum Nachbarn]"
+  },
+  {
+    "slug": "schaedlingsbefall",
+    "menu_title": "Schädlingsbefall / Ungeziefer",
+    "seo_title": "Mängelanzeige Schädlingsbefall & Ungeziefer | PDF-Vorlage",
+    "seo_desc": "Ameisen, Ratten oder Bettwanzen in der Wohnung? Musterbrief zur Mängelanzeige bei Ungeziefer an den Vermieter kostenlos erstellen.",
+    "h1": "Mängelanzeige wegen Schädlings- / Ungezieferbefalls",
+    "info_titel": "Ungeziefer in der Wohnung? Wer zahlt die Beseitigung?",
+    "info_text": "Der Vermieter ist grundsätzlich für die Schädlingsbekämpfung (Kammerjäger) zuständig, es sei denn, er kann nachweisen, dass Sie den Befall verschuldet haben. Melden Sie das Problem sofort, um eine Ausbreitung im gesamten Haus zu verhindern.",
+    "prefill_mangel_beschreibung": "In der Wohnung wurde ein akuter Befall von Schädlingen festgestellt, der das hygienische und vertragsgemäße Wohnen massiv beeinträchtigt. Eine eigenständige Beseitigung mit haushaltsüblichen Mitteln blieb erfolglos.",
+    "prefill_mangel_ort": "[Bitte eintragen, z. B. Küche (Ameisen), Schlafzimmer (Bettwanzen) oder Keller/Terrasse (Ratten)]"
+  },
+  {
+    "slug": "fahrstuhlausfall",
+    "menu_title": "Fahrstuhlausfall",
+    "seo_title": "Mängelanzeige Fahrstuhlausfall / Aufzug defekt | Vorlage",
+    "seo_desc": "Aufzug im Mietshaus defekt? Erstellen Sie eine Mängelanzeige an den Vermieter. Ideal für höhergelegene Stockwerke. Kostenloses PDF.",
+    "h1": "Mängelanzeige wegen Ausfalls des Fahrstuhls / Aufzugs",
+    "info_titel": "Fahrstuhl defekt? Besonders in oberen Stockwerken ein Mangel",
+    "info_text": "Ist ein Fahrstuhl im Mietvertrag verankert oder standardmäßig vorhanden, muss er funktionieren. Fällt er über längere Zeit aus, rechtfertigt dies – besonders in höheren Etagen – eine Mietminderung. Setzen Sie dem Vermieter eine angemessene Frist zur Reparatur.",
+    "prefill_mangel_beschreibung": "Der Personenaufzug im Wohnhaus ist komplett außer Betrieb. Da sich die angemietete Wohnung im oberen Stockwerk befindet, stellt der Ausfall eine erhebliche Erschwernis im Alltag und einen deutlichen Mangel dar.",
+    "prefill_mangel_ort": "Personenaufzug im Treppenhaus / [Ggf. Aufzugsnummer oder Aufgang eintragen]"
+  },
+  {
+    "slug": "kuechengeraete-defekt",
+    "menu_title": "Defekt mitvermieteter Geräte (Küche)",
+    "seo_title": "Mängelanzeige Einbauküche / Defekte Küchengeräte | Vorlage",
+    "seo_desc": "Mitvermieteter Herd oder Kühlschrank defekt? Fordern Sie den Vermieter mit dieser PDF-Mängelanzeige zur Reparatur auf.",
+    "h1": "Mängelanzeige: Defekt an mitvermieteten Elektrogeräten",
+    "info_titel": "Herd oder Kühlschrank kaputt? Das gilt bei Einbauküchen",
+    "info_text": "Wenn die Einbauküche oder einzelne Elektrogeräte (Herd, Ofen, Kühlschrank, Geschirrspüler) Teil des Mietvertrags sind, ist der Vermieter für deren Instandhaltung und Reparatur verantwortlich (sofern keine wirksame Kleinreparaturklausel greift).",
+    "prefill_mangel_beschreibung": "Das im Mietvertrag enthaltene und mitvermietete Elektrogerät ist defekt und kann nicht mehr genutzt werden. Ein normales Kochen, Kühlen bzw. die vertragsgemäße Nutzung der Küche ist dadurch stark eingeschränkt.",
+    "prefill_mangel_ort": "Küche: [Bitte genaues Gerät eintragen, z. B. Einbau-Kühlschrank oder Backofen]"
+  },
+  {
+    "slug": "klingel-defekt",
+    "menu_title": "Klingel / Gegensprechanlage defekt",
+    "seo_title": "Mängelanzeige Klingel & Gegensprechanlage defekt | Vorlage",
+    "seo_desc": "Klingel oder Gegensprechanlage ohne Funktion? Erstellen Sie eine kostenlose Mängelanzeige für Ihren Vermieter als PDF.",
+    "h1": "Mängelanzeige: Defekt der Klingel- und Gegensprechanlage",
+    "info_titel": "Klingel kaputt? Post und Besuch verpasst?",
+    "info_text": "Eine funktionierende Klingel sowie die Gegensprechanlage nebst Türöffner gehören zum Mindeststandard einer modernen Wohnung. Ist die Anlage defekt, müssen Sie Lieferanten oder Besuchern oft mühsam entgegengehen. Fordern Sie den Vermieter zur Behebung auf.",
+    "prefill_mangel_beschreibung": "Die Klingel an der Hauseingangstür sowie die Gegensprechanlage und der elektrische Türöffner in der Wohnung sind komplett ohne Funktion. Signalzeichen kommen in der Wohnung nicht an.",
+    "prefill_mangel_ort": "Hauseingangstür / Wohnungstür und Steuerungseinheit im Flur"
+  },
+  {
+    "slug": "haustuer-schloss-defekt",
+    "menu_title": "Defekte Haustür / Schließanlage",
+    "seo_title": "Mängelanzeige Defektes Schloss & Haustür | PDF-Vorlage",
+    "seo_desc": "Haustür schließt nicht oder Schloss defekt? Mängelanzeige wegen Sicherheitsmängeln an den Vermieter senden. Rechtssicheres PDF.",
+    "h1": "Mängelanzeige wegen defekter Haustür / Schließanlage",
+    "info_titel": "Sicherheitsrisiko: Wenn die Haustür offen steht",
+    "info_text": "Eine Hauseingangstür, die nicht richtig schließt, oder ein defektes Schloss im Haupteingang stellen ein erhebliches Sicherheitsrisiko dar (Einbruchgefahr, unbefugter Zutritt Dritter). Der Vermieter muss hier unverzüglich für Abhilfe und Sicherheit sorgen.",
+    "prefill_mangel_beschreibung": "Die Hauseingangstür schließt nicht mehr selbstständig bzw. das Schloss der Hauptschließanlage ist defekt. Die Tür steht somit für jedermann offen, was ein massives Sicherheitsrisiko für das gesamte Objekt darstellt.",
+    "prefill_mangel_ort": "Haupteingangstür des Wohngebäudes"
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "auslandssemester",
+    "menu_title": "Wegen Auslandssemester / Reise",
+    "seo_title": "Untervermietung wegen Auslandssemester | PDF Antrag",
+    "seo_desc": "Gehen Sie ins Ausland? Beantragen Sie rechtssicher die Untervermietung für Ihr Auslandssemester oder eine längere Reise. Kostenloser PDF-Generator.",
+    "h1": "Erlaubnis zur Untervermietung wegen Auslandsaufenthalt beantragen",
+    "info_titel": "Die Wohnung während der Reise nicht aufgeben müssen",
+    "info_text": "Ein längerer Auslandsaufenthalt (z. B. Studium oder Auslandsprojekt) ist ein klassisches, gerichtlich anerkanntes 'berechtigtes Interesse'. Wichtig ist: Sie müssen zumindest einen kleinen Teil der Wohnung (z. B. ein Zimmer oder eine verschlossene Abstellkammer) formell für Ihre eigenen Sachen behalten, damit es rechtlich eine Teiluntervermietung nach § 553 BGB bleibt. Eine vollständige Untervermietung der gesamten Wohnung kann der Vermieter leichter ablehnen.",
+    "prefill_dauer": "Befristet vom [Startdatum] bis zum [Enddatum]",
+    "prefill_entstehung": "Nach Erhalt der Zusage für mein Auslandssemester / meinen berufsbedingten Auslandsaufenthalt.",
+    "prefill_erlaeuterung": "Mein berechtigtes Interesse an der befristeten Teiluntervermietung besteht darin, dass ich mich in dem genannten Zeitraum ausbildungsbedingt / beruflich im Ausland aufhalten werde. Um die finanzielle Belastung für die temporär leerstehende Wohnung zu minimieren, möchte ich einen Teil der Wohnung befristet untervermieten. Einen Teil der Räumlichkeiten behalte ich zur Einlagerung meiner persönlichen Gegenstände weiterhin in meinem unmittelbaren Besitz. Als Untermieter ist folgende Person vorgesehen: [Name, Vorname, Geburtsdatum des Untermieters]."
+  },
+  {
+    "slug": "wg-gruendung",
+    "menu_title": "Gründung einer Wohngemeinschaft (WG)",
+    "seo_title": "Untervermietung für WG-Gründung | PDF Antrag Vermieter",
+    "seo_desc": "Sie wollen eine WG gründen oder ein freies Zimmer vermieten? Nutzen Sie diesen PDF-Antrag für die Untermieterlaubnis beim Vermieter. Ohne Anmeldung.",
+    "h1": "Erlaubnis zur Untervermietung zwecks WG-Gründung",
+    "info_titel": "Freies Zimmer zur WG machen",
+    "info_text": "Der Wunsch, nicht mehr alleine zu leben, soziale Kontakte zu pflegen oder schlicht die Wohnkosten zu teilen, reicht als 'berechtigtes Interesse' für eine WG-Gründung völlig aus. Bitte beachten Sie, dass Sie dem Vermieter die Daten des geplanten Untermieters (Name, Beruf/Tätigkeit) mitteilen müssen, damit dieser die Zumutbarkeit prüfen kann.",
+    "prefill_dauer": "Unbefristet",
+    "prefill_entstehung": "Nach dem Entschluss, die Wohnung künftig gemeinschaftlich zu nutzen.",
+    "prefill_erlaeuterung": "Mein berechtigtes Interesse an der Teiluntervermietung begründet sich aus dem Wunsch, meine private Lebensgestaltung zu verändern und nicht mehr alleine in der Wohnung zu leben. Die Gründung einer Wohngemeinschaft dient neben dem sozialen Austausch auch der notwendigen finanziellen Entlastung angesichts gestiegener allgemeiner Lebenshaltungskosten. Als zukünftige/-r Untermieter/-in ist vorgesehen: [Name, Vorname, aktuelle Anschrift und Beruf des Untermieters]."
+  },
+  {
+    "slug": "lebensgefaehrte",
+    "menu_title": "Einzug des Partners / der Partnerin",
+    "seo_title": "Erlaubnis Einzug Partner beantragen | PDF Untervermietung",
+    "seo_desc": "Zusammenziehen? Für den Einzug des unverheirateten Partners brauchen Sie die Erlaubnis des Vermieters. Erstellen Sie hier den Antrag als PDF.",
+    "h1": "Erlaubnis für den Einzug des Lebensgefährten (Untervermietung)",
+    "info_titel": "Zusammenziehen: Verheiratet vs. Unverheiratet",
+    "info_text": "Vorsicht vor einem häufigen Irrtum: Während Ehepartner und engste Familienmitglieder (Kinder/Eltern) genehmigungsfrei einziehen dürfen, gelten unverheiratete Lebensgefährten rechtlich als 'Dritte'. Sie müssen den Vermieter zwingend vor dem Einzug um Erlaubnis bitten. Der Wunsch, das Leben künftig gemeinsam in einer Wohnung zu verbringen, ist laut Bundesgerichtshof (BGH) jedoch ein unanfechtbares berechtigtes Interesse.",
+    "prefill_dauer": "Unbefristet",
+    "prefill_entstehung": "Nach dem Entschluss, eine dauerhafte, gemeinsame Lebensführung zu begründen.",
+    "prefill_erlaeuterung": "Mein berechtigtes Interesse besteht in dem Wunsch, mit meinem/meiner unverheirateten Lebenspartner/-in eine auf Dauer angelegte gemeinsame Lebensführung in meiner Wohnung aufzubauen. Nach ständiger Rechtsprechung des Bundesgerichtshofs (BGH) stellt dieser persönliche Wunsch ein berechtigtes Interesse im Sinne des § 553 Abs. 1 BGB dar. Ich bitte daher um Erteilung der Erlaubnis für den Einzug von: [Name, Vorname, Geburtsdatum des Partners/der Partnerin]."
+  },
+  {
+    "slug": "finanzielle-notlage",
+    "menu_title": "Wegen finanzieller Gründe (Jobwechsel / Kosten)",
+    "seo_title": "Untervermietung wegen finanzieller Gründe | PDF Antrag",
+    "seo_desc": "Miete zu teuer geworden? Beantragen Sie eine Untervermietung beim Vermieter, um finanzielle Engpässe auszukommen. Kostenloser Generator.",
+    "h1": "Erlaubnis zur Untervermietung aus wirtschaftlichen Gründen",
+    "info_titel": "Wenn die Mietbelastung zu hoch wird",
+    "info_text": "Egal ob durch Jobverlust, Gehaltseinbußen, Renteneintritt oder stark gestiegene Energiekosten und Mieten: Die Notwendigkeit, sich finanziell zu entlasten, um die Wohnung nicht kündigen zu müssen, ist einer der am stärksten geschützten Gründe für einen Untermiet-Antrag (§ 553 BGB).",
+    "prefill_dauer": "Unbefristet / Ggf. befristet",
+    "prefill_entstehung": "Nach einer unvorhergesehenen Änderung meiner wirtschaftlichen Verhältnisse.",
+    "prefill_erlaeuterung": "Mein berechtigtes Interesse an der Teiluntervermietung ist wirtschaftlicher Natur. Seit Abschluss des Mietvertrags haben sich meine finanziellen Verhältnisse (z. B. durch [Grund eintragen, z. B. Reduzierung des Einkommens / Inflation / veränderte Lebensumstände]) spürbar verändert. Die Untervermietung eines Zimmers ist dringend erforderlich, um die laufenden Miet- und Nebenkosten weiterhin zuverlässig decken zu können und das Mietverhältnis dauerhaft zu sichern. Als Untermieter ist vorgesehen: [Name, Vorname des Untermieters]."
+  },
+  {
+    "slug": "berufspendler",
+    "menu_title": "Wegen beruflichem Pendeln (Zweitwohnsitz)",
+    "seo_title": "Untervermietung wegen Job & Pendeln | PDF Vorlage Antrag",
+    "seo_desc": "Beruflich in einer anderen Stadt tätig? Beantragen Sie die Untervermietung Ihrer Wohnung für die Pendelzeit rechtssicher als PDF.",
+    "h1": "Erlaubnis zur Untervermietung wegen berufsbedingten Pendelns",
+    "info_titel": "Doppelter Haushalt: Kosten abfedern",
+    "info_text": "Wenn Sie aus beruflichen Gründen unter der Woche in einer anderen Stadt arbeiten müssen und dort eine Zweitwohnung oder ein Zimmer benötigen, ist das ein absolut anerkannter Grund für eine Teiluntervermietung der Hauptwohnung. So vermeiden Sie eine doppelte, unbezahlbare Mietbelastung.",
+    "prefill_dauer": "Unbefristet / Für die Dauer des Beschäftigungsverhältnisses",
+    "prefill_entstehung": "Nach Aufnahme meiner beruflichen Tätigkeit an einem anderen Arbeitsort.",
+    "prefill_erlaeuterung": "Aufgrund einer beruflichen Veränderung befindet sich mein primärer Arbeitsort nunmehr in [Name der Stadt]. Da ich dort einen zweiten Wohnsitz unterhalten muss, bin ich gezwungen, die finanzielle Belastung an meinem Hauptwohnsitz zu reduzieren. Ich beabsichtige daher, ein Zimmer meiner Wohnung während meiner arbeitsbedingten Abwesenheit unterzuvermieten. Als Untermieter ist vorgesehen: [Name, Vorname des Untermieters]."
+  },
+  {
+    "slug": "empty-nest",
+    "menu_title": "Nach Auszug der Kinder",
+    "seo_title": "Untervermietung nach Auszug der Kinder | PDF Vorlage",
+    "seo_desc": "Wohnung nach dem Auszug der Kinder zu groß und zu teuer? Beantragen Sie die Teiluntervermietung eines freien Zimmers beim Vermieter.",
+    "h1": "Erlaubnis zur Untervermietung nach Haushaltsverkleinerung",
+    "info_titel": "Wenn die Familienwohnung plötzlich zu groß ist",
+    "info_text": "Wenn die Kinder flügge werden und ausziehen, stehen oft ein oder mehrere Zimmer leer. Viele Mieter möchten nach Jahrzehnten nicht aus ihrem gewohnten Umfeld ausziehen, können oder wollen die Kosten für die große Wohnung aber nicht mehr alleine tragen. Die Verkleinerung des Haushalts begründet ein klares berechtigtes Interesse.",
+    "prefill_dauer": "Unbefristet",
+    "prefill_entstehung": "Nach dem Auszug von Familienangehörigen und der damit verbundenen Verkleinerung des Haushalts.",
+    "prefill_erlaeuterung": "Nach dem Auszug meiner Kinder steht ein Teil der gemieteten Wohnung dauerhaft leer. Um die nunmehr für eine Einzelperson / ein Paar zu hohen Wohnkosten abzufedern und den Wohnraum sinnvoll zu nutzen, möchte ich ein freies Zimmer an eine dritte Person untervermieten. Dies ermöglicht mir den Verbleib in meinem langjährigen sozialen Umfeld. Als Untermieter ist vorgesehen: [Name, Vorname des Untermieters]."
+  },
+  {
+    "slug": "trennung-partner",
+    "menu_title": "Nach Trennung vom Partner",
+    "seo_title": "Untervermietung nach Trennung | PDF Antrag an Vermieter",
+    "seo_desc": "Partner ist nach einer Trennung ausgezogen? Beantragen Sie die Untervermietung des freien Zimmers zur finanziellen Entlastung.",
+    "h1": "Erlaubnis zur Untervermietung nach Trennung der Lebensgemeinschaft",
+    "info_titel": "Kosten auffangen, wenn einer auszieht",
+    "info_text": "Bricht eine Partnerschaft auseinander und zieht ein Partner aus, steht der in der Wohnung verbleibende Hauptmieter plötzlich vor den doppelten Kosten. Um eine Kündigung der Wohnung abzuwenden, erlaubt der Gesetzgeber in dieser Notsituation die Untervermietung eines Teils der Räume.",
+    "prefill_dauer": "Unbefristet",
+    "prefill_entstehung": "Nach der Trennung von meinem/meiner bisherigen Lebensgefährten/-in und dessen/deren Auszug.",
+    "prefill_erlaeuterung": "Mein bisheriger Partner / meine bisherige Partnerin ist infolge unserer Trennung aus der gemeinsamen Wohnung ausgezogen. Da ich die Gesamtmiete nunmehr alleine tragen muss, hat sich meine wirtschaftliche Situation akut verschärft. Zur Vermeidung von Zahlungsrückständen und zur Sicherung des Mietverhältnisses ist die Teiluntervermietung eines Zimmers zwingend notwendig. Als Untermieter ist vorgesehen: [Name, Vorname des Untermieters]."
+  },
+  {
+    "slug": "pflege-angehoerige",
+    "menu_title": "Wegen Pflege/Betreuung von Angehörigen",
+    "seo_title": "Untervermietung wegen Pflegefall in der Familie | PDF",
+    "seo_desc": "Sie müssen vorübergehend Verwandte pflegen? Beantragen Sie die Teiluntervermietung Ihrer Wohnung für diesen Zeitraum. Kostenloses PDF.",
+    "h1": "Erlaubnis zur Untervermietung wegen Pflege von Familienangehörigen",
+    "info_titel": "Unterstützung der Familie ohne Wohnungsverlust",
+    "info_text": "Wenn in der Familie ein Pflege- oder Betreuungsfall eintritt und Sie temporär an einen anderen Ort ziehen müssen, um zu helfen, dürfen Sie Ihre Wohnung teiluntervermieten. So bleibt Ihr Lebensmittelpunkt gesichert, während Sie familiäre Pflichten wahrnehmen.",
+    "prefill_dauer": "Befristet für die Dauer der voraussichtlichen Pflege/Betreuung",
+    "prefill_entstehung": "Nach dem Eintritt der Pflegebedürftigkeit eines engen Familienangehörigen.",
+    "prefill_erlaeuterung": "Ein enger Familienangehöriger ist akut auf Hilfe und Pflege angewiesen. Um diese Betreuung im Alltag gewährleisten zu können, werde ich mich in den kommenden Monaten überwiegend am Wohnort des Angehörigen aufhalten. Damit meine Wohnung in dieser Zeit nicht ungenutzt bleibt und um die finanzielle Belastung zu reduzieren, möchte ich einen Teil der Wohnung befristet untervermieten. Als Untermieter ist vorgesehen: [Name, Vorname des Untermieters]."
+  }
+]
