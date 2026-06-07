@@ -2,11 +2,11 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>{{SEO_TITLE}}</title>
-  <meta name="description" content="{{SEO_DESC}}">
+  <title>Untervermietung nach Auszug der Kinder | PDF Vorlage</title>
+  <meta name="description" content="Wohnung nach dem Auszug der Kinder zu groß und zu teuer? Beantragen Sie die Teiluntervermietung eines freien Zimmers beim Vermieter.">
   <meta name="robots" content="index,follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link class="canonical" href="https://mieter-lotse.de/ml/generator-antrag-erlaubnis-untervermietung-{{SLUG}}.html">
+  <link class="canonical" href="https://mieter-lotse.de/ml/generator-antrag-erlaubnis-untervermietung-empty-nest.html">
   <link rel="icon" href="/logo-lotse-fav.png">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script defer src="/untervermietung_antrag_script.js"></script>
@@ -18,10 +18,10 @@
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://mieter-lotse.de/ml/generator-antrag-erlaubnis-untervermietung-{{SLUG}}.html",
-        "url": "https://mieter-lotse.de/ml/generator-antrag-erlaubnis-untervermietung-{{SLUG}}.html",
-        "name": "{{SEO_TITLE}}",
-        "description": "{{SEO_DESC}}",
+        "@id": "https://mieter-lotse.de/ml/generator-antrag-erlaubnis-untervermietung-empty-nest.html",
+        "url": "https://mieter-lotse.de/ml/generator-antrag-erlaubnis-untervermietung-empty-nest.html",
+        "name": "Untervermietung nach Auszug der Kinder | PDF Vorlage",
+        "description": "Wohnung nach dem Auszug der Kinder zu groß und zu teuer? Beantragen Sie die Teiluntervermietung eines freien Zimmers beim Vermieter.",
         "inLanguage": "de",
         "isPartOf": {
           "@type": "WebSite",
@@ -49,7 +49,7 @@
       },
       {
         "@type": "FAQPage",
-        "@id": "https://mieter-lotse.de/ml/generator-antrag-erlaubnis-untervermietung-{{SLUG}}.html#faq",
+        "@id": "https://mieter-lotse.de/ml/generator-antrag-erlaubnis-untervermietung-empty-nest.html#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -89,7 +89,7 @@
 
   <div class="page-container">
 
-  <h1>{{H1}}</h1>
+  <h1>Erlaubnis zur Untervermietung nach Haushaltsverkleinerung</h1>
   
   <div class="usp-bar">
     <div class="usp-item">
@@ -119,8 +119,8 @@
   <a href="#untervermietungAntragForm" class="button jump-button" style="margin-bottom: 20px; display: inline-block;">Direkt zum kostenlosen Untermiet-Antrag springen</a>
 
   <section class="info-box quick-facts-box" style="background-color: #f4f6f8; border-left: 4px solid #0056b3; padding: 20px; margin-bottom: 25px; border-radius: 0 8px 8px 0;">
-    <h2 style="font-size: 1.25em; margin-top: 0; color: #333;">{{INFO_TITEL}}</h2>
-    <p>{{INFO_TEXT}}</p>
+    <h2 style="font-size: 1.25em; margin-top: 0; color: #333;">Wenn die Familienwohnung plötzlich zu groß ist</h2>
+    <p>Wenn die Kinder flügge werden und ausziehen, stehen oft ein oder mehrere Zimmer leer. Viele Mieter möchten nach Jahrzehnten nicht aus ihrem gewohnten Umfeld ausziehen, können oder wollen die Kosten für die große Wohnung aber nicht mehr alleine tragen. Die Verkleinerung des Haushalts begründet ein klares berechtigtes Interesse.</p>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px; font-size: 0.95em;">
       <div><strong>Rechtliche Basis:</strong> § 553 BGB (Teilüberlassung)</div>
       <div><strong>Voraussetzung:</strong> Berechtigtes Interesse</div>
@@ -184,7 +184,7 @@
         <label for="geplanterBeginnUntermiete">Geplanter Beginn der Untervermietung (Datum):</label>
         <input type="date" id="geplanterBeginnUntermiete" name="geplanterBeginnUntermiete" required autocomplete="off">
         <label for="geplanteDauerUntermiete">Geplante Dauer der Untervermietung (optional):</label>
-        <input type="text" id="geplanteDauerUntermiete" name="geplanteDauerUntermiete" value="{{PREFILL_DAUER}}" autocomplete="off">
+        <input type="text" id="geplanteDauerUntermiete" name="geplanteDauerUntermiete" value="Unbefristet" autocomplete="off">
       </fieldset>
 
       <fieldset>
@@ -215,10 +215,10 @@
         </select>
 
         <label for="berechtigtesInteresseEntstehung">Wann ist dieses Interesse entstanden? <small>(Zwingend nach Vertragsschluss!)</small></label>
-        <input type="text" id="berechtigtesInteresseEntstehung" name="berechtigtesInteresseEntstehung" value="{{PREFILL_ENTSTEHUNG}}" required autocomplete="off">
+        <input type="text" id="berechtigtesInteresseEntstehung" name="berechtigtesInteresseEntstehung" value="Nach dem Auszug von Familienangehörigen und der damit verbundenen Verkleinerung des Haushalts." required autocomplete="off">
 
         <label for="berechtigtesInteresseErlaeuterung">Erläuterung Ihres Interesses:</label>
-        <textarea id="berechtigtesInteresseErlaeuterung" name="berechtigtesInteresseErlaeuterung" rows="5" required autocomplete="off">{{PREFILL_ERLAEUTERUNG}}</textarea>
+        <textarea id="berechtigtesInteresseErlaeuterung" name="berechtigtesInteresseErlaeuterung" rows="5" required autocomplete="off">Nach dem Auszug meiner Kinder steht ein Teil der gemieteten Wohnung dauerhaft leer. Um die nunmehr für eine Einzelperson / ein Paar zu hohen Wohnkosten abzufedern und den Wohnraum sinnvoll zu nutzen, möchte ich ein freies Zimmer an eine dritte Person untervermieten. Dies ermöglicht mir den Verbleib in meinem langjährigen sozialen Umfeld. Als Untermieter ist vorgesehen: [Name, Vorname des Untermieters].</textarea>
       </fieldset>
 
       <fieldset>
@@ -311,7 +311,11 @@
     <h2 style="margin-top:0">Weitere Vorlagen zur Untervermietung</h2>
     <p>Hier finden Sie den passenden Antrag für Ihren spezifischen Untervermietungsgrund:</p>
     <div style="margin-bottom: 20px;">
-      {{CROSSLINKS}}
+      <a href="/ml/generator-antrag-erlaubnis-untervermietung-pflege-angehoerige.html" class="button button-secondary" style="display:block; margin-bottom:8px;">Vorlage: Wegen Pflege/Betreuung von Angehörigen</a>
+<a href="/ml/generator-antrag-erlaubnis-untervermietung-trennung-partner.html" class="button button-secondary" style="display:block; margin-bottom:8px;">Vorlage: Nach Trennung vom Partner</a>
+<a href="/ml/generator-antrag-erlaubnis-untervermietung-finanzielle-notlage.html" class="button button-secondary" style="display:block; margin-bottom:8px;">Vorlage: Wegen finanzieller Gründe (Jobwechsel / Kosten)</a>
+<a href="/ml/generator-antrag-erlaubnis-untervermietung-berufspendler.html" class="button button-secondary" style="display:block; margin-bottom:8px;">Vorlage: Wegen beruflichem Pendeln (Zweitwohnsitz)</a>
+
     </div>
     
     <p style="margin-bottom:.4rem; border-top: 1px solid #ccc; padding-top: 15px;">
