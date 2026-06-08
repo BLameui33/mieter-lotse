@@ -2,8 +2,8 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Grundsteuer in den Nebenkosten prüfen | Rechner</title>
-  <meta name="description" content="Darf der Vermieter die Grundsteuer umlegen? Ja, aber oft gibt es Fehler beim Verteilerschlüssel. Prüfen Sie Ihre Nebenkostenabrechnung.">
+  <title>Grundsteuer in den Nebenkosten prüfen | Ist es erlaubt?</title>
+  <meta name="description" content="Darf der Vermieter die Grundsteuer umlegen? Ja, aber Vorsicht bei Gewerbeflächen im Haus. Jetzt Kosten pro Quadratmeter berechnen.">
   <meta name="keywords" content="Nebenkostenabrechnung prüfen, Nachzahlung zu hoch, Betriebskostenspiegel, Nebenkosten Rechner, kalte Betriebskosten, Formfehler Nebenkosten">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://mieter-lotse.de/ml/nebenkosten-check-grundsteuer.html">
@@ -147,7 +147,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Betriebskosten-Plausicheck Rechner",
-  "description": "Darf der Vermieter die Grundsteuer umlegen? Ja, aber oft gibt es Fehler beim Verteilerschlüssel. Prüfen Sie Ihre Nebenkostenabrechnung.",
+  "description": "Darf der Vermieter die Grundsteuer umlegen? Ja, aber Vorsicht bei Gewerbeflächen im Haus. Jetzt Kosten pro Quadratmeter berechnen.",
   "applicationCategory": "CalculatorApplication",
   "operatingSystem": "All",
   "browserRequirements": "Requires JavaScript",
@@ -195,8 +195,8 @@
   </a>
 
   <div class="info-box">
-    <p><strong>Die Grundsteuer: Eine ungeliebte Umlage</strong></p>
-    <p>Ja, die Grundsteuer gehört zu den 'kalten Betriebskosten' und darf auf Sie umgelegt werden. Allerdings passieren hier oft Fehler beim Verteilerschlüssel, wenn im Haus z.B. auch Gewerbeflächen sind. Diese müssen zwingend herausgerechnet werden. Überprüfen Sie Ihre Gesamtkosten.</p>
+    <p><strong>Grundsteuer: Eine Umlage mit Fallstricken</strong></p>
+    <p>Die Grundsteuer gehört zu den kalten Betriebskosten und darf laut Mietvertrag auf Sie umgelegt werden. Allerdings passieren hier oft Fehler beim Verteilerschlüssel. Befinden sich beispielsweise Gewerbebetriebe (wie Läden oder Praxen) im selben Gebäude, müssen deren oft höhere Grundsteueranteile vorab herausgerechnet werden.</p>
     <p>
       <strong>Bringen Sie Licht ins Dunkel.</strong> Unser Rechner vergleicht die geforderten Kosten aus Ihrem Brief detailliert mit den aktuellen Durchschnittswerten (Betriebskostenspiegel) des Deutschen Mieterbundes. So sehen Sie Raum für Raum und Posten für Posten sofort, ob Ihre Kosten extrem vom bundesweiten oder regionalen Durchschnitt abweichen und sich ein tiefergehender rechtlicher Widerspruch lohnt.
     </p>
@@ -226,11 +226,39 @@
     <strong>Datensicherheit:</strong> Die Werte Ihrer Nebenkostenabrechnung werden ausschließlich lokal in Ihrem Webbrowser (localStorage) verarbeitet. Wir speichern oder übertragen diese finanziellen Daten nicht.
   </div>
 
+  <!-- BAUSTEIN 1: Hinweis Pauschalwerte -->
+<div class="info-box" style="background-color: #f3e5f5; border-left: 4px solid #9c27b0; padding: 10px; margin-top: 15px;">
+  <strong>Wie funktionieren die Richtwerte?</strong> Dieser Rechner arbeitet mit den offiziellen Durchschnittswerten des <strong>Betriebskostenspiegels 2025 des Deutschen Mieterbunds</strong> (aktuellste verfügbare Daten, Basis: ~2 Mio. Abrechnungen). Es handelt sich um bundesweite Pauschalwerte – kein Einzelfall. Regionale Besonderheiten (z. B. teure Fernwärme in bestimmten Städten), überdurchschnittlicher Verbrauch oder Sonderkonstellationen können Ihre Kosten legitimerweise von den Richtwerten abweichen lassen. Ein „Rot"-Ergebnis ist immer ein <em>Hinweis zum Nachfragen</em>, kein automatischer Beweis für einen Fehler.
+</div>
+
   <div class="kl-highlight kl-author-box" aria-label="Autor und Aktualisierung" style="background-color: #f5f5f5; border: 1px solid #e0e0e0; padding: 15px; margin-top: 20px; border-radius: 4px; display: flex; align-items: center; gap: 10px;">
     <strong>Autor:</strong> <a id="kl-page-author" href="/über.html" target="_blank" style="color: #2196f3; text-decoration: none;">Mieter-Lotse Team</a>
     <span class="kl-sep" style="color: #9e9e9e;">•</span>
     <strong>Letzte Aktualisierung:</strong> <span id="kl-page-lastupdated">01.05.2026</span>
   </div>
+
+  <!-- WEGWEISER: Schnell- oder Ausführlich-Check -->
+<div style="margin: 25px 0; padding: 20px; background: #f5f5f5; border-radius: 8px; border: 1px solid #e0e0e0;">
+  <p style="margin: 0 0 15px; font-weight: 500; font-size: 1em; text-align: center;">Wie möchten Sie Ihre Abrechnung prüfen?</p>
+  <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+
+    <a href="#calculator" style="flex:1; min-width:220px; display:block; padding:16px 18px; background:#fff; border:2px solid #ff9800; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .15s;"
+       onmouseover="this.style.boxShadow='0 2px 8px rgba(0,0,0,0.12)'" onmouseout="this.style.boxShadow='none'">
+      <div style="font-size:1.4em; margin-bottom:6px;">⚡</div>
+      <div style="font-weight:600; margin-bottom:4px; color:#e65100;">Schnell-Check</div>
+      <div style="font-size:0.85em; color:#666; line-height:1.4;">Nur Gesamtbetrag & Vorauszahlung eingeben — Ergebnis in 30 Sekunden. Ideal wenn Sie die Einzelposten nicht zur Hand haben.</div>
+    </a>
+
+    <a href="#postenChecker" style="flex:1; min-width:220px; display:block; padding:16px 18px; background:#fff; border:2px solid #9c27b0; border-radius:8px; text-decoration:none; color:inherit; transition:box-shadow .15s;"
+       onmouseover="this.style.boxShadow='0 2px 8px rgba(0,0,0,0.12)'" onmouseout="this.style.boxShadow='none'">
+      <div style="font-size:1.4em; margin-bottom:6px;">🔍</div>
+      <div style="font-weight:600; margin-bottom:4px; color:#6a1b9a;">Ausführlicher Posten-Check</div>
+      <div style="font-size:0.85em; color:#666; line-height:1.4;">Jeden Posten einzeln prüfen — Hausmeister, Wasser, Heizung & mehr. Erkennt genau welche Position auffällig ist.</div>
+    </a>
+
+  </div>
+  <p style="margin: 12px 0 0; font-size: 0.8em; color: #999; text-align: center;">Tipp: Die Formfehler-Checkliste finden Sie ebenfalls weiter unten — prüfen Sie diese immer zuerst.</p>
+</div>
 
   <div class="calculator-container" id="calculator">
       <form id="nkCalcForm">
@@ -359,6 +387,558 @@
       </div>
   </div>
 
+  <!-- BAUSTEIN 2: Großer Posten-für-Posten Check -->
+<div class="calculator-container" id="postenChecker" style="border-top-color: #9c27b0; margin-top: 40px;">
+
+  <h2 style="margin-top: 0; font-size: 1.3em; color: #6a1b9a;">🔍 Erweiterter Posten-Check: Jede Position einzeln prüfen</h2>
+  <p style="color: #555; font-size: 0.95em; margin-bottom: 5px;">Sie haben die vollständige Abrechnung vor sich? Dann geben Sie die Einzelbeträge ein. Der Check vergleicht jeden Posten separat mit dem Betriebskostenspiegel 2025 (DMB).</p>
+
+  <div class="info-box" style="background-color: #f3e5f5; border-left: 4px solid #9c27b0; padding: 10px; margin-bottom: 20px; font-size: 0.88em;">
+    <strong>Hinweis zu den Richtwerten:</strong> Alle Benchmarks basieren auf bundesweiten Durchschnittswerten des DMB-Betriebskostenspiegels 2025. Es handelt sich um Pauschalwerte — kein rechtlich verbindlicher Maßstab, aber ein anerkannter Vergleichsmaßstab (auch vor Gericht). Felder, die in Ihrer Abrechnung nicht vorkommen, einfach leer lassen.
+  </div>
+
+  <!-- Schritt-Anzeige -->
+  <div id="pk-progress" style="display: flex; gap: 6px; margin-bottom: 25px;">
+    <div id="pk-p0" style="height:4px; border-radius:2px; flex:1; background:#9c27b0; transition:background .3s;"></div>
+    <div id="pk-p1" style="height:4px; border-radius:2px; flex:1; background:#e0e0e0; transition:background .3s;"></div>
+    <div id="pk-p2" style="height:4px; border-radius:2px; flex:1; background:#e0e0e0; transition:background .3s;"></div>
+  </div>
+
+  <!-- === SCHRITT 0: Eckdaten === -->
+  <div id="pk-s0" class="pk-step">
+    <h3 class="calc-section-title" style="color:#6a1b9a;">Schritt 1 von 3: Eckdaten</h3>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; flex-wrap:wrap;">
+      <div class="input-group" style="flex-direction:column; align-items:flex-start; margin-bottom:0;">
+        <label for="pk_qm" style="margin-bottom:4px;">Wohnfläche (m²)</label>
+        <div class="input-wrapper"><input type="number" id="pk_qm" class="with-addon" placeholder="z.B. 75" min="10"><span class="addon">m²</span></div>
+      </div>
+      <div class="input-group" style="flex-direction:column; align-items:flex-start; margin-bottom:0;">
+        <label for="pk_region" style="margin-bottom:4px;">Region</label>
+        <div class="input-wrapper">
+          <select id="pk_region">
+            <option value="1.15">Westdeutschland – Großstadt</option>
+            <option value="1.0" selected>Westdeutschland – Mittelstadt/Land</option>
+            <option value="0.85">Ostdeutschland / ländlich</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="input-group" style="margin-top:15px;">
+      <label for="pk_heiz">Heizung & Warmwasser in der Abrechnung?</label>
+      <div class="input-wrapper">
+        <select id="pk_heiz">
+          <option value="yes" selected>Ja (Warmnebenkosten)</option>
+          <option value="no">Nein (eigener Zähler/Vertrag)</option>
+        </select>
+      </div>
+    </div>
+    <button type="button" onclick="pkStep(1)" class="button-primary" style="margin-top:20px; padding:12px 25px; cursor:pointer;">Weiter zu den Posten →</button>
+  </div>
+
+  <!-- === SCHRITT 1: Posten eingeben === -->
+  <div id="pk-s1" class="pk-step" style="display:none;">
+    <h3 class="calc-section-title" style="color:#6a1b9a;">Schritt 2 von 3: Jahresbeträge aus Ihrer Abrechnung</h3>
+    <p style="font-size:0.88em; color:#555; margin-bottom:15px;">Alle Felder sind optional. Nur eingegebene Posten werden bewertet. <strong>Jahresbeträge</strong> eintragen, nicht Monatswerte.</p>
+    <div id="pk-postenGrid" style="display:grid; gap:10px; margin-bottom:20px;"></div>
+    <div style="display:flex; justify-content:space-between; gap:10px; margin-top:10px;">
+      <button type="button" onclick="pkStep(0)" style="padding:10px 20px; cursor:pointer; border:1px solid #ccc; border-radius:4px; background:#fff;">← Zurück</button>
+      <button type="button" onclick="pkBerechne()" class="button-primary" style="padding:12px 25px; cursor:pointer;">📊 Alle Posten prüfen</button>
+    </div>
+  </div>
+
+  <!-- === SCHRITT 2: Ergebnis === -->
+  <div id="pk-s2" class="pk-step" style="display:none;">
+    <h3 class="calc-section-title" style="color:#6a1b9a;">Schritt 3 von 3: Ihr Ergebnis</h3>
+    <div id="pk-resultContent"></div>
+    <div style="display:flex; justify-content:space-between; gap:10px; margin-top:20px;">
+      <button type="button" onclick="pkStep(1)" style="padding:10px 20px; cursor:pointer; border:1px solid #ccc; border-radius:4px; background:#fff;">← Posten anpassen</button>
+      <a href="generator-widerspruch-nebenkosten.html" class="button-primary" style="padding:12px 20px; text-decoration:none; display:inline-block;">Zum Widerspruchs-Generator →</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- Interne Styles für Posten-Check -->
+<style>
+  .pk-posten-row {
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 12px 15px;
+  }
+  .pk-posten-label {
+    font-weight: 500;
+    font-size: 0.95em;
+    margin-bottom: 4px;
+  }
+  .pk-posten-hint {
+    font-size: 0.8em;
+    color: #888;
+    margin-bottom: 8px;
+  }
+  .pk-inp-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .pk-inp-row input {
+    flex: 1;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95em;
+    text-align: right;
+  }
+  .pk-inp-row .pk-unit {
+    font-size: 0.85em;
+    color: #666;
+    white-space: nowrap;
+  }
+  .pk-result-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .pk-rc-head {
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95em;
+    font-weight: 500;
+    background: #fafafa;
+  }
+  .pk-rc-body {
+    padding: 10px 14px;
+    font-size: 0.88em;
+    color: #555;
+    line-height: 1.5;
+    border-top: 1px solid #e0e0e0;
+  }
+  .pk-badge {
+    font-size: 0.78em;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .pk-badge-ok   { background:#e8f5e9; color:#2e7d32; }
+  .pk-badge-warn { background:#fff8e1; color:#e65100; }
+  .pk-badge-crit { background:#ffebee; color:#c62828; }
+  .pk-meter {
+    height: 5px;
+    background: #e0e0e0;
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 6px 0 3px;
+  }
+  .pk-meter-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width .4s;
+  }
+  .pk-summary-box {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  .pk-summary-green { background:#e8f5e9; border:2px solid #4caf50; }
+  .pk-summary-yellow { background:#fff8e1; border:2px solid #ff9800; }
+  .pk-summary-red { background:#ffebee; border:2px solid #f44336; }
+</style>
+
+<script>
+(function() {
+  // -------------------------------------------------------
+  // POSTEN-DEFINITIONEN — Basis: DMB Betriebskostenspiegel 2024
+  // Werte in €/qm/Monat (Bundesdurchschnitt)
+  // Quelle: Deutscher Mieterbund, Veröffentlichung Dez. 2025
+  // benchMax = DMB-Durchschnitt; benchCrit = DMB-Maximalwert
+  // -------------------------------------------------------
+  const PK_POSTEN = [
+    {
+      id:'heiz', label:'Heizung & Warmwasser', heizOnly:true,
+      hint:'Brennstoff, Wartung Heizanlage, Schornsteinfeger, Abgasmessung — KEINE Reparaturen',
+      benchAvg: 1.32, benchMax: 2.18,
+      warnText:'Heizkosten über Durchschnitt. Sind Zählerstände korrekt? Gibt es ein Heizkostenabrechnung-Protokoll?',
+      critText:'Heizkosten im kritischen Bereich (über DMB-Maximalwert). Fordern Sie Zählerprotokolle und die detaillierte Heizkostenabrechnung an. Bei Fernwärme: Ist der Anbieter ein Monopolist?'
+    },
+    {
+      id:'wasser', label:'Wasser & Abwasser',
+      hint:'Kaltwasserversorgung, Abwassergebühren, ggf. Wasserzähler-Eichung — KEINE Reparaturen an Leitungen',
+      benchAvg: 0.29, benchMax: 0.50,
+      warnText:'Wasserkosten über dem Durchschnitt. Mögliche Ursache: Leckage im Haus, falscher Verteilerschlüssel (m² vs. Personen), Warmwasseranteil doppelt abgerechnet?',
+      critText:'Sehr hohe Wasserkosten. Prüfen Sie ob Reparaturen an Rohren fälschlicherweise umgelegt wurden — das ist verboten!'
+    },
+    {
+      id:'muell', label:'Müllabfuhr / Entsorgung',
+      hint:'Kommunale Müllgebühren nach Gemeindesatzung — Sperrmüll-Sonderaktionen sind grundsätzlich nicht umlagefähig',
+      benchAvg: 0.13, benchMax: 0.22,
+      warnText:'Müllkosten erhöht. Wurde Sperrmüll oder eine Sonderentsorgung fälschlicherweise auf alle Mieter umgelegt?',
+      critText:'Sehr hohe Müllkosten. Nur die regulären kommunalen Gebühren dürfen umgelegt werden.'
+    },
+    {
+      id:'hausm', label:'Hausmeister',
+      hint:'Pflege, Winterdienst, Treppenhausreinigung durch Hausmeister — KEINE Reparatur- oder Handwerksleistungen!',
+      benchAvg: 0.18, benchMax: 0.35,
+      warnText:'Hausmeisterkosten erhöht. Wichtig: Reparaturen zählen nicht als Betriebskosten. Fordern Sie die Rechnung mit Stundennachweis an.',
+      critText:'Sehr hohe Hausmeisterkosten — häufigster Streitpunkt! Belegeinsicht dringend empfohlen. Reparaturleistungen sind zwingend herauszurechnen.'
+    },
+    {
+      id:'reinig', label:'Gebäude-/Treppenhausreinigung',
+      hint:'Reinigung der Gemeinschaftsflächen (Treppenhaus, Keller, Hof) durch externe Firma oder Mieterrotation',
+      benchAvg: 0.14, benchMax: 0.28,
+      warnText:'Reinigungskosten leicht erhöht. Welche Flächen umfasst der Reinigungsvertrag? Ist der Vertrag marktüblich?',
+      critText:'Sehr hohe Reinigungskosten. Prüfen Sie den Reinigungsvertrag — wurden Leistungen abgerechnet, die nicht erbracht wurden?'
+    },
+    {
+      id:'versich', label:'Gebäudeversicherungen',
+      hint:'Feuer-/Sturm-/Haftpflichtversicherung des Gebäudes — KEINE Hausratsversicherung, KEINE Rechtsschutzversicherung des Vermieters',
+      benchAvg: 0.18, benchMax: 0.32,
+      warnText:'Versicherungskosten erhöht. Im Vergleich zum Vorjahr stark gestiegen? Nur Gebäudeversicherung (Feuer, Sturm, Wasser, Haftpflicht) ist umlegbar.',
+      critText:'Sehr hohe Versicherungskosten. Prüfen Sie welche Versicherungen konkret abgerechnet werden. Hausratsversicherung des Vermieters ist strikt verboten!'
+    },
+    {
+      id:'garten', label:'Gartenpflege',
+      hint:'Nur umlegbar wenn Garten zur Mietsache gehört UND im Mietvertrag ausdrücklich vereinbart wurde',
+      benchAvg: 0.08, benchMax: 0.18,
+      warnText:'Gartenpflege abgerechnet. Ist diese Position explizit im Mietvertrag benannt? Ohne Nennung im Vertrag ist sie nicht umlagefähig!',
+      critText:'Sehr hohe Gartenpflegekosten. Prüfen Sie erstens ob die Vertragsgrundlage besteht, zweitens ob die Kosten marktüblich sind.'
+    },
+    {
+      id:'strom', label:'Allgemeinstrom (Treppenhaus etc.)',
+      hint:'Strom für Treppenhaus, Keller, Außenbeleuchtung, Tiefgarage — NICHT der Heizungsstrom (der ist in Heizkosten)',
+      benchAvg: 0.06, benchMax: 0.12,
+      warnText:'Allgemeinstrom erhöht. Ist Heizungsstrom möglicherweise doppelt abgerechnet (hier und in den Heizkosten)?',
+      critText:'Sehr hoher Allgemeinstrom. Prüfen Sie ob Heizungsstrom getrennt ausgewiesen wird oder ob hier eine Doppelabrechnung vorliegt.'
+    },
+    {
+      id:'aufzug', label:'Aufzug (Lift)',
+      hint:'Strom, Wartungsvertrag, TÜV-Prüfung — Größere Reparaturen/Instandsetzungen sind KEINE Betriebskosten!',
+      benchAvg: 0.20, benchMax: 0.38,
+      warnText:'Aufzugskosten erhöht. Enthält die Abrechnung Reparaturanteile? Der Wartungsvertrag allein sollte diese Werte nicht überschreiten.',
+      critText:'Sehr hohe Aufzugskosten. Instandsetzungen (z.B. Erneuerung Antrieb, Kabine) dürfen nicht als Betriebskosten abgerechnet werden!'
+    },
+    {
+      id:'kabeltv', label:'Kabelanschluss / Gemeinschaftsantenne',
+      hint:'ACHTUNG: Seit 1.7.2024 (§ 2 BetrKV-Änderung) dürfen Kabelgebühren NICHT mehr auf Mieter umgelegt werden!',
+      benchAvg: 0.0, benchMax: 0.0,
+      warnText:'',
+      critText:'Kabelanschluss / TV-Versorgung darf seit 1. Juli 2024 grundsätzlich nicht mehr als Betriebskosten abgerechnet werden (§ 2 Nr. 15 BetrKV wurde gestrichen). Dieser Posten ist angreifbar!'
+    },
+    {
+      id:'sonst', label:'Sonstige Betriebskosten',
+      hint:'Nur zulässig für Positionen die IM MIETVERTRAG konkret benannt sind (z.B. Feuerlöscher, Dachrinne, Schädlingsbekämpfung)',
+      benchAvg: 0.06, benchMax: 0.15,
+      warnText:'Sonstige Kosten vorhanden. Prüfen Sie ob diese Positionen in Ihrem Mietvertrag konkret aufgeführt sind.',
+      critText:'Hohe sonstige Kosten sind fast immer angreifbar. Ohne ausdrückliche Nennung im Mietvertrag können "sonstige Betriebskosten" nicht einfach pauschal abgerechnet werden.'
+    }
+  ];
+
+  // Schritte navigieren
+  window.pkStep = function(n) {
+    const qm = parseFloat(document.getElementById('pk_qm').value);
+    if (n === 1 && !qm) { alert('Bitte Wohnfläche eingeben.'); return; }
+    if (n === 1) pkRenderPosten();
+    ['pk-s0','pk-s1','pk-s2'].forEach((id, i) => {
+      document.getElementById(id).style.display = (i === n) ? 'block' : 'none';
+    });
+    const colors = ['#9c27b0','#e0e0e0','#e0e0e0'];
+    [0,1,2].forEach(i => {
+      const dot = document.getElementById('pk-p'+i);
+      dot.style.background = i < n ? '#4caf50' : (i === n ? '#9c27b0' : '#e0e0e0');
+    });
+  };
+
+  function pkRenderPosten() {
+    const heizEnt = document.getElementById('pk_heiz').value === 'yes';
+    const grid = document.getElementById('pk-postenGrid');
+    grid.innerHTML = '';
+    PK_POSTEN.forEach(p => {
+      if (p.heizOnly && !heizEnt) return;
+      const div = document.createElement('div');
+      div.className = 'pk-posten-row';
+      // Sonderfall Kabel: Feld anzeigen aber als "verboten" kennzeichnen
+      const isKabel = p.id === 'kabeltv';
+      div.innerHTML = `
+        <div class="pk-posten-label">${isKabel ? '⚠️ ' : ''}${p.label}</div>
+        <div class="pk-posten-hint">${p.hint}</div>
+        <div class="pk-inp-row">
+          <input type="number" id="pk_inp_${p.id}" placeholder="${isKabel ? 'Abrechnet? → immer kritisch!' : 'leer = nicht abgerechnet'}" min="0" step="5">
+          <span class="pk-unit">€ / Jahr</span>
+        </div>`;
+      grid.appendChild(div);
+    });
+  }
+
+  window.pkBerechne = function() {
+    const qm = parseFloat(document.getElementById('pk_qm').value) || 0;
+    const rf  = parseFloat(document.getElementById('pk_region').value);
+    const heizEnt = document.getElementById('pk_heiz').value === 'yes';
+    const activePosten = PK_POSTEN.filter(p => !(p.heizOnly && !heizEnt));
+
+    let findings = [];
+    let critCount = 0, warnCount = 0, okCount = 0;
+    let gesamtEingabe = 0;
+
+    activePosten.forEach(p => {
+      const el = document.getElementById('pk_inp_'+p.id);
+      if (!el) return;
+      const val = parseFloat(el.value);
+      if (!val || val <= 0) return;
+      gesamtEingabe += val;
+
+      const valSqm = val / 12 / qm;
+      const isKabel = p.id === 'kabeltv';
+
+      let status = 'ok';
+      // Kabel ist immer kritisch wenn abgerechnet
+      if (isKabel) {
+        status = 'crit'; critCount++;
+      } else {
+        const avgAdj = p.benchAvg * rf;
+        const maxAdj = p.benchMax * rf;
+        if (valSqm > maxAdj * 1.1) { status = 'crit'; critCount++; }
+        else if (valSqm > avgAdj * 1.2) { status = 'warn'; warnCount++; }
+        else { okCount++; }
+      }
+      findings.push({...p, status, valSqm, val,
+        avgAdj: p.benchAvg * rf, maxAdj: p.benchMax * rf});
+    });
+
+    if (findings.length === 0) {
+      alert('Bitte mindestens einen Posten eingeben.');
+      return;
+    }
+
+    // Summary Box
+    let summaryClass = 'pk-summary-green', summaryIcon = '✅', summaryTitle = '', summaryText = '';
+    if (critCount > 0) {
+      summaryClass = 'pk-summary-red'; summaryIcon = '❌';
+      summaryTitle = `${critCount} Posten auffällig hoch oder rechtlich fragwürdig`;
+      summaryText = `Bei ${critCount} Position${critCount>1?'en':''} gibt es konkreten Handlungsbedarf. Fordern Sie die Belege an (Belegeinsicht nach § 259 BGB) und legen Sie ggf. Widerspruch ein.`;
+    } else if (warnCount > 0) {
+      summaryClass = 'pk-summary-yellow'; summaryIcon = '⚠️';
+      summaryTitle = `${warnCount} Posten leicht erhöht — genauer prüfen`;
+      summaryText = `Einige Positionen liegen über dem bundesweiten Durchschnitt. Das kann regionale Gründe haben, lohnt aber eine Nachfrage beim Vermieter oder Belegeinsicht.`;
+    } else {
+      summaryTitle = 'Alle Posten im plausiblen Bereich';
+      summaryText = `Die ${okCount} geprüften Positionen liegen im bundesweiten Normbereich. Prüfen Sie trotzdem die formalen Kriterien (12-Monats-Frist, korrekte Abrechungsperiode).`;
+    }
+
+    let html = `
+      <div class="pk-summary-box ${summaryClass}">
+        <strong style="font-size:1.1em;">${summaryIcon} ${summaryTitle}</strong>
+        <p style="margin-top:8px; font-size:0.9em; line-height:1.5;">${summaryText}</p>
+        <p style="margin-top:6px; font-size:0.82em; color:#555;">Geprüfte Summe: ${gesamtEingabe.toLocaleString('de-DE')} € | Basis: DMB-Betriebskostenspiegel 2025 | Wohnfläche: ${qm} m²</p>
+      </div>`;
+
+    findings.forEach(f => {
+      const isKabel = f.id === 'kabeltv';
+      // Meter: maxAdj = 100%, darüber rot
+      const meterMax = isKabel ? 1 : Math.max(f.maxAdj * 1.5, f.valSqm * 1.1);
+      const pct = Math.min(f.valSqm / meterMax * 100, 100).toFixed(0);
+      const fillColor = f.status==='crit'?'#f44336': f.status==='warn'?'#ff9800':'#4caf50';
+      const badgeClass = `pk-badge-${f.status}`;
+      const badgeText = f.status==='crit'?'Kritisch!': f.status==='warn'?'Erhöht':'OK';
+      const istText = `Ihr Wert: ${f.valSqm.toFixed(2)} €/m²/Mon`;
+      const richtwert = isKabel ? 'Seit 1.7.2024 verboten' : `Ø ${f.avgAdj.toFixed(2)} € | Max. ${f.maxAdj.toFixed(2)} €`;
+      const bodyText = f.status==='crit' ? f.critText : (f.status==='warn' ? f.warnText : 'Dieser Posten liegt im normalen Bereich des Betriebskostenspiegels.');
+
+      html += `
+        <div class="pk-result-card">
+          <div class="pk-rc-head">
+            <span>${f.label}</span>
+            <span class="pk-badge ${badgeClass}">${badgeText}</span>
+          </div>
+          <div class="pk-rc-body">
+            <div style="display:flex; justify-content:space-between; font-size:0.85em; margin-bottom:2px;">
+              <span>${istText}</span>
+              <span style="color:#888;">${richtwert} €/m²/Mon</span>
+            </div>
+            ${isKabel ? '' : `<div class="pk-meter"><div class="pk-meter-fill" style="width:${pct}%; background:${fillColor};"></div></div>`}
+            <div style="margin-top:6px; padding:8px 10px; background:#f5f5f5; border-radius:4px; font-size:0.85em; line-height:1.5;">
+              ${bodyText}
+            </div>
+          </div>
+        </div>`;
+    });
+
+    html += `<p style="font-size:0.78em; color:#999; margin-top:15px; line-height:1.4;">
+      <strong>Quellenangabe:</strong> Richtwerte basieren auf dem Betriebskostenspiegel 2025 des Deutschen Mieterbunds (DMB), 
+      veröffentlicht Dezember 2025, Datenbasis: ca. 2 Millionen Mietwohnungs-Abrechnungen. 
+      Bundesweite Pauschalwerte ohne Gewähr auf Aktualität oder regionale Vollständigkeit. 
+      Kein Ersatz für anwaltliche Beratung.
+    </p>`;
+
+    document.getElementById('pk-resultContent').innerHTML = html;
+    pkStep(2);
+    document.getElementById('pk-s2').scrollIntoView({behavior:'smooth', block:'start'});
+  };
+
+})();
+</script>
+<!-- ENDE BAUSTEIN 2 -->
+
+<!-- BAUSTEIN 3: Interaktive Formfehler-Checkliste -->
+<div class="calculator-container" id="formfehlerCheck" style="border-top-color: #f44336; margin-top: 40px;">
+  <h2 style="margin-top:0; font-size:1.3em; color:#c62828;">✓ Formfehler-Checkliste: Die KO-Kriterien vor der inhaltlichen Prüfung</h2>
+  <p style="color:#555; font-size:0.9em; margin-bottom:15px;">Ein einziger Formfehler kann die Nachzahlungspflicht vollständig aufheben — prüfen Sie diese Punkte zuerst. Klicken Sie alles an was auf Ihre Situation zutrifft.</p>
+
+  <div id="ff-liste" style="display:grid; gap:10px; margin-bottom:20px;"></div>
+
+  <div id="ff-ergebnis" style="display:none; padding:15px; border-radius:8px; margin-top:10px; font-size:0.95em; line-height:1.6;"></div>
+
+  <button type="button" onclick="ffAuswerten()" class="button-primary" style="padding:12px 25px; cursor:pointer; margin-top:10px;">Formfehler auswerten</button>
+  <button type="button" onclick="ffReset()" style="padding:10px 20px; cursor:pointer; border:1px solid #ccc; border-radius:4px; background:#fff; margin-top:10px; margin-left:10px;">Zurücksetzen</button>
+</div>
+
+<style>
+  .ff-item {
+    display:flex; align-items:flex-start; gap:12px;
+    padding:12px 14px; border-radius:6px;
+    border:1px solid #e0e0e0; background:#fafafa;
+    cursor:pointer; transition:background .15s;
+  }
+  .ff-item:hover { background:#fff3e0; }
+  .ff-item.checked { background:#ffebee; border-color:#f44336; }
+  .ff-item input[type=checkbox] { margin-top:2px; width:18px; height:18px; cursor:pointer; flex-shrink:0; }
+  .ff-item-text strong { display:block; font-size:0.95em; }
+  .ff-item-text span { font-size:0.82em; color:#666; line-height:1.4; }
+</style>
+
+<script>
+(function() {
+  const FF_ITEMS = [
+    {
+      id:'frist',
+      label:'Die Abrechnung kam zu spät (nach 12 Monaten nach Abrechnungsende)',
+      detail:'Beispiel: Abrechnungsjahr 2024 → Abrechnung muss bis 31.12.2025 zugegangen sein. Kam sie erst im Januar 2026 oder später, entfällt die Nachzahlungspflicht vollständig (§ 556 Abs. 3 BGB). Ein Guthaben muss der Vermieter Ihnen trotzdem auszahlen.',
+      weight: 3
+    },
+    {
+      id:'zeitraum',
+      label:'Der Abrechnungszeitraum umfasst mehr oder weniger als 12 Monate',
+      detail:'Eine Abrechnung muss exakt 12 Monate umfassen. 14-monatige Abrechnungen oder Abrechnungen, die ohne Grund einen anderen Zeitraum nutzen, sind formal unwirksam.',
+      weight: 3
+    },
+    {
+      id:'kabel',
+      label:'Kabelanschluss / TV-Versorgung wird abgerechnet',
+      detail:'Seit 1. Juli 2024 ist die Umlage von Kabelgebühren auf Mieter verboten (§ 2 Nr. 15 BetrKV gestrichen). Jeder entsprechende Posten ist angreifbar.',
+      weight: 2
+    },
+    {
+      id:'reparatur',
+      label:'Reparaturen, Instandhaltung oder Handwerkerkosten sind enthalten',
+      detail:'Reparaturkosten und Instandhaltungsrücklagen dürfen nie auf Mieter umgelegt werden. Prüfen Sie besonders bei "Hausmeister" und "Aufzug".',
+      weight: 2
+    },
+    {
+      id:'verwaltung',
+      label:'Verwaltungskosten, Porto, Bankgebühren oder Hausverwaltung sind aufgeführt',
+      detail:'Alle Verwaltungskosten des Vermieters (Hausverwaltung, Porto für die Abrechnung, Kontoführungsgebühren) sind explizit nicht umlagefähig (§ 1 Abs. 2 BetrKV).',
+      weight: 2
+    },
+    {
+      id:'vertschluessel',
+      label:'Der Verteilerschlüssel ist in der Abrechnung nicht angegeben oder änderte sich ohne Ankündigung',
+      detail:'Die Abrechnung muss den Verteilerschlüssel (z. B. nach m² oder Personenzahl) nachvollziehbar ausweisen. Fehlt er oder wurde er ohne Ankündigung geändert, ist die Abrechnung formell mangelhaft.',
+      weight: 1
+    },
+    {
+      id:'sonst_unbenannt',
+      label:'"Sonstige Betriebskosten" sind abgerechnet, ohne dass diese im Mietvertrag konkret stehen',
+      detail:'Unter "Sonstige Betriebskosten" dürfen nur Positionen abgerechnet werden, die im Mietvertrag ausdrücklich benannt sind (z. B. "Wartung Feuerlöscher"). Ein pauschaler Posten ohne Spezifikation ist unwirksam.',
+      weight: 1
+    },
+    {
+      id:'gesamtgebaeude',
+      label:'Es wird kein Gesamtkostenbetrag für das Haus ausgewiesen (nur Ihr Anteil ohne Bezugsgröße)',
+      detail:'Die Abrechnung muss für jeden Posten den Gesamtbetrag für das Gebäude, den Verteilerschlüssel und Ihren Anteil ausweisen. Fehlt die Ausgangsgröße, ist die Abrechnung nicht nachvollziehbar und damit formell fehlerhaft.',
+      weight: 1
+    }
+  ];
+
+  function render() {
+    const liste = document.getElementById('ff-liste');
+    liste.innerHTML = '';
+    FF_ITEMS.forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'ff-item';
+      div.id = 'ff-row-'+item.id;
+      div.innerHTML = `
+        <input type="checkbox" id="ff_${item.id}" onchange="ffToggle('${item.id}')">
+        <div class="ff-item-text">
+          <strong>${item.label}</strong>
+          <span>${item.detail}</span>
+        </div>`;
+      div.addEventListener('click', function(e) {
+        if (e.target.type !== 'checkbox') {
+          const cb = document.getElementById('ff_'+item.id);
+          cb.checked = !cb.checked;
+          ffToggle(item.id);
+        }
+      });
+      liste.appendChild(div);
+    });
+  }
+
+  window.ffToggle = function(id) {
+    const cb = document.getElementById('ff_'+id);
+    document.getElementById('ff-row-'+id).classList.toggle('checked', cb.checked);
+  };
+
+  window.ffAuswerten = function() {
+    const checked = FF_ITEMS.filter(item => document.getElementById('ff_'+item.id).checked);
+    const ergebnis = document.getElementById('ff-ergebnis');
+    ergebnis.style.display = 'block';
+
+    if (checked.length === 0) {
+      ergebnis.style.background = '#e8f5e9';
+      ergebnis.style.border = '2px solid #4caf50';
+      ergebnis.innerHTML = '<strong>✅ Keine Formfehler angekreuzt.</strong> Gut — dann können Sie zur inhaltlichen Prüfung der Einzelposten übergehen. Nutzen Sie dafür den Posten-Check oben auf dieser Seite.';
+      return;
+    }
+
+    const schwere = checked.reduce((s, i) => s + i.weight, 0);
+    let intro = '';
+    const hasFristFehler = checked.some(i => i.id === 'frist' || i.id === 'zeitraum');
+
+    if (hasFristFehler) {
+      intro = `<strong style="color:#c62828;">❌ Formfehler mit sofortiger Wirkung!</strong> Sie haben einen Fehler angekreuzt, der die Nachzahlungspflicht direkt aufhebt. Sie müssen die Nachzahlung <em>rechtlich nicht leisten</em>. Schreiben Sie dem Vermieter umgehend — nutzen Sie dafür unseren <a href="generator-widerspruch-nebenkosten.html">Widerspruchs-Generator</a>.`;
+    } else {
+      intro = `<strong style="color:#e65100;">⚠️ ${checked.length} Formfehler gefunden.</strong> Diese Fehler machen die Abrechnung angreifbar. Legen Sie Widerspruch ein und fordern Sie eine korrigierte Abrechnung.`;
+    }
+
+    let details = '<ul style="margin-top:10px; padding-left:20px; font-size:0.88em; line-height:1.7;">';
+    checked.forEach(item => { details += `<li><strong>${item.label}</strong></li>`; });
+    details += '</ul>';
+
+    ergebnis.style.background = hasFristFehler ? '#ffebee' : '#fff8e1';
+    ergebnis.style.border = `2px solid ${hasFristFehler ? '#f44336' : '#ff9800'}`;
+    ergebnis.innerHTML = intro + details +
+      `<p style="margin-top:10px; font-size:0.85em;"><a href="generator-widerspruch-nebenkosten.html" style="font-weight:bold;">→ Zum Widerspruchs-Generator</a> &nbsp;|&nbsp; <a href="generator-belegeinsicht.html">→ Belegeinsicht anfordern</a></p>`;
+
+    ergebnis.scrollIntoView({behavior:'smooth', block:'center'});
+  };
+
+  window.ffReset = function() {
+    FF_ITEMS.forEach(item => {
+      const cb = document.getElementById('ff_'+item.id);
+      if (cb) cb.checked = false;
+      const row = document.getElementById('ff-row-'+item.id);
+      if (row) row.classList.remove('checked');
+    });
+    document.getElementById('ff-ergebnis').style.display = 'none';
+  };
+
+  render();
+})();
+</script>
+<!-- ENDE BAUSTEIN 3 -->
+
   <h2>Die 3 größten Fehler in der Abrechnung</h2>
   <p>Bevor Sie die Abrechnung inhaltlich prüfen, checken Sie diese drei formalen KO-Kriterien. Ist nur eines davon erfüllt, müssen Sie die Nachzahlung gar nicht erst leisten!</p>
   
@@ -396,10 +976,10 @@
     <h2 style="margin-top:0">Weitere Checks für Ihre Nebenkostenabrechnung</h2>
     <p>Prüfen Sie gezielt diese häufigen Fehlerquellen, wenn Ihre Abrechnung zu hoch ausfällt:</p>
     <div style="margin-bottom: 20px;">
-      <a href="/ml/nebenkosten-check-heizkosten.html" class="button button-secondary" style="display:block; margin-bottom:8px;">Prüfen: Heizkosten & Warmwasser</a>
-<a href="/ml/nebenkosten-check-gebaeudereinigung.html" class="button button-secondary" style="display:block; margin-bottom:8px;">Prüfen: Gebäudereinigung (Treppenhaus)</a>
+      <a href="/ml/nebenkosten-check-gebaeudereinigung.html" class="button button-secondary" style="display:block; margin-bottom:8px;">Prüfen: Gebäudereinigung</a>
 <a href="/ml/nebenkosten-check-hausmeister.html" class="button button-secondary" style="display:block; margin-bottom:8px;">Prüfen: Hausmeisterkosten</a>
-<a href="/ml/nebenkosten-check-wasser-abwasser.html" class="button button-secondary" style="display:block; margin-bottom:8px;">Prüfen: Wasser & Abwasser</a>
+<a href="/ml/nebenkosten-check-gartenpflege.html" class="button button-secondary" style="display:block; margin-bottom:8px;">Prüfen: Gartenpflege</a>
+<a href="/ml/nebenkosten-check-aufzug.html" class="button button-secondary" style="display:block; margin-bottom:8px;">Prüfen: Aufzugskosten</a>
 
     </div>
     

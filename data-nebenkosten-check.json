@@ -2,46 +2,100 @@
   {
     "slug": "heizkosten",
     "menu_title": "Heizkosten & Warmwasser",
-    "seo_title": "Heizkosten Check: Ist die Abrechnung zu hoch? | Rechner",
-    "seo_desc": "Prüfen Sie Ihre Heizkostenabrechnung. Vergleichen Sie Ihre Kosten mit dem Durchschnitt und fordern Sie bei überhöhten Preisen Belegeinsicht an.",
-    "h1": "Nebenkosten-Check: Sind Ihre Heizkosten zu hoch?",
+    "seo_title": "Heizkostenabrechnung prüfen: Zu hoch? | Online-Rechner",
+    "seo_desc": "Heizkosten zu hoch? Nutzen Sie den Nebenkostencheck, vergleichen Sie Ihre Heizkostenabrechnung mit dem Durchschnitt & decken Sie Fehler auf.",
+    "h1": "Nebenkosten-Check: Sind Ihre Heiz- und Warmwasserkosten zu hoch?",
     "info_titel": "Der größte Kostentreiber: Heizung und Warmwasser",
-    "info_text": "Heizkosten machen meist 50 bis 70 Prozent der gesamten Nebenkosten aus. Hier passieren die häufigsten Fehler (z.B. falsche Schätzungen, defekte Zähler oder nicht beachtete Preisbremsen). Geben Sie Ihre Gesamtkosten ein, um zu prüfen, ob Sie deutlich über dem bundesweiten Durchschnitt liegen."
+    "info_text": "Heizkosten machen meist 50 bis 70 Prozent der gesamten warmen Nebenkosten aus. Hier schleichen sich besonders häufig Fehler ein – von falschen Ablesewerten über defekte Messgeräte bis hin zu unzulässigen Wartungskosten. Vergleichen Sie Ihre Verbrauchswerte mit dem bundesweiten Durchschnitt, um Einsparpotenziale sofort aufzudecken."
   },
   {
     "slug": "hausmeister",
     "menu_title": "Hausmeisterkosten",
-    "seo_title": "Hausmeisterkosten prüfen: Sind sie zu hoch? | NK-Rechner",
-    "seo_desc": "Sind Ihre Hausmeisterkosten in der Nebenkostenabrechnung plausibel? Prüfen Sie die Kosten pro Quadratmeter und finden Sie versteckte Reparaturkosten.",
+    "seo_title": "Hausmeisterkosten in Nebenkosten prüfen | Online-Rechner",
+    "seo_desc": "Sind Ihre Hausmeisterkosten plausibel? Finden Sie heraus, ob der Vermieter unzulässige Reparaturen oder Verwaltungskosten auf Sie umlegt.",
     "h1": "Nebenkosten-Check: Sind die Hausmeisterkosten zu hoch?",
-    "info_titel": "Versteckte Reparaturen beim Hauswart?",
-    "info_text": "Hausmeisterkosten sind extrem fehleranfällig. Oft werden Reparaturarbeiten, die der Vermieter eigentlich selbst zahlen muss, unrechtmäßig auf die Mieter umgelegt. Prüfen Sie mit unserem Rechner, ob Ihre Nebenkosten insgesamt auffällig hoch sind und fordern Sie dann die Belege des Hausmeisters an."
+    "info_titel": "Vorsicht vor versteckten Instandhaltungskosten",
+    "info_text": "Kosten für den Hausmeister sind extrem fehleranfällig. Häufig legen Vermieter Reparaturen, Instandhaltungen oder reine Verwaltungstätigkeiten über diesen Posten um. Das ist unzulässig! Nur regelmäßige Pflege- und Kontrollarbeiten dürfen auf die Mieter umgelegt werden. Prüfen Sie, ob der Betrag für Ihre Wohnfläche im Rahmen liegt."
   },
   {
     "slug": "wasser-abwasser",
     "menu_title": "Wasser & Abwasser",
-    "seo_title": "Wasserkosten prüfen: Abrechnung zu hoch? | Rechner",
-    "seo_desc": "Prüfen Sie Ihre Wasserkosten in der Nebenkostenabrechnung. Oft werden falsche Verteilerschlüssel (z.B. nach Quadratmeter statt Verbrauch) angewendet.",
+    "seo_title": "Wasserkosten prüfen: Abrechnung zu hoch? | NK-Rechner",
+    "seo_desc": "Prüfen Sie Ihre Wasser- und Abwasserkosten. Oft werden falsche Verteilerschlüssel angewendet. Jetzt Plausibilität online testen.",
     "h1": "Nebenkosten-Check: Zu hohe Wasser- und Abwasserkosten?",
-    "info_titel": "Wenn der Wasserzähler scheinbar durchdreht",
-    "info_text": "Stark gestiegene Wasserkosten können ein Indiz für unentdeckte Rohrbrüche im Haus oder falsch abgelesene Zähler sein. Wenn es in Ihrem Haus keine eigenen Wasserzähler gibt, wird oft unfair nach Wohnfläche statt nach Verbrauch abgerechnet. Nutzen Sie unseren Rechner für einen ersten Plausibilitäts-Check."
+    "info_titel": "Wenn der Wasserverbrauch verdächtig hoch erscheint",
+    "info_text": "Stark gestiegene Wasserkosten können auf unentdeckte Rohrbrüche im Haus, defekte Spülungen oder falsch abgelesene Zähler hindeuten. Gibt es im Haus keine eigenen Wasserzähler für jede Wohnung, wird oft nach Wohnfläche statt nach Verbrauch abgerechnet – das ist zwar oft erlaubt, aber für Singles meist unfair. Machen Sie den Plausibilitäts-Check."
   },
   {
     "slug": "gebaeudereinigung",
-    "menu_title": "Gebäudereinigung (Treppenhaus)",
-    "seo_title": "Gebäudereinigung prüfen: Nebenkosten Check | Rechner",
-    "seo_desc": "Treppenhausreinigung zu teuer? Vergleichen Sie Ihre Nebenkostenabrechnung mit dem Betriebskostenspiegel. Kostenloser Online-Rechner.",
+    "menu_title": "Gebäudereinigung",
+    "seo_title": "Gebäudereinigung in Nebenkostenabrechnung prüfen",
+    "seo_desc": "Treppenhausreinigung zu teuer? Vergleichen Sie Ihre Putzkosten mit dem Betriebskostenspiegel und fordern Sie Belegeinsicht an.",
     "h1": "Nebenkosten-Check: Ist die Gebäudereinigung zu teuer?",
-    "info_titel": "Wirtschaftlichkeitsgebot bei der Putzfirma",
-    "info_text": "Der Vermieter darf nicht einfach den teuersten Reinigungsservice beauftragen. Er ist dem 'Gebot der Wirtschaftlichkeit' verpflichtet. Wenn Ihre Gesamtabrechnung durch exorbitante Putzkosten nach oben getrieben wird, sollten Sie aktiv werden. Prüfen Sie jetzt Ihre Werte."
+    "info_titel": "Wirtschaftlichkeitsgebot schützt vor Luxus-Putzfirmen",
+    "info_text": "Der Vermieter darf nicht einfach den teuersten Reinigungsservice beauftragen. Er ist gesetzlich dem 'Gebot der Wirtschaftlichkeit' verpflichtet. Wenn Ihre Abrechnung durch exorbitante Putzkosten nach oben getrieben wird oder die Leistung gar nicht erbracht wurde, sollten Sie die Belege prüfen. Nutzen Sie unseren Rechner für den Vergleich."
   },
   {
     "slug": "grundsteuer",
     "menu_title": "Grundsteuer",
-    "seo_title": "Grundsteuer in den Nebenkosten prüfen | Rechner",
-    "seo_desc": "Darf der Vermieter die Grundsteuer umlegen? Ja, aber oft gibt es Fehler beim Verteilerschlüssel. Prüfen Sie Ihre Nebenkostenabrechnung.",
+    "seo_title": "Grundsteuer in den Nebenkosten prüfen | Ist es erlaubt?",
+    "seo_desc": "Darf der Vermieter die Grundsteuer umlegen? Ja, aber Vorsicht bei Gewerbeflächen im Haus. Jetzt Kosten pro Quadratmeter berechnen.",
     "h1": "Nebenkosten-Check: Grundsteuer korrekt abgerechnet?",
-    "info_titel": "Die Grundsteuer: Eine ungeliebte Umlage",
-    "info_text": "Ja, die Grundsteuer gehört zu den 'kalten Betriebskosten' und darf auf Sie umgelegt werden. Allerdings passieren hier oft Fehler beim Verteilerschlüssel, wenn im Haus z.B. auch Gewerbeflächen sind. Diese müssen zwingend herausgerechnet werden. Überprüfen Sie Ihre Gesamtkosten."
+    "info_titel": "Grundsteuer: Eine Umlage mit Fallstricken",
+    "info_text": "Die Grundsteuer gehört zu den kalten Betriebskosten und darf laut Mietvertrag auf Sie umgelegt werden. Allerdings passieren hier oft Fehler beim Verteilerschlüssel. Befinden sich beispielsweise Gewerbebetriebe (wie Läden oder Praxen) im selben Gebäude, müssen deren oft höhere Grundsteueranteile vorab herausgerechnet werden."
+  },
+  {
+    "slug": "muell-strassenreinigung",
+    "menu_title": "Müll & Straßenreinigung",
+    "seo_title": "Müllgebühren & Straßenreinigung in Nebenkosten prüfen",
+    "seo_desc": "Sind die Kosten für Müllabfuhr und Straßenreinigung zu hoch? Prüfen Sie die Abrechnung auf falsche Tonnen-Größen und Schlüssel.",
+    "h1": "Nebenkosten-Check: Müllabfuhr und Straßenreinigung",
+    "info_titel": "Zu viele oder zu große Tonnen kosten Ihr Geld",
+    "info_text": "Die kommunalen Gebühren für Müll und Straßenreinigung müssen vom Vermieter wirtschaftlich optimiert werden. Stehen im Hof dauerhaft halbleere, aber teure Großtonnen, verletzt der Vermieter unter Umständen das Wirtschaftlichkeitsgebot. Auch Sonderabfall-Entsorgungen (z.B. nach Sperrmüll-Vandalismus) dürfen oft nicht einfach pauschal umgelegt werden."
+  },
+  {
+    "slug": "aufzug",
+    "menu_title": "Aufzugskosten",
+    "seo_title": "Aufzugskosten in der Mietwohnung prüfen | Rechner",
+    "seo_desc": "Müssen Erdgeschossmieter für den Fahrstuhl zahlen? Ja, aber Instandhaltungskosten müssen abgezogen werden. Jetzt prüfen.",
+    "h1": "Nebenkosten-Check: Sind die Aufzugskosten zu hoch?",
+    "info_titel": "Teure Wartungsverträge und Reparatur-Schummeleien",
+    "info_text": "Betriebskosten für den Aufzug sind umlagefähig – und das laut Rechtsprechung meist sogar für Mieter im Erdgeschoss. Aber: Reparaturkosten und Kosten für den Notruf-Akkutausch sind Sache des Vermieters! Sehr oft werden diese Kosten in sogenannten 'Vollwartungsverträgen' versteckt und unzulässigerweise komplett auf die Mieter umgelegt."
+  },
+  {
+    "slug": "gartenpflege",
+    "menu_title": "Gartenpflege",
+    "seo_title": "Gartenpflege-Kosten in den Nebenkosten prüfen",
+    "seo_desc": "Darf der Vermieter die Gartenpflege abrechnen, wenn Sie den Garten nicht nutzen? Erfahren Sie es hier inklusive Kosten-Check.",
+    "h1": "Nebenkosten-Check: Kosten für Gartenpflege zu hoch?",
+    "info_titel": "Pflegekosten ja, Erstbepflanzung nein",
+    "info_text": "Die laufenden Kosten für das Rasenmähen, Heckenschneiden oder die Spielplatzpflege dürfen umgelegt werden – selbst dann, wenn Sie den Garten gar nicht nutzen dürfen, er aber das Gesamterscheinungsbild des Hauses aufwertet. Unzulässig sind hingegen Kosten für eine komplette Neuanlage des Gartens oder die Anschaffung teurer Gartengeräte (z.B. ein neuer Rasenmäher-Traktor)."
+  },
+  {
+    "slug": "versicherungen",
+    "menu_title": "Versicherungen",
+    "seo_title": "Sach- und Haftpflichtversicherung in der Abrechnung",
+    "seo_desc": "Welche Versicherungen darf der Vermieter über die Nebenkosten umlegen? Prüfen Sie versteckte Kosten wie Rechtsschutzversicherungen.",
+    "h1": "Nebenkosten-Check: Versicherungskosten prüfen",
+    "info_titel": "Nur Gebäude- und Haftpflichtversicherungen sind erlaubt",
+    "info_text": "Der Vermieter darf die Kosten für die Gebäudeversicherung (Feuer, Leitungswasser, Sturm) sowie die Glas- und Haftpflichtversicherung auf die Mieter umlegen. Absolut tabu in der Abrechnung sind hingegen die private Rechtsschutzversicherung des Vermieters, Hausratversicherungen oder Mietausfallversicherungen. Prüfen Sie diesen Posten daher ganz genau."
+  },
+  {
+    "slug": "beleuchtung",
+    "menu_title": "Beleuchtung & Allgemeinstrom",
+    "seo_title": "Allgemeinstrom prüfen: Nebenkostenabrechnung zu hoch?",
+    "seo_desc": "Ist der Strom für Flur und Keller zu teuer? Erfahren Sie, wie Sie prüfen, ob der Vermieter Baustrom oder Gewerbestrom umlegt.",
+    "h1": "Nebenkosten-Check: Stimmt der Allgemeinstrom?",
+    "info_titel": "Stromdiebe oder falsche Zählerzuordnung?",
+    "info_text": "Unter 'Beleuchtung' bzw. Allgemeinstrom fällt der Strom für die Flurbeleuchtung, den Kellergang, die Außenbeleuchtung und die Waschküche. Erscheint dieser Posten extrem hoch, kann es sein, dass fälschlicherweise der Strom für eine Baustelle im Haus oder der Strombedarf einer gewerblichen Praxis/eines Ladens mit über die Mieter abgerechnet wurde."
+  },
+  {
+    "slug": "schornsteinfeger",
+    "menu_title": "Schornsteinreinigung",
+    "seo_title": "Schornsteinfegerkosten in Nebenkosten prüfen | Rechner",
+    "seo_desc": "Sind die Schornsteinfegergebühren in Ihrer Abrechnung korrekt? Vergleichen Sie die Kosten und finden Sie Doppelabrechnungen.",
+    "h1": "Nebenkosten-Check: Schornsteinfeger und Kehrgebühren",
+    "info_titel": "Achtung vor der Doppelabrechnung bei den Heizkosten",
+    "info_text": "Die Kosten für den Schornsteinfeger (Kehr- und Messgebühren) dürfen grundsätzlich als kalte Betriebskosten umgelegt werden. Aber Achtung: Sehr häufig taucht dieser Posten doppelt auf – einmal separat unter 'Schornsteinfeger' und ein zweites Mal innerhalb der 'Heizkostenabrechnung'. Eine solche Doppelabrechnung ist unzulässig."
   }
 ]
