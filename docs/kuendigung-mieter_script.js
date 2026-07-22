@@ -239,6 +239,7 @@ function generateKuendigungMieterPDF(data) {
 
     } else { // Ordentliche Kündigung
         writeParagraph(`hiermit kündige(n) ich/wir den oben genannten Mietvertrag für die Wohnung in ${mietobjektAdresseKurz} ordentlich und fristgerecht zum **${kuendigungsdatumWunschFormatiert}**.`, defaultLineHeight, textFontSize); // Datum fett
+           
         writeParagraph("Sollte dieser Termin aus von mir/uns nicht bekannten Gründen nicht der korrekten Frist entsprechen, kündige(n) ich/wir hilfsweise zum nächstmöglichen Termin. Bitte teilen Sie mir/uns diesen in Ihrer Kündigungsbestätigung mit.", defaultLineHeight, textFontSize);
     }
     
