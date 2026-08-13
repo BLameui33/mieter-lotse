@@ -201,22 +201,96 @@ function generateMietminderungPDF(data) {
     const berechneterMinderungsbetrag = (bruttomieteNum * (minderungsquoteNum / 100));
     const neueMiete = bruttomieteNum - berechneterMinderungsbetrag;
 
+    // Schriftart setzen wie vorgegeben
     doc.setFont("times", "normal");
 
-    writeLine(mieterName, defaultLineHeight, "normal", textFontSize);
-    mieterAdresse.split("\n").forEach(line => writeLine(line.trim(), defaultLineHeight, "normal", textFontSize));
-    if (y + defaultLineHeight <= usableHeight) y += defaultLineHeight; else {doc.addPage(); y = margin;}
+    // Absender- & Empfängerdaten vorbereiten (Mieter/Vermieter-Variablen)
+    let absenderName = mieterName;
+    let absenderAdresse = mieterAdresse; // Enthält bereits die komplette Adresse
+    let infoText = ""; // Dieser Block besitzt standardmäßig kein Aktenzeichen im Kopf
 
-    writeLine(vermieterName, defaultLineHeight, "normal", textFontSize);
-    vermieterAdresse.split("\n").forEach(line => writeLine(line.trim(), defaultLineHeight, "normal", textFontSize));
-    if (y + defaultLineHeight * 2 <= usableHeight) y += defaultLineHeight * 2; else {doc.addPage(); y = margin;}
+    let targetEmpfaengerName = vermieterName || "";
+    let targetEmpfaengerAdresse = vermieterAdresse || "";
+    
+    // Dynamische Schriftgröße nutzen
+    let fSize = textFontSize || 11;
 
+    // ==========================================
+    // --- UNIFORMER BRIEFKOPF START ---
+    // ==========================================
+    
+    // 1. RECHTER BLOCK: Haupt-Absenderblock (Oben rechts)
+    const rightColumnX = pageWidth - margin - 60; // Startpunkt rechts (ca. 130mm)
+    let rightY = margin;
+    
+    doc.setFont("times", "bold");
+    doc.setFontSize(10);
+    doc.text("Absender:", rightColumnX, rightY);
+    rightY += 5;
+    
+    doc.setFont("times", "normal");
+    doc.setFontSize(fSize);
+    doc.text(absenderName, rightColumnX, rightY);
+    rightY += defaultLineHeight;
+    
+    absenderAdresse.split("\n").forEach(line => {
+        if (line.trim() !== "") {
+            doc.text(line.trim(), rightColumnX, rightY);
+            rightY += defaultLineHeight;
+        }
+    });
+
+    // 2. LINKER BLOCK: Kleine Rücksendezeile + Empfänger (Vermieter)
+    let leftY = margin + 15; 
+    
+    // Inline-Rücksendezeile generieren
+    const cleanAddressInline = absenderAdresse.replace(/\r?\n/g, " · ");
+    const ruecksendeZeile = `${absenderName} · ${cleanAddressInline}`;
+    
+    doc.setFont("times", "normal");
+    doc.setFontSize(8);
+    doc.setTextColor(120, 120, 120); // Dezentes Grau
+    doc.text(ruecksendeZeile, margin, leftY);
+    
+    // Die feine Trennlinie unter dem Mini-Absender
+    doc.setDrawColor(180, 180, 180); 
+    doc.setLineWidth(0.2);
+    doc.line(margin, leftY + 1.5, margin + 85, leftY + 1.5); 
+    
+    // Empfänger platzieren (Name & Adresse)
+    leftY += 6; 
+    doc.setFontSize(fSize);
+    doc.setTextColor(0, 0, 0); // Zurück zu Schwarz
+    
+    if (targetEmpfaengerName !== "") {
+        doc.text(targetEmpfaengerName, margin, leftY);
+        leftY += defaultLineHeight;
+    }
+    
+    if (targetEmpfaengerAdresse) {
+        targetEmpfaengerAdresse.split("\n").forEach(line => {
+            if (line.trim() !== "") {
+                doc.text(line.trim(), margin, leftY);
+                leftY += defaultLineHeight;
+            }
+        });
+    }
+
+    // 3. DATUM: Rechtsbündig unterhalb der Blöcke
     const datumHeute = new Date().toLocaleDateString("de-DE");
-    doc.setFontSize(textFontSize);
-    const datumsBreite = doc.getStringUnitWidth(datumHeute) * textFontSize / doc.internal.scaleFactor;
-    if (y + defaultLineHeight > usableHeight) { doc.addPage(); y = margin; }
-    doc.text(datumHeute, pageWidth - margin - datumsBreite, y);
-    y += defaultLineHeight * 2; 
+    doc.setFontSize(fSize);
+    const datumsBreite = doc.getStringUnitWidth(datumHeute) * fSize / doc.internal.scaleFactor;
+    
+    // Kollisionsschutz (gleicht asymmetrische Spaltenhöhen perfekt aus)
+    let datumY = Math.max(leftY, rightY) + 5; 
+    doc.text(datumHeute, pageWidth - margin - datumsBreite, datumY);
+
+    // Übergabe an die globale Y-Koordinate für den nachfolgenden Inhalt
+    y = datumY + 12;
+
+    // ==========================================
+    // --- UNIFORMER BRIEFKOPF ENDE ---
+    // ==========================================
 
     let mietobjektAdresse = (mieterAdresse.split("\n")[0] || '[Adresse der Wohnung]').trim();
     if (mieterAdresse.split("\n").length > 1 && (mieterAdresse.split("\n")[1] || '').trim() !== "") {

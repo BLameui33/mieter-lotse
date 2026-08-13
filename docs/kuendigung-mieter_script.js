@@ -24,12 +24,42 @@ document.addEventListener('DOMContentLoaded', function() {
         updateSonderkuendigungDetailsVisibility(); // Initial prüfen
     }
 
+    // --- Ich/Wir-Auswahl (Anredeform) ---
+    // Erwartet im HTML z.B.:
+    // <select id="anredeForm">
+    //   <option value="wir">Wir (mehrere Mieter)</option>
+    //   <option value="ich">Ich (Einzelperson)</option>
+    // </select>
+    const anredeFormSelect = document.getElementById('anredeForm');
+    const mieterNamenField = document.getElementById('mieterNamen');
+    let anredeFormManuellGesetzt = false;
+
+    function autoAnredeFormVorschlagen() {
+        if (!anredeFormSelect || !mieterNamenField || anredeFormManuellGesetzt) return;
+        const anzahlMieter = mieterNamenField.value
+            .split('\n')
+            .map(s => s.trim())
+            .filter(Boolean).length;
+        anredeFormSelect.value = anzahlMieter > 1 ? 'wir' : 'ich';
+    }
+
+    if (anredeFormSelect) {
+        anredeFormSelect.addEventListener('change', function() {
+            anredeFormManuellGesetzt = true;
+        });
+    }
+    if (mieterNamenField) {
+        mieterNamenField.addEventListener('input', autoAnredeFormVorschlagen);
+        autoAnredeFormVorschlagen(); // Initial vorschlagen
+    }
+
     // --- Speichern & Laden Logik ---
     const formElementIds = [
         "mieterNamen", "mieterAdresse", 
         "vermieterName", "vermieterAdresse",
         "mietvertragDatum", "kuendigungsdatumWunsch", "kuendigungArt", 
-        "sonderkuendigungGrundText", "kuendigungZusatzText"
+        "sonderkuendigungGrundText", "kuendigungZusatzText",
+        "anredeForm"
     ];
     const checkboxIdsToSave = [ 
         "kenntnisFristen", "alleMieterUnterschreiben", "nachweisbarerVersand"
@@ -71,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 element.checked = data[id];
             }
         });
+        if (data['anredeForm']) anredeFormManuellGesetzt = true; // geladener Wert gilt als bewusst gesetzt
         if (kuendigungArtSelect) updateSonderkuendigungDetailsVisibility(); // Sichtbarkeit nach Laden aktualisieren
     }
 
@@ -184,30 +215,78 @@ function generateKuendigungMieterPDF(data) {
         mieterNamen, mieterAdresse, 
         vermieterName, vermieterAdresse,
         mietvertragDatum, kuendigungsdatumWunsch, kuendigungArt, 
-        sonderkuendigungGrundText, kuendigungZusatzText
-        // Anlagen sind hier nicht primär vorgesehen, aber könnten ergänzt werden
+        sonderkuendigungGrundText, kuendigungZusatzText,
+        anredeForm
     } = data;
 
     const mietvertragDatumFormatiert = getFormattedDateValue(mietvertragDatum, "");
     const kuendigungsdatumWunschFormatiert = getFormattedDateValue(kuendigungsdatumWunsch);
 
+    // --- Ich/Wir-Logik ---
+    // Fällt anredeForm nicht sauber auf "ich" oder "wir", wird anhand der Anzahl
+    // eingetragener Mieternamen automatisch entschieden (>1 Zeile -> wir).
+    const mieterNamenZeilenRoh = (mieterNamen || "").split("\n").map(s => s.trim()).filter(Boolean);
+    let istWir;
+    if (anredeForm === 'ich') istWir = false;
+    else if (anredeForm === 'wir') istWir = true;
+    else istWir = mieterNamenZeilenRoh.length > 1;
+
+    function pick(ichVariante, wirVariante) {
+        return istWir ? wirVariante : ichVariante;
+    }
 
     // --- PDF-Inhalt erstellen ---
     doc.setFont("times", "normal");
 
-    // Absender (Mieter)
-    mieterNamen.split("\n").forEach(line => writeLine(line.trim())); // Für mehrere Mieter untereinander
-    mieterAdresse.split("\n").forEach(line => writeLine(line.trim()));
-    if (y + defaultLineHeight <= usableHeight) y += defaultLineHeight; else {doc.addPage(); y = margin;}
+    // ===== Hochwertigerer Briefkopf =====
+    const mieterLines = mieterNamenZeilenRoh;
+    const adresseLines = (mieterAdresse || "").split("\n").map(s => s.trim()).filter(Boolean);
+
+    // Absender-Block oben rechts: Namen fett, Adresse normal (rechtsbündig, wie ein Briefkopf)
+    function writeLineRight(text, currentLineHeight = defaultLineHeight, fontStyle = "normal", fontSize = textFontSize) {
+        const textToWrite = text === undefined || text === null ? "" : String(text);
+        if (y + currentLineHeight > usableHeight - (margin / 2)) { doc.addPage(); y = margin; }
+        doc.setFontSize(fontSize);
+        doc.setFont("times", fontStyle);
+        doc.text(textToWrite, pageWidth - margin, y, { align: "right" });
+        y += currentLineHeight;
+    }
+
+    mieterLines.forEach(line => writeLineRight(line, defaultLineHeight, "bold"));
+    adresseLines.forEach(line => writeLineRight(line));
+
+    // Dünne Trennlinie unter dem Absender für einen hochwertigeren Gesamteindruck
+    y += 2;
+    doc.setDrawColor(140, 140, 140);
+    doc.setLineWidth(0.3);
+    doc.line(margin, y, pageWidth - margin, y);
+    doc.setDrawColor(0, 0, 0);
+    y += 8;
+
+    // Rücksendeangabe: kleine, unterstrichene Absenderzeile über dem Empfänger (DIN 5008)
+    const ruecksendeText = [mieterLines[0] || "", ...adresseLines].filter(Boolean).join(" · ");
+    if (ruecksendeText) {
+        const kleinSchriftgroesse = 8;
+        if (y + 5 > usableHeight - (margin / 2)) { doc.addPage(); y = margin; }
+        doc.setFontSize(kleinSchriftgroesse);
+        doc.setFont("times", "normal");
+        doc.text(ruecksendeText, margin, y);
+        const ruecksendeBreite = doc.getStringUnitWidth(ruecksendeText) * kleinSchriftgroesse / doc.internal.scaleFactor;
+        doc.setLineWidth(0.15);
+        doc.line(margin, y + 1, margin + ruecksendeBreite, y + 1);
+        y += 5 + 4;
+    }
 
     // Empfänger (Vermieter)
     writeLine(vermieterName);
-    vermieterAdresse.split("\n").forEach(line => writeLine(line.trim()));
+    adresseLines.length ? "" : null; // (keine Aktion, nur Lesbarkeit)
+    (vermieterAdresse || "").split("\n").forEach(line => writeLine(line.trim()));
     if (y + defaultLineHeight * 2 <= usableHeight) y += defaultLineHeight * 2; else {doc.addPage(); y = margin;}
 
     // Datum rechtsbündig
     const datumHeute = new Date().toLocaleDateString("de-DE");
     doc.setFontSize(textFontSize);
+    doc.setFont("times", "normal");
     const datumsBreite = doc.getStringUnitWidth(datumHeute) * textFontSize / doc.internal.scaleFactor;
     if (y + defaultLineHeight > usableHeight) { doc.addPage(); y = margin; }
     doc.text(datumHeute, pageWidth - margin - datumsBreite, y);
@@ -233,14 +312,24 @@ function generateKuendigungMieterPDF(data) {
 
     // Kündigungserklärung
     if (kuendigungArt === "sonderkuendigung" && sonderkuendigungGrundText && sonderkuendigungGrundText.trim() !== "") {
-        writeParagraph(`hiermit kündige(n) ich/wir den oben genannten Mietvertrag unter Berufung auf mein/unser Sonderkündigungsrecht aus folgendem Grund fristgerecht zum ${kuendigungsdatumWunschFormatiert}:`);
+        writeParagraph(
+            `hiermit ${pick("kündige ich", "kündigen wir")} den oben genannten Mietvertrag unter Berufung auf ${pick("mein", "unser")} Sonderkündigungsrecht aus folgendem Grund fristgerecht zum ${kuendigungsdatumWunschFormatiert}:`
+        );
         writeParagraph(sonderkuendigungGrundText, defaultLineHeight, textFontSize, {extraSpacingAfter: defaultLineHeight * 0.5});
-        writeParagraph(`Sollte diese Sonderkündigung nicht anerkannt werden, kündige(n) ich/wir hilfsweise ordentlich und fristgerecht zum nächstmöglichen Zeitpunkt. Bitte bestätigen Sie mir/uns diesen hilfsweisen Kündigungstermin schriftlich.`);
+        writeParagraph(
+            `Sollte diese Sonderkündigung nicht anerkannt werden, ${pick("kündige ich", "kündigen wir")} hilfsweise ordentlich und fristgerecht zum nächstmöglichen Zeitpunkt. Bitte bestätigen Sie ${pick("mir", "uns")} diesen hilfsweisen Kündigungstermin schriftlich.`
+        );
 
     } else { // Ordentliche Kündigung
-        writeParagraph(`hiermit kündige(n) ich/wir den oben genannten Mietvertrag für die Wohnung in ${mietobjektAdresseKurz} ordentlich und fristgerecht zum **${kuendigungsdatumWunschFormatiert}**.`, defaultLineHeight, textFontSize); // Datum fett
+        writeParagraph(
+            `hiermit ${pick("kündige ich", "kündigen wir")} den oben genannten Mietvertrag für die Wohnung in ${mietobjektAdresseKurz} ordentlich und fristgerecht zum **${kuendigungsdatumWunschFormatiert}**.`,
+            defaultLineHeight, textFontSize
+        ); // Datum fett
            
-        writeParagraph("Sollte dieser Termin aus von mir/uns nicht bekannten Gründen nicht der korrekten Frist entsprechen, kündige(n) ich/wir hilfsweise zum nächstmöglichen Termin. Bitte teilen Sie mir/uns diesen in Ihrer Kündigungsbestätigung mit.", defaultLineHeight, textFontSize);
+        writeParagraph(
+            `Sollte dieser Termin aus ${pick("mir", "uns")} nicht bekannten Gründen nicht der korrekten Frist entsprechen, ${pick("kündige ich", "kündigen wir")} hilfsweise zum nächstmöglichen Termin. Bitte teilen Sie ${pick("mir", "uns")} diesen in Ihrer Kündigungsbestätigung mit.`,
+            defaultLineHeight, textFontSize
+        );
     }
     
     // Zusatztext
@@ -249,14 +338,17 @@ function generateKuendigungMieterPDF(data) {
         writeParagraph(kuendigungZusatzText);
     } else {
         y += defaultLineHeight / 2;
-        writeParagraph("Ich/Wir bitten um eine schriftliche Bestätigung dieser Kündigung unter Nennung des Beendigungszeitpunktes des Mietverhältnisses. Für die Vereinbarung eines Termins zur Wohnungsübergabe stehe ich/stehen wir Ihnen gerne zur Verfügung.", defaultLineHeight, textFontSize);
+        writeParagraph(
+            `${pick("Ich bitte", "Wir bitten")} um eine schriftliche Bestätigung dieser Kündigung unter Nennung des Beendigungszeitpunktes des Mietverhältnisses. Für die Vereinbarung eines Termins zur Wohnungsübergabe ${pick("stehe ich", "stehen wir")} Ihnen gerne zur Verfügung.`,
+            defaultLineHeight, textFontSize
+        );
     }
     
     // Grußformel und Unterschrift(en)
     writeParagraph("Mit freundlichen Grüßen", defaultLineHeight, textFontSize, {extraSpacingAfter: defaultLineHeight * 2}); 
     
     // Platz für Unterschriften (mehrere Zeilen, falls mehrere Mieter)
-    const mieterArray = mieterNamen.split('\n').filter(name => name.trim() !== "");
+    const mieterArray = mieterLines;
     if (mieterArray.length > 0) {
         mieterArray.forEach(einzelMieter => {
             writeParagraph("_________________________");
@@ -264,7 +356,7 @@ function generateKuendigungMieterPDF(data) {
         });
     } else { // Fallback, falls das Feld mieterNamen leer ist (sollte durch required nicht passieren)
         writeParagraph("_________________________");
-        writeParagraph("(Unterschrift Mieter/in)");
+        writeParagraph(pick("(Unterschrift Mieter/in)", "(Unterschriften Mieter/innen)"));
     }
 
 

@@ -251,34 +251,118 @@ function generateVermieterKuendigungWiderspruchPDF(data) {
     const datumKuendigungFormatiert = getFormattedDateValue(datumKuendigungsschreiben);
     const kuendigungsfristZumFormatiert = getFormattedDateValue(kuendigungsfristZum);
 
+    // Schriftart setzen wie vorgegeben
     doc.setFont("times", "normal");
 
-    // Absender
-    let absenderName = mieterName;
-    let absenderAdresse = mieterAdresse;
-    if (widerspruchfuehrerIdentischSBA === 'nein' && wfNameSBA && wfNameSBA.trim() !== "") {
-        absenderName = wfNameSBA;
-        absenderAdresse = wfAdresseSBA;
-    }
-    writeLine(doc, absenderName, defaultLineHeight, "normal", textFontSize);
-    absenderAdresse.split("\n").forEach(line => writeLine(doc, line.trim(), defaultLineHeight, "normal", textFontSize));
-    if (widerspruchfuehrerIdentischSBA === 'nein' && wfNameSBA && wfNameSBA.trim() !== ""){
-         writeParagraph(doc, `(handelnd für ${mieterName})`, defaultLineHeight, smallTextFontSize, {fontStyle: "italic", extraSpacingAfter: defaultLineHeight*0.5});
-    }
-    if (yGlobal + defaultLineHeight <= usableHeight) yGlobal += defaultLineHeight; else {doc.addPage(); yGlobal = margin;}
+    // Absender-Sonderlogik (Widerspruchsführer vs. Mieter)
+    let isVertreter = (typeof widerspruchfuehrerIdentischSBA !== "undefined" && widerspruchfuehrerIdentischSBA === 'nein' && typeof wfNameSBA !== "undefined" && wfNameSBA && wfNameSBA.trim() !== "");
+    
+    let absenderName = isVertreter ? wfNameSBA : mieterName;
+    let absenderAdresse = isVertreter ? wfAdresseSBA : mieterAdresse;
 
-    // Empfänger (Vermieter)
-    writeLine(doc, vermieterName, defaultLineHeight, "normal", textFontSize);
-    vermieterAdresse.split("\n").forEach(line => writeLine(doc, line.trim(), defaultLineHeight, "normal", textFontSize));
-    if (yGlobal + defaultLineHeight * 2 <= usableHeight) yGlobal += defaultLineHeight * 2; else {doc.addPage(); yGlobal = margin;}
+    let targetEmpfaengerName = vermieterName || "";
+    let targetEmpfaengerAdresse = vermieterAdresse || "";
+    
+    // Dynamische Schriftgrößen nutzen
+    let fSize = textFontSize || 11;
+    let smallFSize = (typeof smallTextFontSize !== "undefined") ? smallTextFontSize : (fSize - 2);
 
-    // Datum rechtsbündig
+    // ==========================================
+    // --- UNIFORMER BRIEFKOPF START ---
+    // ==========================================
+    
+    // 1. RECHTER BLOCK: Haupt-Absenderblock (Oben rechts)
+    const rightColumnX = pageWidth - margin - 60; // Startpunkt rechts (ca. 130mm)
+    let rightY = margin;
+    
+    doc.setFont("times", "bold");
+    doc.setFontSize(10);
+    doc.text("Absender:", rightColumnX, rightY);
+    rightY += 5;
+    
+    doc.setFont("times", "normal");
+    doc.setFontSize(fSize);
+    
+    // Name ausgeben
+    if (absenderName) {
+        doc.text(absenderName, rightColumnX, rightY);
+        rightY += defaultLineHeight;
+    }
+    
+    // Adresse zeilenweise ausgeben
+    if (absenderAdresse) {
+        absenderAdresse.split("\n").forEach(line => {
+            if (line.trim() !== "") {
+                doc.text(line.trim(), rightColumnX, rightY);
+                rightY += defaultLineHeight;
+            }
+        });
+    }
+
+    // Sonderfall: Hinweis "handelnd für [MieterName]" unter der Adresse einfügen
+    if (isVertreter) {
+        doc.setFont("times", "italic");
+        doc.setFontSize(smallFSize);
+        doc.text(`(handelnd für ${mieterName})`, rightColumnX, rightY);
+        rightY += defaultLineHeight;
+        
+        // Schriftart & -größe zurücksetzen
+        doc.setFont("times", "normal");
+        doc.setFontSize(fSize);
+    }
+
+    // 2. LINKER BLOCK: Kleine Rücksendezeile + Empfänger (Vermieter)
+    let leftY = margin + 15; 
+    
+    // Inline-Rücksendezeile generieren
+    const cleanAddressInline = absenderAdresse ? absenderAdresse.replace(/\r?\n/g, " · ") : "";
+    const ruecksendeZeile = `${absenderName} · ${cleanAddressInline}`;
+    
+    doc.setFont("times", "normal");
+    doc.setFontSize(8);
+    doc.setTextColor(120, 120, 120); // Dezentes Grau
+    doc.text(ruecksendeZeile, margin, leftY);
+    
+    // Die feine Trennlinie unter dem Mini-Absender
+    doc.setDrawColor(180, 180, 180); 
+    doc.setLineWidth(0.2);
+    doc.line(margin, leftY + 1.5, margin + 85, leftY + 1.5); 
+    
+    // Empfänger platzieren (Name & Adresse)
+    leftY += 6; 
+    doc.setFontSize(fSize);
+    doc.setTextColor(0, 0, 0); // Zurück zu Schwarz
+    
+    if (targetEmpfaengerName !== "") {
+        doc.text(targetEmpfaengerName, margin, leftY);
+        leftY += defaultLineHeight;
+    }
+    
+    if (targetEmpfaengerAdresse) {
+        targetEmpfaengerAdresse.split("\n").forEach(line => {
+            if (line.trim() !== "") {
+                doc.text(line.trim(), margin, leftY);
+                leftY += defaultLineHeight;
+            }
+        });
+    }
+
+    // 3. DATUM: Rechtsbündig unterhalb der Blöcke
     const datumHeute = new Date().toLocaleDateString("de-DE");
-    doc.setFontSize(textFontSize);
-    const datumsBreite = doc.getStringUnitWidth(datumHeute) * textFontSize / doc.internal.scaleFactor;
-    if (yGlobal + defaultLineHeight > usableHeight) { doc.addPage(); yGlobal = margin; }
-    doc.text(datumHeute, pageWidth - margin - datumsBreite, yGlobal);
-    yGlobal += defaultLineHeight * 2; 
+    doc.setFontSize(fSize);
+    const datumsBreite = doc.getStringUnitWidth(datumHeute) * fSize / doc.internal.scaleFactor;
+    
+    // Kollisionsschutz (gleicht asymmetrische Spaltenhöhen perfekt aus)
+    let datumY = Math.max(leftY, rightY) + 5; 
+    doc.text(datumHeute, pageWidth - margin - datumsBreite, datumY);
+
+    // Übergabe an die globale Y-Koordinate (yGlobal & y für Maximalkompatibilität)
+    yGlobal = datumY + 12;
+    if (typeof y !== "undefined") y = yGlobal;
+
+    // ==========================================
+    // --- UNIFORMER BRIEFKOPF ENDE ---
+    // ==========================================
 
     // Betreff (druckvoller)
     let mietobjektAdresseKurz = (mieterAdresse.split("\n")[0] || '[Adresse der Wohnung]').trim();

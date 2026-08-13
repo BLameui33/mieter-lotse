@@ -111,20 +111,96 @@ document.addEventListener('DOMContentLoaded', function() {
         } = data;
 
         // KORREKTER Absender- und Empfängerblock für Fensterumschläge
-        doc.setFontSize(9);
-        const mieterAdresseEinzeilig = mieterAdresse.replace(/\n/g, ', ');
-        const absenderZeile = `${mieterName} · ${mieterAdresseEinzeilig}`;
-        doc.text(absenderZeile, margin, margin - 10);
-        doc.setFontSize(textFontSize);
-        y = margin + 15;
-        writeParagraph(vermieterName);
-        vermieterAdresse.split("\n").forEach(line => writeParagraph(line.trim(), { extraSpacingAfter: 0 }));
-        y += defaultLineHeight * 2;
-        
-        // Datum
-        const datumHeute = new Date().toLocaleDateString("de-DE");
-        doc.text(datumHeute, pageWidth - margin - doc.getStringUnitWidth(datumHeute) * textFontSize / doc.internal.scaleFactor, y);
-        y += defaultLineHeight * 2;
+     // Schriftart setzen wie vorgegeben
+    doc.setFont("times", "normal");
+
+    // Absender- & Empfängerdaten vorbereiten (Mieter/Vermieter-Variablen)
+    let absenderName = mieterName;
+    let absenderAdresse = mieterAdresse; // Enthält bereits die komplette Adresse
+    let infoText = ""; // Dieser Block besitzt standardmäßig kein Aktenzeichen im Kopf
+
+    let targetEmpfaengerName = vermieterName || "";
+    let targetEmpfaengerAdresse = vermieterAdresse || "";
+    
+    // Dynamische Schriftgröße nutzen
+    let fSize = textFontSize || 11;
+
+    // ==========================================
+    // --- UNIFORMER BRIEFKOPF START ---
+    // ==========================================
+    
+    // 1. RECHTER BLOCK: Haupt-Absenderblock (Oben rechts)
+    const rightColumnX = pageWidth - margin - 60; // Startpunkt rechts (ca. 130mm)
+    let rightY = margin;
+    
+    doc.setFont("times", "bold");
+    doc.setFontSize(10);
+    doc.text("Absender:", rightColumnX, rightY);
+    rightY += 5;
+    
+    doc.setFont("times", "normal");
+    doc.setFontSize(fSize);
+    doc.text(absenderName, rightColumnX, rightY);
+    rightY += defaultLineHeight;
+    
+    absenderAdresse.split("\n").forEach(line => {
+        if (line.trim() !== "") {
+            doc.text(line.trim(), rightColumnX, rightY);
+            rightY += defaultLineHeight;
+        }
+    });
+
+    // 2. LINKER BLOCK: Kleine Rücksendezeile + Empfänger (Vermieter)
+    let leftY = margin + 15; 
+    
+    // Inline-Rücksendezeile generieren
+    const cleanAddressInline = absenderAdresse.replace(/\r?\n/g, " · ");
+    const ruecksendeZeile = `${absenderName} · ${cleanAddressInline}`;
+    
+    doc.setFont("times", "normal");
+    doc.setFontSize(8);
+    doc.setTextColor(120, 120, 120); // Dezentes Grau
+    doc.text(ruecksendeZeile, margin, leftY);
+    
+    // Die feine Trennlinie unter dem Mini-Absender
+    doc.setDrawColor(180, 180, 180); 
+    doc.setLineWidth(0.2);
+    doc.line(margin, leftY + 1.5, margin + 85, leftY + 1.5); 
+    
+    // Empfänger platzieren (Name & Adresse)
+    leftY += 6; 
+    doc.setFontSize(fSize);
+    doc.setTextColor(0, 0, 0); // Zurück zu Schwarz
+    
+    if (targetEmpfaengerName !== "") {
+        doc.text(targetEmpfaengerName, margin, leftY);
+        leftY += defaultLineHeight;
+    }
+    
+    if (targetEmpfaengerAdresse) {
+        targetEmpfaengerAdresse.split("\n").forEach(line => {
+            if (line.trim() !== "") {
+                doc.text(line.trim(), margin, leftY);
+                leftY += defaultLineHeight;
+            }
+        });
+    }
+
+    // 3. DATUM: Rechtsbündig unterhalb der Blöcke
+    const datumHeute = new Date().toLocaleDateString("de-DE");
+    doc.setFontSize(fSize);
+    const datumsBreite = doc.getStringUnitWidth(datumHeute) * fSize / doc.internal.scaleFactor;
+    
+    // Kollisionsschutz (gleicht asymmetrische Spaltenhöhen perfekt aus)
+    let datumY = Math.max(leftY, rightY) + 5; 
+    doc.text(datumHeute, pageWidth - margin - datumsBreite, datumY);
+
+    // Übergabe an die globale Y-Koordinate für den nachfolgenden Inhalt
+    y = datumY + 12;
+
+    // ==========================================
+    // --- UNIFORMER BRIEFKOPF ENDE ---
+    // ==========================================
 
         // Betreff
         writeParagraph(`Widerspruch gegen die Modernisierungsankündigung vom ${new Date(datumAnkuendigung).toLocaleDateString('de-DE')}`, { fontSize: 13, fontStyle: "bold", extraSpacingAfter: 2 });
