@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // 1. Einheitliches CSS in die Seite einfügen (!important überschreibt deine alten Inline-Styles)
+    // 1. Einheitliches CSS in die Seite einfügen (!important überschreibt alte Inline-Styles)
     const style = document.createElement('style');
     style.innerHTML = `
         /* Das Design für den inneren weißen Kasten */
-        #spendenPopup .popup-content {
+        .popup-overlay .popup-content,
+        .popup-content {
             background: #ffffff !important; 
             padding: 40px 30px !important; 
             border-radius: 12px !important; 
@@ -28,26 +29,29 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         /* Den alten PayPal-Button unauffälliger machen (als Alternative) */
-        #spendenPopup input[type="submit"] {
+        .popup-overlay input[type="submit"],
+        .popup-content input[type="submit"] {
             background: none !important; border: none !important; text-decoration: underline !important; 
             cursor: pointer !important; margin-bottom: 20px !important; font-size: 0.9em !important;
             color: #555 !important; padding: 0 !important; font-weight: normal !important;
         }
 
         /* Den Schließen-Button einheitlich machen */
-        #spendenPopup .popup-close-button {
+        .popup-overlay .popup-close-button,
+        .popup-content .popup-close-button {
             background: #f1f1f1 !important; border: 1px solid #ccc !important; padding: 10px 20px !important; 
             cursor: pointer !important; border-radius: 5px !important; font-size: 14px !important;
             width: 100% !important; transition: 0.2s !important; color: #333 !important; margin-top: 0 !important;
         }
-        #spendenPopup .popup-close-button:hover { 
+        .popup-overlay .popup-close-button:hover,
+        .popup-content .popup-close-button:hover { 
             background: #e0e0e0 !important; 
         }
     `;
     document.head.appendChild(style);
 
-    // 2. PayPal-Formulare finden und Buttons einbauen (Texte bleiben unangetastet!)
-    const forms = document.querySelectorAll('#spendenPopup form[action="https://www.paypal.com/donate"]');
+    // 2. Alle PayPal-Formulare auf der Seite finden (unabhängig von der ID des übergeordneten Popups)
+    const forms = document.querySelectorAll('form[action="https://www.paypal.com/donate"]');
     
     forms.forEach(form => {
         // Verhindern, dass Buttons doppelt eingefügt werden
@@ -58,9 +62,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Container für die neuen Buttons erstellen
         const btnContainer = document.createElement('div');
-        btnContainer.className = 'spenden-btn-gruppe'; // Hier greift unser CSS von oben
+        btnContainer.className = 'spenden-btn-gruppe';
 
-        // Die Beträge
+        // Die Beträge (3 €, 5 €, 10 €)
         const amounts = [3, 5, 10];
 
         amounts.forEach(amount => {
@@ -69,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
             btn.name = "amount";
             btn.value = amount;
             btn.textContent = amount + " €";
-            btn.className = "spenden-summe-btn"; // Hier greift unser CSS von oben
+            btn.className = "spenden-summe-btn";
             btnContainer.appendChild(btn);
         });
 
@@ -79,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Die neuen Buttons vor dem originalen Submit-Button einfügen
         originalSubmit.parentNode.insertBefore(btnContainer, originalSubmit);
         
-        // Formular markieren
+        // Formular als bearbeitet markieren
         form.dataset.buttonsAdded = "true";
     });
 });
