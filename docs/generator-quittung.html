@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Quittungsvorlage PDF | Generator für Bar-Kaution / Ablöse</title>
+  
+  <meta name="description" content="Kostenlos Quittung online ausfüllen. Perfekt für Bar-Kautionen und Ablöse von z.B. Einbauküchen. Inklusive Wort-Umwandlung.">
+  <meta name="keywords" content="Quittungsvorlage PDF, Quittung online ausfüllen, Quittung Bar-Kaution Muster, Quittungsblock Generator, § 368 BGB">
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Mieter-Lotse Redaktion">
+  <link rel="canonical" href="https://mieter-lotse.de/generator-quittung.html">
+  <link rel="icon" href="/logo-lotse-fav.png">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <!-- Signature Pad Bibliothek -->
+  <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.7/dist/signature_pad.umd.min.js"></script>
+  <script defer src="quittungs_generator_script.js"></script>
+  <link rel="stylesheet" href="/css/generator.css">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Quittungs-Generator (Privat & Gewerblich) nach § 368 BGB",
+    "applicationCategory": "BusinessApplication, UtilitiesApplication",
+    "operatingSystem": "All",
+    "description": "Erstellt eine Quittung im klassischen gelben A6-Format als PDF. Wandelt Zahlen automatisch in Worte um als Fälschungsschutz.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0.00",
+      "priceCurrency": "EUR"
+    }
+  }
+  </script>
+  
+  <style>
+    /* --- Quittungs-Vorschau Design (Der klassische gelbe Block) --- */
+    .receipt-preview-wrapper {
+        background-color: #fff9c4; /* Klassisches Quittungs-Gelb */
+        border: 1px solid #c8b900;
+        border-radius: 4px;
+        padding: 20px;
+        max-width: 100%;
+        position: relative;
+        box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
+        margin-top: 15px;
+        margin-bottom: 20px;
+        font-family: 'Courier New', Courier, monospace; /* Typischer Schreibmaschinen-Look */
+        color: #333;
+        background-image: repeating-linear-gradient(transparent, transparent 29px, #e0d47a 30px);
+        background-position: 0 1.2em;
+    }
+
+    .receipt-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid #333;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        background-color: #fff9c4;
+    }
+
+    .receipt-title {
+        font-size: 1.8em;
+        font-weight: bold;
+        letter-spacing: 2px;
+        margin: 0;
+    }
+
+    .receipt-number {
+        color: #d32f2f;
+        font-weight: bold;
+    }
+
+    .receipt-row {
+        margin-bottom: 15px;
+        font-size: 1.1em;
+        line-height: 1.6;
+        display: flex;
+        align-items: baseline;
+    }
+
+    .receipt-label {
+        font-weight: bold;
+        margin-right: 10px;
+        white-space: nowrap;
+        background-color: #fff9c4;
+        padding-right: 5px;
+    }
+
+    .receipt-value {
+        flex-grow: 1;
+        font-style: italic;
+        color: #000;
+        border-bottom: 1px dashed #777; /* Handschrift-Linie */
+        padding-left: 5px;
+        min-height: 1.5em;
+    }
+
+    .amount-box {
+        border: 2px solid #333;
+        padding: 5px 15px;
+        font-size: 1.4em;
+        font-weight: bold;
+        background: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+    <a href="index.html" class="site-logo">Mieter-Lotse</a>
+</header>
+
+<div class="page-container">
+
+<h1>Quittung für Bar-Kaution / Ablöse der Einbauküche</h1>
+
+  <div class="usp-bar">
+    <div class="usp-item"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg> Rechtsgültig nach § 368 BGB</div>
+    <div class="usp-item"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg> Betrag-in-Wort-Automatik</div>
+    <div class="usp-item"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg> Klassisches Block-Design</div>
+    <div class="usp-item"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2e7d32"/></svg> 100% Kostenlos als PDF</div>
+  </div>
+
+  <a href="#quittungForm" class="button jump-button" style="margin-bottom: 20px; display: inline-block;">Direkt zur kostenlosen Quittungsvorlage springen</a>
+
+  <div class="info-box">
+  <p>
+    <strong>Zahlen Sie Ihre Mietkaution bar oder kaufen Sie die Einbauküche vom Vormieter ab?</strong> Bei der Übergabe von Bargeld im Rahmen eines Umzugs geht es oft um hunderte oder tausende Euro. Ohne schriftlichen Nachweis haben Sie vor Gericht schlechte Karten, falls der Vermieter behauptet, das Geld nie erhalten zu haben.
+  </p>
+  <p>
+    Wer bar bezahlt, hat ein gesetzliches Recht auf eine schriftliche Empfangsbestätigung (§ 368 BGB). Erstellen Sie hier in wenigen Sekunden eine <strong>rechtssichere, klassische Quittung als PDF</strong>. Geben Sie die Daten einfach am Handy ein und lassen Sie den Vermieter oder Vormieter direkt auf dem Bildschirm unterschreiben!
+  </p>
+</div>
+
+  <div class="info-box" style="background-color: #fff8e1; border-left: 4px solid #ff9800; padding: 10px; margin-top: 15px;">
+    <strong>Wichtiger Hinweis:</strong> Diese Quittungsvorlage ist für Barzahlungen im Rahmen von Mietangelegenheiten (Kaution, Ablöse, Einbauküche) gedacht. Für Privatverkäufe oder Darlehen nutzen Sie bitte den <a href="sozialrecht-lotse.de/generator-quittung.html" style="color: #ff9800; text-decoration: underline;">Quittungs-Generator für Privatverkäufe</a>.
+  </div>
+
+  <div class="highlight-box" style="background-color: #fff3f3; border-left: 4px solid #e53935; padding: 10px; margin-top: 15px;">
+    <strong>Technischer Hinweis:</strong> Um das fertige PDF herunterzuladen, nutzen Sie bitte einen Standard-Browser wie <strong>Chrome, Firefox oder Safari</strong>. In-App-Browser blockieren Downloads häufig.
+  </div>
+
+  <!-- DAS FORMULAR -->
+  <form id="quittungForm">
+    <fieldset>
+      <legend>1. Betrag & Verwendungszweck</legend>
+      
+      <label for="betragZahlen">Betrag in Euro (z.B. 150,50):</label>
+      <input type="number" id="betragZahlen" step="0.01" required placeholder="0.00" style="font-weight:bold; font-size: 1.2em;">
+      
+      <label for="betragWorten">Betrag in Worten (Fälschungsschutz):</label>
+      <p class="instruction-text" style="font-size:0.8em; color:#555; margin-top:0;">Wird automatisch ausgefüllt, sobald Sie eine Zahl eingeben.</p>
+      <input type="text" id="betragWorten" readonly placeholder="z.B. Einhundertfünfzig" style="background-color: #eee; cursor: not-allowed;">
+
+      <label for="verwendungszweck">Wofür wurde das Geld bezahlt? (Verwendungszweck):</label>
+      <input type="text" id="verwendungszweck" required placeholder="z.B. Verkauf gebrauchter Laptop Marke XY / Rückzahlung privates Darlehen">
+    </fieldset>
+
+    <fieldset>
+        <legend>2. Personen-Daten</legend>
+        
+        <label for="zahlerName">Von wem stammt das Geld? (Geldgeber / Zahler):</label>
+        <input type="text" id="zahlerName" required placeholder="Vor- und Nachname der zahlenden Person">
+        
+        <label for="empfaengerName">Wer hat das Geld erhalten? (Geldempfänger / Aussteller der Quittung):</label>
+        <input type="text" id="empfaengerName" required placeholder="Vor- und Nachname der empfangenden Person (muss unterschreiben!)">
+    </fieldset>
+
+    <!-- Live-Vorschau Quittung -->
+    <div style="background-color: #e3f2fd; border-left: 4px solid #2196f3; padding: 15px; margin-top: 15px; margin-bottom: 15px; border-radius: 0 4px 4px 0;">
+        <h4 style="margin-top: 0; margin-bottom: 10px; color: #0d47a1;">Live-Vorschau: Ihre Quittung</h4>
+        <p style="font-size: 0.9em; margin-bottom: 15px; color: #333;">
+            So wird die generierte PDF-Quittung (Querformat, A6) aussehen:
+        </p>
+        
+        <div class="receipt-preview-wrapper">
+            <div class="receipt-header">
+                <div class="receipt-title">QUITTUNG</div>
+                <div class="amount-box"><span id="prevBetrag">0,00</span> €</div>
+            </div>
+            
+            <div class="receipt-row">
+                <span class="receipt-label">Betrag in Worten:</span>
+                <span class="receipt-value" id="prevWorte">Null</span>
+            </div>
+            
+            <div class="receipt-row">
+                <span class="receipt-label">Von:</span>
+                <span class="receipt-value" id="prevZahler">________________________</span>
+            </div>
+            
+            <div class="receipt-row">
+                <span class="receipt-label">Für:</span>
+                <span class="receipt-value" id="prevZweck">________________________</span>
+            </div>
+            
+            <div class="receipt-row" style="margin-top: 30px;">
+                <span class="receipt-label">Ort, Datum:</span>
+                <span class="receipt-value">________________________</span>
+                <span class="receipt-label" style="margin-left:20px;">Unterschrift:</span>
+                <span class="receipt-value">________________________</span>
+            </div>
+        </div>
+    </div>
+
+    <fieldset>
+        <legend>3. Ort & Datum</legend>
+        <label for="quittungOrt">Ort:</label>
+        <input type="text" id="quittungOrt" required placeholder="z.B. Berlin">
+        
+        <label for="quittungDatum">Datum (leer lassen für heute):</label>
+        <input type="date" id="quittungDatum">
+    </fieldset>
+    
+    <fieldset>
+        <legend>4. Steuer-Zusatz (Optional für Privat)</legend>
+        <p class="instruction-text" style="font-size:0.9em; color:#555; margin-top:0;">
+            Für private Verkäufe fällt in der Regel keine Mehrwertsteuer (Umsatzsteuer) an. Der Betrag ist brutto wie netto.
+        </p>
+        <label>
+            <input type="checkbox" id="keineSteuer" checked> Privatverkauf (Kein Ausweis von Umsatzsteuer)
+        </label>
+    </fieldset>
+
+    <fieldset>
+        <legend>5. Digitale Unterschrift des Empfängers</legend>
+        <p class="instruction-text" style="font-size:0.9em; color:#555; margin-top:0;">
+            Quittieren Sie den Erhalt des Geldes hier mit der Maus oder dem Finger. <em>(Lassen Sie das Feld leer, wenn Sie die PDF ausdrucken und per Hand unterschreiben möchten).</em>
+        </p>
+        
+        <!-- Das Zeichenbrett (Canvas) -->
+        <div style="border: 1px dashed #aaa; background-color: #fafafa; width: 100%; max-width: 400px; height: 150px; position: relative; border-radius: 4px; touch-action: none;">
+            <canvas id="signatureCanvas" style="width: 100%; height: 100%; display: block;"></canvas>
+        </div>
+        
+        <button type="button" id="clearSignatureBtn" class="button-secondary" style="margin-top: 10px; font-size: 0.85em; padding: 6px 12px;">Unterschrift löschen / neu beginnen</button>
+    </fieldset>
+
+    <div style="font-size: 0.8em; color: #555; margin-top: 20px; text-align: center;">
+        <span style="color: green;">🔒</span> <strong>Datenschutz:</strong> Ihre Daten bleiben bei Ihnen. Das PDF wird sicher in Ihrem Browser generiert (kein Server-Upload).
+    </div>
+
+    <div class="button-group">
+      <button type="submit" id="createPdfBtn" class="button-primary" style="background-color: #d35400; color: white; padding: 15px 30px; font-size: 1.1em; width: 100%;">Quittung als PDF generieren</button>
+    </div>
+  </form>
+  
+  <hr style="margin-top:50px; border: 1px solid #eee;">
+
+  <div class="info-box" style="background-color: #f8f9fa; border: none; padding: 25px;">
+  <h2 style="margin-top: 0;">Warum eine Quittung beim Umzug pures Geld wert ist</h2>
+  <p>
+    Rund um den Ein- und Auszug fließt häufig noch Bargeld. Seien es Abstands-Zahlungen, Abstand für Laminat oder die erste Rate der Mietkaution direkt bei der Schlüsselübergabe. Ohne Quittung gilt: Aussage gegen Aussage.
+  </p>
+  
+  <h3 style="font-size: 1.2em; color: #2e7d32;">Die Bar-Kaution an den Vermieter</h3>
+  <p>
+    Grundsätzlich gilt: Sie dürfen die Kaution gem. § 551 BGB in drei Raten zahlen (die erste Rate zu Mietbeginn). Zahlt der Mieter diese erste Rate in bar bei der Wohnungsübergabe, muss der Vermieter dies zwingend quittieren. Tipp: Schreiben Sie in den Verwendungszweck der Quittung genau: <em>"1. Rate der Mietkaution für Wohnung [Adresse]"</em>. 
+  </p>
+
+  <h3 style="font-size: 1.2em; color: #2e7d32;">Ablöse (Abstand) an den Vormieter</h3>
+  <p>
+    Sie übernehmen die Küche, die Waschmaschine oder maßgefertigte Rollos vom Vormieter? Nutzen Sie unsere Vorlage, um das Geschäft abzuschließen. Die Quittung dient hier gleichzeitig als Zahlungsnachweis und Kaufbeleg. Ohne diesen Beleg könnte der Vormieter (oder im schlimmsten Fall der Vermieter) beim späteren Auszug Eigentumsansprüche an der Küche anmelden.
+  </p>
+</div>
+
+<h2>Häufige Fragen zur Quittung im Mietrecht</h2>
+<details>
+  <summary>Darf der Vermieter auf eine Barzahlung der Kaution bestehen?</summary>
+  <p>Nein. Als Mieter haben Sie das Recht, die Kaution zu überweisen. Wenn Sie sich jedoch freiwillig auf eine Barzahlung einigen, haben Sie wiederum das Recht, das Geld nur gegen Aushändigung einer formell korrekten Quittung zu übergeben.</p>
+</details>
+<details>
+  <summary>Reicht ein Kontoauszug nicht auch?</summary>
+  <p>Wenn Sie das Geld überweisen: Ja. Ein Kontoauszug ist ein anerkannter Nachweis. Wenn Sie das Geld aber vorher am Automaten abheben und dem Vermieter in die Hand drücken, beweist der Kontoauszug nur die Abhebung, nicht aber, dass der Vermieter das Geld auch wirklich erhalten hat. Hier ist die Quittung zwingend erforderlich.</p>
+</details>
+<details>
+  <summary>Was gehört bei einer Abstandszahlung in den Verwendungszweck?</summary>
+  <p>Seien Sie so präzise wie möglich. Schreiben Sie nicht nur "Küche", sondern "Ablöse für Einbauküche inkl. Elektrogeräte, Wohnung 3. OG links, Musterstraße 1". So schließen Sie spätere Verwechslungen aus.</p>
+</details>
+
+</div> 
+
+<div style="background-color: #f8f9fa; border-top: 2px solid #e0e0e0; padding: 25px 15px; margin-top: 40px; text-align: center; font-family: sans-serif;">
+    
+    <h3 style="font-size: 1.1em; color: #333; margin-top: 0; margin-bottom: 8px;">Wer hat diese Inhalte erstellt?</h3>
+    <p style="font-size: 0.9em; color: #555; max-width: 700px; margin: 0 auto 12px auto; line-height: 1.5;">
+        Unsere Ratgeber und Generatoren basieren auf der strikten Auswertung aktueller Gesetzestexte. Sie werden von <strong>Jan (Projektleitung) & Team</strong> entwickelt und durch unser Netzwerk aus Fachberatern regelmäßig auf fachliche Korrektheit geprüft. 
+        <br><br>
+        <em>Wichtiger Hinweis: Unser Tool generiert Standardvorlagen zur Selbsthilfe und ersetzt keine anwaltliche Einzelfallprüfung.</em>
+    </p>
+    
+    <div style="margin-bottom: 25px;">
+        <a href="über.html" style="display: inline-block; font-size: 0.9em; color: #0056b3; text-decoration: underline; font-weight: bold;">
+            Mehr über unsere Redaktion & Arbeitsweise erfahren
+        </a>
+    </div>
+
+    <div style="margin: 0 auto 20px auto; max-width: 600px; background-color: #ffffff; border: 1px solid #d1d5db; border-radius: 8px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+        <p style="margin: 0; font-size: 0.95em; color: #333; line-height: 1.4;">
+             <strong>Sie wissen nicht genau, wo Sie anfangen sollen?</strong><br>
+            Nutzen Sie unseren <a href="index.html" style="color: #0056b3; font-weight: bold; text-decoration: none; border-bottom: 2px solid #0056b3;">Digitalen Lotsen</a>. Er führt Sie in wenigen Klicks zielsicher zum passenden Ratgeber, Rechner oder Generator für Ihr Anliegen.
+        </p>
+    </div>
+    <p style="font-size: 0.85em; color: #777; margin: 0 auto; max-width: 600px; border-top: 1px solid #eaeaea; padding-top: 15px;">
+        💡 <strong>Fehler entdeckt oder ein technisches Problem?</strong> Helfen Sie uns, die Tools aktuell zu halten. <a href="mailto:info@kassen-lotse.de" style="color: #555; text-decoration: underline;">Schreiben Sie uns gerne eine kurze Nachricht</a>.
+    </p>
+    
+</div>
+<footer>
+  <div class="mini-footer-hint">
+  <p><strong>Das Lotsen-Netzwerk:</strong></p>
+<p>
+  <a href="https://www.kassen-lotse.de" class="mini-footer-link">Kassen-Lotse</a> • 
+  <a href="https://www.sozialrecht-lotse.de" class="mini-footer-link">Sozial-Lotse</a> • 
+  <a href="https://www.mieter-lotse.de" class="mini-footer-link">Mieter-Lotse</a>
+</p>
+  </div>
+  <p>&copy; 2026 Mieter-Lotse | <a href="über.html">Redaktion & Expertise</a> | <a href="datenschutz-mieter-lotse.html">Datenschutz</a> | <a href="impressum-mieter-lotse.html">Impressum</a></p>
+</footer>
+
+</body>
+</html>
