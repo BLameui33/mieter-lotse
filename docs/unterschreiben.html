@@ -129,7 +129,7 @@
         max-width: 100%;
         height: auto; 
         background-color: #fff;
-        touch-action: none;
+        touch-action: pinch-zoom;
     }
 
     .pagination-controls {
@@ -174,6 +174,9 @@
   <div class="info-box">
     <p style="margin: 0;">
       <strong>So funktioniert's:</strong> Laden Sie Ihr erstelltes PDF (oder ein Foto) hoch. Unterschreiben Sie einfach mit der Maus oder auf dem Handy mit dem Finger. Das Tool erzeugt ein normgerechtes, sicheres PDF für die Krankenkasse.
+    </p>
+    <p style="margin: 10px 0 0 0; font-size: 0.9em; color: #1565c0;">
+      <strong>Tipp für Smartphones:</strong> Mit 1 Finger können Sie zeichnen. Nutzen Sie 2 Finger gleichzeitig, um hereinzuzoomen oder das Blatt zu verschieben.
     </p>
   </div>
 
@@ -469,13 +472,20 @@
         };
     }
 
-    function startPosition(e) {
-        e.preventDefault();
+   function startPosition(e) {
+        if (e.touches && e.touches.length > 1) {
+            isDrawing = false;
+            return; 
+        }
+                if (e.cancelable) {
+            e.preventDefault();
+        }
+        
         isDrawing = true;
         const coords = getCoordinates(e);
         lastX = coords.x;
         lastY = coords.y;
-        draw(e);
+        draw(e); // Startpunkt zeichnen
     }
 
     function endPosition() {
@@ -484,18 +494,30 @@
     }
 
     function draw(e) {
+        if (e.touches && e.touches.length > 1) {
+            isDrawing = false;
+            ctx.beginPath(); // Alten Pfad kappen, damit keine ungewollte Linie gezogen wird
+            return;
+        }
+
         if (!isDrawing) return;
-        e.preventDefault();
+        
+        if (e.cancelable) {
+            e.preventDefault();
+        }
+        
         const coords = getCoordinates(e);
         const relativeScale = canvas.width / 800; 
         ctx.lineWidth = parseFloat(penWidthSelect.value) * relativeScale;
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
         ctx.strokeStyle = penColorSelect.value;
+        
         ctx.beginPath();
         ctx.moveTo(lastX, lastY);
         ctx.lineTo(coords.x, coords.y);
         ctx.stroke();
+        
         lastX = coords.x;
         lastY = coords.y;
     }
