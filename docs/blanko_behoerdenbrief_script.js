@@ -105,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
-
 function generateBlankoPDF() {
     const { jsPDF } = window.jspdf;
     // A4 Format in Millimetern
