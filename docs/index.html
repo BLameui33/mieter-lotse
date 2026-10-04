@@ -42,7 +42,7 @@
   --transition: all 0.25s ease;
 }
 
-/* --- Grundlayout --- */
+
 body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.8;
@@ -53,10 +53,10 @@ body {
   font-size: 1.05rem;
 }
 
-/* === HEADER & LOGO (Schmal & Kompakt) === */
+
 .site-header {
   background-color: #ffffff;
-  padding: 0.6rem 1rem; /* Halbiert (vorher 1.2rem) für eine deutlich schmalere Höhe */
+  padding: 0.6rem 1rem; 
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid #e6ebf1;
   text-align: center;
@@ -64,14 +64,14 @@ body {
   z-index: 10;
 }
 
-/* Dezente Glanzlinie am oberen Rand */
+
 .site-header::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 3px; /* Feiner gemacht (vorher 4px) */
+  height: 3px; 
   background: linear-gradient(90deg, #004e92, #0070f3);
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -87,7 +87,7 @@ body {
 
 .site-logo {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.35rem; /* Vorher 1.8rem – wirkt dadurch dezent und spart Höhe */
+  font-size: 1.35rem; 
   font-weight: 700;
   color: var(--accent);
   text-decoration: none;
@@ -107,9 +107,9 @@ body {
   text-shadow: 0 1px 6px rgba(0, 112, 243, 0.15);
 }
 
-/* --- Hauptcontainer --- */
+
 .page-container {
-  max-width: 1100px; /* Erhöht für optimales 2-Spalten-Grid */
+  max-width: 1100px; 
   margin: 3rem auto;
   background: var(--white);
   padding: 3rem 2.8rem;
@@ -122,7 +122,7 @@ body {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 14px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* --- Überschriften --- */
+
 h1 {
   font-size: 2.6rem;
   margin-bottom: 1.8rem;
@@ -153,28 +153,28 @@ h2 {
   padding-bottom: 10px;
 }
 
-/* Edler, spitz zulaufender Unterstrich mit Farbverlauf */
+
 h2::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 100px; /* Längere Startlänge */
-  height: 3px;  /* 3px Höhe gibt der Spitze perfekte Präzision */
+  width: 100px; 
+  height: 3px;  
   
-  /* Farbverlauf von kräftigem Blau bis leicht transparent an der Spitze */
+  
   background: linear-gradient(90deg, #004e92 0%, var(--primary) 60%, rgba(0, 112, 243, 0.2) 100%);
   
-  /* Schneidet die Linie nach rechts spitz zu (Dreieck/Pfeil-Optik) */
+  
   clip-path: polygon(0 0, 100% 50%, 0 100%);
   
   transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Seidenweiches Ausfahren der Spitze nach rechts bei Hover */
+
 .category-section:hover h2::after,
 h2:hover::after {
-  width: 180px; /* Reicht edel & weit nach rechts */
+  width: 180px; 
 }
 
 h3 {
@@ -184,7 +184,7 @@ h3 {
   color: var(--primary-dark);
 }
 
-/* --- Intro & Mission Boxen --- */
+
 .intro-text,
 .project-mission,
 .privacy-short-info {
@@ -210,7 +210,7 @@ h3 {
   color: var(--accent);
 }
 
-/* --- KATEGORIEN SEKTIONEN (CARDS) --- */
+
 .category-section {
   margin-bottom: 2.5rem;
   background: #fcfdfe;
@@ -220,7 +220,7 @@ h3 {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
 }
 
-/* --- TOOL-LISTE ALS 2-SPALTEN GRID --- */
+
 .tool-list {
   list-style: none;
   padding-left: 0;
@@ -270,10 +270,10 @@ h3 {
   font-size: 0.88rem;
   color: #555;
   line-height: 1.5;
-  margin-top: auto; /* Drückt Beschreibung bündig nach unten */
+  margin-top: auto; 
 }
 
-/* Highlight Tags */
+
 .highlight-word {
   background-color: var(--primary-light);
   color: var(--primary-dark);
@@ -286,7 +286,7 @@ h3 {
   margin-right: 4px;
 }
 
-/* --- USP BAR --- */
+
 .usp-bar {
   display: flex;
   justify-content: center;
@@ -315,7 +315,7 @@ h3 {
   fill: #2e7d32;
 }
 
-/* --- SPENDENHINWEIS --- */
+
 .spendenhinweis {
   background: #fff9e6;
   border: 1px solid #ffeeba;
@@ -358,7 +358,7 @@ h3 {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* --- GRUND-DESIGN LOTSE & INTERAKTIV-ELEMENTE --- */
+
 .lotse-wrapper {
   max-width: 800px;
   margin: 40px auto;
@@ -472,7 +472,7 @@ h3 {
   color: #222;
 }
 
-/* --- BUTTONS, DETAILS & EXTRA BOXEN --- */
+
 .button.jump-button {
   display: block !important;
   width: fit-content;
@@ -601,7 +601,7 @@ details p {
   border-radius: 8px;
 }
 
-/* --- FOOTER --- */
+
 footer {
   text-align: center;
   padding: 3rem 0 2rem 0;
@@ -623,7 +623,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* --- MOBILE RESPONSIVE REGELN --- */
+
 @media (max-width: 700px) {
   .page-container {
     padding: 1.2rem;
@@ -648,7 +648,7 @@ footer a:hover {
     padding: 1.2rem 1rem;
   }
 
-  /* Grid fällt auf Handys sauber auf 1 Spalte zurück */
+  
   .tool-list {
     grid-template-columns: 1fr;
     gap: 0.8rem;
@@ -709,7 +709,7 @@ footer a:hover {
    TOPIC NAVIGATOR – Modernes Schwebendes Bottom-Widget
    ========================================================================== */
 
-/* Haupt-Container (Schwebendes Bottom-Widget) */
+
 .topic-navigator {
   position: fixed;
   bottom: 20px;
@@ -734,7 +734,7 @@ footer a:hover {
 
   box-sizing: border-box;
 
-  /* --- STANDARDMÄSSIG UNSICHTBAR & LEICHT NACH UNTEN VERSETZT --- */
+  
   opacity: 0;
   visibility: hidden;
   transform: translate(-50%, 20px);
@@ -742,7 +742,7 @@ footer a:hover {
   transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease;
 }
 
-/* --- WIRD AKTIV, WENN BEI DEN KATEGORIEN (Gleitet sanft hoch) --- */
+
 .topic-navigator.is-visible {
   opacity: 1;
   visibility: visible;
@@ -750,7 +750,7 @@ footer a:hover {
   pointer-events: auto;
 }
 
-/* Dezent beschriftet */
+
 .topic-navigator label {
   font-size: 0.725rem;
   font-weight: 700;
@@ -761,7 +761,7 @@ footer a:hover {
   flex-shrink: 0;
 }
 
-/* Das Select-Feld in Pillen-Optik */
+
 .topic-navigator select {
   flex: 1;
   min-width: 0;
@@ -790,19 +790,19 @@ footer a:hover {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-/* Scroll-Abstand für Ziel-Kategorien (auf den Header oben abgestimmt) */
+
 .category-section {
   scroll-margin-top: 70px;
 }
 
-/* Platz am Seitenende, damit das Footer-Ende nicht verdeckt wird */
+
 footer {
   padding-bottom: 90px !important;
 }
 
 @media (max-width: 600px) {
   .topic-navigator {
-    bottom: 14px; /* Noch etwas näher am unteren Rand auf Mobilgeräten */
+    bottom: 14px; 
     width: calc(100% - 24px);
     padding: 6px 10px 6px 14px;
   }
@@ -814,6 +814,248 @@ footer {
   .topic-navigator select {
     padding: 8px 30px 8px 10px;
     font-size: 0.825rem;
+  }
+}
+
+
+
+.site-header {
+  background: #ffffff !important;
+  border-bottom: 1px solid #edf1f6 !important;
+  box-shadow: none !important;
+}
+.site-header::before { display: none !important; }
+.site-logo,
+.site-logo:hover { transform: none !important; text-shadow: none !important; }
+
+
+.page-container {
+  background: #ffffff !important;
+  border: 0 !important;
+  box-shadow: inset 0 0 0 1px rgba(23, 37, 60, 0.05),
+              0 8px 24px rgba(16, 24, 40, 0.05) !important;
+  border-radius: 12px !important;
+}
+.page-container:hover {
+  transform: none !important;
+  box-shadow: inset 0 0 0 1px rgba(23, 37, 60, 0.06),
+              0 8px 24px rgba(16, 24, 40, 0.05) !important;
+}
+
+
+h1::after {
+  content: "";
+  display: block;
+  width: 160px;
+  height: 2px;
+  margin: 1.1rem auto 0 auto;
+  border-radius: 999px;
+  background: linear-gradient(90deg,
+              rgba(0, 112, 243, 0), rgba(0, 112, 243, 0.9) 50%, rgba(0, 112, 243, 0));
+}
+
+
+h2 { display: block !important; padding-bottom: 0 !important; }
+h2::after {
+  position: static !important;
+  display: block !important;
+  width: 112px !important;
+  height: 2px !important;
+  margin-top: 0.55rem !important;
+  border-radius: 999px !important;
+  clip-path: none !important;
+  transition: none !important;
+  opacity: 0.75 !important;
+  background: linear-gradient(90deg, #0070f3, rgba(0, 112, 243, 0)) !important;
+}
+h2:hover::after,
+.category-section:hover h2::after { width: 112px !important; }
+
+
+.lotse-header h2::after,
+.spendenhinweis h2::after {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+
+h3 { color: #1f3a58 !important; }
+h3::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(0, 112, 243, 0.5);
+  margin-right: 0.55rem;
+  vertical-align: 0.3em;
+}
+
+
+.intro-text,
+.project-mission,
+.model-info,
+.privacy-short-info {
+  background: #ffffff !important;
+  border: 0 !important;
+  box-shadow: inset 0 0 0 1px #d8e3f0 !important;
+  border-radius: 10px !important;
+  color: #2f2f2f !important;
+}
+.intro-text:hover,
+.project-mission:hover,
+.model-info:hover,
+.privacy-short-info:hover {
+  transform: none !important;
+  box-shadow: inset 0 0 0 1px #d8e3f0 !important;
+}
+.project-mission strong,
+.privacy-short-info strong { color: #10243e !important; }
+
+
+.usp-item {
+  background: #ffffff !important;
+  border: 0 !important;
+  box-shadow: inset 0 0 0 1px #e2e7ee !important;
+  border-radius: 6px !important;
+  color: #33546f !important;
+}
+
+
+.category-section {
+  background: #ffffff !important;
+  box-shadow: inset 0 0 0 1px #e2e7ee !important;
+  border-radius: 12px !important;
+}
+.tool-list li {
+  background: #ffffff !important;
+  border: 0 !important;
+  box-shadow: inset 0 0 0 1px #e2e7ee !important;
+  border-radius: 10px !important;
+}
+.tool-list li:hover {
+  transform: none !important;
+  background: #f7fafc !important;
+  box-shadow: inset 0 0 0 1px #cfdff0 !important;
+}
+.tool-list a { color: #1d3a5a !important; }
+.tool-list a:hover { color: #0070f3 !important; }
+.tool-list small { color: #6b7683 !important; }
+
+
+.lotse-wrapper {
+  background: #ffffff !important;
+  border: 0 !important;
+  box-shadow: inset 0 0 0 1px #e2e7ee,
+              0 8px 24px rgba(16, 24, 40, 0.05) !important;
+  border-radius: 12px !important;
+}
+.lotse-btn {
+  background: #ffffff !important;
+  border: 1px solid #d7dfe9 !important;
+  border-radius: 10px !important;
+  color: #2f2f2f !important;
+}
+.lotse-btn:hover {
+  background: #f2f7fd !important;
+  border-color: #cfdff0 !important;
+  color: #10243e !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+#lotse-frage { color: #16324f !important; }
+#lotse-zurueck:hover { background: #f2f5f8 !important; }
+
+
+.spendenhinweis {
+  background: #fbfcfd !important;
+  border: 0 !important;
+  box-shadow: inset 0 0 0 1px #e4e8ee !important;
+  border-radius: 12px !important;
+}
+.spendenhinweis h2 { color: #16324f !important; }
+.spendenhinweis p { color: #4a5560 !important; }
+.spendenhinweis input[type="submit"] {
+  background: #0070f3 !important;
+  color: #ffffff !important;
+  border: 0 !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14),
+              0 1px 2px rgba(0, 89, 201, 0.22) !important;
+}
+.spendenhinweis input[type="submit"]:hover {
+  background: #0059c9 !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14),
+              0 4px 12px rgba(0, 89, 201, 0.24) !important;
+}
+
+
+footer {
+  background: transparent !important;
+  border-top: 1px solid #eceff3 !important;
+  color: #68727f !important;
+}
+
+/* -----------------------------------------
+   Topic-Navigator: deutlich wahrnehmbar
+   ----------------------------------------- */
+
+/* Schluss mit Halbtransparent + Blur: volle Deckung, klarer Rand,
+   kräftigerer Schatten = die Leiste "steht" jetzt über dem Inhalt */
+.topic-navigator {
+  background: #ffffff !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 0 !important;
+  border-radius: 14px !important;
+  padding: 10px 12px 10px 16px !important;
+  bottom: 16px !important;
+  box-shadow: inset 0 0 0 1px #cfdff0,
+              0 12px 32px rgba(16, 24, 40, 0.18),
+              0 2px 8px rgba(16, 24, 40, 0.10) !important;
+}
+
+
+.topic-navigator label { color: #4a5560 !important; }
+.topic-navigator label::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0070f3;
+  margin-right: 0.45rem;
+  vertical-align: 0.05em;
+}
+
+
+.topic-navigator select {
+  border: 1px solid #c3d3e4 !important;
+  border-radius: 10px !important;
+  background-color: #fbfcfe !important;
+  color: #10243e !important;
+  box-shadow: none !important;
+}
+
+
+@media (max-width: 600px) {
+  .topic-navigator { border-radius: 12px !important; }
+}
+
+/* USP-Grid-Fix: Das 2-Spalten-Grid stand außerhalb der Media-Query
+   und galt dadurch auch auf Desktop – hier auf mobil begrenzt */
+@media (min-width: 601px) {
+  .usp-bar {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    padding: 0 !important;
+  }
+  .usp-item {
+    font-size: 0.8rem !important;
+    padding: 0.45rem 0.85rem !important;
+    text-align: left !important;
   }
 }
 </style>
@@ -1200,10 +1442,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!select || !sections.length) return;
 
-  // 1. Klick-Aktion: Schneidet ein eventuelles '#' automatisch ab
+  
   select.addEventListener("change", (e) => {
     const rawValue = e.target.value;
-    const cleanId = rawValue.replace(/^#/, ""); // Entfernt das '#' am Anfang
+    const cleanId = rawValue.replace(/^#/, ""); 
     const targetElement = document.getElementById(cleanId);
     
     if (targetElement) {
@@ -1211,7 +1453,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 2. Scrollspy: Findet die passende Option, egal ob mit oder ohne '#' im value
+  
   function updateDropdownOnScroll() {
     const scrollPosition = window.scrollY || window.pageYOffset;
     let currentSectionId = "";
@@ -1225,14 +1467,14 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Sonderfall: Ganz unten auf der Seite
+    
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
       if (sections.length > 0) {
         currentSectionId = sections[sections.length - 1].id;
       }
     }
 
-    // Passende Option suchen (prüft "alg1" UND "#alg1")
+    
     if (currentSectionId) {
       const matchingOption = Array.from(select.options).find(
         (opt) => opt.value === currentSectionId || opt.value === `#${currentSectionId}`
@@ -1270,7 +1512,7 @@ window.addEventListener('scroll', () => {
     const firstRect = firstSection.getBoundingClientRect();
     const lastRect = lastSection.getBoundingClientRect();
 
-    // Rechnet aus, ob der Nutzer im Bereich der Kategorien ist
+    
     const inCategoryArea = (firstRect.top < window.innerHeight - 100) && (lastRect.bottom > 100);
 
     if (inCategoryArea) {
