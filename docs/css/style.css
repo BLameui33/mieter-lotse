@@ -2673,6 +2673,15 @@ textarea::placeholder { color: #9aa4af !important; }
 details p:last-child { margin-bottom: 0 !important; }
 
 
+/* =========================================
+   iOS-Zoom-Fix: alle Inputs auf 16px
+   (ans ENDE beider Dateien)
+   ========================================= */
+
+input, select, textarea {
+  font-size: 16px !important;
+}
+
 
 
 
