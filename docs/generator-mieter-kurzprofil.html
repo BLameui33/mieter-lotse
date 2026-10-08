@@ -38,6 +38,66 @@
     "reviewedBy": { "@type": "Organization", "name": "Mieter-Lotse Redaktion" }
   }
   </script>
+  <style>
+    
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+#profilForm fieldset {
+  min-width: 0;         
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#profilForm legend {
+  max-width: 100%;
+  white-space: normal;  
+  word-wrap: break-word;
+}
+
+
+#profilForm input,
+#profilForm select,
+#profilForm textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+
+
+#profilForm input[type="file"] {
+  max-width: 100%;
+  overflow: hidden;       
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.9em;       
+}
+
+
+#profilForm .button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#profilForm .button-group button {
+  flex: 1 1 100%; 
+}
+#profilForm input[type="file"]::file-selector-button {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+  </style>
 </head>
 
 <body>
@@ -239,7 +299,7 @@
 
 </div>
 
-<!-- Spenden / Success Popup -->
+
 <div id="spendenPopup" class="popup-overlay" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center;">
   <div class="popup-content" style="background: #fff; padding: 30px; border-radius: 8px; max-width: 500px; text-align: center;">
       <h2>Steckbrief erfolgreich erstellt!</h2>
@@ -286,7 +346,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     let photoDataUrl = null;
 
-    // Handle File Upload locally via FileReader
+    
     document.getElementById('pFoto').addEventListener('change', function(e) {
         const file = e.target.files[0];
         if (file) {
@@ -298,7 +358,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Save/Load Logic (Without Photo for LocalStorage limits)
+    
     document.getElementById('saveBtnProfil').addEventListener('click', function() {
         const fields = ['pName', 'pAlter', 'pTelefon', 'pEmail', 'pWohnort', 'pBeruf', 'pArbeitgeber', 'pVertragsart', 'pNetto', 'pPersonen', 'pHaustiere', 'pRaucher', 'pArg1', 'pArg2', 'pArg3'];
         fields.forEach(f => {
@@ -316,7 +376,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // PDF Generation
+    
     document.getElementById('profilForm').addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -342,9 +402,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const arg2 = document.getElementById('pArg2').value;
         const arg3 = document.getElementById('pArg3').value;
 
-        // --- MODERN LAYOUT ---
-        // Top Header Banner
-        doc.setFillColor(33, 150, 243); // Blue Theme (#2196f3)
+        
+        
+        doc.setFillColor(33, 150, 243); 
         doc.rect(0, 0, 210, 40, 'F');
         
         doc.setTextColor(255, 255, 255);
@@ -356,12 +416,12 @@ document.addEventListener('DOMContentLoaded', function() {
         doc.setFontSize(14);
         doc.text(name, 20, 30);
 
-        doc.setTextColor(0, 0, 0); // Reset color
+        doc.setTextColor(0, 0, 0); 
         
-        // Right Side Image or Placeholder
+        
         if (photoDataUrl) {
             try {
-                // Dimensions approx 35x45mm (Passport style)
+                
                 doc.addImage(photoDataUrl, 'JPEG', 150, 45, 35, 45);
             } catch (err) {
                 console.error("Image loading failed", err);
@@ -388,7 +448,7 @@ document.addEventListener('DOMContentLoaded', function() {
             doc.setTextColor(33, 150, 243);
             doc.text(title, leftX, y);
             doc.setDrawColor(33, 150, 243);
-            doc.line(leftX, y + 2, 140, y + 2); // Draw line under title
+            doc.line(leftX, y + 2, 140, y + 2); 
             doc.setTextColor(0, 0, 0);
             doc.setFont("helvetica", "normal");
             doc.setFontSize(11);
@@ -403,26 +463,26 @@ document.addEventListener('DOMContentLoaded', function() {
             return y + lineSpacing;
         }
 
-        // Section 1: Kontakt & Persönliches
+        
         yPos = addSectionHeader("Kontakt & Persönliches", yPos);
         yPos = addKeyValue("Alter:", alter + " Jahre", yPos);
         yPos = addKeyValue("Wohnort:", ort, yPos);
         yPos = addKeyValue("Telefon:", tel, yPos);
         yPos = addKeyValue("E-Mail:", email, yPos);
 
-        yPos += 5; // Spacing
+        yPos += 5; 
 
-        // Section 2: Beruf & Finanzen
+        
         yPos = addSectionHeader("Beruf & Finanzen", yPos);
         yPos = addKeyValue("Beruf:", beruf, yPos);
         yPos = addKeyValue("Arbeitgeber:", ag, yPos);
         yPos = addKeyValue("Vertragsart:", vertrag, yPos);
         yPos = addKeyValue("Nettoeinkommen:", netto + " (Haushalt/Monat)", yPos);
 
-        // From here, we span across the whole page (below the image)
+        
         yPos = Math.max(yPos, 100) + 10; 
 
-        // Section 3: Wohnsituation & Haushalt
+        
         yPos = addSectionHeader("Wohnsituation & Haushalt", yPos);
         yPos = addKeyValue("Personen gesamt:", personen, yPos);
         yPos = addKeyValue("Haustiere:", haustiere, yPos);
@@ -430,11 +490,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         yPos += 10;
 
-        // Section 4: Auf einen Blick
+        
         yPos = addSectionHeader("Auf einen Blick", yPos);
         doc.setFontSize(12);
         
-        // Bullet points
+        
         if(arg1) {
             doc.text("•  " + arg1, leftX, yPos);
             yPos += 8;
@@ -448,7 +508,7 @@ document.addEventListener('DOMContentLoaded', function() {
             yPos += 8;
         }
 
-        // Footer signature line
+        
         yPos += 30;
         const today = new Date().toLocaleDateString('de-DE');
         doc.setFontSize(10);
@@ -457,7 +517,7 @@ document.addEventListener('DOMContentLoaded', function() {
         doc.line(leftX, yPos + 2, leftX + 60, yPos + 2);
         doc.text("Unterschrift " + name, leftX, yPos + 7);
 
-        // Save
+        
         doc.save("Mieter_Steckbrief_" + name.replace(/\s+/g, '_') + ".pdf");
         
         document.getElementById('spendenPopup').style.display = 'flex';

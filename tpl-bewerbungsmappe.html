@@ -72,6 +72,41 @@
     ]
   }
   </script>
+  <style>
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+#mappeForm fieldset {
+  min-width: 0;         
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 12px 15px;   
+  box-sizing: border-box;
+}
+
+#mappeForm input[type="text"],
+#mappeForm input[type="email"],
+#mappeForm input[type="number"],
+#mappeForm textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+
+#mappeForm .flex-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap; 
+}
+
+#mappeForm .flex-row > div {
+  flex: 1 1 200px; 
+}</style>
 </head>
 
 <body>
